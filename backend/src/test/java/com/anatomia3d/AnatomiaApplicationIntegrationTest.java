@@ -23,6 +23,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.List;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -33,6 +34,7 @@ class AnatomiaApplicationIntegrationTest extends AbstractPostgresTest {
 
     private static final String FEMUR_ID = "STR-TST-FEMUR";
     private static final String TIBIA_ID = "STR-TST-TIBIA";
+    private static final String PATELA_ID = "STR-TST-PATELA";
     private static final String INACTIVE_ID = "STR-TST-INACT";
 
     @Autowired
@@ -79,6 +81,9 @@ class AnatomiaApplicationIntegrationTest extends AbstractPostgresTest {
         AnatomicalStructure tibia = structure(TIBIA_ID, "Tíbia direita", skeletal, lowerLimb, true);
         structureRepository.save(tibia);
 
+        AnatomicalStructure patela = structure(PATELA_ID, "Patela direita", skeletal, lowerLimb, true);
+        structureRepository.save(patela);
+
         structureRepository.save(structure(INACTIVE_ID, "Inativa", skeletal, lowerLimb, false));
 
         StructureRelation relation = new StructureRelation();
@@ -87,6 +92,13 @@ class AnatomiaApplicationIntegrationTest extends AbstractPostgresTest {
         relation.setRelationType("ARTICULATES_WITH");
         relation.setDescription("Articula a extremidade distal do femur.");
         relationRepository.save(relation);
+
+        StructureRelation reverse = new StructureRelation();
+        reverse.setSourceStructure(patela);
+        reverse.setTargetStructure(femur);
+        reverse.setRelationType("ARTICULATION");
+        reverse.setDescription("Patela com tróclea femoral.");
+        relationRepository.save(reverse);
 
         SourceLicense license = licenseRepository.findBySourceName("BodyParts3D")
             .orElseThrow(IllegalStateException::new);
@@ -154,9 +166,9 @@ class AnatomiaApplicationIntegrationTest extends AbstractPostgresTest {
                 .param("region", "REG-LOWER-LIMB")
                 .param("size", "100"))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.content", hasSize(2)))
+            .andExpect(jsonPath("$.content", hasSize(3)))
             .andExpect(jsonPath("$.content[*].id",
-                org.hamcrest.Matchers.containsInAnyOrder(FEMUR_ID, TIBIA_ID)));
+                org.hamcrest.Matchers.containsInAnyOrder(FEMUR_ID, TIBIA_ID, PATELA_ID)));
     }
 
     @Test
@@ -184,9 +196,18 @@ class AnatomiaApplicationIntegrationTest extends AbstractPostgresTest {
     void relacoesDaEstrutura() throws Exception {
         mockMvc.perform(get("/api/v1/structures/{id}/relations", FEMUR_ID))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$", hasSize(1)))
-            .andExpect(jsonPath("$[0].relationType", is("ARTICULATES_WITH")))
-            .andExpect(jsonPath("$[0].target.id", is(TIBIA_ID)));
+            .andExpect(jsonPath("$", hasSize(2)))
+            .andExpect(jsonPath("$[?(@.relationType=='ARTICULATES_WITH')].target.id", hasItem(TIBIA_ID)))
+            .andExpect(jsonPath("$[?(@.relationType=='ARTICULATION')].target.id", hasItem(PATELA_ID)));
+    }
+
+    @Test
+    void resolveArticulacoesNoSentidoReverso() throws Exception {
+        mockMvc.perform(get("/api/v1/structures/{id}/relations", FEMUR_ID))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$[?(@.relationType=='ARTICULATION')].target.id", hasSize(1)))
+            .andExpect(jsonPath("$[?(@.relationType=='ARTICULATION')].target.id", hasItem(PATELA_ID)))
+            .andExpect(jsonPath("$[?(@.relationType=='ARTICULATES_WITH')].target.id", hasItem(TIBIA_ID)));
     }
 
     @Test

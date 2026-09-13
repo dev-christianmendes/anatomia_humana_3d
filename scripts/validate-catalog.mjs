@@ -35,6 +35,37 @@ function normalizePt(value) {
   return value.normalize('NFD').replace(/\p{M}+/gu, '').toLowerCase().trim();
 }
 
+function validateRelations(ids) {
+  const relationsPath = resolve(root, 'catalog/relations.json');
+  if (!existsSync(relationsPath)) {
+    errors.push('catalog/relations.json ausente.');
+    return;
+  }
+  const VALID_TYPES = new Set(['ARTICULATION', 'ORIGIN', 'INSERTION']);
+  const relations = JSON.parse(readFileSync(relationsPath, 'utf8')).relations;
+  const seen = new Set();
+  for (const rel of relations) {
+    if (!ids.has(rel.source)) {
+      errors.push(`relacao: source desconhecido '${rel.source}'.`);
+    }
+    if (!ids.has(rel.target)) {
+      errors.push(`relacao ${rel.source}: target desconhecido '${rel.target}'.`);
+    }
+    if (rel.source === rel.target) {
+      errors.push(`relacao ${rel.source}: auto-relacao.`);
+    }
+    if (!VALID_TYPES.has(rel.relationType)) {
+      errors.push(`relacao ${rel.source}: relationType invalido '${rel.relationType}'.`);
+    }
+    const key = `${rel.source}|${rel.target}|${rel.relationType}`;
+    if (seen.has(key)) {
+      errors.push(`relacao ${key}: duplicada.`);
+    }
+    seen.add(key);
+  }
+  console.log(`Relacoes: ${relations.length} (${relations.filter((r) => r.relationType === 'ARTICULATION').length} articulacoes, ${relations.filter((r) => r.relationType === 'ORIGIN').length} origens, ${relations.filter((r) => r.relationType === 'INSERTION').length} insercoes)`);
+}
+
 for (const entry of entries) {
   const id = entry.structureId;
 
@@ -96,6 +127,8 @@ if (missingInCatalog.length) {
 }
 
 const count = process.stdout.columns ? undefined : countByStatus(entries);
+
+validateRelations(reportedIds);
 
 if (count) {
   console.log(count);

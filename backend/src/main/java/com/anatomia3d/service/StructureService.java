@@ -17,13 +17,16 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Service
 public class StructureService {
 
     private static final int MAX_PAGE_SIZE = 100;
     private static final int DEFAULT_PAGE_SIZE = 20;
+    private static final String ARTICULATION_TYPE = "ARTICULATION";
 
     private final AnatomicalStructureRepository structureRepository;
     private final StructureRelationRepository relationRepository;
@@ -64,10 +67,22 @@ public class StructureService {
     @Transactional(readOnly = true)
     public List<RelationDto> relations(String id) {
         findStructure(id);
-        return relationRepository
+        List<RelationDto> forward = relationRepository
             .findBySourceStructure_ExternalCodeOrderByTargetStructure_NameAsc(id)
             .stream()
             .map(RelationMapper::toDto)
+            .toList();
+        List<RelationDto> reverse = relationRepository
+            .findByTargetStructure_ExternalCodeOrderBySourceStructure_NameAsc(id)
+            .stream()
+            .filter(relation -> ARTICULATION_TYPE.equals(relation.getRelationType()))
+            .map(relation -> new RelationDto(
+                relation.getRelationType(),
+                relation.getDescription(),
+                StructureMapper.toSummary(relation.getSourceStructure())))
+            .toList();
+        return Stream.concat(forward.stream(), reverse.stream())
+            .sorted(Comparator.comparing((RelationDto dto) -> dto.target().name()))
             .toList();
     }
 
