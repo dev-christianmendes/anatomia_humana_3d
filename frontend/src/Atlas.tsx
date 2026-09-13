@@ -1,19 +1,66 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react'
-import { Activity, Bone, Box, CircleHelp, ExternalLink, Focus, Layers3, Minus, Plus, RotateCcw, RotateCw, ScanLine, X } from 'lucide-react'
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
+import { Activity, Bone, Box, CircleHelp, ExternalLink, Focus, Layers3, Minus, Plus, RotateCcw, RotateCw, ScanLine, Search, X } from 'lucide-react'
 import type { AnatomicalView } from './features/viewer/camera'
 import type { CameraCommand } from './features/viewer/AnatomyViewport'
 import type { StructureRecord } from './data/structures'
 import { getStructure, regionLabel, systemLabel, SYSTEMS } from './features/structure/catalog'
-import { fetchApiStructure } from './features/structure/api'
+import { searchStructures } from './features/structure/search'
+import { fetchApiStructure, fetchApiRelations, type ApiRelation } from './features/structure/api'
+import { getRelations, relationLabel } from './features/structure/relations'
 import { useAtlas } from './store/atlas'
 import './atlas.css'
 
 const AnatomyViewport = lazy(() => import('./features/viewer/AnatomyViewport'))
 
-function StructureInfo({ structureId }: { structureId: string }) {
+function StructureSearch({ onChoose }: { onChoose: (structureId: string) => void }) {
+  const [term, setTerm] = useState('')
+  const [debounced, setDebounced] = useState('')
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebounced(term), 200)
+    return () => clearTimeout(timer)
+  }, [term])
+
+  const results = useMemo(() => searchStructures(debounced, 8), [debounced])
+
+  function choose(structureId: string) {
+    onChoose(structureId)
+    setTerm('')
+    setDebounced('')
+  }
+
+  return <div className="search">
+    <label className="search-field">
+      <Search size={15} />
+      <input type="search" placeholder="Buscar estrutura, músculo, região…" value={term}
+        onChange={(event) => setTerm(event.target.value)} aria-label="Buscar estrutura" />
+      {term && <button type="button" className="search-clear" aria-label="Limpar busca" onClick={() => { setTerm(''); setDebounced('') }}><X size={14} /></button>}
+    </label>
+    {debounced.trim() && (results.length > 0 ? <ul className="search-results">
+      {results.map((entry) => <li key={entry.structureId}>
+        <button type="button" onClick={() => choose(entry.structureId)}>
+          <span className="search-result-name"><Focus size={13} />{entry.name}</span>
+          <span className="search-result-meta">{systemLabel(entry.system)} · {regionLabel(entry.region)}</span>
+        </button>
+      </li>)}
+    </ul> : <p className="search-empty">Nenhum resultado encontrado.</p>)}
+  </div>
+}
+
+function RelationMatch({ relation, onChoose }: { relation: ApiRelation; onChoose: (id: string) => void }) {
+  return <button type="button" className="relation-row" onClick={() => onChoose(relation.targetId)}>
+    <span className="relation-type">{relationLabel(relation.relationType)}</span>
+    <span className="relation-target">{getStructure(relation.targetId)?.name ?? relation.targetId}</span>
+    {relation.description && <span className="relation-description">{relation.description}</span>}
+  </button>
+}
+
+function StructureInfo({ structureId, onChoose }: { structureId: string; onChoose: (structureId: string) => void }) {
   const structure = getStructure(structureId)
   const isolated = useAtlas((state) => state.isolatedStructureId)
   const [remote, setRemote] = useState<StructureRecord | null | undefined>(undefined)
+  const [relations, setRelations] = useState<ApiRelation[]>([])
+  const [relationsLoaded, setRelationsLoaded] = useState<'idle' | 'loaded' | 'absent'>('idle')
 
   useEffect(() => {
     let cancelled = false
@@ -23,11 +70,29 @@ function StructureInfo({ structureId }: { structureId: string }) {
     return () => { cancelled = true }
   }, [structureId])
 
+  useEffect(() => {
+    let cancelled = false
+    void fetchApiRelations(structureId).then((value) => {
+      if (!cancelled) {
+        setRelations(value ? value.filter((r) => getStructure(r.targetId)) : [])
+        setRelationsLoaded(value ? 'loaded' : 'absent')
+      }
+    })
+    return () => { cancelled = true }
+  }, [structureId])
+
+  const localRelations = useMemo(() => getRelations(structureId), [structureId])
+
   const active = remote ?? structure
   if (!active) {
     return <span className="eyebrow">ESTRUTURA NÃO ENCONTRADA</span>
   }
   const viaApi = Boolean(remote)
+
+  function focusRelation(targetId: string) {
+    useAtlas.getState().select(targetId)
+    onChoose(targetId)
+  }
   return <div className="structure-panel">
     {isolated === structureId && <span className="isolated-badge">Visão isolada</span>}
     <span className="eyebrow">ESTRUTURA SELECIONADA</span>
@@ -44,6 +109,16 @@ function StructureInfo({ structureId }: { structureId: string }) {
     {active.description ? <p>{active.description}</p> : <p className="pending-note">Descrição em curadoria.</p>}
     <h3>Função</h3>
     {active.function ? <p>{active.function}</p> : <p className="pending-note">Função em curadoria.</p>}
+    <h3>Relações anatômicas</h3>
+    {(() => {
+      const shown = relationsLoaded === 'absent'
+        ? localRelations.map((entry) => ({ targetId: entry.targetId, relationType: entry.relationType, description: entry.description ?? null }))
+        : relations
+      if (shown.length === 0) {
+        return <p className="pending-note">{relationsLoaded === 'loaded' ? 'Nenhuma relação catalogada.' : 'Relações em curadoria.'}</p>
+      }
+      return <div className="relation-list">{shown.map((entry) => <RelationMatch key={entry.relationType + entry.targetId} relation={entry} onChoose={focusRelation} />)}</div>
+    })()}
     {active.educationalSourceUrl && <a className="source-link" href={active.educationalSourceUrl} target="_blank" rel="noreferrer">{active.educationalSourceName ?? 'Consultar fonte'} <ExternalLink size={14} /></a>}
     {!active.reviewed && <p className="curation-note">Conteúdo pendente de curadoria.</p>}
     <p className="data-origin">Dados {viaApi ? 'via API' : 'locais'}</p>
@@ -62,6 +137,7 @@ export default function Atlas() {
   const selectedStructureId = useAtlas((state) => state.selectedStructureId)
   const isolatedStructureId = useAtlas((state) => state.isolatedStructureId)
   const systemVisibility = useAtlas((state) => state.systemVisibility)
+  const explosionProgress = useAtlas((state) => state.explosionProgress)
 
   function changeView(next: AnatomicalView) {
     setView(next)
@@ -71,6 +147,12 @@ export default function Atlas() {
     changeView('front')
     setRotating(false)
     setWireframe(false)
+    useAtlas.getState().setExplosion(0)
+  }
+
+  function chooseFromSearch(structureId: string) {
+    useAtlas.getState().select(structureId)
+    setCommand((previous) => ({ action: 'focus', structureId, sequence: previous.sequence + 1 }))
   }
 
   return <div className="app-shell">
@@ -85,6 +167,7 @@ export default function Atlas() {
         <div className="sidebar-heading"><span className="eyebrow">EXPLORAR</span><Layers3 size={17} /></div>
         <h1>Corpo humano</h1>
         <div className="catalog-item"><span className="bone-icon"><Bone size={22} /></span><div><strong>Esquelético · Muscular</strong><span>BodyParts3D + Z-Anatomy</span></div><span className="status-dot" /></div>
+        <StructureSearch onChoose={chooseFromSearch} />
         <section className="control-section">
           <h2>Orientação</h2>
           <div className="view-options" role="group" aria-label="Vista anatômica">
@@ -95,6 +178,15 @@ export default function Atlas() {
           <h2>Visualização</h2>
           <label className="toggle-row"><span><RotateCw size={17} />Rotação automática</span><input type="checkbox" checked={rotating} onChange={() => setRotating(!rotating)} /></label>
           <label className="toggle-row"><span><Box size={17} />Malha poligonal</span><input type="checkbox" checked={wireframe} onChange={() => setWireframe(!wireframe)} /></label>
+        </section>
+        <section className="control-section">
+          <h2>Explosão</h2>
+          <label className="explosion-row">
+            <span>Separação das estruturas <em>{explosionProgress}%</em></span>
+            <input type="range" min={0} max={100} step={1} value={explosionProgress}
+              onChange={(event) => useAtlas.getState().setExplosion(Number(event.target.value))}
+              aria-label="Intensidade da explosão" />
+          </label>
         </section>
         <section className="control-section">
           <h2>Sistemas</h2>
@@ -134,7 +226,7 @@ export default function Atlas() {
       </section>
       <aside className="info-panel" aria-label="Informações do modelo">
         {selectedStructureId
-          ? <StructureInfo key={selectedStructureId} structureId={selectedStructureId} />
+          ? <StructureInfo key={selectedStructureId} structureId={selectedStructureId} onChoose={chooseFromSearch} />
           : <div className="model-panel">
             <span className="eyebrow">MODELO EM EXIBIÇÃO</span>
             <div className="info-illustration"><Bone size={38} strokeWidth={1.2} /><span>02</span></div>

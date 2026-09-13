@@ -51,4 +51,14 @@ describe('atlas store', () => {
     expect(useAtlas.getState().isolatedStructureId).toBeNull()
     expect(useAtlas.getState().selectedStructureId).toBe('STR-ESQ-0230')
   })
+
+  it('controls explosion progress within bounds', () => {
+    expect(useAtlas.getState().explosionProgress).toBe(0)
+    useAtlas.getState().setExplosion(45)
+    expect(useAtlas.getState().explosionProgress).toBe(45)
+    useAtlas.getState().setExplosion(120)
+    expect(useAtlas.getState().explosionProgress).toBe(100)
+    useAtlas.getState().setExplosion(-10)
+    expect(useAtlas.getState().explosionProgress).toBe(0)
+  })
 })

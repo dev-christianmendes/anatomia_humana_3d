@@ -1,9 +1,9 @@
 import { Component, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import type { ReactNode } from 'react'
+import type { MutableRefObject, ReactNode } from 'react'
 import { Canvas, useThree } from '@react-three/fiber'
 import type { ThreeEvent } from '@react-three/fiber'
 import { Html, OrbitControls, useGLTF } from '@react-three/drei'
-import { Box3, Mesh, MeshStandardMaterial, Object3D, Vector3 } from 'three'
+import { Box3, Mesh, MeshStandardMaterial, Object3D, Sphere, Vector3 } from 'three'
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import { cameraDistance, cameraPosition } from './camera'
 import type { AnatomicalView } from './camera'
@@ -17,7 +17,8 @@ const SELECTED_COLOR = '#1f7a5b'
 useGLTF.preload(MODEL_PATH)
 useGLTF.preload(MUSCLE_MODEL_PATH)
 
-export type CameraCommand = { action: 'reset' | 'in' | 'out'; sequence: number }
+export type CameraCommand = { action: 'reset' | 'in' | 'out' | 'focus'; sequence: number; structureId?: string }
+type StructureBoxes = MutableRefObject<Map<string, Box3>>
 type ViewerProps = {
   view: AnatomicalView
   command: CameraCommand
@@ -43,11 +44,12 @@ function fitTransform(scene: Object3D) {
   return { center, scale }
 }
 
-function SceneModel({ scene, fit, color, wireframe, onLoaded }: {
+function SceneModel({ scene, fit, color, wireframe, boxesRef, onLoaded }: {
   scene: Object3D
   fit: { center: Vector3; scale: number }
   color: string
   wireframe: boolean
+  boxesRef: StructureBoxes
   onLoaded: (meshes: number, triangles: number) => void
 }) {
   const invalidate = useThree((state) => state.invalidate)
@@ -55,6 +57,7 @@ function SceneModel({ scene, fit, color, wireframe, onLoaded }: {
   const selected = useAtlas((state) => state.selectedStructureId)
   const isolated = useAtlas((state) => state.isolatedStructureId)
   const systemVisibility = useAtlas((state) => state.systemVisibility)
+  const explosionProgress = useAtlas((state) => state.explosionProgress)
 
   const [model] = useState(() => {
     const copy = scene.clone(true)
@@ -80,6 +83,57 @@ function SceneModel({ scene, fit, color, wireframe, onLoaded }: {
     })
     return refs
   }, [model])
+
+  const structureBoxes = useMemo(() => {
+    const boxes = new Map<string, Box3>()
+    model.updateWorldMatrix(true, true)
+    model.traverse((object) => {
+      if (!(object instanceof Mesh)) return
+      const id = object.userData?.structureId
+      if (typeof id !== 'string' || !id) return
+      const box = boxes.get(id) ?? new Box3()
+      boxes.set(id, box.union(new Box3().setFromObject(object)))
+    })
+    return boxes
+  }, [model])
+
+  useEffect(() => {
+    for (const [structureId, box] of structureBoxes) boxesRef.current.set(structureId, box)
+  }, [boxesRef, structureBoxes])
+
+  const basePositions = useMemo(() => {
+    const base = new Map<Mesh, Vector3>()
+    model.traverse((object) => {
+      if (object instanceof Mesh) base.set(object, object.position.clone())
+    })
+    return base
+  }, [model])
+
+  const explosionOffsets = useMemo(() => {
+    const offsets = new Map<string, Vector3>()
+    const bodyCenter = new Vector3()
+    for (const box of structureBoxes.values()) bodyCenter.add(box.getCenter(new Vector3()))
+    bodyCenter.divideScalar(Math.max(structureBoxes.size, 1))
+    for (const [structureId, box] of structureBoxes) {
+      const direction = box.getCenter(new Vector3()).sub(bodyCenter)
+      if (direction.lengthSq() < 1e-8) direction.set(0, 1, 0)
+      direction.normalize()
+      const radius = box.getBoundingSphere(new Sphere()).radius
+      offsets.set(structureId, direction.multiplyScalar(0.25 * radius + 0.12))
+    }
+    return offsets
+  }, [structureBoxes])
+
+  useEffect(() => {
+    const progress = explosionProgress / 100
+    for (const [mesh, base] of basePositions) {
+      mesh.position.copy(base)
+      const id = mesh.userData?.structureId
+      const offset = typeof id === 'string' ? explosionOffsets.get(id) : undefined
+      if (offset) mesh.position.addScaledVector(offset, progress)
+    }
+    invalidate()
+  }, [explosionProgress, basePositions, explosionOffsets, invalidate])
 
   useEffect(() => {
     let meshes = 0
@@ -139,7 +193,7 @@ function SceneModel({ scene, fit, color, wireframe, onLoaded }: {
     onPointerDown={selectStructure} />
 }
 
-function Controls({ view, command, rotating }: Omit<ViewerProps, 'wireframe' | 'onLoaded'>) {
+function Controls({ view, command, rotating, boxes }: Omit<ViewerProps, 'wireframe' | 'onLoaded'> & { boxes: StructureBoxes }) {
   const controls = useRef<OrbitControlsImpl>(null)
   const { camera, size, invalidate } = useThree()
   const applied = useRef(-1)
@@ -151,6 +205,18 @@ function Controls({ view, command, rotating }: Omit<ViewerProps, 'wireframe' | '
       const offset = camera.position.clone().sub(controls.current.target)
       offset.multiplyScalar(command.action === 'in' ? 0.8 : 1.25).clampLength(0.6, 30)
       camera.position.copy(controls.current.target).add(offset)
+    } else if (command.action === 'focus' && command.structureId) {
+      const box = boxes.current.get(command.structureId)
+      if (box) {
+        const center = box.getCenter(new Vector3())
+        const radius = box.getBoundingSphere(new Sphere()).radius
+        const direction = camera.position.clone().sub(controls.current.target)
+        if (direction.lengthSq() < 1e-6) direction.set(0, 0, 1)
+        direction.normalize()
+        const distance = Math.max(cameraDistance(size.width / size.height, Math.max(radius * 1.25, 0.15)), 0.6)
+        camera.position.copy(center).addScaledVector(direction, distance)
+        controls.current.target.copy(center)
+      }
     } else {
       camera.position.set(...cameraPosition(view, cameraDistance(size.width / size.height)))
       camera.up.set(0, 1, 0)
@@ -159,7 +225,7 @@ function Controls({ view, command, rotating }: Omit<ViewerProps, 'wireframe' | '
     }
     controls.current.update()
     invalidate()
-  }, [camera, command, invalidate, size.width, size.height, view])
+  }, [boxes, camera, command, invalidate, size.width, size.height, view])
 
   return <OrbitControls ref={controls} makeDefault enableDamping dampingFactor={0.08}
     autoRotate={rotating} autoRotateSpeed={0.65} minDistance={0.6} maxDistance={30} />
@@ -178,8 +244,9 @@ class ViewerBoundary extends Component<{ children: ReactNode }, { failed: boolea
   }
 }
 
-function SceneContent({ wireframe, onLoaded, onMusclesLoaded }: {
+function SceneContent({ wireframe, boxesRef, onLoaded, onMusclesLoaded }: {
   wireframe: boolean
+  boxesRef: StructureBoxes
   onLoaded: (meshes: number, triangles: number) => void
   onMusclesLoaded: (meshes: number, triangles: number) => void
 }) {
@@ -187,8 +254,8 @@ function SceneContent({ wireframe, onLoaded, onMusclesLoaded }: {
   const muscles = useGLTF(MUSCLE_MODEL_PATH)
   const fit = useMemo(() => fitTransform(skeleton.scene), [skeleton.scene])
   return <group>
-    <SceneModel scene={skeleton.scene} fit={fit} color="#d4bfb1" wireframe={wireframe} onLoaded={onLoaded} />
-    <SceneModel scene={muscles.scene} fit={fit} color="#b8433a" wireframe={wireframe} onLoaded={onMusclesLoaded} />
+    <SceneModel scene={skeleton.scene} fit={fit} color="#d4bfb1" wireframe={wireframe} boxesRef={boxesRef} onLoaded={onLoaded} />
+    <SceneModel scene={muscles.scene} fit={fit} color="#b8433a" wireframe={wireframe} boxesRef={boxesRef} onLoaded={onMusclesLoaded} />
   </group>
 }
 
@@ -201,6 +268,7 @@ export default function AnatomyViewport(props: ViewerProps) {
     return Boolean(context)
   })
   const metrics = useRef<Partial<Record<'skeleton' | 'muscles', { meshes: number; triangles: number }>>>({})
+  const boxesRef = useRef<Map<string, Box3>>(new Map())
   const reportTotals = useCallback(() => {
     const total = { meshes: 0, triangles: 0 }
     for (const value of Object.values(metrics.current)) {
@@ -238,9 +306,9 @@ export default function AnatomyViewport(props: ViewerProps) {
       <directionalLight position={[4, 5, 6]} intensity={1.2} />
       <directionalLight position={[-4, 2, -3]} intensity={0.6} color="#c4e5df" />
       <Suspense fallback={<Html center><div className="loading" role="status">Carregando modelos…</div></Html>}>
-        <SceneContent wireframe={props.wireframe} onLoaded={skeletonLoaded} onMusclesLoaded={musclesLoaded} />
+        <SceneContent wireframe={props.wireframe} boxesRef={boxesRef} onLoaded={skeletonLoaded} onMusclesLoaded={musclesLoaded} />
       </Suspense>
-      <Controls view={props.view} command={props.command} rotating={props.rotating} />
+      <Controls view={props.view} command={props.command} rotating={props.rotating} boxes={boxesRef} />
     </Canvas>
   </ViewerBoundary>
 }
