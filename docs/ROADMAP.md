@@ -18,6 +18,9 @@
 - [x] Catálogo pt-BR gerado (258 estruturas) com validacao e seed.
 - [x] Integracao opcional do front com a API (VITE_API_URL).
 - [x] Curadoria manual completa do catálogo (258/258 revisadas), com seed V3 e fallback no frontend.
+- [x] Sistema muscular (Z-Anatomy): extracao no Blender, 462 estruturas, GLB Meshopt, mapa e inventario de licenca.
+- [x] Curadoria do sistema muscular (462/462 revisadas), catálogo final com 720 estruturas (STR-ESQ + STR-MUS), seed/sync atualizados.
+- [x] Viewer com dois GLBs (esqueleto + musculatura), fit compartilhado, creditos/licencas e testes E2E.
 
 ## Pendencias da Preparacao
 

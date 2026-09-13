@@ -9,11 +9,15 @@ function normalizePt(value: string): string {
 describe('estruturas locais (sincronizadas do catalogo)', () => {
   it('lista estruturas unicas com identicadores esperados', () => {
     const ids = STRUCTURES.map((entry) => entry.structureId)
-    expect(ids.length).toBe(258)
-    expect(new Set(ids).size).toBe(258)
+    expect(ids.length).toBe(720)
+    expect(new Set(ids).size).toBe(720)
     for (const id of ids) {
-      expect(id).toMatch(/^STR-ESQ-\d{4}$/)
+      expect(id).toMatch(/^STR-(ESQ|MUS)-\d{4}$/)
     }
+    const muscles = STRUCTURES.filter((entry) => entry.system === 'SYS-MUS')
+    expect(muscles.length).toBe(462)
+    const sided = muscles.filter((entry) => /(esquerdo|direito)$/.test(entry.name))
+    expect(sided.length).toBeGreaterThanOrEqual(450)
   })
 
   it('normaliza nomes sem acentos em caixa baixa', () => {
@@ -40,8 +44,17 @@ describe('estruturas locais (sincronizadas do catalogo)', () => {
 
   it('rotula sistemas e regioes conhecidos', () => {
     expect(systemLabel('SYS-ESQ')).toBe('Esquelético')
+    expect(systemLabel('SYS-MUS')).toBe('Muscular')
     expect(regionLabel('REG-HEAD')).toBe('Cabeça')
+    expect(regionLabel('REG-UPPER-LIMB')).toBe('Membro superior')
     expect(systemLabel('SYS-XXXX')).toBe('SYS-XXXX')
     expect(regionLabel('REG-XXXX')).toBe('REG-XXXX')
+  })
+
+  it('inclui musculatura nas telas de sistema', () => {
+    const muscular = SYSTEMS.find((system) => system.code === 'SYS-MUS')
+    expect(muscular).toBeDefined()
+    expect(muscular!.count).toBe(462)
+    expect(SYSTEMS.find((system) => system.code === 'SYS-ESQ')?.count).toBe(258)
   })
 })

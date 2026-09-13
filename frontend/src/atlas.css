@@ -126,6 +126,8 @@ h1 { font: 700 22px/1.4 Manrope, sans-serif; margin: 9px 0 25px; }
 .credits-dialog p { font-size: 13px; line-height: 1.8; }
 .credits-dialog a { color: var(--green); font-size: 12px; display: flex; align-items: center; gap: 8px; }
 .credits-dialog .reset-button { margin-top: 0; width: 100%; }
+.credits-dialog .credits-downloads { display: flex; gap: 12px; flex-wrap: wrap; }
+.credits-dialog .credits-downloads a { padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; font-weight: 600; }
 .header, .sidebar, .info-panel { animation: appear .45s ease both; }
 @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
 @media (min-width: 1600px) {

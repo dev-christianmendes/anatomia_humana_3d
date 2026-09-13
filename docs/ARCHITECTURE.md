@@ -7,17 +7,21 @@ main.tsx -> Atlas.tsx (UI / painel / sidebar)
                 -> store/atlas.ts (Zustand: selecao, hover, sistemas, isolamento)
                 -> features/structure (catalog local, api adapter, labels)
                 -> AnatomyViewport (lazy)
-                     -> Canvas / Model / Controls
+                     -> Canvas / SceneContent (esqueleto + musculatura)
                      -> camera.ts
                      -> /models/bodyparts3d-skeleton.glb
+                     -> /models/z-anatomy-muscles.glb
 
 scripts/import-skeleton.mjs -> fonte oficial -> OBJ -> GLB Meshopt
                            -> assets/licenses.json
                            -> assets/structure-map.json
 
-scripts/generate-catalog.mjs -> catalog/fma-pt-dictionary.json + structure-map
-                           -> catalog/catalog.json (rascunho pt-BR, 258)
-catalog/curated.json + scripts/apply-curation.mjs -> curadoria revisada (258/258)
+scripts/export-zanatomy-muscles.py -> Blender -> malhas + CSV (músculos)
+scripts/build-zanatomy-muscles.mjs -> assets/z-anatomy-map.json + GLB
+                                  -> assets/licenses.json / z-anatomy-excluded.json
+
+scripts/generate-catalog.mjs -> structure-map + z-anatomy-map + dicionarios
+                           -> catalog/catalog.json (pt-BR, 720)
 scripts/validate-catalog.mjs -> valida catalogo (exige todas revisadas)
 scripts/export-catalog-seed.mjs -> V3__seed_structures.sql (somente revisadas)
 scripts/sync-frontend-catalog.mjs -> frontend/src/data/structures.ts

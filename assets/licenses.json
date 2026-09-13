@@ -4,11 +4,11 @@
     "source": "BodyParts3D 4.0",
     "author": "The Database Center for Life Science",
     "sourceUrl": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/partof_BP3D_4.0_obj_99.zip",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "license": "CC BY-SA 2.1 JP",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
     "verificationUrl": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
     "obtainedAt": "2026-09-10",
-    "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.",
+    "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution-ShareAlike 2.1 Japan.",
     "modifications": [
       "Skeleton FMA23876 plus limb bone concepts from official catalog",
       "OBJ to glTF 2.0 binary conversion",
@@ -18,12 +18,39 @@
       "Local structureId and original sourceId metadata"
     ],
     "permissions": [
-      "Redistribution with attribution",
-      "Adaptation with attribution"
+      "Redistribution with attribution and same license",
+      "Adaptation with attribution and same license"
     ],
     "sha256": "28e6795383b05925b262ec498c90f7eb2830b2bb6cab3ebdd85ed3b690569be6",
     "bytes": 4236112,
     "meshes": 258,
     "triangles": 783874
+  },
+  {
+    "asset": "z-anatomy-muscles.glb",
+    "source": "Z-Anatomy — Models of human anatomy",
+    "author": "Z-Anatomy contributors",
+    "sourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "verificationUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy/blob/main/LICENSE",
+    "obtainedAt": "2026-09-13",
+    "attribution": "Z-Anatomy (derivado de BodyParts3D, © DBCLS) — licensed under CC BY-SA 4.0 International.",
+    "modifications": [
+      "Extracao do sistema muscular (colecao \"4: Muscular system\") do Startup.blend oficial",
+      "Exclusao de tecidos conjuntivos (assets/z-anatomy-excluded.json)",
+      "Conversao de metros (Z-up) para milimetros (Y-up)",
+      "Vertex welding, quantization e Meshopt compression",
+      "structureId e sourceId locais por malha"
+    ],
+    "permissions": [
+      "Redistribution with attribution",
+      "Adaptation with attribution"
+    ],
+    "sha256": "b2bd504021bc433e0486261fd45ab72d504464cbb5013cefeb03d8a68d281d5c",
+    "bytes": 7546876,
+    "meshes": 462,
+    "structures": 462,
+    "triangles": 298084
   }
 ]

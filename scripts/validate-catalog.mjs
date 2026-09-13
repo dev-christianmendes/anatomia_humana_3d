@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const catalogPath = process.argv[2] || resolve(root, 'catalog/catalog.json');
 const structureMapPath = resolve(root, 'assets/structure-map.json');
+const zAnatomyMapPath = resolve(root, 'assets/z-anatomy-map.json');
 
 const VALID_SYSTEMS = new Set(['SYS-ESQ', 'SYS-MUS', 'SYS-NER', 'SYS-CIR', 'SYS-RES', 'SYS-DIG']);
 const VALID_REGIONS = new Set(['REG-HEAD', 'REG-NECK', 'REG-TRUNK', 'REG-UPPER-LIMB', 'REG-LOWER-LIMB']);
@@ -19,10 +20,12 @@ if (!existsSync(catalogPath)) {
 
 const entries = JSON.parse(readFileSync(catalogPath, 'utf8'));
 const structureMap = JSON.parse(readFileSync(structureMapPath, 'utf8'));
+const zAnatomyMap = JSON.parse(readFileSync(zAnatomyMapPath, 'utf8'));
+const allMaps = [...structureMap, ...zAnatomyMap];
 
 const errors = [];
-const structureIdSet = new Set(structureMap.map((e) => e.structureId));
-const sourceIdSet = new Set(structureMap.map((e) => e.sourceId));
+const structureIdSet = new Set(allMaps.map((e) => e.structureId));
+const sourceIdSet = new Set(allMaps.map((e) => e.sourceId));
 const reportedIds = new Set();
 
 function normalizePt(value) {
@@ -40,14 +43,14 @@ for (const entry of entries) {
   }
   reportedIds.add(id);
 
-  if (!/^STR-ESQ-\d{4}$/.test(id)) {
+  if (!/^STR-(ESQ|MUS)-\d{4}$/.test(id)) {
     errors.push(`${id}: formato de structureId invalido.`);
   }
   if (!structureIdSet.has(id)) {
-    errors.push(`${id}: nao existe no structure-map.json.`);
+    errors.push(`${id}: nao existe no structure-map.json nem no z-anatomy-map.json.`);
   }
   if (!sourceIdSet.has(entry.sourceId)) {
-    errors.push(`${id}: sourceId ${entry.sourceId} nao existe no structure-map.json.`);
+    errors.push(`${id}: sourceId ${entry.sourceId} nao existe nos maps de estrutura.`);
   }
   if (!entry.name || !entry.name.trim()) {
     errors.push(`${id}: name vazio.`);
@@ -85,7 +88,7 @@ for (const entry of entries) {
   }
 }
 
-const missingInCatalog = structureMap
+const missingInCatalog = allMaps
   .filter((e) => !reportedIds.has(e.structureId))
   .map((e) => e.structureId);
 if (missingInCatalog.length) {

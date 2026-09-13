@@ -84,7 +84,7 @@ export default function Atlas() {
       <aside className="sidebar" aria-label="Controles de visualização">
         <div className="sidebar-heading"><span className="eyebrow">EXPLORAR</span><Layers3 size={17} /></div>
         <h1>Corpo humano</h1>
-        <div className="catalog-item"><span className="bone-icon"><Bone size={22} /></span><div><strong>Esquelético</strong><span>BodyParts3D · 4.0</span></div><span className="status-dot" /></div>
+        <div className="catalog-item"><span className="bone-icon"><Bone size={22} /></span><div><strong>Esquelético · Muscular</strong><span>BodyParts3D + Z-Anatomy</span></div><span className="status-dot" /></div>
         <section className="control-section">
           <h2>Orientação</h2>
           <div className="view-options" role="group" aria-label="Vista anatômica">
@@ -119,7 +119,7 @@ export default function Atlas() {
         <div className="sidebar-bottom"><span className="edition">ATLAS / EDIÇÃO INICIAL</span><p>Uma perspectiva sobre<br />o corpo humano.</p><span className="small-note">Uso educacional. Não diagnóstico.</span></div>
       </aside>
       <section className="viewport" aria-label="Atlas 3D">
-        <div className="viewport-heading"><div><span className="eyebrow">ANATOMIA HUMANA</span><h2>Sistema esquelético</h2></div><span className="view-badge"><span className="status-dot" />3D</span></div>
+        <div className="viewport-heading"><div><span className="eyebrow">ANATOMIA HUMANA</span><h2>Esqueleto e musculatura</h2></div><span className="view-badge"><span className="status-dot" />3D</span></div>
         <Suspense fallback={<div className="viewer-message" role="status">Preparando visualização…</div>}>
           <AnatomyViewport view={view} command={command} rotating={rotating} wireframe={wireframe} onLoaded={onLoaded} />
         </Suspense>
@@ -130,19 +130,19 @@ export default function Atlas() {
           <span className="tool-divider" />
           <button className="icon-button" aria-label="Resetar câmera" title="Resetar câmera" onClick={() => changeView('front')}><Focus size={20} /></button>
         </div>
-        <div className="viewport-footer"><span className="model-status" role="status"><span className={`status-dot ${metrics ? '' : 'pending'}`} />{metrics ? 'Modelo carregado' : 'Carregando modelo'}</span><span>BodyParts3D / CC BY 4.0</span></div>
+        <div className="viewport-footer"><span className="model-status" role="status"><span className={`status-dot ${metrics ? '' : 'pending'}`} />{metrics ? 'Modelo carregado' : 'Carregando modelo'}</span><span>BodyParts3D + Z-Anatomy</span></div>
       </section>
       <aside className="info-panel" aria-label="Informações do modelo">
         {selectedStructureId
           ? <StructureInfo key={selectedStructureId} structureId={selectedStructureId} />
           : <div className="model-panel">
             <span className="eyebrow">MODELO EM EXIBIÇÃO</span>
-            <div className="info-illustration"><Bone size={38} strokeWidth={1.2} /><span>01</span></div>
-            <h2>Sistema<br />esquelético</h2><span className="latin-name">Systema skeletale</span>
+            <div className="info-illustration"><Bone size={38} strokeWidth={1.2} /><span>02</span></div>
+            <h2>Esqueleto e<br />musculatura</h2><span className="latin-name">Systema skeletale et musculare</span>
             <div className="info-rule" />
-            <h3>Visão geral</h3><p>O esqueleto sustenta o corpo, protege órgãos internos e, em conjunto com os músculos, participa do movimento.</p>
-            <dl className="metadata"><div><dt>Representação</dt><dd>Corpo inteiro</dd></div><div><dt>Fonte</dt><dd>BodyParts3D</dd></div><div><dt>Formato</dt><dd>glTF 2.0 / GLB</dd></div><div><dt>Malhas</dt><dd>{metrics?.meshes.toLocaleString('pt-BR') ?? '—'}</dd></div><div><dt>Triângulos</dt><dd>{metrics ? Math.round(metrics.triangles).toLocaleString('pt-BR') : '—'}</dd></div></dl>
-            <a className="source-link" href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/desc.html" target="_blank" rel="noreferrer">Consultar fonte <ExternalLink size={14} /></a>
+            <h3>Visão geral</h3><p>O esqueleto sustenta o corpo e protege órgãos internos; os músculos, em conjunto com ele, produzem o movimento.</p>
+            <dl className="metadata"><div><dt>Representação</dt><dd>Corpo inteiro</dd></div><div><dt>Fonte</dt><dd>BodyParts3D · Z-Anatomy</dd></div><div><dt>Formato</dt><dd>glTF 2.0 / GLB</dd></div><div><dt>Malhas</dt><dd>{metrics?.meshes.toLocaleString('pt-BR') ?? '—'}</dd></div><div><dt>Triângulos</dt><dd>{metrics ? Math.round(metrics.triangles).toLocaleString('pt-BR') : '—'}</dd></div></dl>
+            <a className="source-link" href="https://github.com/Z-Anatomy/Models-of-human-anatomy" target="_blank" rel="noreferrer">Consultar fonte <ExternalLink size={14} /></a>
             <div className="asset-footer"><ScanLine size={20} /><span>Modelo anatômico reduzido<br /><strong>Referência visual educacional</strong></span></div>
           </div>}
       </aside>
@@ -150,10 +150,16 @@ export default function Atlas() {
     <footer className="footer"><span>ANATOMIA 3D</span><span>Milestone 01 · First 3D Viewer</span><button onClick={() => credits.current?.showModal()}>Fontes e licença <ExternalLink size={12} /></button></footer>
     <dialog ref={credits} aria-labelledby="credits-title" className="credits-dialog">
       <span className="eyebrow">PROCEDÊNCIA DO ASSET</span><h2 id="credits-title">Fontes e licença</h2>
-      <p>BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.</p>
-      <p>Recorte do sistema esquelético, conversão OBJ para GLB, rotação dos eixos e material de exibição. Malhas reduzidas da versão 4.0.</p>
-      <a href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html" target="_blank" rel="noreferrer">Licença na fonte oficial <ExternalLink size={14} /></a>
-      <a href="models/bodyparts3d-skeleton.glb" download>Baixar modelo GLB</a>
+      <p><strong>BodyParts3D</strong>, © The Database Center for Life Science, licensed under CC Attribution-ShareAlike 2.1 Japan.</p>
+      <p>Recorte do sistema esquelético (FMA23876 + membros), conversão OBJ para GLB, rotação dos eixos e material de exibição. Malhas reduzidas da versão 4.0.</p>
+      <a href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html" target="_blank" rel="noreferrer">Licença BodyParts3D <ExternalLink size={14} /></a>
+      <p><strong>Z-Anatomy — Models of human anatomy</strong>, licensed under CC BY-SA 4.0.</p>
+      <p>Sistema muscular extraído do Startup.blend oficial, excluído tecido conjuntivo (462 estruturas), conversão para milímetros (Y-up), material compartilhado e compressão Meshopt.</p>
+      <a href="https://github.com/Z-Anatomy/Models-of-human-anatomy/blob/main/LICENSE" target="_blank" rel="noreferrer">Licença Z-Anatomy <ExternalLink size={14} /></a>
+      <div className="credits-downloads">
+        <a href="models/bodyparts3d-skeleton.glb" download>Baixar esqueleto</a>
+        <a href="models/z-anatomy-muscles.glb" download>Baixar musculatura</a>
+      </div>
       <form method="dialog"><button className="reset-button">Fechar</button></form>
     </dialog>
   </div>

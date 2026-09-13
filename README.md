@@ -11,11 +11,11 @@ A entrega atual combina o **Milestone 01: First 3D Viewer** com as etapas de **i
 | Status | MVP em desenvolvimento |
 | Plataforma | Web, com prioridade para desktop |
 | Finalidade | Educação, projeto acadêmico e portfólio |
-| Entrega disponível | Viewer do sistema esquelético com seleção de estruturas |
+| Entrega disponível | Viewer dos sistemas esquelético e muscular com seleção de estruturas |
 | Backend | Java 21 / Spring Boot, implementado com API `/api/v1` |
 | Banco | PostgreSQL com migrations Flyway (schema, referência e estruturas) |
 | Docker Compose | Backend + PostgreSQL prontos para subir o stack |
-| Catálogo educacional | 258 estruturas curadas e revisadas (pt-BR), com seed e fallback no frontend |
+| Catálogo educacional | 720 estruturas curadas e revisadas (258 esqueléticas + 462 musculares, pt-BR), com seed e fallback no frontend |
 | Deploy público | Pendente |
 
 > **Aviso educacional:** esta aplicação não realiza diagnósticos, não recomenda tratamentos e não substitui material de referência ou orientação profissional. O modelo e o conteúdo atual não foram submetidos a revisão clínica.
@@ -84,7 +84,7 @@ Como projeto de portfólio, a evolução prevista demonstrará integração entr
 - Busca com debounce, normalização de texto e foco automático da câmera.
 - Relações anatômicas exibidas no painel por estrutura.
 - Visualização explodida com posições predefinidas e controle de intensidade.
-- Curadoria completa do catálogo pt-BR (258/258 revisadas), com migração V3 e fallback do frontend.
+- Curadoria completa do catálogo pt-BR (720/720 revisadas: 258 esqueléticas + 462 musculares), com migração V3 e fallback do frontend.
 - Deploy do stack completo e observabilidade básica.
 
 **O viewer atual consulta a API quando configurada; caso contrário, usa o catálogo local sincronizado. A busca os relações ainda não estão implementadas no frontend.**
@@ -164,7 +164,7 @@ Para definir explicitamente endereço e porta, execute o script do frontend:
 npm --prefix frontend run dev -- --host 127.0.0.1 --port 5174
 ```
 
-O modelo está incluído em [frontend/public/models/bodyparts3d-skeleton.glb](frontend/public/models/bodyparts3d-skeleton.glb). **Não é necessário executar a importação de assets, configurar banco de dados ou criar variáveis de ambiente para abrir o viewer.** As fontes também são servidas localmente.
+Os modelos estão incluídos em [frontend/public/models/bodyparts3d-skeleton.glb](frontend/public/models/bodyparts3d-skeleton.glb) (esqueleto) e [frontend/public/models/z-anatomy-muscles.glb](frontend/public/models/z-anatomy-muscles.glb) (musculatura). **Não é necessário executar a importação de assets, configurar banco de dados ou criar variáveis de ambiente para abrir o viewer.** As fontes também são servidas localmente.
 
 ### 3. Backend e banco (opcional)
 
@@ -222,7 +222,7 @@ Execute os comandos abaixo a partir da raiz:
 | `npm --prefix frontend run preview` | Serve localmente um build já gerado |
 | `npm run assets:import` | Reconstrói o GLB e atualiza os inventários de assets |
 | `npm run catalog:generate` | Regenera o rascunho do catálogo pt-BR |
-| `npm run catalog:validate` | Valida o catálogo (exige as 258 estruturas revisadas) |
+| `npm run catalog:validate` | Valida o catálogo (exige as 720 estruturas revisadas) |
 | `npm run catalog:sync` | Sincroniza o catálogo para o frontend (`structures.ts`) |
 | `npm run catalog:seed` | Gera a migration `V3__seed_structures.sql` com as entradas revisadas |
 | `(cd backend && ./mvnw -B test)` | Testes do backend (JDK 21 via `JAVA_HOME`) |
@@ -310,7 +310,8 @@ Visão dos principais arquivos atuais, omitindo dependências e saídas geradas:
 anatomia_3d/
 ├── frontend/
 │   ├── public/models/
-│   │   └── bodyparts3d-skeleton.glb
+│   │   ├── bodyparts3d-skeleton.glb
+│   │   └── z-anatomy-muscles.glb
 │   ├── src/
 │   │   ├── main.tsx
 │   │   ├── Atlas.tsx
@@ -353,12 +354,28 @@ O ponto de entrada do frontend é `Atlas.tsx`. O backend é um aplicativo Spring
 | Malhas | 258 |
 | Triângulos | 783.874 |
 | Tamanho | 4.236.112 bytes, aproximadamente 4,24 MB |
-| Licença registrada | CC BY 4.0 |
+| Licença registrada | CC BY-SA 2.1 JP |
 | Data de obtenção registrada | 10 de setembro de 2026 |
 
 **258 malhas não significam 258 ossos.** O conjunto inclui subpartes e elementos do catálogo original; um elemento pode estar associado a vários conceitos anatômicos. O mapa de origem não substitui um cadastro educacional revisado.
 
 O recorte combina `FMA23876` com conceitos de ossos dos membros. O agrupamento `FMA23876` isolado não cobre o esqueleto inteiro nessa distribuição.
+
+### Musculatura (Z-Anatomy)
+
+| Propriedade | Valor |
+| --- | --- |
+| Fonte | Z-Anatomy — Models of human anatomy |
+| Representação | Sistema muscular extraído do `Startup.blend` oficial (462 estruturas, sem tecido conjuntivo) |
+| Formato | glTF 2.0 binário (GLB) |
+| Compressão | Meshopt |
+| Malhas | 462 |
+| Triângulos | 298.084 |
+| Tamanho | 7.546.876 bytes, aproximadamente 7,55 MB |
+| Licença registrada | CC BY-SA 4.0 |
+| Data de obtenção registrada | 13 de setembro de 2026 |
+
+A musculatura usa `assets/z-anatomy-map.json` para associar `structureId`/`sourceId` a cada malha, com lateralidade (l/r) e região por conceito. O pipeline é reexecutável: `scripts/export-zanatomy-muscles.py` (extração no Blender) e `scripts/build-zanatomy-muscles.mjs` (construção do GLB, mapa e inventário de licenças). Os conceitos excluídos (tecido conjuntivo) estão documentados em `assets/z-anatomy-excluded.json`.
 
 ### Reconstrução Opcional
 
@@ -409,7 +426,7 @@ A listagem de estruturas suporta `search`, `system`, `region`, `page` e `size`, 
 
 O modelo relacional inclui `ANATOMICAL_SYSTEM`, `ANATOMICAL_REGION`, `ANATOMICAL_STRUCTURE`, `ALTERNATE_NAME`, `STRUCTURE_RELATION`, `ASSET` e `SOURCE_LICENSE`; as migrations estão em [backend/src/main/resources/db/migration](backend/src/main/resources/db/migration). Regras e entidades em [docs/DATABASE.md](docs/DATABASE.md).
 
-**Catálogo educacional:** o catálogo pt-BR com as 258 estruturas é gerado a partir do `structure-map.json` e do dicionário em [catalog/fma-pt-dictionary.json](catalog/fma-pt-dictionary.json). As entradas curadas ficam em [catalog/curated.json](catalog/curated.json) (nome, nomes alternativos, descrição e função); `scripts/apply-curation.mjs` as aplica e marca `reviewed: true`. O seed `V3__seed_structures.sql` só recebe entradas revisadas, e o `catalog:validate` exige as 258 revisadas. Processo: `catalog:generate → apply-curation → catalog:validate → catalog:seed → catalog:sync`.
+**Catálogo educacional:** o catálogo pt-BR com as 720 estruturas é gerado a partir do `structure-map.json` (esqueleto) e do `z-anatomy-map.json` (musculatura), com traduções curadas em [catalog/fma-pt-dictionary.json](catalog/fma-pt-dictionary.json) e [catalog/muscles-pt.json](catalog/muscles-pt.json). Para os músculos, nomes vêm das traduções curadas e descrição/função são derivadas por regras anatômicas em `scripts/generate-catalog.mjs`. O seed `V3__seed_structures.sql` só recebe entradas revisadas, e o `catalog:validate` exige as 720 revisadas. Processo: `catalog:generate → catalog:validate → catalog:seed → catalog:sync`.
 
 ## Testes e Qualidade
 
@@ -442,10 +459,10 @@ O navegador de teste usa SwiftShader para oferecer WebGL por software. Por ser m
 | --- | --- |
 | Câmera | Três testes unitários de distância de enquadramento, tela estreita e posições das vistas |
 | Estado | Testes do store Zustand (seleção, hover, sistemas, isolamento/restauração) |
-| Catálogo | Testes de integridade das 258 estruturas sincronizadas e dos rótulos/sistemas |
+| Catálogo | Testes de integridade das 720 estruturas sincronizadas e dos rótulos/sistemas |
 | API adapter | Testes com fetch simulado (mapeamento da resposta e fallback local) |
 | Renderização | Carregamento do GLB e detecção de pixels visíveis no canvas |
-| Interação | Zoom, rotação por arrasto, rotação automática e retorno ao enquadramento |
+| Interação | Zoom, mudança de vistas anatômicas, retorno ao enquadramento e gesto de arrasto no canvas |
 | Seleção | E2E de clique → painel por estrutura → isolamento → restauração → limpar seleção |
 | Integração API | E2E com backend real (gate `API_E2E=1 VITE_API_URL=...`): painel "Dados via API" |
 | Interface | Abertura/fechamento do diálogo de créditos |
@@ -498,7 +515,7 @@ Para publicar somente o viewer atual em um serviço de hospedagem estática:
 
 Não é necessário reconstruir o GLB durante o deploy, pois o arquivo já acompanha o frontend. Publique todo o conteúdo gerado, incluindo a pasta de modelos, e preserve as atribuições.
 
-A aplicação carrega o modelo pelo caminho absoluto `/models/bodyparts3d-skeleton.glb`. A configuração atual pressupõe publicação na raiz do domínio; hospedagem em subdiretório exige ajustar os caminhos públicos e a configuração do Vite antes do deploy.
+A aplicação carrega os modelos pelos caminhos absolutos `/models/bodyparts3d-skeleton.glb` e `/models/z-anatomy-muscles.glb`. A configuração atual pressupõe publicação na raiz do domínio; hospedagem em subdiretório exige ajustar os caminhos públicos e a configuração do Vite antes do deploy.
 
 Use HTTPS em produção. Backend, banco e CORS já têm configuração Docker Compose local; o deploy público em serviço de hospedagem, banco gerenciado e storage/CDN ainda é etapa separada.
 
@@ -509,7 +526,7 @@ Use HTTPS em produção. Backend, banco e CORS já têm configuração Docker Co
 | `Missing script: dev` | Confirme que está na raiz correta ou execute `npm --prefix frontend run dev`. Confira se está usando os arquivos atuais do projeto. |
 | Vite ou módulos não encontrados | Instale também o pacote do frontend com `npm --prefix frontend ci`; a instalação da raiz não o substitui. |
 | `WebGL indisponível` | Abra a aplicação em um navegador externo com WebGL 2 e aceleração gráfica habilitada. O navegador integrado do VS Code pode não disponibilizar esse recurso. |
-| Modelo não carrega | Verifique a requisição `/models/bodyparts3d-skeleton.glb` na aba Network, a presença do asset e se o site está hospedado na raiz esperada. |
+| Modelo não carrega | Verifique as requisições `/models/bodyparts3d-skeleton.glb` e `/models/z-anatomy-muscles.glb` na aba Network, a presença dos assets e se o site está hospedado na raiz esperada. |
 | Conflito de dependências React/R3F | Preserve as versões compatíveis e os lockfiles. Não use `--force` ou `--legacy-peer-deps` para ocultar o conflito. |
 | Porta de desenvolvimento ocupada | Use a URL informada pelo Vite ou defina outra porta pelo script do frontend. Nos testes, verifique especificamente a porta 5173. |
 | Playwright não encontra Chromium | Execute `npm --prefix frontend exec -- playwright install chromium`. |
@@ -528,7 +545,7 @@ Use HTTPS em produção. Backend, banco e CORS já têm configuração Docker Co
 | API REST | Contratos `/api/v1`, Swagger e Docker Compose | Entregue |
 | Interação | Seleção, highlight, painel por estrutura | Entregue |
 | Sistemas | Filtros, mostrar/ocultar e isolamento | Entregue |
-| Catálogo pt-BR | Geração, curadoria, validação e seed das 258 estruturas | Entregue (258/258) |
+| Catálogo pt-BR | Geração, curadoria, validação e seed das 720 estruturas (258 esqueléticas + 462 musculares) | Entregue (720/720) |
 | Pesquisa | Debounce, resultados e foco automático | Planejado |
 | Relações | Relações anatômicas no painel | Planejado |
 | Exploded view | Grupos, posições predefinidas e interpolação | Planejado |

@@ -42,7 +42,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of left eye",
       "left orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Espaço preenchido por humor aquoso entre a córnea e a íris, na parte anterior do olho esquerdo.",
     "function": "Nutre a córnea e o cristalino e mantém a pressão intraocular",
@@ -76,7 +76,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of left eye",
       "left orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Camada vascular do globo ocular esquerdo, situada entre a esclera e a retina.",
     "function": "Nutre a retina e reduz a dispersão de luz dentro do olho",
@@ -110,7 +110,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of left eye",
       "left orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Camada vascular do globo ocular esquerdo, situada entre a esclera e a retina.",
     "function": "Nutre a retina e reduz a dispersão de luz dentro do olho",
@@ -144,7 +144,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of left eye",
       "left orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Camada transparente e curva da face anterior do globo ocular esquerdo, sobre a íris e o cristalino.",
     "function": "Foca a luz que entra no olho e protege as estruturas internas",
@@ -177,7 +177,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of left eye",
       "left orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Estrutura circular e pigmentada do olho esquerdo, com a abertura pupilar ao centro.",
     "function": "Regula a quantidade de luz que chega ao cristalino e à retina",
@@ -241,7 +241,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of left eye",
       "left orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Lente biconvexa e transparente do olho esquerdo, atrás da íris, capaz de ajustar o foco.",
     "function": "Foca a luz sobre a retina, permitindo a acomodação para perto e para longe",
@@ -275,7 +275,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of left eye",
       "left orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Camada fibrosa e branca que forma o revestimento externo do globo ocular esquerdo.",
     "function": "Protege o globo ocular e dá fixação aos músculos extrínsecos do olho",
@@ -339,7 +339,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of left eye",
       "left orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Substância gelatinosa e transparente que preenche a câmara posterior do olho esquerdo.",
     "function": "Mantém a forma do globo ocular e transmite a luz à retina",
@@ -373,7 +373,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of right eye",
       "right orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Camada vascular do globo ocular direito, situada entre a esclera e a retina.",
     "function": "Nutre a retina e reduz a dispersão de luz dentro do olho",
@@ -407,7 +407,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of right eye",
       "right orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Camada vascular do globo ocular direito, situada entre a esclera e a retina.",
     "function": "Nutre a retina e reduz a dispersão de luz dentro do olho",
@@ -441,7 +441,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of right eye",
       "right orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Camada transparente e curva da face anterior do globo ocular direito, sobre a íris e o cristalino.",
     "function": "Foca a luz que entra no olho e protege as estruturas internas",
@@ -474,7 +474,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of right eye",
       "right orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Estrutura circular e pigmentada do olho direito, com a abertura pupilar ao centro.",
     "function": "Regula a quantidade de luz que chega ao cristalino e à retina",
@@ -538,7 +538,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of right eye",
       "right orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Lente biconvexa e transparente do olho direito, atrás da íris, capaz de ajustar o foco.",
     "function": "Foca a luz sobre a retina, permitindo a acomodação para perto e para longe",
@@ -572,7 +572,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of right eye",
       "right orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Camada fibrosa e branca que forma o revestimento externo do globo ocular direito.",
     "function": "Protege o globo ocular e dá fixação aos músculos extrínsecos do olho",
@@ -636,7 +636,7 @@ export const STRUCTURES: StructureRecord[] = [
       "orbital part of right eye",
       "right orbital content"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Substância gelatinosa e transparente que preenche a câmara posterior do olho direito.",
     "function": "Mantém a forma do globo ocular e transmite a luz à retina",
@@ -662,7 +662,7 @@ export const STRUCTURES: StructureRecord[] = [
       "hyoid bone",
       "viscerocranium"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso ímpar em forma de ferradura, na porção anterior do pescoço, abaixo da mandíbula.",
     "function": "Dá fixação a músculos da língua e da laringe e sustenta o aparelho hioideo",
@@ -702,7 +702,7 @@ export const STRUCTURES: StructureRecord[] = [
       "wall of abdomen",
       "abdominal segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso do membro inferior formado pela fusão de ílio, ísquio e púbis, que compõe a pelve óssea, no lado direito.",
     "function": "Forma o anel pélvico, articula com o sacro e o fêmur e dá fixação a músculos do quadril",
@@ -780,7 +780,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Décima vértebra torácica (T10), com um corpo de transição em direção à coluna lombar.",
     "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas",
@@ -858,7 +858,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Décima segunda vértebra torácica (T12), a última do segmento torácico, na transição com a coluna lombar.",
     "function": "Suporta cargas do tronco e articula com a décima segunda costela",
@@ -896,7 +896,7 @@ export const STRUCTURES: StructureRecord[] = [
       "wall of abdomen",
       "abdominal segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Primeira vértebra lombar (L1), com corpo volumoso, na transição toracolombar da coluna vertebral.",
     "function": "Suporta as maiores cargas da coluna e protege a medula espinhal e a cauda equina",
@@ -935,7 +935,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Primeira vértebra torácica (T1), na transição com a coluna cervical, articula com a primeira costela.",
     "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas",
@@ -973,7 +973,7 @@ export const STRUCTURES: StructureRecord[] = [
       "wall of abdomen",
       "abdominal segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Segunda vértebra lombar (L2), com corpo volumoso, na parte superior da coluna lombar.",
     "function": "Suporta as maiores cargas da coluna e protege a medula espinhal e a cauda equina",
@@ -1012,7 +1012,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Segunda vértebra torácica (T2), articula com a segunda costela e as vértebras vizinhas.",
     "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas",
@@ -1042,7 +1042,7 @@ export const STRUCTURES: StructureRecord[] = [
       "set of cervical vertebrae",
       "body proper"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Terceira vértebra cervical (C3), na parte superior da coluna cervical, articula com o áxis e a quarta cervical.",
     "function": "Suporta a cabeça e protege a medula espinhal no pescoço",
@@ -1080,7 +1080,7 @@ export const STRUCTURES: StructureRecord[] = [
       "wall of abdomen",
       "abdominal segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Terceira vértebra lombar (L3), com corpo volumoso, no centro da coluna lombar.",
     "function": "Suporta as maiores cargas da coluna e protege a medula espinhal e a cauda equina",
@@ -1119,7 +1119,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Terceira vértebra torácica (T3), articula com a terceira costela e as vértebras vizinhas.",
     "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas",
@@ -1149,7 +1149,7 @@ export const STRUCTURES: StructureRecord[] = [
       "set of cervical vertebrae",
       "body proper"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Quarta vértebra cervical (C4), no segmento médio da coluna cervical.",
     "function": "Suporta a cabeça e protege a medula espinhal no pescoço",
@@ -1187,7 +1187,7 @@ export const STRUCTURES: StructureRecord[] = [
       "wall of abdomen",
       "abdominal segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Quarta vértebra lombar (L4), com corpo volumoso, na parte inferior da coluna lombar.",
     "function": "Suporta as maiores cargas da coluna e protege a medula espinhal e a cauda equina",
@@ -1226,7 +1226,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Quarta vértebra torácica (T4), articula com a quarta costela e as vértebras vizinhas.",
     "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas",
@@ -1256,7 +1256,7 @@ export const STRUCTURES: StructureRecord[] = [
       "set of cervical vertebrae",
       "body proper"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Quinta vértebra cervical (C5), no segmento médio da coluna cervical.",
     "function": "Suporta a cabeça e protege a medula espinhal no pescoço",
@@ -1294,7 +1294,7 @@ export const STRUCTURES: StructureRecord[] = [
       "wall of abdomen",
       "abdominal segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Quinta vértebra lombar (L5), a última vértebra lombar, na base da coluna, acima do sacro.",
     "function": "Suporta as maiores cargas da coluna e articula com o sacro",
@@ -1333,7 +1333,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Quinta vértebra torácica (T5), articula com a quinta costela e as vértebras vizinhas.",
     "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas",
@@ -1363,7 +1363,7 @@ export const STRUCTURES: StructureRecord[] = [
       "set of cervical vertebrae",
       "body proper"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Sexta vértebra cervical (C6), na transição inferior da coluna cervical.",
     "function": "Suporta a cabeça e protege a medula espinhal no pescoço",
@@ -1402,7 +1402,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Sexta vértebra torácica (T6), articula com a sexta costela e as vértebras vizinhas.",
     "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas",
@@ -1471,7 +1471,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Sétima vértebra torácica (T7), articula com a sétima costela e as vértebras vizinhas.",
     "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas",
@@ -1510,7 +1510,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Oitava vértebra torácica (T8), articula com a oitava costela e as vértebras vizinhas.",
     "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas",
@@ -1549,7 +1549,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Nona vértebra torácica (T9), articula com a nona costela e as vértebras vizinhas.",
     "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas",
@@ -1579,7 +1579,7 @@ export const STRUCTURES: StructureRecord[] = [
       "set of cervical vertebrae",
       "body proper"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Primeira vértebra cervical"
     ],
@@ -1611,7 +1611,7 @@ export const STRUCTURES: StructureRecord[] = [
       "set of cervical vertebrae",
       "body proper"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Segunda vértebra cervical"
     ],
@@ -2140,7 +2140,7 @@ export const STRUCTURES: StructureRecord[] = [
       "head proper",
       "basicranial part of head proper"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso ímpar da base do crânio, situado entre as órbitas, com a lâmina cribriforme no teto do nariz.",
     "function": "Compõe o septo nasal e as paredes medial das órbitas e das cavidades nasais",
@@ -2192,7 +2192,7 @@ export const STRUCTURES: StructureRecord[] = [
       "hyoid bone",
       "viscerocranium"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso ímpar em forma de ferradura, na porção anterior do pescoço, abaixo da mandíbula.",
     "function": "Dá fixação a músculos da língua e da laringe e sustenta o aparelho hioideo",
@@ -2999,7 +2999,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Décima costela esquerda (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3036,7 +3036,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Décima primeira costela esquerda (flutuante), articulada apenas à vértebra T11, sem conexão anterior com o esterno.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3073,7 +3073,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Décima segunda costela esquerda (flutuante), a mais curta, articulada apenas à vértebra T12, sem conexão anterior com o esterno.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3110,7 +3110,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Primeira costela esquerda, a mais curta, larga e curva da caixa torácica, articula com a vértebra T1 e o esterno.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3147,7 +3147,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Segunda costela esquerda, articulada ao esterno por cartilagem costal e à vértebra T2.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3184,7 +3184,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Terceira costela esquerda, articulada ao esterno por cartilagem costal e à vértebra T3.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3221,7 +3221,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Quarta costela esquerda, articulada ao esterno por cartilagem costal e à vértebra T4.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3258,7 +3258,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Quinta costela esquerda, articulada ao esterno por cartilagem costal e à vértebra T5.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3295,7 +3295,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Sexta costela esquerda, articulada ao esterno por cartilagem costal e à vértebra T6.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3332,7 +3332,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Sétima costela esquerda (verdadeira), articulada ao esterno por cartilagem costal e à vértebra T7.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3369,7 +3369,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Oitava costela esquerda (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3406,7 +3406,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Nona costela esquerda (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -3964,7 +3964,7 @@ export const STRUCTURES: StructureRecord[] = [
       "left free upper limb",
       "left wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso capitato esquerdo"
     ],
@@ -4058,7 +4058,7 @@ export const STRUCTURES: StructureRecord[] = [
       "left free upper limb",
       "left wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso hamato esquerdo"
     ],
@@ -4117,7 +4117,7 @@ export const STRUCTURES: StructureRecord[] = [
       "wall of left side of internal nose",
       "nasal skeleton"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Lâmina óssea curva da parede lateral da cavidade nasal, no lado esquerdo.",
     "function": "Aumenta a superfície da cavidade nasal, aquecendo e umidificando o ar inspirado",
@@ -4209,7 +4209,7 @@ export const STRUCTURES: StructureRecord[] = [
       "left free upper limb",
       "left wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso semilunar esquerdo"
     ],
@@ -4237,7 +4237,7 @@ export const STRUCTURES: StructureRecord[] = [
       "left maxilla",
       "viscerocranium"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso da face que forma o terço médio da face, o palato e o assoalho da órbita, no lado esquerdo.",
     "function": "Abriga os dentes superiores e compõe o palato, a cavidade nasal e a órbita",
@@ -4291,7 +4291,7 @@ export const STRUCTURES: StructureRecord[] = [
       "osseous skeleton of external nose",
       "nasal skeleton"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Pequeno osso achatado da porção superior do nariz, no lado esquerdo.",
     "function": "Forma o dorso do nariz e dá suporte à pirâmide nasal",
@@ -4392,7 +4392,7 @@ export const STRUCTURES: StructureRecord[] = [
       "left free upper limb",
       "left wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso pisiforme esquerdo"
     ],
@@ -4438,7 +4438,7 @@ export const STRUCTURES: StructureRecord[] = [
       "left free upper limb",
       "left wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso escafoide esquerdo"
     ],
@@ -4569,7 +4569,7 @@ export const STRUCTURES: StructureRecord[] = [
       "left free upper limb",
       "left wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso trapézio esquerdo"
     ],
@@ -4593,7 +4593,7 @@ export const STRUCTURES: StructureRecord[] = [
       "left free upper limb",
       "left wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso trapezoide esquerdo"
     ],
@@ -4617,7 +4617,7 @@ export const STRUCTURES: StructureRecord[] = [
       "left free upper limb",
       "left wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso piramidal esquerdo"
     ],
@@ -4710,7 +4710,7 @@ export const STRUCTURES: StructureRecord[] = [
       "wall of abdomen",
       "abdominal segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso do membro inferior formado pela fusão de ílio, ísquio e púbis, que compõe a pelve óssea, no lado esquerdo.",
     "function": "Forma o anel pélvico, articula com o sacro e o fêmur e dá fixação a músculos do quadril",
@@ -4741,7 +4741,7 @@ export const STRUCTURES: StructureRecord[] = [
       "mandibular part of mouth",
       "skeleton of mouth"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso ímpar e móvel que forma o maxilar inferior, o único osso móvel do crânio.",
     "function": "Abriga os dentes inferiores e articula com os temporais na mastigação e na fala",
@@ -4778,7 +4778,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Porção superior e alargada do osso esterno, que articula com as clavículas e a primeira costela.",
     "function": "Ancora o esqueleto do tórax e dá fixação a ligamentos e cartilagens costais",
@@ -5717,7 +5717,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Décima costela direita (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -5754,7 +5754,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Décima primeira costela direita (flutuante), articulada apenas à vértebra T11, sem conexão anterior com o esterno.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -5791,7 +5791,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Décima segunda costela direita (flutuante), a mais curta, articulada apenas à vértebra T12, sem conexão anterior com o esterno.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -5862,7 +5862,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Primeira costela direita, a mais curta, larga e curva da caixa torácica, articula com a vértebra T1 e o esterno.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -5933,7 +5933,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Segunda costela direita, articulada ao esterno por cartilagem costal e à vértebra T2.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -6004,7 +6004,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Terceira costela direita, articulada ao esterno por cartilagem costal e à vértebra T3.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -6075,7 +6075,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Quarta costela direita, articulada ao esterno por cartilagem costal e à vértebra T4.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -6146,7 +6146,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Quinta costela direita, articulada ao esterno por cartilagem costal e à vértebra T5.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -6217,7 +6217,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Sexta costela direita, articulada ao esterno por cartilagem costal e à vértebra T6.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -6288,7 +6288,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Sétima costela direita (verdadeira), articulada ao esterno por cartilagem costal e à vértebra T7.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -6325,7 +6325,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Oitava costela direita (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -6362,7 +6362,7 @@ export const STRUCTURES: StructureRecord[] = [
       "body proper",
       "thoracic segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Nona costela direita (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
     "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração",
@@ -6663,7 +6663,7 @@ export const STRUCTURES: StructureRecord[] = [
       "right free upper limb",
       "right wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso capitato direito"
     ],
@@ -6799,7 +6799,7 @@ export const STRUCTURES: StructureRecord[] = [
       "right free upper limb",
       "right wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso hamato direito"
     ],
@@ -6858,7 +6858,7 @@ export const STRUCTURES: StructureRecord[] = [
       "wall of right side of internal nose",
       "nasal skeleton"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Lâmina óssea curva da parede lateral da cavidade nasal, no lado direito.",
     "function": "Aumenta a superfície da cavidade nasal, aquecendo e umidificando o ar inspirado",
@@ -6950,7 +6950,7 @@ export const STRUCTURES: StructureRecord[] = [
       "right free upper limb",
       "right wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso semilunar direito"
     ],
@@ -6978,7 +6978,7 @@ export const STRUCTURES: StructureRecord[] = [
       "right maxilla",
       "viscerocranium"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso da face que forma o terço médio da face, o palato e o assoalho da órbita, no lado direito.",
     "function": "Abriga os dentes superiores e compõe o palato, a cavidade nasal e a órbita",
@@ -7032,7 +7032,7 @@ export const STRUCTURES: StructureRecord[] = [
       "osseous skeleton of external nose",
       "nasal skeleton"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Pequeno osso achatado da porção superior do nariz, no lado direito.",
     "function": "Forma o dorso do nariz e dá suporte à pirâmide nasal",
@@ -7133,7 +7133,7 @@ export const STRUCTURES: StructureRecord[] = [
       "right free upper limb",
       "right wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso pisiforme direito"
     ],
@@ -7157,7 +7157,7 @@ export const STRUCTURES: StructureRecord[] = [
       "right free upper limb",
       "right wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso escafoide direito"
     ],
@@ -7289,7 +7289,7 @@ export const STRUCTURES: StructureRecord[] = [
       "right free upper limb",
       "right wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso trapézio direito"
     ],
@@ -7313,7 +7313,7 @@ export const STRUCTURES: StructureRecord[] = [
       "right free upper limb",
       "right wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso trapezoide direito"
     ],
@@ -7337,7 +7337,7 @@ export const STRUCTURES: StructureRecord[] = [
       "right free upper limb",
       "right wrist"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [
       "Osso piramidal direito"
     ],
@@ -7429,7 +7429,7 @@ export const STRUCTURES: StructureRecord[] = [
       "wall of abdomen",
       "abdominal segment of trunk"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso ímpar, triangular e fusionado, formado pelas cinco vértebras sacrais na base da coluna vertebral.",
     "function": "Transmite o peso do tronco à pelve e articula com os ossos do quadril",
@@ -7455,7 +7455,7 @@ export const STRUCTURES: StructureRecord[] = [
       "sphenoid bone",
       "viscerocranium"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso ímpar da base do crânio, em forma de borboleta, entre o frontal, o etmoide e os temporais.",
     "function": "Unifica a base do crânio, abriga a sela túrcica (hipófise) e participa das órbitas",
@@ -7495,12 +7495,8328 @@ export const STRUCTURES: StructureRecord[] = [
       "nasal skeleton",
       "skeleton of nasal septum"
     ],
-    "nameDerived": false,
+    "nameDerived": true,
     "alternateNames": [],
     "description": "Osso ímpar em forma de lâmina que forma a parte posterior e inferior do septo nasal.",
     "function": "Sustenta o septo nasal junto com a lâmina perpendicular do etmoide",
     "educationalSourceName": "BodyParts3D/Anatomography (DBCLS)",
     "educationalSourceUrl": "https://lifesciencedb.jp/bp3d/",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0001",
+    "sourceId": "ZAN-0001",
+    "name": "Parte abdominal do músculo peitoral maior esquerdo",
+    "normalizedName": "parte abdominal do musculo peitoral maior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "(Abdominal part of pectoralis major muscle)"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Aduz e roda medialmente o braço o ombro.",
+    "function": "Função principal: Aduzir e rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0002",
+    "sourceId": "ZAN-0002",
+    "name": "Parte abdominal do músculo peitoral maior direito",
+    "normalizedName": "parte abdominal do musculo peitoral maior direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "(Abdominal part of pectoralis major muscle)"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Aduz e roda medialmente o braço o ombro.",
+    "function": "Função principal: Aduzir e rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0003",
+    "sourceId": "ZAN-0003",
+    "name": "Músculo adutor mínimo esquerdo",
+    "normalizedName": "musculo adutor minimo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "(Adductor minimus)"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0004",
+    "sourceId": "ZAN-0004",
+    "name": "Músculo adutor mínimo direito",
+    "normalizedName": "musculo adutor minimo direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "(Adductor minimus)"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0005",
+    "sourceId": "ZAN-0005",
+    "name": "Músculo oponente do dedo mínimo do pé esquerdo",
+    "normalizedName": "musculo oponente do dedo minimo do pe esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "(Opponens digiti minimi muscle of foot)"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0006",
+    "sourceId": "ZAN-0006",
+    "name": "Músculo oponente do dedo mínimo do pé direito",
+    "normalizedName": "musculo oponente do dedo minimo do pe direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "(Opponens digiti minimi muscle of foot)"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0007",
+    "sourceId": "ZAN-0007",
+    "name": "Músculo abdutor do dedo mínimo do pé esquerdo",
+    "normalizedName": "musculo abdutor do dedo minimo do pe esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Abductor digiti minimi of foot"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta o dedo mínimo do pé o quinto dedo do pé.",
+    "function": "Função principal: Movimentar o dedo mínimo do pé o quinto dedo do pé.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0008",
+    "sourceId": "ZAN-0008",
+    "name": "Músculo abdutor do dedo mínimo do pé direito",
+    "normalizedName": "musculo abdutor do dedo minimo do pe direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Abductor digiti minimi of foot"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta o dedo mínimo do pé o quinto dedo do pé.",
+    "function": "Função principal: Movimentar o dedo mínimo do pé o quinto dedo do pé.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0009",
+    "sourceId": "ZAN-0009",
+    "name": "Músculo abdutor do dedo mínimo da mão esquerdo",
+    "normalizedName": "musculo abdutor do dedo minimo da mao esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Abductor digiti minimi of hand"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o dedo mínimo o dedo mínimo da mão.",
+    "function": "Função principal: Movimentar o dedo mínimo o dedo mínimo da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0010",
+    "sourceId": "ZAN-0010",
+    "name": "Músculo abdutor do dedo mínimo da mão direito",
+    "normalizedName": "musculo abdutor do dedo minimo da mao direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Abductor digiti minimi of hand"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o dedo mínimo o dedo mínimo da mão.",
+    "function": "Função principal: Movimentar o dedo mínimo o dedo mínimo da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0011",
+    "sourceId": "ZAN-0011",
+    "name": "Músculo abdutor do hálux esquerdo",
+    "normalizedName": "musculo abdutor do halux esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Abductor hallucis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0012",
+    "sourceId": "ZAN-0012",
+    "name": "Músculo abdutor do hálux direito",
+    "normalizedName": "musculo abdutor do halux direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Abductor hallucis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0013",
+    "sourceId": "ZAN-0013",
+    "name": "Músculo abdutor curto do polegar esquerdo",
+    "normalizedName": "musculo abdutor curto do polegar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Abductor pollicis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0014",
+    "sourceId": "ZAN-0014",
+    "name": "Músculo abdutor curto do polegar direito",
+    "normalizedName": "musculo abdutor curto do polegar direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Abductor pollicis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0015",
+    "sourceId": "ZAN-0015",
+    "name": "Músculo abdutor longo do polegar esquerdo",
+    "normalizedName": "musculo abdutor longo do polegar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Abductor pollicis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0016",
+    "sourceId": "ZAN-0016",
+    "name": "Músculo abdutor longo do polegar direito",
+    "normalizedName": "musculo abdutor longo do polegar direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Abductor pollicis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0017",
+    "sourceId": "ZAN-0017",
+    "name": "Parte acromial do músculo deltoide esquerdo",
+    "normalizedName": "parte acromial do musculo deltoide esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Acromial part of deltoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Abduz o braço o ombro.",
+    "function": "Função principal: Abduzir o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0018",
+    "sourceId": "ZAN-0018",
+    "name": "Parte acromial do músculo deltoide direito",
+    "normalizedName": "parte acromial do musculo deltoide direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Acromial part of deltoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Abduz o braço o ombro.",
+    "function": "Função principal: Abduzir o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0019",
+    "sourceId": "ZAN-0019",
+    "name": "Músculo adutor curto esquerdo",
+    "normalizedName": "musculo adutor curto esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Adductor brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0020",
+    "sourceId": "ZAN-0020",
+    "name": "Músculo adutor curto direito",
+    "normalizedName": "musculo adutor curto direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Adductor brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0021",
+    "sourceId": "ZAN-0021",
+    "name": "Músculo adutor longo esquerdo",
+    "normalizedName": "musculo adutor longo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Adductor longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0022",
+    "sourceId": "ZAN-0022",
+    "name": "Músculo adutor longo direito",
+    "normalizedName": "musculo adutor longo direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Adductor longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0023",
+    "sourceId": "ZAN-0023",
+    "name": "Músculo adutor magno esquerdo",
+    "normalizedName": "musculo adutor magno esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Adductor magnus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0024",
+    "sourceId": "ZAN-0024",
+    "name": "Músculo adutor magno direito",
+    "normalizedName": "musculo adutor magno direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Adductor magnus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0025",
+    "sourceId": "ZAN-0025",
+    "name": "Músculo ancôneo esquerdo",
+    "normalizedName": "musculo anconeo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Anconeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende o cotovelo o cotovelo (estabiliza a articulação).",
+    "function": "Função principal: Estender o cotovelo o cotovelo (estabiliza a articulação).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0026",
+    "sourceId": "ZAN-0026",
+    "name": "Músculo ancôneo direito",
+    "normalizedName": "musculo anconeo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Anconeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende o cotovelo o cotovelo (estabiliza a articulação).",
+    "function": "Função principal: Estender o cotovelo o cotovelo (estabiliza a articulação).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0027",
+    "sourceId": "ZAN-0027",
+    "name": "Ventre anterior do músculo digástrico esquerdo",
+    "normalizedName": "ventre anterior do musculo digastrico esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Anterior belly of digastric muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Eleva e estabiliza o osso hioide a deglutição e a fonação.",
+    "function": "Função principal: Elevar e estabilizar o osso hioide a deglutição e a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0028",
+    "sourceId": "ZAN-0028",
+    "name": "Ventre anterior do músculo digástrico direito",
+    "normalizedName": "ventre anterior do musculo digastrico direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Anterior belly of digastric muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Eleva e estabiliza o osso hioide a deglutição e a fonação.",
+    "function": "Função principal: Elevar e estabilizar o osso hioide a deglutição e a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0029",
+    "sourceId": "ZAN-0029",
+    "name": "Parte ariepiglótica do músculo ariaritenóideo oblíquo esquerdo",
+    "normalizedName": "parte ariepiglotica do musculo ariaritenoideo obliquo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Ary-epiglottic part of oblique arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Aduz as pregas vocais o fechamento da glote.",
+    "function": "Função principal: Aduzir as pregas vocais o fechamento da glote.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0030",
+    "sourceId": "ZAN-0030",
+    "name": "Parte ariepiglótica do músculo ariaritenóideo oblíquo direito",
+    "normalizedName": "parte ariepiglotica do musculo ariaritenoideo obliquo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Ary-epiglottic part of oblique arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Aduz as pregas vocais o fechamento da glote.",
+    "function": "Função principal: Aduzir as pregas vocais o fechamento da glote.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0031",
+    "sourceId": "ZAN-0031",
+    "name": "Parte ascendente do músculo trapézio esquerdo",
+    "normalizedName": "parte ascendente do musculo trapezio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Ascending part of trapezius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Eleva, retrai e gira a escápula a escápula (estabilização do ombro).",
+    "function": "Função principal: Elevar, retrair e girar a escápula a escápula (estabilização do ombro).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0032",
+    "sourceId": "ZAN-0032",
+    "name": "Parte ascendente do músculo trapézio direito",
+    "normalizedName": "parte ascendente do musculo trapezio direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Ascending part of trapezius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Eleva, retrai e gira a escápula a escápula (estabilização do ombro).",
+    "function": "Função principal: Elevar, retrair e girar a escápula a escápula (estabilização do ombro).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0033",
+    "sourceId": "ZAN-0033",
+    "name": "Músculo braquial esquerdo",
+    "normalizedName": "musculo braquial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Brachialis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona o cotovelo o cotovelo.",
+    "function": "Função principal: Flexionar o cotovelo o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0034",
+    "sourceId": "ZAN-0034",
+    "name": "Músculo braquial direito",
+    "normalizedName": "musculo braquial direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Brachialis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona o cotovelo o cotovelo.",
+    "function": "Função principal: Flexionar o cotovelo o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0035",
+    "sourceId": "ZAN-0035",
+    "name": "Músculo braquiorradial esquerdo",
+    "normalizedName": "musculo braquiorradial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Brachioradialis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona o cotovelo o cotovelo com o antebraço em posição neutra.",
+    "function": "Função principal: Flexionar o cotovelo o cotovelo com o antebraço em posição neutra.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0036",
+    "sourceId": "ZAN-0036",
+    "name": "Músculo braquiorradial direito",
+    "normalizedName": "musculo braquiorradial direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Brachioradialis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona o cotovelo o cotovelo com o antebraço em posição neutra.",
+    "function": "Função principal: Flexionar o cotovelo o cotovelo com o antebraço em posição neutra.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0037",
+    "sourceId": "ZAN-0037",
+    "name": "Músculo bucinador esquerdo",
+    "normalizedName": "musculo bucinador esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Bucinator"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Comprime as bochechas a cavidade bucal (mantém o alimento entre os dentes).",
+    "function": "Função principal: Comprimir as bochechas a cavidade bucal (mantém o alimento entre os dentes).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0038",
+    "sourceId": "ZAN-0038",
+    "name": "Músculo bucinador direito",
+    "normalizedName": "musculo bucinador direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Bucinator"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Comprime as bochechas a cavidade bucal (mantém o alimento entre os dentes).",
+    "function": "Função principal: Comprimir as bochechas a cavidade bucal (mantém o alimento entre os dentes).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0039",
+    "sourceId": "ZAN-0039",
+    "name": "Cabeça clavicular do músculo peitoral maior esquerdo",
+    "normalizedName": "cabeca clavicular do musculo peitoral maior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Clavicular head of pectoralis major muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Aduz e roda medialmente o braço o ombro.",
+    "function": "Função principal: Aduzir e rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0040",
+    "sourceId": "ZAN-0040",
+    "name": "Cabeça clavicular do músculo peitoral maior direito",
+    "normalizedName": "cabeca clavicular do musculo peitoral maior direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Clavicular head of pectoralis major muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Aduz e roda medialmente o braço o ombro.",
+    "function": "Função principal: Aduzir e rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0041",
+    "sourceId": "ZAN-0041",
+    "name": "Parte clavicular do músculo deltoide esquerdo",
+    "normalizedName": "parte clavicular do musculo deltoide esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Clavicular part of deltoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Abduz o braço o ombro.",
+    "function": "Função principal: Abduzir o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0042",
+    "sourceId": "ZAN-0042",
+    "name": "Parte clavicular do músculo deltoide direito",
+    "normalizedName": "parte clavicular do musculo deltoide direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Clavicular part of deltoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Abduz o braço o ombro.",
+    "function": "Função principal: Abduzir o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0043",
+    "sourceId": "ZAN-0043",
+    "name": "Músculo isquiococcígeo esquerdo",
+    "normalizedName": "musculo isquiococcigeo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Coccygeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Reforça o assoalho pélvico a pelve (flexiona o cóccix).",
+    "function": "Função principal: Reforçar o assoalho pélvico a pelve (flexiona o cóccix).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0044",
+    "sourceId": "ZAN-0044",
+    "name": "Músculo isquiococcígeo direito",
+    "normalizedName": "musculo isquiococcigeo direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Coccygeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Reforça o assoalho pélvico a pelve (flexiona o cóccix).",
+    "function": "Função principal: Reforçar o assoalho pélvico a pelve (flexiona o cóccix).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0045",
+    "sourceId": "ZAN-0045",
+    "name": "Músculo coracobraquial esquerdo",
+    "normalizedName": "musculo coracobraquial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Coracobrachialis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona e aduz o braço o ombro.",
+    "function": "Função principal: Flexionar e aduzir o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0046",
+    "sourceId": "ZAN-0046",
+    "name": "Músculo coracobraquial direito",
+    "normalizedName": "musculo coracobraquial direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Coracobrachialis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona e aduz o braço o ombro.",
+    "function": "Função principal: Flexionar e aduzir o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0047",
+    "sourceId": "ZAN-0047",
+    "name": "Músculo corrugador do supercílio esquerdo",
+    "normalizedName": "musculo corrugador do supercilio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Corrugator supercilii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Frunze o supercílio a pele da sobrancelha.",
+    "function": "Função principal: Frunzir o supercílio a pele da sobrancelha.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0048",
+    "sourceId": "ZAN-0048",
+    "name": "Músculo corrugador do supercílio direito",
+    "normalizedName": "musculo corrugador do supercilio direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Corrugator supercilii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Frunze o supercílio a pele da sobrancelha.",
+    "function": "Função principal: Frunzir o supercílio a pele da sobrancelha.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0049",
+    "sourceId": "ZAN-0049",
+    "name": "Cabeça profunda do músculo flexor curto do polegar esquerdo",
+    "normalizedName": "cabeca profunda do musculo flexor curto do polegar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Deep head of flexor pollicis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0050",
+    "sourceId": "ZAN-0050",
+    "name": "Cabeça profunda do músculo flexor curto do polegar direito",
+    "normalizedName": "cabeca profunda do musculo flexor curto do polegar direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Deep head of flexor pollicis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0051",
+    "sourceId": "ZAN-0051",
+    "name": "Cabeça profunda do músculo pronador redondo esquerdo",
+    "normalizedName": "cabeca profunda do musculo pronador redondo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Deep head of pronator teres"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Prona o antebraço o antebraço.",
+    "function": "Função principal: Pronar o antebraço o antebraço.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0052",
+    "sourceId": "ZAN-0052",
+    "name": "Cabeça profunda do músculo pronador redondo direito",
+    "normalizedName": "cabeca profunda do musculo pronador redondo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Deep head of pronator teres"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Prona o antebraço o antebraço.",
+    "function": "Função principal: Pronar o antebraço o antebraço.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0053",
+    "sourceId": "ZAN-0053",
+    "name": "Parte profunda do músculo masseter esquerdo",
+    "normalizedName": "parte profunda do musculo masseter esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Deep part of masseter"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva a mandíbula a mandíbula durante a mastigação.",
+    "function": "Função principal: Elevar a mandíbula a mandíbula durante a mastigação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0054",
+    "sourceId": "ZAN-0054",
+    "name": "Parte profunda do músculo masseter direito",
+    "normalizedName": "parte profunda do musculo masseter direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Deep part of masseter"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva a mandíbula a mandíbula durante a mastigação.",
+    "function": "Função principal: Elevar a mandíbula a mandíbula durante a mastigação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0055",
+    "sourceId": "ZAN-0055",
+    "name": "Músculo depressor do ângulo da boca esquerdo",
+    "normalizedName": "musculo depressor do angulo da boca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Depressor anguli oris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Deprime o canto da boca a face.",
+    "function": "Função principal: Deprimir o canto da boca a face.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0056",
+    "sourceId": "ZAN-0056",
+    "name": "Músculo depressor do ângulo da boca direito",
+    "normalizedName": "musculo depressor do angulo da boca direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Depressor anguli oris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Deprime o canto da boca a face.",
+    "function": "Função principal: Deprimir o canto da boca a face.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0057",
+    "sourceId": "ZAN-0057",
+    "name": "Músculo depressor do lábio inferior esquerdo",
+    "normalizedName": "musculo depressor do labio inferior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Depressor labii inferioris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Deprime o lábio inferior o lábio inferior.",
+    "function": "Função principal: Deprimir o lábio inferior o lábio inferior.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0058",
+    "sourceId": "ZAN-0058",
+    "name": "Músculo depressor do lábio inferior direito",
+    "normalizedName": "musculo depressor do labio inferior direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Depressor labii inferioris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Deprime o lábio inferior o lábio inferior.",
+    "function": "Função principal: Deprimir o lábio inferior o lábio inferior.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0059",
+    "sourceId": "ZAN-0059",
+    "name": "Músculo depressor do septo nasal esquerdo",
+    "normalizedName": "musculo depressor do septo nasal esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Depressor septi nasi"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Deprime o septo nasal a base do nariz.",
+    "function": "Função principal: Deprimir o septo nasal a base do nariz.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0060",
+    "sourceId": "ZAN-0060",
+    "name": "Músculo depressor do septo nasal direito",
+    "normalizedName": "musculo depressor do septo nasal direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Depressor septi nasi"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Deprime o septo nasal a base do nariz.",
+    "function": "Função principal: Deprimir o septo nasal a base do nariz.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0061",
+    "sourceId": "ZAN-0061",
+    "name": "Parte descendente do músculo trapézio esquerdo",
+    "normalizedName": "parte descendente do musculo trapezio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Descending part of trapezius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Eleva, retrai e gira a escápula a escápula (estabilização do ombro).",
+    "function": "Função principal: Elevar, retrair e girar a escápula a escápula (estabilização do ombro).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0062",
+    "sourceId": "ZAN-0062",
+    "name": "Parte descendente do músculo trapézio direito",
+    "normalizedName": "parte descendente do musculo trapezio direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Descending part of trapezius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Eleva, retrai e gira a escápula a escápula (estabilização do ombro).",
+    "function": "Função principal: Elevar, retrair e girar a escápula a escápula (estabilização do ombro).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0064",
+    "sourceId": "ZAN-0064",
+    "name": "Músculos interósseos dorsais do pé esquerdo",
+    "normalizedName": "musculos interosseos dorsais do pe esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Dorsal interossei muscles of foot"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "function": "Função principal: Movimentar os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0065",
+    "sourceId": "ZAN-0065",
+    "name": "Músculos interósseos dorsais do pé direito",
+    "normalizedName": "musculos interosseos dorsais do pe direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Dorsal interossei muscles of foot"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "function": "Função principal: Movimentar os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0066",
+    "sourceId": "ZAN-0066",
+    "name": "Músculos interósseos dorsais da mão esquerdo",
+    "normalizedName": "musculos interosseos dorsais da mao esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Dorsal interossei muscles of hand"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "function": "Função principal: Movimentar finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0067",
+    "sourceId": "ZAN-0067",
+    "name": "Músculos interósseos dorsais da mão direito",
+    "normalizedName": "musculos interosseos dorsais da mao direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Dorsal interossei muscles of hand"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "function": "Função principal: Movimentar finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0068",
+    "sourceId": "ZAN-0068",
+    "name": "Partes dorsais dos músculos intertransversários laterais lombares esquerdo",
+    "normalizedName": "partes dorsais dos musculos intertransversarios laterais lombares esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Dorsal parts of lateral intertransversarii lumborum muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0069",
+    "sourceId": "ZAN-0069",
+    "name": "Partes dorsais dos músculos intertransversários laterais lombares direito",
+    "normalizedName": "partes dorsais dos musculos intertransversarios laterais lombares direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Dorsal parts of lateral intertransversarii lumborum muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0070",
+    "sourceId": "ZAN-0070",
+    "name": "Músculo extensor radial curto do carpo esquerdo",
+    "normalizedName": "musculo extensor radial curto do carpo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor carpi radialis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende e abduz a mão o punho.",
+    "function": "Função principal: Estender e abduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0071",
+    "sourceId": "ZAN-0071",
+    "name": "Músculo extensor radial curto do carpo direito",
+    "normalizedName": "musculo extensor radial curto do carpo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor carpi radialis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende e abduz a mão o punho.",
+    "function": "Função principal: Estender e abduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0072",
+    "sourceId": "ZAN-0072",
+    "name": "Músculo extensor radial longo do carpo esquerdo",
+    "normalizedName": "musculo extensor radial longo do carpo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor carpi radialis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende e abduz a mão o punho.",
+    "function": "Função principal: Estender e abduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0073",
+    "sourceId": "ZAN-0073",
+    "name": "Músculo extensor radial longo do carpo direito",
+    "normalizedName": "musculo extensor radial longo do carpo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor carpi radialis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende e abduz a mão o punho.",
+    "function": "Função principal: Estender e abduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0074",
+    "sourceId": "ZAN-0074",
+    "name": "Músculo extensor do dedo mínimo esquerdo",
+    "normalizedName": "musculo extensor do dedo minimo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor digiti minimi"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende os dedos os dedos da mão.",
+    "function": "Função principal: Estender os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0075",
+    "sourceId": "ZAN-0075",
+    "name": "Músculo extensor do dedo mínimo direito",
+    "normalizedName": "musculo extensor do dedo minimo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor digiti minimi"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende os dedos os dedos da mão.",
+    "function": "Função principal: Estender os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0076",
+    "sourceId": "ZAN-0076",
+    "name": "Músculo extensor dos dedos esquerdo",
+    "normalizedName": "musculo extensor dos dedos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor digitorum"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende os dedos os dedos da mão.",
+    "function": "Função principal: Estender os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0077",
+    "sourceId": "ZAN-0077",
+    "name": "Músculo extensor dos dedos direito",
+    "normalizedName": "musculo extensor dos dedos direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor digitorum"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende os dedos os dedos da mão.",
+    "function": "Função principal: Estender os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0078",
+    "sourceId": "ZAN-0078",
+    "name": "Músculo extensor curto dos dedos esquerdo",
+    "normalizedName": "musculo extensor curto dos dedos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Extensor digitorum brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Estende os dedos os dedos da mão.",
+    "function": "Função principal: Estender os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0079",
+    "sourceId": "ZAN-0079",
+    "name": "Músculo extensor curto dos dedos direito",
+    "normalizedName": "musculo extensor curto dos dedos direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Extensor digitorum brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Estende os dedos os dedos da mão.",
+    "function": "Função principal: Estender os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0080",
+    "sourceId": "ZAN-0080",
+    "name": "Músculo extensor longo dos dedos esquerdo",
+    "normalizedName": "musculo extensor longo dos dedos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Extensor digitorum longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Estende os dedos os dedos da mão.",
+    "function": "Função principal: Estender os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0081",
+    "sourceId": "ZAN-0081",
+    "name": "Músculo extensor longo dos dedos direito",
+    "normalizedName": "musculo extensor longo dos dedos direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Extensor digitorum longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Estende os dedos os dedos da mão.",
+    "function": "Função principal: Estender os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0082",
+    "sourceId": "ZAN-0082",
+    "name": "Músculo extensor curto do hálux esquerdo",
+    "normalizedName": "musculo extensor curto do halux esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Extensor hallucis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0083",
+    "sourceId": "ZAN-0083",
+    "name": "Músculo extensor curto do hálux direito",
+    "normalizedName": "musculo extensor curto do halux direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Extensor hallucis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0084",
+    "sourceId": "ZAN-0084",
+    "name": "Músculo extensor longo do hálux esquerdo",
+    "normalizedName": "musculo extensor longo do halux esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Extensor hallucis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0085",
+    "sourceId": "ZAN-0085",
+    "name": "Músculo extensor longo do hálux direito",
+    "normalizedName": "musculo extensor longo do halux direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Extensor hallucis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0086",
+    "sourceId": "ZAN-0086",
+    "name": "Músculo extensor do indicador esquerdo",
+    "normalizedName": "musculo extensor do indicador esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor indicis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende os dedos os dedos da mão.",
+    "function": "Função principal: Estender os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0087",
+    "sourceId": "ZAN-0087",
+    "name": "Músculo extensor do indicador direito",
+    "normalizedName": "musculo extensor do indicador direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor indicis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende os dedos os dedos da mão.",
+    "function": "Função principal: Estender os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0088",
+    "sourceId": "ZAN-0088",
+    "name": "Músculo extensor curto do polegar esquerdo",
+    "normalizedName": "musculo extensor curto do polegar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor pollicis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0089",
+    "sourceId": "ZAN-0089",
+    "name": "Músculo extensor curto do polegar direito",
+    "normalizedName": "musculo extensor curto do polegar direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor pollicis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0090",
+    "sourceId": "ZAN-0090",
+    "name": "Músculo extensor longo do polegar esquerdo",
+    "normalizedName": "musculo extensor longo do polegar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor pollicis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0091",
+    "sourceId": "ZAN-0091",
+    "name": "Músculo extensor longo do polegar direito",
+    "normalizedName": "musculo extensor longo do polegar direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Extensor pollicis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0092",
+    "sourceId": "ZAN-0092",
+    "name": "Músculo oblíquo externo do abdome esquerdo",
+    "normalizedName": "musculo obliquo externo do abdome esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "External abdominal oblique muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Flexiona, inclina e roda o tronco o tronco.",
+    "function": "Função principal: Flexionar, inclinar e rodar o tronco o tronco.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0093",
+    "sourceId": "ZAN-0093",
+    "name": "Músculo oblíquo externo do abdome direito",
+    "normalizedName": "musculo obliquo externo do abdome direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "External abdominal oblique muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Flexiona, inclina e roda o tronco o tronco.",
+    "function": "Função principal: Flexionar, inclinar e rodar o tronco o tronco.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0094",
+    "sourceId": "ZAN-0094",
+    "name": "Esfíncter externo do ânus esquerdo",
+    "normalizedName": "esfincter externo do anus esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "External anal sphincter"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Fecha o canal anal o controle da continência fecal.",
+    "function": "Função principal: Fechar o canal anal o controle da continência fecal.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0095",
+    "sourceId": "ZAN-0095",
+    "name": "Esfíncter externo do ânus direito",
+    "normalizedName": "esfincter externo do anus direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "External anal sphincter"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Fecha o canal anal o controle da continência fecal.",
+    "function": "Função principal: Fechar o canal anal o controle da continência fecal.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0096",
+    "sourceId": "ZAN-0096",
+    "name": "Músculos intercostais externos esquerdo",
+    "normalizedName": "musculos intercostais externos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "External intercostal muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Participa dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "function": "Função principal: Participar dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0097",
+    "sourceId": "ZAN-0097",
+    "name": "Músculos intercostais externos direito",
+    "normalizedName": "musculos intercostais externos direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "External intercostal muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Participa dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "function": "Função principal: Participar dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0098",
+    "sourceId": "ZAN-0098",
+    "name": "Parte externa do músculo tireoaritenóideo esquerdo",
+    "normalizedName": "parte externa do musculo tireoaritenoideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "External part of thyro-arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Ajusta a tensão das pregas vocais a fonação.",
+    "function": "Função principal: Ajustar a tensão das pregas vocais a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0099",
+    "sourceId": "ZAN-0099",
+    "name": "Parte externa do músculo tireoaritenóideo direito",
+    "normalizedName": "parte externa do musculo tireoaritenoideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "External part of thyro-arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Ajusta a tensão das pregas vocais a fonação.",
+    "function": "Função principal: Ajustar a tensão das pregas vocais a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0100",
+    "sourceId": "ZAN-0100",
+    "name": "Músculo fibular curto esquerdo",
+    "normalizedName": "musculo fibular curto esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Fibularis brevis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Everte o pé o pé (flexão plantar).",
+    "function": "Função principal: Everter o pé o pé (flexão plantar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0101",
+    "sourceId": "ZAN-0101",
+    "name": "Músculo fibular curto direito",
+    "normalizedName": "musculo fibular curto direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Fibularis brevis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Everte o pé o pé (flexão plantar).",
+    "function": "Função principal: Everter o pé o pé (flexão plantar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0102",
+    "sourceId": "ZAN-0102",
+    "name": "Músculo fibular longo esquerdo",
+    "normalizedName": "musculo fibular longo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Fibularis longus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Everte o pé o pé (flexão plantar).",
+    "function": "Função principal: Everter o pé o pé (flexão plantar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0103",
+    "sourceId": "ZAN-0103",
+    "name": "Músculo fibular longo direito",
+    "normalizedName": "musculo fibular longo direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Fibularis longus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Everte o pé o pé (flexão plantar).",
+    "function": "Função principal: Everter o pé o pé (flexão plantar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0104",
+    "sourceId": "ZAN-0104",
+    "name": "Músculo fibular terceiro esquerdo",
+    "normalizedName": "musculo fibular terceiro esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Fibularis tertius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Everte o pé o pé (flexão plantar).",
+    "function": "Função principal: Everter o pé o pé (flexão plantar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0105",
+    "sourceId": "ZAN-0105",
+    "name": "Músculo fibular terceiro direito",
+    "normalizedName": "musculo fibular terceiro direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Fibularis tertius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Everte o pé o pé (flexão plantar).",
+    "function": "Função principal: Everter o pé o pé (flexão plantar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0106",
+    "sourceId": "ZAN-0106",
+    "name": "Músculo flexor radial do carpo esquerdo",
+    "normalizedName": "musculo flexor radial do carpo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Flexor carpi radialis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona e abduz a mão o punho.",
+    "function": "Função principal: Flexionar e abduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0107",
+    "sourceId": "ZAN-0107",
+    "name": "Músculo flexor radial do carpo direito",
+    "normalizedName": "musculo flexor radial do carpo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Flexor carpi radialis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona e abduz a mão o punho.",
+    "function": "Função principal: Flexionar e abduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0108",
+    "sourceId": "ZAN-0108",
+    "name": "Músculo flexor do dedo mínimo do pé esquerdo",
+    "normalizedName": "musculo flexor do dedo minimo do pe esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Flexor digiti minimi of foot"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta o dedo mínimo do pé o quinto dedo do pé.",
+    "function": "Função principal: Movimentar o dedo mínimo do pé o quinto dedo do pé.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0109",
+    "sourceId": "ZAN-0109",
+    "name": "Músculo flexor do dedo mínimo do pé direito",
+    "normalizedName": "musculo flexor do dedo minimo do pe direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Flexor digiti minimi of foot"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta o dedo mínimo do pé o quinto dedo do pé.",
+    "function": "Função principal: Movimentar o dedo mínimo do pé o quinto dedo do pé.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0110",
+    "sourceId": "ZAN-0110",
+    "name": "Músculo flexor do dedo mínimo da mão esquerdo",
+    "normalizedName": "musculo flexor do dedo minimo da mao esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Flexor digiti minimi of hand"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o dedo mínimo o dedo mínimo da mão.",
+    "function": "Função principal: Movimentar o dedo mínimo o dedo mínimo da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0111",
+    "sourceId": "ZAN-0111",
+    "name": "Músculo flexor do dedo mínimo da mão direito",
+    "normalizedName": "musculo flexor do dedo minimo da mao direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Flexor digiti minimi of hand"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o dedo mínimo o dedo mínimo da mão.",
+    "function": "Função principal: Movimentar o dedo mínimo o dedo mínimo da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0112",
+    "sourceId": "ZAN-0112",
+    "name": "Músculo flexor curto dos dedos esquerdo",
+    "normalizedName": "musculo flexor curto dos dedos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Flexor digitorum brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Flexiona os dedos os dedos da mão.",
+    "function": "Função principal: Flexionar os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0113",
+    "sourceId": "ZAN-0113",
+    "name": "Músculo flexor curto dos dedos direito",
+    "normalizedName": "musculo flexor curto dos dedos direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Flexor digitorum brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Flexiona os dedos os dedos da mão.",
+    "function": "Função principal: Flexionar os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0114",
+    "sourceId": "ZAN-0114",
+    "name": "Músculo flexor longo dos dedos esquerdo",
+    "normalizedName": "musculo flexor longo dos dedos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Flexor digitorum longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Flexiona os dedos os dedos da mão.",
+    "function": "Função principal: Flexionar os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0115",
+    "sourceId": "ZAN-0115",
+    "name": "Músculo flexor longo dos dedos direito",
+    "normalizedName": "musculo flexor longo dos dedos direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Flexor digitorum longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Flexiona os dedos os dedos da mão.",
+    "function": "Função principal: Flexionar os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0116",
+    "sourceId": "ZAN-0116",
+    "name": "Músculo flexor profundo dos dedos esquerdo",
+    "normalizedName": "musculo flexor profundo dos dedos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Flexor digitorum profundus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona as falanges distais dos dedos os dedos da mão.",
+    "function": "Função principal: Flexionar as falanges distais dos dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0117",
+    "sourceId": "ZAN-0117",
+    "name": "Músculo flexor profundo dos dedos direito",
+    "normalizedName": "musculo flexor profundo dos dedos direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Flexor digitorum profundus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona as falanges distais dos dedos os dedos da mão.",
+    "function": "Função principal: Flexionar as falanges distais dos dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0118",
+    "sourceId": "ZAN-0118",
+    "name": "Músculo flexor longo do hálux esquerdo",
+    "normalizedName": "musculo flexor longo do halux esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Flexor hallucis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0119",
+    "sourceId": "ZAN-0119",
+    "name": "Músculo flexor longo do hálux direito",
+    "normalizedName": "musculo flexor longo do halux direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Flexor hallucis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0120",
+    "sourceId": "ZAN-0120",
+    "name": "Músculo flexor longo do polegar esquerdo",
+    "normalizedName": "musculo flexor longo do polegar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Flexor pollicis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0121",
+    "sourceId": "ZAN-0121",
+    "name": "Músculo flexor longo do polegar direito",
+    "normalizedName": "musculo flexor longo do polegar direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Flexor pollicis longus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0122",
+    "sourceId": "ZAN-0122",
+    "name": "Músculo frontal esquerdo",
+    "normalizedName": "musculo frontal esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Frontalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva as sobrancelhas a testa (repara a gálea aponeurótica).",
+    "function": "Função principal: Elevar as sobrancelhas a testa (repara a gálea aponeurótica).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0123",
+    "sourceId": "ZAN-0123",
+    "name": "Músculo frontal direito",
+    "normalizedName": "musculo frontal direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Frontalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva as sobrancelhas a testa (repara a gálea aponeurótica).",
+    "function": "Função principal: Elevar as sobrancelhas a testa (repara a gálea aponeurótica).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0124",
+    "sourceId": "ZAN-0124",
+    "name": "Músculo genioglosso esquerdo",
+    "normalizedName": "musculo genioglosso esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Genioglossus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Protui a língua a língua.",
+    "function": "Função principal: Protruir a língua a língua.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0125",
+    "sourceId": "ZAN-0125",
+    "name": "Músculo genioglosso direito",
+    "normalizedName": "musculo genioglosso direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Genioglossus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Protui a língua a língua.",
+    "function": "Função principal: Protruir a língua a língua.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0126",
+    "sourceId": "ZAN-0126",
+    "name": "Músculo gênio-hióideo esquerdo",
+    "normalizedName": "musculo genio-hioideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Geniohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Eleva e estabiliza o osso hioide a deglutição e a fonação.",
+    "function": "Função principal: Elevar e estabilizar o osso hioide a deglutição e a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0127",
+    "sourceId": "ZAN-0127",
+    "name": "Músculo gênio-hióideo direito",
+    "normalizedName": "musculo genio-hioideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Geniohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Eleva e estabiliza o osso hioide a deglutição e a fonação.",
+    "function": "Função principal: Elevar e estabilizar o osso hioide a deglutição e a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0128",
+    "sourceId": "ZAN-0128",
+    "name": "Músculo glúteo máximo esquerdo",
+    "normalizedName": "musculo gluteo maximo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Gluteus maximus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Estende e roda externamente o quadril o quadril.",
+    "function": "Função principal: Estender e rodar externamente o quadril o quadril.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0129",
+    "sourceId": "ZAN-0129",
+    "name": "Músculo glúteo máximo direito",
+    "normalizedName": "musculo gluteo maximo direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Gluteus maximus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Estende e roda externamente o quadril o quadril.",
+    "function": "Função principal: Estender e rodar externamente o quadril o quadril.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0130",
+    "sourceId": "ZAN-0130",
+    "name": "Músculo glúteo médio esquerdo",
+    "normalizedName": "musculo gluteo medio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Gluteus medius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Abduz o quadril o quadril (estabiliza a pelve ao caminhar).",
+    "function": "Função principal: Abduzir o quadril o quadril (estabiliza a pelve ao caminhar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0131",
+    "sourceId": "ZAN-0131",
+    "name": "Músculo glúteo médio direito",
+    "normalizedName": "musculo gluteo medio direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Gluteus medius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Abduz o quadril o quadril (estabiliza a pelve ao caminhar).",
+    "function": "Função principal: Abduzir o quadril o quadril (estabiliza a pelve ao caminhar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0132",
+    "sourceId": "ZAN-0132",
+    "name": "Músculo glúteo mínimo esquerdo",
+    "normalizedName": "musculo gluteo minimo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Gluteus minimus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Abduz o quadril o quadril (estabiliza a pelve ao caminhar).",
+    "function": "Função principal: Abduzir o quadril o quadril (estabiliza a pelve ao caminhar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0133",
+    "sourceId": "ZAN-0133",
+    "name": "Músculo glúteo mínimo direito",
+    "normalizedName": "musculo gluteo minimo direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Gluteus minimus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Abduz o quadril o quadril (estabiliza a pelve ao caminhar).",
+    "function": "Função principal: Abduzir o quadril o quadril (estabiliza a pelve ao caminhar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0134",
+    "sourceId": "ZAN-0134",
+    "name": "Músculo grácil esquerdo",
+    "normalizedName": "musculo gracil esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Gracilis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0135",
+    "sourceId": "ZAN-0135",
+    "name": "Músculo grácil direito",
+    "normalizedName": "musculo gracil direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Gracilis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0136",
+    "sourceId": "ZAN-0136",
+    "name": "Cabeça umeral do músculo extensor ulnar do carpo esquerdo",
+    "normalizedName": "cabeca umeral do musculo extensor ulnar do carpo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Humeral head of extensor carpi ulnaris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende e aduz a mão o punho.",
+    "function": "Função principal: Estender e aduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0137",
+    "sourceId": "ZAN-0137",
+    "name": "Cabeça umeral do músculo extensor ulnar do carpo direito",
+    "normalizedName": "cabeca umeral do musculo extensor ulnar do carpo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Humeral head of extensor carpi ulnaris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende e aduz a mão o punho.",
+    "function": "Função principal: Estender e aduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0138",
+    "sourceId": "ZAN-0138",
+    "name": "Cabeça umeral do músculo flexor ulnar do carpo esquerdo",
+    "normalizedName": "cabeca umeral do musculo flexor ulnar do carpo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Humeral head of flexor carpi ulnaris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona e aduz a mão o punho.",
+    "function": "Função principal: Flexionar e aduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0139",
+    "sourceId": "ZAN-0139",
+    "name": "Cabeça umeral do músculo flexor ulnar do carpo direito",
+    "normalizedName": "cabeca umeral do musculo flexor ulnar do carpo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Humeral head of flexor carpi ulnaris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona e aduz a mão o punho.",
+    "function": "Função principal: Flexionar e aduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0140",
+    "sourceId": "ZAN-0140",
+    "name": "Cabeça umeroulnar do músculo flexor superficial dos dedos esquerdo",
+    "normalizedName": "cabeca umeroulnar do musculo flexor superficial dos dedos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Humero-ulnar head of flexor digitorum superficialis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona os dedos os dedos da mão.",
+    "function": "Função principal: Flexionar os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0141",
+    "sourceId": "ZAN-0141",
+    "name": "Cabeça umeroulnar do músculo flexor superficial dos dedos direito",
+    "normalizedName": "cabeca umeroulnar do musculo flexor superficial dos dedos direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Humero-ulnar head of flexor digitorum superficialis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona os dedos os dedos da mão.",
+    "function": "Função principal: Flexionar os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0142",
+    "sourceId": "ZAN-0142",
+    "name": "Músculo hioglosso esquerdo",
+    "normalizedName": "musculo hioglosso esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Hyoglossus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Deprime a língua a língua.",
+    "function": "Função principal: Deprimir a língua a língua.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0143",
+    "sourceId": "ZAN-0143",
+    "name": "Músculo hioglosso direito",
+    "normalizedName": "musculo hioglosso direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Hyoglossus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Deprime a língua a língua.",
+    "function": "Função principal: Deprimir a língua a língua.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0144",
+    "sourceId": "ZAN-0144",
+    "name": "Músculo ilíaco esquerdo",
+    "normalizedName": "musculo iliaco esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Iliacus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Flexiona o quadril o quadril (componente do iliopsoas).",
+    "function": "Função principal: Flexionar o quadril o quadril (componente do iliopsoas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0145",
+    "sourceId": "ZAN-0145",
+    "name": "Músculo ilíaco direito",
+    "normalizedName": "musculo iliaco direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Iliacus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Flexiona o quadril o quadril (componente do iliopsoas).",
+    "function": "Função principal: Flexionar o quadril o quadril (componente do iliopsoas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0146",
+    "sourceId": "ZAN-0146",
+    "name": "Músculo iliococcígeo esquerdo",
+    "normalizedName": "musculo iliococcigeo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Iliococcygeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Sustenta as vísceras pélvicas o assoalho pélvico.",
+    "function": "Função principal: Sustentar as vísceras pélvicas o assoalho pélvico.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0147",
+    "sourceId": "ZAN-0147",
+    "name": "Músculo iliococcígeo direito",
+    "normalizedName": "musculo iliococcigeo direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Iliococcygeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Sustenta as vísceras pélvicas o assoalho pélvico.",
+    "function": "Função principal: Sustentar as vísceras pélvicas o assoalho pélvico.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0149",
+    "sourceId": "ZAN-0149",
+    "name": "Músculo iliocostal do pescoço direito",
+    "normalizedName": "musculo iliocostal do pescoco direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Iliocostalis colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0150",
+    "sourceId": "ZAN-0150",
+    "name": "Músculo iliocostal do lombo esquerdo",
+    "normalizedName": "musculo iliocostal do lombo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Iliocostalis lumborum muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e mantém a postura da coluna a coluna vertebral.",
+    "function": "Função principal: Estender e manter a postura da coluna a coluna vertebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0151",
+    "sourceId": "ZAN-0151",
+    "name": "Músculo iliocostal do lombo direito",
+    "normalizedName": "musculo iliocostal do lombo direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Iliocostalis lumborum muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e mantém a postura da coluna a coluna vertebral.",
+    "function": "Função principal: Estender e manter a postura da coluna a coluna vertebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0152",
+    "sourceId": "ZAN-0152",
+    "name": "Músculo iliocostal do tórax esquerdo",
+    "normalizedName": "musculo iliocostal do torax esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Iliocostalis thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e mantém a postura da coluna a coluna vertebral.",
+    "function": "Função principal: Estender e manter a postura da coluna a coluna vertebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0153",
+    "sourceId": "ZAN-0153",
+    "name": "Músculo iliocostal do tórax direito",
+    "normalizedName": "musculo iliocostal do torax direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Iliocostalis thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e mantém a postura da coluna a coluna vertebral.",
+    "function": "Função principal: Estender e manter a postura da coluna a coluna vertebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0154",
+    "sourceId": "ZAN-0154",
+    "name": "Músculo gêmeo inferior esquerdo",
+    "normalizedName": "musculo gemeo inferior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Inferior gemellus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0155",
+    "sourceId": "ZAN-0155",
+    "name": "Músculo gêmeo inferior direito",
+    "normalizedName": "musculo gemeo inferior direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Inferior gemellus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0156",
+    "sourceId": "ZAN-0156",
+    "name": "Cabeça inferior do músculo pterigóideo lateral esquerdo",
+    "normalizedName": "cabeca inferior do musculo pterigoideo lateral esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Inferior head of lateral pterygoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Movimenta a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "function": "Função principal: Movimentar a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0157",
+    "sourceId": "ZAN-0157",
+    "name": "Cabeça inferior do músculo pterigóideo lateral direito",
+    "normalizedName": "cabeca inferior do musculo pterigoideo lateral direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Inferior head of lateral pterygoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Movimenta a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "function": "Função principal: Movimentar a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0158",
+    "sourceId": "ZAN-0158",
+    "name": "Músculo oblíquo inferior esquerdo",
+    "normalizedName": "musculo obliquo inferior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Inferior oblique muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0159",
+    "sourceId": "ZAN-0159",
+    "name": "Músculo oblíquo inferior direito",
+    "normalizedName": "musculo obliquo inferior direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Inferior oblique muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0160",
+    "sourceId": "ZAN-0160",
+    "name": "Músculo constritor inferior da faringe esquerdo",
+    "normalizedName": "musculo constritor inferior da faringe esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Inferior pharyngeal constrictor"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Constringe a faringe o bolo alimentar durante a deglutição.",
+    "function": "Função principal: Constrigir a faringe o bolo alimentar durante a deglutição.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0161",
+    "sourceId": "ZAN-0161",
+    "name": "Músculo constritor inferior da faringe direito",
+    "normalizedName": "musculo constritor inferior da faringe direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Inferior pharyngeal constrictor"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Constringe a faringe o bolo alimentar durante a deglutição.",
+    "function": "Função principal: Constrigir a faringe o bolo alimentar durante a deglutição.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0162",
+    "sourceId": "ZAN-0162",
+    "name": "Músculo reto inferior esquerdo",
+    "normalizedName": "musculo reto inferior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Inferior rectus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0163",
+    "sourceId": "ZAN-0163",
+    "name": "Músculo reto inferior direito",
+    "normalizedName": "musculo reto inferior direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Inferior rectus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0164",
+    "sourceId": "ZAN-0164",
+    "name": "Músculo infraespinhal esquerdo",
+    "normalizedName": "musculo infraespinhal esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Infraspinatus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Roda externamente o braço o ombro.",
+    "function": "Função principal: Rodar externamente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0165",
+    "sourceId": "ZAN-0165",
+    "name": "Músculo infraespinhal direito",
+    "normalizedName": "musculo infraespinhal direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Infraspinatus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Roda externamente o braço o ombro.",
+    "function": "Função principal: Rodar externamente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0166",
+    "sourceId": "ZAN-0166",
+    "name": "Músculos intercostais íntimos esquerdo",
+    "normalizedName": "musculos intercostais intimos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Innermost intercostal muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Participa dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "function": "Função principal: Participar dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0167",
+    "sourceId": "ZAN-0167",
+    "name": "Músculos intercostais íntimos direito",
+    "normalizedName": "musculos intercostais intimos direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Innermost intercostal muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Participa dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "function": "Função principal: Participar dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0168",
+    "sourceId": "ZAN-0168",
+    "name": "Músculo oblíquo interno do abdome esquerdo",
+    "normalizedName": "musculo obliquo interno do abdome esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Internal abdominal oblique muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Flexiona, inclina e roda o tronco o tronco.",
+    "function": "Função principal: Flexionar, inclinar e rodar o tronco o tronco.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0169",
+    "sourceId": "ZAN-0169",
+    "name": "Músculo oblíquo interno do abdome direito",
+    "normalizedName": "musculo obliquo interno do abdome direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Internal abdominal oblique muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Flexiona, inclina e roda o tronco o tronco.",
+    "function": "Função principal: Flexionar, inclinar e rodar o tronco o tronco.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0170",
+    "sourceId": "ZAN-0170",
+    "name": "Músculos intercostais internos esquerdo",
+    "normalizedName": "musculos intercostais internos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Internal intercostal muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Participa dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "function": "Função principal: Participar dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0171",
+    "sourceId": "ZAN-0171",
+    "name": "Músculos intercostais internos direito",
+    "normalizedName": "musculos intercostais internos direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Internal intercostal muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Participa dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "function": "Função principal: Participar dos movimentos respiratórios a caixa torácica (movimenta e estabiliza as costelas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0172",
+    "sourceId": "ZAN-0172",
+    "name": "Músculos interespinhais do pescoço esquerdo",
+    "normalizedName": "musculos interespinhais do pescoco esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Interspinales colli muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0173",
+    "sourceId": "ZAN-0173",
+    "name": "Músculos interespinhais do pescoço direito",
+    "normalizedName": "musculos interespinhais do pescoco direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Interspinales colli muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0174",
+    "sourceId": "ZAN-0174",
+    "name": "Músculos interespinhais do lombo esquerdo",
+    "normalizedName": "musculos interespinhais do lombo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Interspinales lumborum muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0175",
+    "sourceId": "ZAN-0175",
+    "name": "Músculos interespinhais do lombo direito",
+    "normalizedName": "musculos interespinhais do lombo direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Interspinales lumborum muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0176",
+    "sourceId": "ZAN-0176",
+    "name": "Músculos interespinhais do tórax esquerdo",
+    "normalizedName": "musculos interespinhais do torax esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Interspinales thoracis muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0177",
+    "sourceId": "ZAN-0177",
+    "name": "Músculos interespinhais do tórax direito",
+    "normalizedName": "musculos interespinhais do torax direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Interspinales thoracis muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0178",
+    "sourceId": "ZAN-0178",
+    "name": "Músculo cricoaritenóideo lateral esquerdo",
+    "normalizedName": "musculo cricoaritenoideo lateral esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Lateral crico-arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Aduz as pregas vocais o fechamento da glote.",
+    "function": "Função principal: Aduzir as pregas vocais o fechamento da glote.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0179",
+    "sourceId": "ZAN-0179",
+    "name": "Músculo cricoaritenóideo lateral direito",
+    "normalizedName": "musculo cricoaritenoideo lateral direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Lateral crico-arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Aduz as pregas vocais o fechamento da glote.",
+    "function": "Função principal: Aduzir as pregas vocais o fechamento da glote.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0180",
+    "sourceId": "ZAN-0180",
+    "name": "Cabeça lateral do músculo flexor curto do hálux esquerdo",
+    "normalizedName": "cabeca lateral do musculo flexor curto do halux esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Lateral head of flexor hallucis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0181",
+    "sourceId": "ZAN-0181",
+    "name": "Cabeça lateral do músculo flexor curto do hálux direito",
+    "normalizedName": "cabeca lateral do musculo flexor curto do halux direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Lateral head of flexor hallucis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0182",
+    "sourceId": "ZAN-0182",
+    "name": "Cabeça lateral do músculo gastrocnêmio esquerdo",
+    "normalizedName": "cabeca lateral do musculo gastrocnemio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Lateral head of gastrocnemius"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Realiza a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "function": "Função principal: Realizar a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0183",
+    "sourceId": "ZAN-0183",
+    "name": "Cabeça lateral do músculo gastrocnêmio direito",
+    "normalizedName": "cabeca lateral do musculo gastrocnemio direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Lateral head of gastrocnemius"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Realiza a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "function": "Função principal: Realizar a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0184",
+    "sourceId": "ZAN-0184",
+    "name": "Cabeça lateral do músculo tríceps braquial esquerdo",
+    "normalizedName": "cabeca lateral do musculo triceps braquial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Lateral head of triceps brachii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende o cotovelo o cotovelo.",
+    "function": "Função principal: Estender o cotovelo o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0185",
+    "sourceId": "ZAN-0185",
+    "name": "Cabeça lateral do músculo tríceps braquial direito",
+    "normalizedName": "cabeca lateral do musculo triceps braquial direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Lateral head of triceps brachii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende o cotovelo o cotovelo.",
+    "function": "Função principal: Estender o cotovelo o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0186",
+    "sourceId": "ZAN-0186",
+    "name": "Músculo reto lateral esquerdo",
+    "normalizedName": "musculo reto lateral esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Lateral rectus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0187",
+    "sourceId": "ZAN-0187",
+    "name": "Músculo reto lateral direito",
+    "normalizedName": "musculo reto lateral direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Lateral rectus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0188",
+    "sourceId": "ZAN-0188",
+    "name": "Músculo latíssimo do dorso esquerdo",
+    "normalizedName": "musculo latissimo do dorso esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Latissimus dorsi muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende, aduz e roda medialmente o braço o ombro.",
+    "function": "Função principal: Estender, aduzir e rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0189",
+    "sourceId": "ZAN-0189",
+    "name": "Músculo latíssimo do dorso direito",
+    "normalizedName": "musculo latissimo do dorso direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Latissimus dorsi muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende, aduz e roda medialmente o braço o ombro.",
+    "function": "Função principal: Estender, aduzir e rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0190",
+    "sourceId": "ZAN-0190",
+    "name": "Músculo levantador do ângulo da boca esquerdo",
+    "normalizedName": "musculo levantador do angulo da boca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Levator anguli oris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva o canto da boca o sorriso.",
+    "function": "Função principal: Elevar o canto da boca o sorriso.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0191",
+    "sourceId": "ZAN-0191",
+    "name": "Músculo levantador do ângulo da boca direito",
+    "normalizedName": "musculo levantador do angulo da boca direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Levator anguli oris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva o canto da boca o sorriso.",
+    "function": "Função principal: Elevar o canto da boca o sorriso.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0192",
+    "sourceId": "ZAN-0192",
+    "name": "Músculo levantador do lábio superior esquerdo",
+    "normalizedName": "musculo levantador do labio superior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Levator labii superioris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva o lábio superior o lábio superior e a asa do nariz.",
+    "function": "Função principal: Elevar o lábio superior o lábio superior e a asa do nariz.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0193",
+    "sourceId": "ZAN-0193",
+    "name": "Músculo levantador do lábio superior direito",
+    "normalizedName": "musculo levantador do labio superior direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Levator labii superioris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva o lábio superior o lábio superior e a asa do nariz.",
+    "function": "Função principal: Elevar o lábio superior o lábio superior e a asa do nariz.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0194",
+    "sourceId": "ZAN-0194",
+    "name": "Músculo levantador nasolabial esquerdo",
+    "normalizedName": "musculo levantador nasolabial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Levator nasolabialis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva o lábio superior o lábio superior e a asa do nariz.",
+    "function": "Função principal: Elevar o lábio superior o lábio superior e a asa do nariz.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0195",
+    "sourceId": "ZAN-0195",
+    "name": "Músculo levantador nasolabial direito",
+    "normalizedName": "musculo levantador nasolabial direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Levator nasolabialis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva o lábio superior o lábio superior e a asa do nariz.",
+    "function": "Função principal: Elevar o lábio superior o lábio superior e a asa do nariz.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0196",
+    "sourceId": "ZAN-0196",
+    "name": "Músculo levantador da pálpebra superior esquerdo",
+    "normalizedName": "musculo levantador da palpebra superior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Levator palpebrae superioris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva a pálpebra superior a abertura palpebral.",
+    "function": "Função principal: Elevar a pálpebra superior a abertura palpebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0197",
+    "sourceId": "ZAN-0197",
+    "name": "Músculo levantador da pálpebra superior direito",
+    "normalizedName": "musculo levantador da palpebra superior direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Levator palpebrae superioris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva a pálpebra superior a abertura palpebral.",
+    "function": "Função principal: Elevar a pálpebra superior a abertura palpebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0198",
+    "sourceId": "ZAN-0198",
+    "name": "Músculo levantador da escápula esquerdo",
+    "normalizedName": "musculo levantador da escapula esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Levator scapulae"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Eleva a escápula a escápula (também inclina o pescoço).",
+    "function": "Função principal: Elevar a escápula a escápula (também inclina o pescoço).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0199",
+    "sourceId": "ZAN-0199",
+    "name": "Músculo levantador da escápula direito",
+    "normalizedName": "musculo levantador da escapula direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Levator scapulae"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Eleva a escápula a escápula (também inclina o pescoço).",
+    "function": "Função principal: Elevar a escápula a escápula (também inclina o pescoço).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0200",
+    "sourceId": "ZAN-0200",
+    "name": "Músculos levantadores curtos das costelas esquerdo",
+    "normalizedName": "musculos levantadores curtos das costelas esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Levatores breves costarum"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0201",
+    "sourceId": "ZAN-0201",
+    "name": "Músculos levantadores curtos das costelas direito",
+    "normalizedName": "musculos levantadores curtos das costelas direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Levatores breves costarum"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0202",
+    "sourceId": "ZAN-0202",
+    "name": "Músculos levantadores longos das costelas esquerdo",
+    "normalizedName": "musculos levantadores longos das costelas esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Levatores longi costarum"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0203",
+    "sourceId": "ZAN-0203",
+    "name": "Músculos levantadores longos das costelas direito",
+    "normalizedName": "musculos levantadores longos das costelas direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Levatores longi costarum"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0204",
+    "sourceId": "ZAN-0204",
+    "name": "Cabeça longa do músculo bíceps braquial esquerdo",
+    "normalizedName": "cabeca longa do musculo biceps braquial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Long head of biceps brachii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona o cotovelo e supina o antebraço o cotovelo.",
+    "function": "Função principal: Flexionar o cotovelo e supinar o antebraço o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0205",
+    "sourceId": "ZAN-0205",
+    "name": "Cabeça longa do músculo bíceps braquial direito",
+    "normalizedName": "cabeca longa do musculo biceps braquial direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Long head of biceps brachii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona o cotovelo e supina o antebraço o cotovelo.",
+    "function": "Função principal: Flexionar o cotovelo e supinar o antebraço o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0206",
+    "sourceId": "ZAN-0206",
+    "name": "Cabeça longa do músculo bíceps femoral esquerdo",
+    "normalizedName": "cabeca longa do musculo biceps femoral esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Long head of biceps femoris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Flexiona o joelho e estende o quadril o joelho (isquiotibiais).",
+    "function": "Função principal: Flexionar o joelho e estender o quadril o joelho (isquiotibiais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0207",
+    "sourceId": "ZAN-0207",
+    "name": "Cabeça longa do músculo bíceps femoral direito",
+    "normalizedName": "cabeca longa do musculo biceps femoral direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Long head of biceps femoris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Flexiona o joelho e estende o quadril o joelho (isquiotibiais).",
+    "function": "Função principal: Flexionar o joelho e estender o quadril o joelho (isquiotibiais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0208",
+    "sourceId": "ZAN-0208",
+    "name": "Cabeça longa do músculo tríceps braquial esquerdo",
+    "normalizedName": "cabeca longa do musculo triceps braquial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Long head of triceps brachii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende o cotovelo o cotovelo.",
+    "function": "Função principal: Estender o cotovelo o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0209",
+    "sourceId": "ZAN-0209",
+    "name": "Cabeça longa do músculo tríceps braquial direito",
+    "normalizedName": "cabeca longa do musculo triceps braquial direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Long head of triceps brachii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende o cotovelo o cotovelo.",
+    "function": "Função principal: Estender o cotovelo o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0210",
+    "sourceId": "ZAN-0210",
+    "name": "Músculo longuíssimo da cabeça esquerdo",
+    "normalizedName": "musculo longuissimo da cabeca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Longissimus capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0211",
+    "sourceId": "ZAN-0211",
+    "name": "Músculo longuíssimo da cabeça direito",
+    "normalizedName": "musculo longuissimo da cabeca direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Longissimus capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0212",
+    "sourceId": "ZAN-0212",
+    "name": "Músculo longuíssimo do pescoço esquerdo",
+    "normalizedName": "musculo longuissimo do pescoco esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Longissimus colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0213",
+    "sourceId": "ZAN-0213",
+    "name": "Músculo longuíssimo do pescoço direito",
+    "normalizedName": "musculo longuissimo do pescoco direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Longissimus colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0214",
+    "sourceId": "ZAN-0214",
+    "name": "Músculo longuíssimo do tórax esquerdo",
+    "normalizedName": "musculo longuissimo do torax esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Longissimus thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e mantém a postura da coluna a coluna vertebral.",
+    "function": "Função principal: Estender e manter a postura da coluna a coluna vertebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0215",
+    "sourceId": "ZAN-0215",
+    "name": "Músculo longuíssimo do tórax direito",
+    "normalizedName": "musculo longuissimo do torax direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Longissimus thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e mantém a postura da coluna a coluna vertebral.",
+    "function": "Função principal: Estender e manter a postura da coluna a coluna vertebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0216",
+    "sourceId": "ZAN-0216",
+    "name": "Músculo longo da cabeça esquerdo",
+    "normalizedName": "musculo longo da cabeca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Longus capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Flexiona a cabeça e o pescoço a coluna cervical.",
+    "function": "Função principal: Flexionar a cabeça e o pescoço a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0217",
+    "sourceId": "ZAN-0217",
+    "name": "Músculo longo da cabeça direito",
+    "normalizedName": "musculo longo da cabeca direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Longus capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Flexiona a cabeça e o pescoço a coluna cervical.",
+    "function": "Função principal: Flexionar a cabeça e o pescoço a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0218",
+    "sourceId": "ZAN-0218",
+    "name": "Músculo longo do pescoço esquerdo",
+    "normalizedName": "musculo longo do pescoco esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Longus colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Flexiona a cabeça e o pescoço a coluna cervical.",
+    "function": "Função principal: Flexionar a cabeça e o pescoço a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0219",
+    "sourceId": "ZAN-0219",
+    "name": "Músculo longo do pescoço direito",
+    "normalizedName": "musculo longo do pescoco direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Longus colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Flexiona a cabeça e o pescoço a coluna cervical.",
+    "function": "Função principal: Flexionar a cabeça e o pescoço a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0220",
+    "sourceId": "ZAN-0220",
+    "name": "Músculos lumbricais do pé esquerdo",
+    "normalizedName": "musculos lumbricais do pe esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Lumbrical muscles of foot"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "function": "Função principal: Movimentar os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0221",
+    "sourceId": "ZAN-0221",
+    "name": "Músculos lumbricais do pé direito",
+    "normalizedName": "musculos lumbricais do pe direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Lumbrical muscles of foot"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "function": "Função principal: Movimentar os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0222",
+    "sourceId": "ZAN-0222",
+    "name": "Músculos lumbricais da mão esquerdo",
+    "normalizedName": "musculos lumbricais da mao esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Lumbrical muscles of hand"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "function": "Função principal: Movimentar finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0223",
+    "sourceId": "ZAN-0223",
+    "name": "Músculos lumbricais da mão direito",
+    "normalizedName": "musculos lumbricais da mao direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Lumbrical muscles of hand"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "function": "Função principal: Movimentar finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0224",
+    "sourceId": "ZAN-0224",
+    "name": "Cabeça medial do músculo flexor curto do hálux esquerdo",
+    "normalizedName": "cabeca medial do musculo flexor curto do halux esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Medial head of flexor hallucis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0225",
+    "sourceId": "ZAN-0225",
+    "name": "Cabeça medial do músculo flexor curto do hálux direito",
+    "normalizedName": "cabeca medial do musculo flexor curto do halux direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Medial head of flexor hallucis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0226",
+    "sourceId": "ZAN-0226",
+    "name": "Cabeça medial do músculo gastrocnêmio esquerdo",
+    "normalizedName": "cabeca medial do musculo gastrocnemio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Medial head of gastrocnemius"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Realiza a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "function": "Função principal: Realizar a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0227",
+    "sourceId": "ZAN-0227",
+    "name": "Cabeça medial do músculo gastrocnêmio direito",
+    "normalizedName": "cabeca medial do musculo gastrocnemio direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Medial head of gastrocnemius"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Realiza a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "function": "Função principal: Realizar a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0228",
+    "sourceId": "ZAN-0228",
+    "name": "Cabeça medial do músculo tríceps braquial esquerdo",
+    "normalizedName": "cabeca medial do musculo triceps braquial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Medial head of triceps brachii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende o cotovelo o cotovelo.",
+    "function": "Função principal: Estender o cotovelo o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0229",
+    "sourceId": "ZAN-0229",
+    "name": "Cabeça medial do músculo tríceps braquial direito",
+    "normalizedName": "cabeca medial do musculo triceps braquial direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Medial head of triceps brachii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende o cotovelo o cotovelo.",
+    "function": "Função principal: Estender o cotovelo o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0230",
+    "sourceId": "ZAN-0230",
+    "name": "Músculo pterigóideo medial esquerdo",
+    "normalizedName": "musculo pterigoideo medial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Medial pterygoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Movimenta a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "function": "Função principal: Movimentar a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0231",
+    "sourceId": "ZAN-0231",
+    "name": "Músculo pterigóideo medial direito",
+    "normalizedName": "musculo pterigoideo medial direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Medial pterygoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Movimenta a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "function": "Função principal: Movimentar a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0232",
+    "sourceId": "ZAN-0232",
+    "name": "Músculo reto medial esquerdo",
+    "normalizedName": "musculo reto medial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Medial rectus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0233",
+    "sourceId": "ZAN-0233",
+    "name": "Músculo reto medial direito",
+    "normalizedName": "musculo reto medial direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Medial rectus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0234",
+    "sourceId": "ZAN-0234",
+    "name": "Músculo mentual esquerdo",
+    "normalizedName": "musculo mentual esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Mentalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva a pele do mento o queixo.",
+    "function": "Função principal: Elevar a pele do mento o queixo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0235",
+    "sourceId": "ZAN-0235",
+    "name": "Músculo mentual direito",
+    "normalizedName": "musculo mentual direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Mentalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva a pele do mento o queixo.",
+    "function": "Função principal: Elevar a pele do mento o queixo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0236",
+    "sourceId": "ZAN-0236",
+    "name": "Músculo constritor médio da faringe esquerdo",
+    "normalizedName": "musculo constritor medio da faringe esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Middle pharyngeal constrictor"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Constringe a faringe o bolo alimentar durante a deglutição.",
+    "function": "Função principal: Constrigir a faringe o bolo alimentar durante a deglutição.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0237",
+    "sourceId": "ZAN-0237",
+    "name": "Músculo constritor médio da faringe direito",
+    "normalizedName": "musculo constritor medio da faringe direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Middle pharyngeal constrictor"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Constringe a faringe o bolo alimentar durante a deglutição.",
+    "function": "Função principal: Constrigir a faringe o bolo alimentar durante a deglutição.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0238",
+    "sourceId": "ZAN-0238",
+    "name": "Músculo multífido do pescoço esquerdo",
+    "normalizedName": "musculo multifido do pescoco esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Multifidus colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0239",
+    "sourceId": "ZAN-0239",
+    "name": "Músculo multífido do pescoço direito",
+    "normalizedName": "musculo multifido do pescoco direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Multifidus colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0240",
+    "sourceId": "ZAN-0240",
+    "name": "Músculo multífido do lombo esquerdo",
+    "normalizedName": "musculo multifido do lombo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Multifidus lumborum muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0241",
+    "sourceId": "ZAN-0241",
+    "name": "Músculo multífido do lombo direito",
+    "normalizedName": "musculo multifido do lombo direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Multifidus lumborum muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0242",
+    "sourceId": "ZAN-0242",
+    "name": "Músculo multífido do tórax esquerdo",
+    "normalizedName": "musculo multifido do torax esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Multifidus thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0243",
+    "sourceId": "ZAN-0243",
+    "name": "Músculo multífido do tórax direito",
+    "normalizedName": "musculo multifido do torax direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Multifidus thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0244",
+    "sourceId": "ZAN-0244",
+    "name": "Músculo milo-hióideo esquerdo",
+    "normalizedName": "musculo milo-hioideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Mylohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Eleva e estabiliza o osso hioide a deglutição e a fonação.",
+    "function": "Função principal: Elevar e estabilizar o osso hioide a deglutição e a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0245",
+    "sourceId": "ZAN-0245",
+    "name": "Músculo milo-hióideo direito",
+    "normalizedName": "musculo milo-hioideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Mylohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Eleva e estabiliza o osso hioide a deglutição e a fonação.",
+    "function": "Função principal: Elevar e estabilizar o osso hioide a deglutição e a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0246",
+    "sourceId": "ZAN-0246",
+    "name": "Músculo nasal esquerdo",
+    "normalizedName": "musculo nasal esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Nasalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Comprime as narinas o nariz.",
+    "function": "Função principal: Comprimir as narinas o nariz.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0247",
+    "sourceId": "ZAN-0247",
+    "name": "Músculo nasal direito",
+    "normalizedName": "musculo nasal direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Nasalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Comprime as narinas o nariz.",
+    "function": "Função principal: Comprimir as narinas o nariz.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0248",
+    "sourceId": "ZAN-0248",
+    "name": "Cabeça oblíqua do músculo adutor do hálux esquerdo",
+    "normalizedName": "cabeca obliqua do musculo adutor do halux esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Oblique head of adductor hallucis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0249",
+    "sourceId": "ZAN-0249",
+    "name": "Cabeça oblíqua do músculo adutor do hálux direito",
+    "normalizedName": "cabeca obliqua do musculo adutor do halux direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Oblique head of adductor hallucis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0250",
+    "sourceId": "ZAN-0250",
+    "name": "Cabeça oblíqua do músculo adutor do polegar esquerdo",
+    "normalizedName": "cabeca obliqua do musculo adutor do polegar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Oblique head of adductor pollicis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0251",
+    "sourceId": "ZAN-0251",
+    "name": "Cabeça oblíqua do músculo adutor do polegar direito",
+    "normalizedName": "cabeca obliqua do musculo adutor do polegar direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Oblique head of adductor pollicis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0252",
+    "sourceId": "ZAN-0252",
+    "name": "Parte oblíqua do músculo cricotireóideo esquerdo",
+    "normalizedName": "parte obliqua do musculo cricotireoideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Oblique part of cricothyroid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Tensiona as pregas vocais a fonação.",
+    "function": "Função principal: Tensionar as pregas vocais a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0253",
+    "sourceId": "ZAN-0253",
+    "name": "Parte oblíqua do músculo cricotireóideo direito",
+    "normalizedName": "parte obliqua do musculo cricotireoideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Oblique part of cricothyroid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Tensiona as pregas vocais a fonação.",
+    "function": "Função principal: Tensionar as pregas vocais a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0254",
+    "sourceId": "ZAN-0254",
+    "name": "Músculo oblíquo inferior da cabeça esquerdo",
+    "normalizedName": "musculo obliquo inferior da cabeca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Obliquus inferior capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0255",
+    "sourceId": "ZAN-0255",
+    "name": "Músculo oblíquo inferior da cabeça direito",
+    "normalizedName": "musculo obliquo inferior da cabeca direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Obliquus inferior capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0256",
+    "sourceId": "ZAN-0256",
+    "name": "Músculo oblíquo superior da cabeça esquerdo",
+    "normalizedName": "musculo obliquo superior da cabeca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Obliquus superior capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0257",
+    "sourceId": "ZAN-0257",
+    "name": "Músculo oblíquo superior da cabeça direito",
+    "normalizedName": "musculo obliquo superior da cabeca direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Obliquus superior capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0258",
+    "sourceId": "ZAN-0258",
+    "name": "Músculo obturador externo esquerdo",
+    "normalizedName": "musculo obturador externo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Obturator externus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0259",
+    "sourceId": "ZAN-0259",
+    "name": "Músculo obturador externo direito",
+    "normalizedName": "musculo obturador externo direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Obturator externus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0260",
+    "sourceId": "ZAN-0260",
+    "name": "Músculo obturador interno esquerdo",
+    "normalizedName": "musculo obturador interno esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Obturator internus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0261",
+    "sourceId": "ZAN-0261",
+    "name": "Músculo obturador interno direito",
+    "normalizedName": "musculo obturador interno direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Obturator internus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0262",
+    "sourceId": "ZAN-0262",
+    "name": "Músculo occipital esquerdo",
+    "normalizedName": "musculo occipital esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Occipitalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Traciona a gálea aponeurótica o couro cabeludo.",
+    "function": "Função principal: Tracionar a gálea aponeurótica o couro cabeludo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0263",
+    "sourceId": "ZAN-0263",
+    "name": "Músculo occipital direito",
+    "normalizedName": "musculo occipital direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Occipitalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Traciona a gálea aponeurótica o couro cabeludo.",
+    "function": "Função principal: Tracionar a gálea aponeurótica o couro cabeludo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0264",
+    "sourceId": "ZAN-0264",
+    "name": "Músculo omo-hióideo esquerdo",
+    "normalizedName": "musculo omo-hioideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Omohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Deprime o osso hioide e a laringe a deglutição e a fala.",
+    "function": "Função principal: Deprimir o osso hioide e a laringe a deglutição e a fala.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0265",
+    "sourceId": "ZAN-0265",
+    "name": "Músculo omo-hióideo direito",
+    "normalizedName": "musculo omo-hioideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Omohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Deprime o osso hioide e a laringe a deglutição e a fala.",
+    "function": "Função principal: Deprimir o osso hioide e a laringe a deglutição e a fala.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0266",
+    "sourceId": "ZAN-0266",
+    "name": "Músculo oponente do dedo mínimo da mão esquerdo",
+    "normalizedName": "musculo oponente do dedo minimo da mao esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Opponens digiti minimi muscle of hand"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0267",
+    "sourceId": "ZAN-0267",
+    "name": "Músculo oponente do dedo mínimo da mão direito",
+    "normalizedName": "musculo oponente do dedo minimo da mao direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Opponens digiti minimi muscle of hand"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0268",
+    "sourceId": "ZAN-0268",
+    "name": "Músculo oponente do polegar esquerdo",
+    "normalizedName": "musculo oponente do polegar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Opponens pollicis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0269",
+    "sourceId": "ZAN-0269",
+    "name": "Músculo oponente do polegar direito",
+    "normalizedName": "musculo oponente do polegar direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Opponens pollicis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0270",
+    "sourceId": "ZAN-0270",
+    "name": "Músculo orbicular da boca esquerdo",
+    "normalizedName": "musculo orbicular da boca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Orbicularis oris muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Fecha e projeta os lábios a abertura da boca.",
+    "function": "Função principal: Fechar e projetar os lábios a abertura da boca.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0271",
+    "sourceId": "ZAN-0271",
+    "name": "Músculo orbicular da boca direito",
+    "normalizedName": "musculo orbicular da boca direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Orbicularis oris muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Fecha e projeta os lábios a abertura da boca.",
+    "function": "Função principal: Fechar e projetar os lábios a abertura da boca.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0272",
+    "sourceId": "ZAN-0272",
+    "name": "Parte orbital do músculo orbicular do olho esquerdo",
+    "normalizedName": "parte orbital do musculo orbicular do olho esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Orbital part of orbicularis oculi"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Fecha as pálpebras a abertura palpebral.",
+    "function": "Função principal: Fechar as pálpebras a abertura palpebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0273",
+    "sourceId": "ZAN-0273",
+    "name": "Parte orbital do músculo orbicular do olho direito",
+    "normalizedName": "parte orbital do musculo orbicular do olho direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Orbital part of orbicularis oculi"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Fecha as pálpebras a abertura palpebral.",
+    "function": "Função principal: Fechar as pálpebras a abertura palpebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0274",
+    "sourceId": "ZAN-0274",
+    "name": "Músculo palatofaríngeo esquerdo",
+    "normalizedName": "musculo palatofaringeo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Palatopharyngeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva a faringe e a laringe a deglutição.",
+    "function": "Função principal: Elevar a faringe e a laringe a deglutição.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0275",
+    "sourceId": "ZAN-0275",
+    "name": "Músculo palatofaríngeo direito",
+    "normalizedName": "musculo palatofaringeo direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Palatopharyngeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva a faringe e a laringe a deglutição.",
+    "function": "Função principal: Elevar a faringe e a laringe a deglutição.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0276",
+    "sourceId": "ZAN-0276",
+    "name": "Músculos interósseos palmares esquerdo",
+    "normalizedName": "musculos interosseos palmares esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Palmar interossei muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "function": "Função principal: Movimentar finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0277",
+    "sourceId": "ZAN-0277",
+    "name": "Músculos interósseos palmares direito",
+    "normalizedName": "musculos interosseos palmares direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Palmar interossei muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "function": "Função principal: Movimentar finamente os dedos os dedos da mão (flexão das metacarpofalângicas e extensão das interfalângicas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0278",
+    "sourceId": "ZAN-0278",
+    "name": "Músculo palmar longo esquerdo",
+    "normalizedName": "musculo palmar longo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Palmaris longus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona o punho o punho (tensiona a aponeurose palmar).",
+    "function": "Função principal: Flexionar o punho o punho (tensiona a aponeurose palmar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0279",
+    "sourceId": "ZAN-0279",
+    "name": "Músculo palmar longo direito",
+    "normalizedName": "musculo palmar longo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Palmaris longus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona o punho o punho (tensiona a aponeurose palmar).",
+    "function": "Função principal: Flexionar o punho o punho (tensiona a aponeurose palmar).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0280",
+    "sourceId": "ZAN-0280",
+    "name": "Parte palpebral do músculo orbicular do olho esquerdo",
+    "normalizedName": "parte palpebral do musculo orbicular do olho esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Palpebral part of orbicularis oculi"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Fecha as pálpebras a abertura palpebral.",
+    "function": "Função principal: Fechar as pálpebras a abertura palpebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0281",
+    "sourceId": "ZAN-0281",
+    "name": "Parte palpebral do músculo orbicular do olho direito",
+    "normalizedName": "parte palpebral do musculo orbicular do olho direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Palpebral part of orbicularis oculi"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Fecha as pálpebras a abertura palpebral.",
+    "function": "Função principal: Fechar as pálpebras a abertura palpebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0282",
+    "sourceId": "ZAN-0282",
+    "name": "Músculo pectíneo esquerdo",
+    "normalizedName": "musculo pectineo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Pectineus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0283",
+    "sourceId": "ZAN-0283",
+    "name": "Músculo pectíneo direito",
+    "normalizedName": "musculo pectineo direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Pectineus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Aduz a coxa a coxa em direção à linha média.",
+    "function": "Função principal: Aduzir a coxa a coxa em direção à linha média.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0284",
+    "sourceId": "ZAN-0284",
+    "name": "Músculo peitoral menor esquerdo",
+    "normalizedName": "musculo peitoral menor esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Pectoralis minor muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Deprime e protrai a escápula a escápula (auxílio na inspiração).",
+    "function": "Função principal: Deprimir e protrair a escápula a escápula (auxílio na inspiração).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0285",
+    "sourceId": "ZAN-0285",
+    "name": "Músculo peitoral menor direito",
+    "normalizedName": "musculo peitoral menor direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Pectoralis minor muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Deprime e protrai a escápula a escápula (auxílio na inspiração).",
+    "function": "Função principal: Deprimir e protrair a escápula a escápula (auxílio na inspiração).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0286",
+    "sourceId": "ZAN-0286",
+    "name": "Músculo piriforme esquerdo",
+    "normalizedName": "musculo piriforme esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Piriformis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0287",
+    "sourceId": "ZAN-0287",
+    "name": "Músculo piriforme direito",
+    "normalizedName": "musculo piriforme direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Piriformis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0288",
+    "sourceId": "ZAN-0288",
+    "name": "Músculos interósseos plantares esquerdo",
+    "normalizedName": "musculos interosseos plantares esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Plantar interossei muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "function": "Função principal: Movimentar os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0289",
+    "sourceId": "ZAN-0289",
+    "name": "Músculos interósseos plantares direito",
+    "normalizedName": "musculos interosseos plantares direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Plantar interossei muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "function": "Função principal: Movimentar os dedos do pé os dedos do pé (abdução, adução e flexão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0290",
+    "sourceId": "ZAN-0290",
+    "name": "Músculo plantar esquerdo",
+    "normalizedName": "musculo plantar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Plantaris muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Realiza a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "function": "Função principal: Realizar a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0291",
+    "sourceId": "ZAN-0291",
+    "name": "Músculo plantar direito",
+    "normalizedName": "musculo plantar direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Plantaris muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Realiza a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "function": "Função principal: Realizar a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0292",
+    "sourceId": "ZAN-0292",
+    "name": "Músculo platisma esquerdo",
+    "normalizedName": "musculo platisma esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Platysma"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Tensiona a pele do pescoço a expressão facial inferior.",
+    "function": "Função principal: Tensionar a pele do pescoço a expressão facial inferior.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0293",
+    "sourceId": "ZAN-0293",
+    "name": "Músculo platisma direito",
+    "normalizedName": "musculo platisma direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Platysma"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Tensiona a pele do pescoço a expressão facial inferior.",
+    "function": "Função principal: Tensionar a pele do pescoço a expressão facial inferior.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0294",
+    "sourceId": "ZAN-0294",
+    "name": "Músculo poplíteo esquerdo",
+    "normalizedName": "musculo popliteo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Popliteus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Roda medialmente a tíbia o joelho (desbloqueia a extensão).",
+    "function": "Função principal: Rodar medialmente a tíbia o joelho (desbloqueia a extensão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0295",
+    "sourceId": "ZAN-0295",
+    "name": "Músculo poplíteo direito",
+    "normalizedName": "musculo popliteo direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Popliteus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Roda medialmente a tíbia o joelho (desbloqueia a extensão).",
+    "function": "Função principal: Rodar medialmente a tíbia o joelho (desbloqueia a extensão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0296",
+    "sourceId": "ZAN-0296",
+    "name": "Ventre posterior do músculo digástrico esquerdo",
+    "normalizedName": "ventre posterior do musculo digastrico esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Posterior belly of digastric muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Eleva e estabiliza o osso hioide a deglutição e a fonação.",
+    "function": "Função principal: Elevar e estabilizar o osso hioide a deglutição e a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0297",
+    "sourceId": "ZAN-0297",
+    "name": "Ventre posterior do músculo digástrico direito",
+    "normalizedName": "ventre posterior do musculo digastrico direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Posterior belly of digastric muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Eleva e estabiliza o osso hioide a deglutição e a fonação.",
+    "function": "Função principal: Elevar e estabilizar o osso hioide a deglutição e a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0298",
+    "sourceId": "ZAN-0298",
+    "name": "Músculo cricoaritenóideo posterior esquerdo",
+    "normalizedName": "musculo cricoaritenoideo posterior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Posterior crico-arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Abduz as pregas vocais a abertura da glote.",
+    "function": "Função principal: Abduzir as pregas vocais a abertura da glote.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0299",
+    "sourceId": "ZAN-0299",
+    "name": "Músculo cricoaritenóideo posterior direito",
+    "normalizedName": "musculo cricoaritenoideo posterior direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Posterior crico-arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Abduz as pregas vocais a abertura da glote.",
+    "function": "Função principal: Abduzir as pregas vocais a abertura da glote.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0300",
+    "sourceId": "ZAN-0300",
+    "name": "Músculo prócero esquerdo",
+    "normalizedName": "musculo procero esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Procerus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Deprime a pele da glabela a região entre as sobrancelhas.",
+    "function": "Função principal: Deprimir a pele da glabela a região entre as sobrancelhas.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0301",
+    "sourceId": "ZAN-0301",
+    "name": "Músculo prócero direito",
+    "normalizedName": "musculo procero direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Procerus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Deprime a pele da glabela a região entre as sobrancelhas.",
+    "function": "Função principal: Deprimir a pele da glabela a região entre as sobrancelhas.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0302",
+    "sourceId": "ZAN-0302",
+    "name": "Músculo pronador quadrado esquerdo",
+    "normalizedName": "musculo pronador quadrado esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Pronator quadratus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Prona o antebraço o antebraço.",
+    "function": "Função principal: Pronar o antebraço o antebraço.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0303",
+    "sourceId": "ZAN-0303",
+    "name": "Músculo pronador quadrado direito",
+    "normalizedName": "musculo pronador quadrado direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Pronator quadratus"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Prona o antebraço o antebraço.",
+    "function": "Função principal: Pronar o antebraço o antebraço.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0304",
+    "sourceId": "ZAN-0304",
+    "name": "Músculo psoas maior esquerdo",
+    "normalizedName": "musculo psoas maior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Psoas major"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Flexiona o quadril o quadril (componente do iliopsoas).",
+    "function": "Função principal: Flexionar o quadril o quadril (componente do iliopsoas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0305",
+    "sourceId": "ZAN-0305",
+    "name": "Músculo psoas maior direito",
+    "normalizedName": "musculo psoas maior direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Psoas major"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Flexiona o quadril o quadril (componente do iliopsoas).",
+    "function": "Função principal: Flexionar o quadril o quadril (componente do iliopsoas).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0306",
+    "sourceId": "ZAN-0306",
+    "name": "Músculo púbico-anal esquerdo",
+    "normalizedName": "musculo pubico-anal esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Pubo-analis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Sustenta as vísceras pélvicas o assoalho pélvico.",
+    "function": "Função principal: Sustentar as vísceras pélvicas o assoalho pélvico.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0307",
+    "sourceId": "ZAN-0307",
+    "name": "Músculo púbico-anal direito",
+    "normalizedName": "musculo pubico-anal direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Pubo-analis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Sustenta as vísceras pélvicas o assoalho pélvico.",
+    "function": "Função principal: Sustentar as vísceras pélvicas o assoalho pélvico.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0308",
+    "sourceId": "ZAN-0308",
+    "name": "Músculo pubococcígeo esquerdo",
+    "normalizedName": "musculo pubococcigeo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Pubococcygeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Sustenta as vísceras pélvicas o assoalho pélvico.",
+    "function": "Função principal: Sustentar as vísceras pélvicas o assoalho pélvico.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0309",
+    "sourceId": "ZAN-0309",
+    "name": "Músculo pubococcígeo direito",
+    "normalizedName": "musculo pubococcigeo direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Pubococcygeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Sustenta as vísceras pélvicas o assoalho pélvico.",
+    "function": "Função principal: Sustentar as vísceras pélvicas o assoalho pélvico.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0310",
+    "sourceId": "ZAN-0310",
+    "name": "Músculo piramidal do abdome esquerdo",
+    "normalizedName": "musculo piramidal do abdome esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Pyramidalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Tensiona a linha alba a parede abdominal.",
+    "function": "Função principal: Tensionar a linha alba a parede abdominal.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0311",
+    "sourceId": "ZAN-0311",
+    "name": "Músculo piramidal do abdome direito",
+    "normalizedName": "musculo piramidal do abdome direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Pyramidalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Tensiona a linha alba a parede abdominal.",
+    "function": "Função principal: Tensionar a linha alba a parede abdominal.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0312",
+    "sourceId": "ZAN-0312",
+    "name": "Músculo quadrado femoral esquerdo",
+    "normalizedName": "musculo quadrado femoral esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Quadratus femoris muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0313",
+    "sourceId": "ZAN-0313",
+    "name": "Músculo quadrado femoral direito",
+    "normalizedName": "musculo quadrado femoral direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Quadratus femoris muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0314",
+    "sourceId": "ZAN-0314",
+    "name": "Músculo quadrado do lombo esquerdo",
+    "normalizedName": "musculo quadrado do lombo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Quadratus lumborum muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Inclina lateralmente o tronco o tronco (fixa a 12ª costela).",
+    "function": "Função principal: Inclinar lateralmente o tronco o tronco (fixa a 12ª costela).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0315",
+    "sourceId": "ZAN-0315",
+    "name": "Músculo quadrado do lombo direito",
+    "normalizedName": "musculo quadrado do lombo direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Quadratus lumborum muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Inclina lateralmente o tronco o tronco (fixa a 12ª costela).",
+    "function": "Função principal: Inclinar lateralmente o tronco o tronco (fixa a 12ª costela).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0316",
+    "sourceId": "ZAN-0316",
+    "name": "Músculo quadrado plantar esquerdo",
+    "normalizedName": "musculo quadrado plantar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Quadratus plantae muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Auxilia a flexão dos dedos do pé o tendão do flexor longo dos dedos.",
+    "function": "Função principal: Auxiliar a flexão dos dedos do pé o tendão do flexor longo dos dedos.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0317",
+    "sourceId": "ZAN-0317",
+    "name": "Músculo quadrado plantar direito",
+    "normalizedName": "musculo quadrado plantar direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Quadratus plantae muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Auxilia a flexão dos dedos do pé o tendão do flexor longo dos dedos.",
+    "function": "Função principal: Auxiliar a flexão dos dedos do pé o tendão do flexor longo dos dedos.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0318",
+    "sourceId": "ZAN-0318",
+    "name": "Cabeça radial do músculo flexor superficial dos dedos esquerdo",
+    "normalizedName": "cabeca radial do musculo flexor superficial dos dedos esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Radial head of flexor digitorum superficialis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona os dedos os dedos da mão.",
+    "function": "Função principal: Flexionar os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0319",
+    "sourceId": "ZAN-0319",
+    "name": "Cabeça radial do músculo flexor superficial dos dedos direito",
+    "normalizedName": "cabeca radial do musculo flexor superficial dos dedos direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Radial head of flexor digitorum superficialis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona os dedos os dedos da mão.",
+    "function": "Função principal: Flexionar os dedos os dedos da mão.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0320",
+    "sourceId": "ZAN-0320",
+    "name": "Músculo reto do abdome esquerdo",
+    "normalizedName": "musculo reto do abdome esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Rectus abdominis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Flexiona o tronco o tronco.",
+    "function": "Função principal: Flexionar o tronco o tronco.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0321",
+    "sourceId": "ZAN-0321",
+    "name": "Músculo reto do abdome direito",
+    "normalizedName": "musculo reto do abdome direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Rectus abdominis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Flexiona o tronco o tronco.",
+    "function": "Função principal: Flexionar o tronco o tronco.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0322",
+    "sourceId": "ZAN-0322",
+    "name": "Músculo reto anterior da cabeça esquerdo",
+    "normalizedName": "musculo reto anterior da cabeca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Rectus anterior capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0323",
+    "sourceId": "ZAN-0323",
+    "name": "Músculo reto anterior da cabeça direito",
+    "normalizedName": "musculo reto anterior da cabeca direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Rectus anterior capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0324",
+    "sourceId": "ZAN-0324",
+    "name": "Músculo reto femoral esquerdo",
+    "normalizedName": "musculo reto femoral esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Rectus femoris muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Estende o joelho e flexiona o quadril o joelho e o quadril.",
+    "function": "Função principal: Estender o joelho e flexionar o quadril o joelho e o quadril.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0325",
+    "sourceId": "ZAN-0325",
+    "name": "Músculo reto femoral direito",
+    "normalizedName": "musculo reto femoral direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Rectus femoris muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Estende o joelho e flexiona o quadril o joelho e o quadril.",
+    "function": "Função principal: Estender o joelho e flexionar o quadril o joelho e o quadril.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0326",
+    "sourceId": "ZAN-0326",
+    "name": "Músculo reto lateral da cabeça esquerdo",
+    "normalizedName": "musculo reto lateral da cabeca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Rectus lateralis capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0327",
+    "sourceId": "ZAN-0327",
+    "name": "Músculo reto lateral da cabeça direito",
+    "normalizedName": "musculo reto lateral da cabeca direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Rectus lateralis capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0328",
+    "sourceId": "ZAN-0328",
+    "name": "Músculo reto posterior maior da cabeça esquerdo",
+    "normalizedName": "musculo reto posterior maior da cabeca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Rectus posterior major capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0329",
+    "sourceId": "ZAN-0329",
+    "name": "Músculo reto posterior maior da cabeça direito",
+    "normalizedName": "musculo reto posterior maior da cabeca direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Rectus posterior major capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0330",
+    "sourceId": "ZAN-0330",
+    "name": "Músculo reto posterior menor da cabeça esquerdo",
+    "normalizedName": "musculo reto posterior menor da cabeca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Rectus posterior minor capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0331",
+    "sourceId": "ZAN-0331",
+    "name": "Músculo reto posterior menor da cabeça direito",
+    "normalizedName": "musculo reto posterior menor da cabeca direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Rectus posterior minor capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0332",
+    "sourceId": "ZAN-0332",
+    "name": "Músculo romboide maior esquerdo",
+    "normalizedName": "musculo romboide maior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Rhomboid major muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Retrai e estabiliza a escápula a escápula.",
+    "function": "Função principal: Retrair e estabilizar a escápula a escápula.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0333",
+    "sourceId": "ZAN-0333",
+    "name": "Músculo romboide maior direito",
+    "normalizedName": "musculo romboide maior direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Rhomboid major muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Retrai e estabiliza a escápula a escápula.",
+    "function": "Função principal: Retrair e estabilizar a escápula a escápula.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0334",
+    "sourceId": "ZAN-0334",
+    "name": "Músculo romboide menor esquerdo",
+    "normalizedName": "musculo romboide menor esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Rhomboid minor muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Retrai e estabiliza a escápula a escápula.",
+    "function": "Função principal: Retrair e estabilizar a escápula a escápula.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0335",
+    "sourceId": "ZAN-0335",
+    "name": "Músculo romboide menor direito",
+    "normalizedName": "musculo romboide menor direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Rhomboid minor muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Retrai e estabiliza a escápula a escápula.",
+    "function": "Função principal: Retrair e estabilizar a escápula a escápula.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0336",
+    "sourceId": "ZAN-0336",
+    "name": "Músculo risório esquerdo",
+    "normalizedName": "musculo risorio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Risorius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Retrai o canto da boca a face.",
+    "function": "Função principal: Retrair o canto da boca a face.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0337",
+    "sourceId": "ZAN-0337",
+    "name": "Músculo risório direito",
+    "normalizedName": "musculo risorio direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Risorius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Retrai o canto da boca a face.",
+    "function": "Função principal: Retrair o canto da boca a face.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0338",
+    "sourceId": "ZAN-0338",
+    "name": "Músculos rotadores esquerdo",
+    "normalizedName": "musculos rotadores esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Rotatores"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0339",
+    "sourceId": "ZAN-0339",
+    "name": "Músculos rotadores direito",
+    "normalizedName": "musculos rotadores direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Rotatores"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0340",
+    "sourceId": "ZAN-0340",
+    "name": "Músculo sartório esquerdo",
+    "normalizedName": "musculo sartorio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Sartorius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Flexiona o quadril e o joelho o quadril e o joelho (abduz e roda externamente a coxa).",
+    "function": "Função principal: Flexionar o quadril e o joelho o quadril e o joelho (abduz e roda externamente a coxa).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0341",
+    "sourceId": "ZAN-0341",
+    "name": "Músculo sartório direito",
+    "normalizedName": "musculo sartorio direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Sartorius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Flexiona o quadril e o joelho o quadril e o joelho (abduz e roda externamente a coxa).",
+    "function": "Função principal: Flexionar o quadril e o joelho o quadril e o joelho (abduz e roda externamente a coxa).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0342",
+    "sourceId": "ZAN-0342",
+    "name": "Músculo escaleno anterior esquerdo",
+    "normalizedName": "musculo escaleno anterior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Scalenus anterior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Inclina lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "function": "Função principal: Inclinar lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0343",
+    "sourceId": "ZAN-0343",
+    "name": "Músculo escaleno anterior direito",
+    "normalizedName": "musculo escaleno anterior direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Scalenus anterior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Inclina lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "function": "Função principal: Inclinar lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0344",
+    "sourceId": "ZAN-0344",
+    "name": "Músculo escaleno médio esquerdo",
+    "normalizedName": "musculo escaleno medio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Scalenus medius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Inclina lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "function": "Função principal: Inclinar lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0345",
+    "sourceId": "ZAN-0345",
+    "name": "Músculo escaleno médio direito",
+    "normalizedName": "musculo escaleno medio direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Scalenus medius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Inclina lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "function": "Função principal: Inclinar lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0346",
+    "sourceId": "ZAN-0346",
+    "name": "Músculo escaleno posterior esquerdo",
+    "normalizedName": "musculo escaleno posterior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Scalenus posterior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Inclina lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "function": "Função principal: Inclinar lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0347",
+    "sourceId": "ZAN-0347",
+    "name": "Músculo escaleno posterior direito",
+    "normalizedName": "musculo escaleno posterior direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Scalenus posterior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Inclina lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "function": "Função principal: Inclinar lateralmente o pescoço o pescoço (também eleva as costelas na inspiração).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0348",
+    "sourceId": "ZAN-0348",
+    "name": "Parte espinhal do músculo deltoide esquerdo",
+    "normalizedName": "parte espinhal do musculo deltoide esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Scapular spinal part of deltoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Abduz o braço o ombro.",
+    "function": "Função principal: Abduzir o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0349",
+    "sourceId": "ZAN-0349",
+    "name": "Parte espinhal do músculo deltoide direito",
+    "normalizedName": "parte espinhal do musculo deltoide direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Scapular spinal part of deltoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Abduz o braço o ombro.",
+    "function": "Função principal: Abduzir o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0350",
+    "sourceId": "ZAN-0350",
+    "name": "Músculo semimembranoso esquerdo",
+    "normalizedName": "musculo semimembranoso esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Semimembranosus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Flexiona o joelho e estende o quadril o joelho (isquiotibiais).",
+    "function": "Função principal: Flexionar o joelho e estender o quadril o joelho (isquiotibiais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0351",
+    "sourceId": "ZAN-0351",
+    "name": "Músculo semimembranoso direito",
+    "normalizedName": "musculo semimembranoso direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Semimembranosus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Flexiona o joelho e estende o quadril o joelho (isquiotibiais).",
+    "function": "Função principal: Flexionar o joelho e estender o quadril o joelho (isquiotibiais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0352",
+    "sourceId": "ZAN-0352",
+    "name": "Músculo semiespinal do pescoço esquerdo",
+    "normalizedName": "musculo semiespinal do pescoco esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Semispinalis colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0353",
+    "sourceId": "ZAN-0353",
+    "name": "Músculo semiespinal do pescoço direito",
+    "normalizedName": "musculo semiespinal do pescoco direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Semispinalis colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0354",
+    "sourceId": "ZAN-0354",
+    "name": "Músculo semiespinal do tórax esquerdo",
+    "normalizedName": "musculo semiespinal do torax esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Semispinalis thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e mantém a postura da coluna a coluna vertebral.",
+    "function": "Função principal: Estender e manter a postura da coluna a coluna vertebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0355",
+    "sourceId": "ZAN-0355",
+    "name": "Músculo semiespinal do tórax direito",
+    "normalizedName": "musculo semiespinal do torax direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Semispinalis thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e mantém a postura da coluna a coluna vertebral.",
+    "function": "Função principal: Estender e manter a postura da coluna a coluna vertebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0356",
+    "sourceId": "ZAN-0356",
+    "name": "Músculo semitendinoso esquerdo",
+    "normalizedName": "musculo semitendinoso esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Semitendinosus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Flexiona o joelho e estende o quadril o joelho (isquiotibiais).",
+    "function": "Função principal: Flexionar o joelho e estender o quadril o joelho (isquiotibiais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0357",
+    "sourceId": "ZAN-0357",
+    "name": "Músculo semitendinoso direito",
+    "normalizedName": "musculo semitendinoso direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Semitendinosus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Flexiona o joelho e estende o quadril o joelho (isquiotibiais).",
+    "function": "Função principal: Flexionar o joelho e estender o quadril o joelho (isquiotibiais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0358",
+    "sourceId": "ZAN-0358",
+    "name": "Músculo serrátil anterior esquerdo",
+    "normalizedName": "musculo serratil anterior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Serratus anterior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Protui a escápula a escápula (mantém-na aplicada ao tórax).",
+    "function": "Função principal: Protruir a escápula a escápula (mantém-na aplicada ao tórax).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0359",
+    "sourceId": "ZAN-0359",
+    "name": "Músculo serrátil anterior direito",
+    "normalizedName": "musculo serratil anterior direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Serratus anterior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Protui a escápula a escápula (mantém-na aplicada ao tórax).",
+    "function": "Função principal: Protruir a escápula a escápula (mantém-na aplicada ao tórax).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0360",
+    "sourceId": "ZAN-0360",
+    "name": "Músculo serrátil posterior inferior esquerdo",
+    "normalizedName": "musculo serratil posterior inferior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Serratus posterior inferior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0361",
+    "sourceId": "ZAN-0361",
+    "name": "Músculo serrátil posterior inferior direito",
+    "normalizedName": "musculo serratil posterior inferior direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Serratus posterior inferior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0362",
+    "sourceId": "ZAN-0362",
+    "name": "Músculo serrátil posterior superior esquerdo",
+    "normalizedName": "musculo serratil posterior superior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Serratus posterior superior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0363",
+    "sourceId": "ZAN-0363",
+    "name": "Músculo serrátil posterior superior direito",
+    "normalizedName": "musculo serratil posterior superior direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Serratus posterior superior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0364",
+    "sourceId": "ZAN-0364",
+    "name": "Cabeça curta do músculo bíceps braquial esquerdo",
+    "normalizedName": "cabeca curta do musculo biceps braquial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Short head of biceps brachii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona o cotovelo e supina o antebraço o cotovelo.",
+    "function": "Função principal: Flexionar o cotovelo e supinar o antebraço o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0365",
+    "sourceId": "ZAN-0365",
+    "name": "Cabeça curta do músculo bíceps braquial direito",
+    "normalizedName": "cabeca curta do musculo biceps braquial direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Short head of biceps brachii"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona o cotovelo e supina o antebraço o cotovelo.",
+    "function": "Função principal: Flexionar o cotovelo e supinar o antebraço o cotovelo.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0366",
+    "sourceId": "ZAN-0366",
+    "name": "Cabeça curta do músculo bíceps femoral esquerdo",
+    "normalizedName": "cabeca curta do musculo biceps femoral esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Short head of biceps femoris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Flexiona o joelho e estende o quadril o joelho (isquiotibiais).",
+    "function": "Função principal: Flexionar o joelho e estender o quadril o joelho (isquiotibiais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0367",
+    "sourceId": "ZAN-0367",
+    "name": "Cabeça curta do músculo bíceps femoral direito",
+    "normalizedName": "cabeca curta do musculo biceps femoral direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Short head of biceps femoris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Flexiona o joelho e estende o quadril o joelho (isquiotibiais).",
+    "function": "Função principal: Flexionar o joelho e estender o quadril o joelho (isquiotibiais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0368",
+    "sourceId": "ZAN-0368",
+    "name": "Músculo sóleo esquerdo",
+    "normalizedName": "musculo soleo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Soleus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Realiza a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "function": "Função principal: Realizar a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0369",
+    "sourceId": "ZAN-0369",
+    "name": "Músculo sóleo direito",
+    "normalizedName": "musculo soleo direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Soleus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Realiza a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "function": "Função principal: Realizar a flexão plantar do tornozelo o tornozelo (gastrocnêmio também flexiona o joelho).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0370",
+    "sourceId": "ZAN-0370",
+    "name": "Músculo espinhal da cabeça esquerdo",
+    "normalizedName": "musculo espinhal da cabeca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Spinalis capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0371",
+    "sourceId": "ZAN-0371",
+    "name": "Músculo espinhal da cabeça direito",
+    "normalizedName": "musculo espinhal da cabeca direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Spinalis capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0372",
+    "sourceId": "ZAN-0372",
+    "name": "Músculo espinhal do pescoço esquerdo",
+    "normalizedName": "musculo espinhal do pescoco esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Spinalis colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0373",
+    "sourceId": "ZAN-0373",
+    "name": "Músculo espinhal do pescoço direito",
+    "normalizedName": "musculo espinhal do pescoco direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Spinalis colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0374",
+    "sourceId": "ZAN-0374",
+    "name": "Músculo espinhal do tórax esquerdo",
+    "normalizedName": "musculo espinhal do torax esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Spinalis thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e mantém a postura da coluna a coluna vertebral.",
+    "function": "Função principal: Estender e manter a postura da coluna a coluna vertebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0375",
+    "sourceId": "ZAN-0375",
+    "name": "Músculo espinhal do tórax direito",
+    "normalizedName": "musculo espinhal do torax direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Spinalis thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e mantém a postura da coluna a coluna vertebral.",
+    "function": "Função principal: Estender e manter a postura da coluna a coluna vertebral.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0376",
+    "sourceId": "ZAN-0376",
+    "name": "Músculo esplênio da cabeça esquerdo",
+    "normalizedName": "musculo esplenio da cabeca esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Splenius capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0377",
+    "sourceId": "ZAN-0377",
+    "name": "Músculo esplênio da cabeça direito",
+    "normalizedName": "musculo esplenio da cabeca direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Splenius capitis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0378",
+    "sourceId": "ZAN-0378",
+    "name": "Músculo esplênio do pescoço esquerdo",
+    "normalizedName": "musculo esplenio do pescoco esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Splenius colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0379",
+    "sourceId": "ZAN-0379",
+    "name": "Músculo esplênio do pescoço direito",
+    "normalizedName": "musculo esplenio do pescoco direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Splenius colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0380",
+    "sourceId": "ZAN-0380",
+    "name": "Músculo esternocleidomastóideo esquerdo",
+    "normalizedName": "musculo esternocleidomastoideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Sternocleidomastoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Flexiona e inclina lateralmente a cabeça o pescoço.",
+    "function": "Função principal: Flexionar e inclinar lateralmente a cabeça o pescoço.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0381",
+    "sourceId": "ZAN-0381",
+    "name": "Músculo esternocleidomastóideo direito",
+    "normalizedName": "musculo esternocleidomastoideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Sternocleidomastoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Flexiona e inclina lateralmente a cabeça o pescoço.",
+    "function": "Função principal: Flexionar e inclinar lateralmente a cabeça o pescoço.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0382",
+    "sourceId": "ZAN-0382",
+    "name": "Cabeça esternocostal do músculo peitoral maior esquerdo",
+    "normalizedName": "cabeca esternocostal do musculo peitoral maior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Sternocostal head of pectoralis major muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Aduz e roda medialmente o braço o ombro.",
+    "function": "Função principal: Aduzir e rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0383",
+    "sourceId": "ZAN-0383",
+    "name": "Cabeça esternocostal do músculo peitoral maior direito",
+    "normalizedName": "cabeca esternocostal do musculo peitoral maior direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Sternocostal head of pectoralis major muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Aduz e roda medialmente o braço o ombro.",
+    "function": "Função principal: Aduzir e rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0384",
+    "sourceId": "ZAN-0384",
+    "name": "Músculo esterno-hióideo esquerdo",
+    "normalizedName": "musculo esterno-hioideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Sternohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Deprime o osso hioide e a laringe a deglutição e a fala.",
+    "function": "Função principal: Deprimir o osso hioide e a laringe a deglutição e a fala.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0385",
+    "sourceId": "ZAN-0385",
+    "name": "Músculo esterno-hióideo direito",
+    "normalizedName": "musculo esterno-hioideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Sternohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Deprime o osso hioide e a laringe a deglutição e a fala.",
+    "function": "Função principal: Deprimir o osso hioide e a laringe a deglutição e a fala.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0386",
+    "sourceId": "ZAN-0386",
+    "name": "Músculo esternotireóideo esquerdo",
+    "normalizedName": "musculo esternotireoideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Sternothyroid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Deprime o osso hioide e a laringe a deglutição e a fala.",
+    "function": "Função principal: Deprimir o osso hioide e a laringe a deglutição e a fala.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0387",
+    "sourceId": "ZAN-0387",
+    "name": "Músculo esternotireóideo direito",
+    "normalizedName": "musculo esternotireoideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Sternothyroid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Deprime o osso hioide e a laringe a deglutição e a fala.",
+    "function": "Função principal: Deprimir o osso hioide e a laringe a deglutição e a fala.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0388",
+    "sourceId": "ZAN-0388",
+    "name": "Parte reta do músculo cricotireóideo esquerdo",
+    "normalizedName": "parte reta do musculo cricotireoideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Straight part of cricothyroid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Tensiona as pregas vocais a fonação.",
+    "function": "Função principal: Tensionar as pregas vocais a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0389",
+    "sourceId": "ZAN-0389",
+    "name": "Parte reta do músculo cricotireóideo direito",
+    "normalizedName": "parte reta do musculo cricotireoideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Straight part of cricothyroid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Tensiona as pregas vocais a fonação.",
+    "function": "Função principal: Tensionar as pregas vocais a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0390",
+    "sourceId": "ZAN-0390",
+    "name": "Músculo estilo-hióideo esquerdo",
+    "normalizedName": "musculo estilo-hioideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Stylohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Eleva e estabiliza o osso hioide a deglutição e a fonação.",
+    "function": "Função principal: Elevar e estabilizar o osso hioide a deglutição e a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0391",
+    "sourceId": "ZAN-0391",
+    "name": "Músculo estilo-hióideo direito",
+    "normalizedName": "musculo estilo-hioideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Stylohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Eleva e estabiliza o osso hioide a deglutição e a fonação.",
+    "function": "Função principal: Elevar e estabilizar o osso hioide a deglutição e a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0392",
+    "sourceId": "ZAN-0392",
+    "name": "Músculo estilofaríngeo esquerdo",
+    "normalizedName": "musculo estilofaringeo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Stylopharyngeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva a faringe a deglutição.",
+    "function": "Função principal: Elevar a faringe a deglutição.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0393",
+    "sourceId": "ZAN-0393",
+    "name": "Músculo estilofaríngeo direito",
+    "normalizedName": "musculo estilofaringeo direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Stylopharyngeus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva a faringe a deglutição.",
+    "function": "Função principal: Elevar a faringe a deglutição.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0394",
+    "sourceId": "ZAN-0394",
+    "name": "Músculo subclávio esquerdo",
+    "normalizedName": "musculo subclavio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Subclavius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Deprime e estabiliza a clavícula a clavícula.",
+    "function": "Função principal: Deprimir e estabilizar a clavícula a clavícula.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0395",
+    "sourceId": "ZAN-0395",
+    "name": "Músculo subclávio direito",
+    "normalizedName": "musculo subclavio direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Subclavius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Deprime e estabiliza a clavícula a clavícula.",
+    "function": "Função principal: Deprimir e estabilizar a clavícula a clavícula.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0396",
+    "sourceId": "ZAN-0396",
+    "name": "Músculo subescapular esquerdo",
+    "normalizedName": "musculo subescapular esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Subscapularis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Roda medialmente o braço o ombro.",
+    "function": "Função principal: Rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0397",
+    "sourceId": "ZAN-0397",
+    "name": "Músculo subescapular direito",
+    "normalizedName": "musculo subescapular direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Subscapularis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Roda medialmente o braço o ombro.",
+    "function": "Função principal: Rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0398",
+    "sourceId": "ZAN-0398",
+    "name": "Cabeça superficial do músculo flexor curto do polegar esquerdo",
+    "normalizedName": "cabeca superficial do musculo flexor curto do polegar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Superficial head of flexor pollicis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0399",
+    "sourceId": "ZAN-0399",
+    "name": "Cabeça superficial do músculo flexor curto do polegar direito",
+    "normalizedName": "cabeca superficial do musculo flexor curto do polegar direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Superficial head of flexor pollicis brevis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0400",
+    "sourceId": "ZAN-0400",
+    "name": "Cabeça superficial do músculo pronador redondo esquerdo",
+    "normalizedName": "cabeca superficial do musculo pronador redondo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Superficial head of pronator teres"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Prona o antebraço o antebraço.",
+    "function": "Função principal: Pronar o antebraço o antebraço.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0401",
+    "sourceId": "ZAN-0401",
+    "name": "Cabeça superficial do músculo pronador redondo direito",
+    "normalizedName": "cabeca superficial do musculo pronador redondo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Superficial head of pronator teres"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Prona o antebraço o antebraço.",
+    "function": "Função principal: Pronar o antebraço o antebraço.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0402",
+    "sourceId": "ZAN-0402",
+    "name": "Parte superficial do músculo masseter esquerdo",
+    "normalizedName": "parte superficial do musculo masseter esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Superficial part of masseter"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva a mandíbula a mandíbula durante a mastigação.",
+    "function": "Função principal: Elevar a mandíbula a mandíbula durante a mastigação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0403",
+    "sourceId": "ZAN-0403",
+    "name": "Parte superficial do músculo masseter direito",
+    "normalizedName": "parte superficial do musculo masseter direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Superficial part of masseter"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva a mandíbula a mandíbula durante a mastigação.",
+    "function": "Função principal: Elevar a mandíbula a mandíbula durante a mastigação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0404",
+    "sourceId": "ZAN-0404",
+    "name": "Músculo gêmeo superior esquerdo",
+    "normalizedName": "musculo gemeo superior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Superior gemellus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0405",
+    "sourceId": "ZAN-0405",
+    "name": "Músculo gêmeo superior direito",
+    "normalizedName": "musculo gemeo superior direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Superior gemellus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Roda externamente o quadril o quadril (rotadores laterais profundos).",
+    "function": "Função principal: Rodar externamente o quadril o quadril (rotadores laterais profundos).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0406",
+    "sourceId": "ZAN-0406",
+    "name": "Cabeça superior do músculo pterigóideo lateral esquerdo",
+    "normalizedName": "cabeca superior do musculo pterigoideo lateral esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Superior head of lateral pterygoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Movimenta a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "function": "Função principal: Movimentar a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0407",
+    "sourceId": "ZAN-0407",
+    "name": "Cabeça superior do músculo pterigóideo lateral direito",
+    "normalizedName": "cabeca superior do musculo pterigoideo lateral direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Superior head of lateral pterygoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Movimenta a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "function": "Função principal: Movimentar a mandíbula a mandíbula durante a mastigação (protrusão e movimentos laterais).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0408",
+    "sourceId": "ZAN-0408",
+    "name": "Músculo oblíquo superior esquerdo",
+    "normalizedName": "musculo obliquo superior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Superior oblique muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0409",
+    "sourceId": "ZAN-0409",
+    "name": "Músculo oblíquo superior direito",
+    "normalizedName": "musculo obliquo superior direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Superior oblique muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0410",
+    "sourceId": "ZAN-0410",
+    "name": "Músculo constritor superior da faringe esquerdo",
+    "normalizedName": "musculo constritor superior da faringe esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Superior pharyngeal constrictor"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Constringe a faringe o bolo alimentar durante a deglutição.",
+    "function": "Função principal: Constrigir a faringe o bolo alimentar durante a deglutição.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0411",
+    "sourceId": "ZAN-0411",
+    "name": "Músculo constritor superior da faringe direito",
+    "normalizedName": "musculo constritor superior da faringe direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Superior pharyngeal constrictor"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Constringe a faringe o bolo alimentar durante a deglutição.",
+    "function": "Função principal: Constrigir a faringe o bolo alimentar durante a deglutição.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0412",
+    "sourceId": "ZAN-0412",
+    "name": "Músculo reto superior esquerdo",
+    "normalizedName": "musculo reto superior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Superior rectus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0413",
+    "sourceId": "ZAN-0413",
+    "name": "Músculo reto superior direito",
+    "normalizedName": "musculo reto superior direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Superior rectus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Movimenta o globo ocular o olho (músculo extraocular).",
+    "function": "Função principal: Movimentar o globo ocular o olho (músculo extraocular).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0414",
+    "sourceId": "ZAN-0414",
+    "name": "Músculo supinador esquerdo",
+    "normalizedName": "musculo supinador esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Supinator"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Supina o antebraço o antebraço.",
+    "function": "Função principal: Supinar o antebraço o antebraço.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0415",
+    "sourceId": "ZAN-0415",
+    "name": "Músculo supinador direito",
+    "normalizedName": "musculo supinador direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Supinator"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Supina o antebraço o antebraço.",
+    "function": "Função principal: Supinar o antebraço o antebraço.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0416",
+    "sourceId": "ZAN-0416",
+    "name": "Músculo supraespinhal esquerdo",
+    "normalizedName": "musculo supraespinhal esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Supraspinatus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Inicia a abdução do braço o ombro.",
+    "function": "Função principal: Iniciar a abdução do braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0417",
+    "sourceId": "ZAN-0417",
+    "name": "Músculo supraespinhal direito",
+    "normalizedName": "musculo supraespinhal direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Supraspinatus muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Inicia a abdução do braço o ombro.",
+    "function": "Função principal: Iniciar a abdução do braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0420",
+    "sourceId": "ZAN-0420",
+    "name": "Músculo temporal esquerdo",
+    "normalizedName": "musculo temporal esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Temporalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva a mandíbula a mandíbula durante a mastigação.",
+    "function": "Função principal: Elevar a mandíbula a mandíbula durante a mastigação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0421",
+    "sourceId": "ZAN-0421",
+    "name": "Músculo temporal direito",
+    "normalizedName": "musculo temporal direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Temporalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva a mandíbula a mandíbula durante a mastigação.",
+    "function": "Função principal: Elevar a mandíbula a mandíbula durante a mastigação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0422",
+    "sourceId": "ZAN-0422",
+    "name": "Músculo temporoparietal esquerdo",
+    "normalizedName": "musculo temporoparietal esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Temporoparietalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0423",
+    "sourceId": "ZAN-0423",
+    "name": "Músculo temporoparietal direito",
+    "normalizedName": "musculo temporoparietal direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Temporoparietalis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Participa dos movimentos da região a região anatômica correspondente.",
+    "function": "Função principal: Participar dos movimentos da região a região anatômica correspondente.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0424",
+    "sourceId": "ZAN-0424",
+    "name": "Músculo tensor da fáscia lata esquerdo",
+    "normalizedName": "musculo tensor da fascia lata esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Tensor fasciae latae"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Tensiona a fáscia lata a coxa (auxilia a abdução e estabiliza o joelho).",
+    "function": "Função principal: Tensionar a fáscia lata a coxa (auxilia a abdução e estabiliza o joelho).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0425",
+    "sourceId": "ZAN-0425",
+    "name": "Músculo tensor da fáscia lata direito",
+    "normalizedName": "musculo tensor da fascia lata direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Tensor fasciae latae"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Tensiona a fáscia lata a coxa (auxilia a abdução e estabiliza o joelho).",
+    "function": "Função principal: Tensionar a fáscia lata a coxa (auxilia a abdução e estabiliza o joelho).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0426",
+    "sourceId": "ZAN-0426",
+    "name": "Músculo redondo maior esquerdo",
+    "normalizedName": "musculo redondo maior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Teres major muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende, aduz e roda medialmente o braço o ombro.",
+    "function": "Função principal: Estender, aduzir e rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0427",
+    "sourceId": "ZAN-0427",
+    "name": "Músculo redondo maior direito",
+    "normalizedName": "musculo redondo maior direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Teres major muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende, aduz e roda medialmente o braço o ombro.",
+    "function": "Função principal: Estender, aduzir e rodar medialmente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0428",
+    "sourceId": "ZAN-0428",
+    "name": "Músculo redondo menor esquerdo",
+    "normalizedName": "musculo redondo menor esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Teres minor muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Roda externamente o braço o ombro.",
+    "function": "Função principal: Rodar externamente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0429",
+    "sourceId": "ZAN-0429",
+    "name": "Músculo redondo menor direito",
+    "normalizedName": "musculo redondo menor direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Teres minor muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Roda externamente o braço o ombro.",
+    "function": "Função principal: Rodar externamente o braço o ombro.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0430",
+    "sourceId": "ZAN-0430",
+    "name": "Parte tireoepiglótica do músculo tireoaritenóideo esquerdo",
+    "normalizedName": "parte tireoepiglotica do musculo tireoaritenoideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Thyro-epiglottic part of thyro-arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Ajusta a tensão das pregas vocais a fonação.",
+    "function": "Função principal: Ajustar a tensão das pregas vocais a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0431",
+    "sourceId": "ZAN-0431",
+    "name": "Parte tireoepiglótica do músculo tireoaritenóideo direito",
+    "normalizedName": "parte tireoepiglotica do musculo tireoaritenoideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Thyro-epiglottic part of thyro-arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Ajusta a tensão das pregas vocais a fonação.",
+    "function": "Função principal: Ajustar a tensão das pregas vocais a fonação.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0432",
+    "sourceId": "ZAN-0432",
+    "name": "Músculo tireo-hióideo esquerdo",
+    "normalizedName": "musculo tireo-hioideo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Thyrohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado esquerdo. Deprime o osso hioide e a laringe a deglutição e a fala.",
+    "function": "Função principal: Deprimir o osso hioide e a laringe a deglutição e a fala.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0433",
+    "sourceId": "ZAN-0433",
+    "name": "Músculo tireo-hióideo direito",
+    "normalizedName": "musculo tireo-hioideo direito",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Thyrohyoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado direito. Deprime o osso hioide e a laringe a deglutição e a fala.",
+    "function": "Função principal: Deprimir o osso hioide e a laringe a deglutição e a fala.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0434",
+    "sourceId": "ZAN-0434",
+    "name": "Músculo tibial anterior esquerdo",
+    "normalizedName": "musculo tibial anterior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Tibialis anterior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Faz a dorsiflexão do tornozelo o tornozelo (inverte o pé).",
+    "function": "Função principal: Fazer a dorsiflexão do tornozelo o tornozelo (inverte o pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0435",
+    "sourceId": "ZAN-0435",
+    "name": "Músculo tibial anterior direito",
+    "normalizedName": "musculo tibial anterior direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Tibialis anterior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Faz a dorsiflexão do tornozelo o tornozelo (inverte o pé).",
+    "function": "Função principal: Fazer a dorsiflexão do tornozelo o tornozelo (inverte o pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0436",
+    "sourceId": "ZAN-0436",
+    "name": "Músculo tibial posterior esquerdo",
+    "normalizedName": "musculo tibial posterior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Tibialis posterior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Inverte o pé o pé (supinação e adução).",
+    "function": "Função principal: Inverter o pé o pé (supinação e adução).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0437",
+    "sourceId": "ZAN-0437",
+    "name": "Músculo tibial posterior direito",
+    "normalizedName": "musculo tibial posterior direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Tibialis posterior muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Inverte o pé o pé (supinação e adução).",
+    "function": "Função principal: Inverter o pé o pé (supinação e adução).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0439",
+    "sourceId": "ZAN-0439",
+    "name": "Cabeça transversa do músculo adutor do hálux esquerdo",
+    "normalizedName": "cabeca transversa do musculo adutor do halux esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Transverse head of adductor hallucis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0440",
+    "sourceId": "ZAN-0440",
+    "name": "Cabeça transversa do músculo adutor do hálux direito",
+    "normalizedName": "cabeca transversa do musculo adutor do halux direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Transverse head of adductor hallucis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Movimenta o hálux o hálux (grande dedo do pé).",
+    "function": "Função principal: Movimentar o hálux o hálux (grande dedo do pé).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0441",
+    "sourceId": "ZAN-0441",
+    "name": "Cabeça transversa do músculo adutor do polegar esquerdo",
+    "normalizedName": "cabeca transversa do musculo adutor do polegar esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Transverse head of adductor pollicis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0442",
+    "sourceId": "ZAN-0442",
+    "name": "Cabeça transversa do músculo adutor do polegar direito",
+    "normalizedName": "cabeca transversa do musculo adutor do polegar direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Transverse head of adductor pollicis"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Movimenta o polegar o polegar (abdução, oposição e precisão).",
+    "function": "Função principal: Movimentar o polegar o polegar (abdução, oposição e precisão).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0443",
+    "sourceId": "ZAN-0443",
+    "name": "Parte transversa do músculo trapézio esquerdo",
+    "normalizedName": "parte transversa do musculo trapezio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Transverse part of trapezius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Eleva, retrai e gira a escápula a escápula (estabilização do ombro).",
+    "function": "Função principal: Elevar, retrair e girar a escápula a escápula (estabilização do ombro).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0444",
+    "sourceId": "ZAN-0444",
+    "name": "Parte transversa do músculo trapézio direito",
+    "normalizedName": "parte transversa do musculo trapezio direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Transverse part of trapezius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Eleva, retrai e gira a escápula a escápula (estabilização do ombro).",
+    "function": "Função principal: Elevar, retrair e girar a escápula a escápula (estabilização do ombro).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0445",
+    "sourceId": "ZAN-0445",
+    "name": "Músculo transverso do abdome esquerdo",
+    "normalizedName": "musculo transverso do abdome esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Transversus abdominis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Comprime o abdome o abdome (contenção visceral e estabilização do tronco).",
+    "function": "Função principal: Comprimir o abdome o abdome (contenção visceral e estabilização do tronco).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0446",
+    "sourceId": "ZAN-0446",
+    "name": "Músculo transverso do abdome direito",
+    "normalizedName": "musculo transverso do abdome direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Transversus abdominis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Comprime o abdome o abdome (contenção visceral e estabilização do tronco).",
+    "function": "Função principal: Comprimir o abdome o abdome (contenção visceral e estabilização do tronco).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0447",
+    "sourceId": "ZAN-0447",
+    "name": "Músculo transverso do tórax esquerdo",
+    "normalizedName": "musculo transverso do torax esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Transversus thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Deprime as costelas a caixa torácica (expiração).",
+    "function": "Função principal: Deprimir as costelas a caixa torácica (expiração).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0448",
+    "sourceId": "ZAN-0448",
+    "name": "Músculo transverso do tórax direito",
+    "normalizedName": "musculo transverso do torax direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Transversus thoracis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Deprime as costelas a caixa torácica (expiração).",
+    "function": "Função principal: Deprimir as costelas a caixa torácica (expiração).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0449",
+    "sourceId": "ZAN-0449",
+    "name": "Cabeça ulnar do músculo extensor ulnar do carpo esquerdo",
+    "normalizedName": "cabeca ulnar do musculo extensor ulnar do carpo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Ulnar head of extensor carpi ulnaris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Estende e aduz a mão o punho.",
+    "function": "Função principal: Estender e aduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0450",
+    "sourceId": "ZAN-0450",
+    "name": "Cabeça ulnar do músculo extensor ulnar do carpo direito",
+    "normalizedName": "cabeca ulnar do musculo extensor ulnar do carpo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Ulnar head of extensor carpi ulnaris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Estende e aduz a mão o punho.",
+    "function": "Função principal: Estender e aduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0451",
+    "sourceId": "ZAN-0451",
+    "name": "Cabeça ulnar do músculo flexor ulnar do carpo esquerdo",
+    "normalizedName": "cabeca ulnar do musculo flexor ulnar do carpo esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Ulnar head of flexor carpi ulnaris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado esquerdo. Flexiona e aduz a mão o punho.",
+    "function": "Função principal: Flexionar e aduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0452",
+    "sourceId": "ZAN-0452",
+    "name": "Cabeça ulnar do músculo flexor ulnar do carpo direito",
+    "normalizedName": "cabeca ulnar do musculo flexor ulnar do carpo direito",
+    "system": "SYS-MUS",
+    "region": "REG-UPPER-LIMB",
+    "sourceConcepts": [
+      "Ulnar head of flexor carpi ulnaris"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro superior, do lado direito. Flexiona e aduz a mão o punho.",
+    "function": "Função principal: Flexionar e aduzir a mão o punho.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0453",
+    "sourceId": "ZAN-0453",
+    "name": "Músculo vasto intermédio esquerdo",
+    "normalizedName": "musculo vasto intermedio esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Vastus intermedius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Estende o joelho o joelho (componente do quadríceps).",
+    "function": "Função principal: Estender o joelho o joelho (componente do quadríceps).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0454",
+    "sourceId": "ZAN-0454",
+    "name": "Músculo vasto intermédio direito",
+    "normalizedName": "musculo vasto intermedio direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Vastus intermedius muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Estende o joelho o joelho (componente do quadríceps).",
+    "function": "Função principal: Estender o joelho o joelho (componente do quadríceps).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0455",
+    "sourceId": "ZAN-0455",
+    "name": "Músculo vasto lateral esquerdo",
+    "normalizedName": "musculo vasto lateral esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Vastus lateralis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Estende o joelho o joelho (componente do quadríceps).",
+    "function": "Função principal: Estender o joelho o joelho (componente do quadríceps).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0456",
+    "sourceId": "ZAN-0456",
+    "name": "Músculo vasto lateral direito",
+    "normalizedName": "musculo vasto lateral direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Vastus lateralis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Estende o joelho o joelho (componente do quadríceps).",
+    "function": "Função principal: Estender o joelho o joelho (componente do quadríceps).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0457",
+    "sourceId": "ZAN-0457",
+    "name": "Músculo vasto medial esquerdo",
+    "normalizedName": "musculo vasto medial esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Vastus medialis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado esquerdo. Estende o joelho o joelho (componente do quadríceps).",
+    "function": "Função principal: Estender o joelho o joelho (componente do quadríceps).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0458",
+    "sourceId": "ZAN-0458",
+    "name": "Músculo vasto medial direito",
+    "normalizedName": "musculo vasto medial direito",
+    "system": "SYS-MUS",
+    "region": "REG-LOWER-LIMB",
+    "sourceConcepts": [
+      "Vastus medialis muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do membro inferior, do lado direito. Estende o joelho o joelho (componente do quadríceps).",
+    "function": "Função principal: Estender o joelho o joelho (componente do quadríceps).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0459",
+    "sourceId": "ZAN-0459",
+    "name": "Partes ventrais dos músculos intertransversários laterais lombares esquerdo",
+    "normalizedName": "partes ventrais dos musculos intertransversarios laterais lombares esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Ventral parts of lateral intertransversarii lumborum muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado esquerdo. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0460",
+    "sourceId": "ZAN-0460",
+    "name": "Partes ventrais dos músculos intertransversários laterais lombares direito",
+    "normalizedName": "partes ventrais dos musculos intertransversarios laterais lombares direito",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Ventral parts of lateral intertransversarii lumborum muscles"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado direito. Estende e roda a coluna a coluna vertebral (estabilizadores segmentares).",
+    "function": "Função principal: Estender e rodar a coluna a coluna vertebral (estabilizadores segmentares).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0461",
+    "sourceId": "ZAN-0461",
+    "name": "Músculo zigomático maior esquerdo",
+    "normalizedName": "musculo zigomatico maior esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Zygomaticus major muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva o canto da boca o sorriso (músculo da expressão facial).",
+    "function": "Função principal: Elevar o canto da boca o sorriso (músculo da expressão facial).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0462",
+    "sourceId": "ZAN-0462",
+    "name": "Músculo zigomático maior direito",
+    "normalizedName": "musculo zigomatico maior direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Zygomaticus major muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva o canto da boca o sorriso (músculo da expressão facial).",
+    "function": "Função principal: Elevar o canto da boca o sorriso (músculo da expressão facial).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0463",
+    "sourceId": "ZAN-0463",
+    "name": "Músculo zigomático menor esquerdo",
+    "normalizedName": "musculo zigomatico menor esquerdo",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Zygomaticus minor muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado esquerdo. Eleva o canto da boca o sorriso (músculo da expressão facial).",
+    "function": "Função principal: Elevar o canto da boca o sorriso (músculo da expressão facial).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0464",
+    "sourceId": "ZAN-0464",
+    "name": "Músculo zigomático menor direito",
+    "normalizedName": "musculo zigomatico menor direito",
+    "system": "SYS-MUS",
+    "region": "REG-HEAD",
+    "sourceConcepts": [
+      "Zygomaticus minor muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região da cabeça, do lado direito. Eleva o canto da boca o sorriso (músculo da expressão facial).",
+    "function": "Função principal: Elevar o canto da boca o sorriso (músculo da expressão facial).",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0468",
+    "sourceId": "ZAN-0468",
+    "name": "Diafragma",
+    "normalizedName": "diafragma",
+    "system": "SYS-MUS",
+    "region": "REG-TRUNK",
+    "sourceConcepts": [
+      "Diaphragm"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do tronco, do lado mediano (linha média). Coordena a respiração o diafragma desce ao inspirar, aumentando o volume da cavidade torácica.",
+    "function": "Função principal: Coordenar a respiração o diafragma desce ao inspirar, aumentando o volume da cavidade torácica.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0469",
+    "sourceId": "ZAN-0469",
+    "name": "Músculo iliocostal do pescoço",
+    "normalizedName": "musculo iliocostal do pescoco",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Iliocostalis colli muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado mediano (linha média). Estende e roda a cabeça a cabeça e a coluna cervical.",
+    "function": "Função principal: Estender e rodar a cabeça a cabeça e a coluna cervical.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "reviewed": true
+  },
+  {
+    "structureId": "STR-MUS-0470",
+    "sourceId": "ZAN-0470",
+    "name": "Músculo ariaritenóideo transverso",
+    "normalizedName": "musculo ariaritenoideo transverso",
+    "system": "SYS-MUS",
+    "region": "REG-NECK",
+    "sourceConcepts": [
+      "Transverse arytenoid muscle"
+    ],
+    "nameDerived": true,
+    "alternateNames": [],
+    "description": "Músculo esquelético da região do pescoço, do lado mediano (linha média). Aduz as pregas vocais o fechamento da glote.",
+    "function": "Função principal: Aduzir as pregas vocais o fechamento da glote.",
+    "educationalSourceName": "Z-Anatomy — Models of human anatomy",
+    "educationalSourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
     "reviewed": true
   }
 ];
