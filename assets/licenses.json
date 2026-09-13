@@ -1,0 +1,29 @@
+[
+  {
+    "asset": "bodyparts3d-skeleton.glb",
+    "source": "BodyParts3D 4.0",
+    "author": "The Database Center for Life Science",
+    "sourceUrl": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/partof_BP3D_4.0_obj_99.zip",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "verificationUrl": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
+    "obtainedAt": "2026-09-10",
+    "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.",
+    "modifications": [
+      "Skeleton FMA23876 plus limb bone concepts from official catalog",
+      "OBJ to glTF 2.0 binary conversion",
+      "Z-up to Y-up rotation",
+      "Shared display material",
+      "Vertex welding, quantization and Meshopt compression",
+      "Local structureId and original sourceId metadata"
+    ],
+    "permissions": [
+      "Redistribution with attribution",
+      "Adaptation with attribution"
+    ],
+    "sha256": "28e6795383b05925b262ec498c90f7eb2830b2bb6cab3ebdd85ed3b690569be6",
+    "bytes": 4236112,
+    "meshes": 258,
+    "triangles": 783874
+  }
+]

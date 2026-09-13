@@ -1,0 +1,1140 @@
+{
+  "STR-ESQ-0024": {
+    "description": "Vértebra torácica com corpo amplo, localizada na transição toracolombar da coluna vertebral.",
+    "function": "Suporta cargas da parte superior do tronco e articula com a décima primeira costela"
+  },
+  "STR-ESQ-0041": {
+    "description": "Sétima e última vértebra cervical, com processo espinhoso longo e proeminente, palpável na base do pescoço.",
+    "function": "Suporta a cabeça na transição cérvico-torácica e dá passagem a nervos espinhais"
+  },
+  "STR-ESQ-0071": {
+    "name": "Sínfise intervertebral do áxis",
+    "description": "Disco de fibrocartilagem entre o áxis (segunda vértebra cervical, C2) e a vértebra seguinte, na coluna cervical.",
+    "function": "Amortece cargas e permite leve flexibilidade entre as vértebras cervicais superiores"
+  },
+  "STR-ESQ-0080": {
+    "name": "Sínfise intervertebral",
+    "description": "Articulação cartilaginosa formada pelo disco intervertebral entre duas vértebras adjacentes da coluna vertebral.",
+    "function": "Une vértebras adjacentes, absorve impactos e distribui as cargas da coluna vertebral"
+  },
+  "STR-ESQ-0072": {
+    "description": "Disco de fibrocartilagem entre a quarta vértebra torácica (T4) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0073": {
+    "description": "Disco de fibrocartilagem entre a quinta vértebra torácica (T5) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0074": {
+    "description": "Disco de fibrocartilagem entre a sexta vértebra torácica (T6) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0075": {
+    "description": "Disco de fibrocartilagem entre a sétima vértebra torácica (T7) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0076": {
+    "description": "Disco de fibrocartilagem entre a oitava vértebra torácica (T8) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0077": {
+    "description": "Disco de fibrocartilagem entre a nona vértebra torácica (T9) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0078": {
+    "description": "Disco de fibrocartilagem entre a décima vértebra torácica (T10) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0079": {
+    "description": "Disco de fibrocartilagem entre a décima primeira vértebra torácica (T11) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0081": {
+    "description": "Disco de fibrocartilagem entre a primeira vértebra lombar (L1) e a vértebra seguinte, na coluna lombar.",
+    "function": "Amortece impactos e distribui as maiores cargas da coluna vertebral"
+  },
+  "STR-ESQ-0082": {
+    "description": "Disco de fibrocartilagem entre a terceira vértebra cervical (C3) e a vértebra seguinte, na coluna cervical.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras cervicais"
+  },
+  "STR-ESQ-0083": {
+    "description": "Disco de fibrocartilagem entre a segunda vértebra lombar (L2) e a vértebra seguinte, na coluna lombar.",
+    "function": "Amortece impactos e distribui as maiores cargas da coluna vertebral"
+  },
+  "STR-ESQ-0084": {
+    "description": "Disco de fibrocartilagem entre a terceira vértebra lombar (L3) e a vértebra seguinte, na coluna lombar.",
+    "function": "Amortece impactos e distribui as maiores cargas da coluna vertebral"
+  },
+  "STR-ESQ-0085": {
+    "description": "Disco de fibrocartilagem entre a quarta vértebra lombar (L4) e a vértebra seguinte, na coluna lombar.",
+    "function": "Amortece impactos e distribui as maiores cargas da coluna vertebral"
+  },
+  "STR-ESQ-0086": {
+    "description": "Disco de fibrocartilagem entre a quinta vértebra lombar (L5) e o sacro, na base da coluna lombar.",
+    "function": "Amortece impactos e distribui as maiores cargas da coluna vertebral"
+  },
+  "STR-ESQ-0087": {
+    "description": "Disco de fibrocartilagem entre a quarta vértebra cervical (C4) e a vértebra seguinte, na coluna cervical.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras cervicais"
+  },
+  "STR-ESQ-0088": {
+    "description": "Disco de fibrocartilagem entre a quinta vértebra cervical (C5) e a vértebra seguinte, na coluna cervical.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras cervicais"
+  },
+  "STR-ESQ-0089": {
+    "description": "Disco de fibrocartilagem entre a sexta vértebra cervical (C6) e a vértebra seguinte, na coluna cervical.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras cervicais"
+  },
+  "STR-ESQ-0090": {
+    "description": "Disco de fibrocartilagem entre a sétima vértebra cervical (C7) e a primeira torácica (T1), na transição cérvico-torácica.",
+    "function": "Amortece impactos e distribui cargas na transição entre as colunas cervical e torácica"
+  },
+  "STR-ESQ-0091": {
+    "description": "Disco de fibrocartilagem entre a primeira vértebra torácica (T1) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0092": {
+    "description": "Disco de fibrocartilagem entre a segunda vértebra torácica (T2) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0093": {
+    "description": "Disco de fibrocartilagem entre a terceira vértebra torácica (T3) e a vértebra seguinte, na coluna torácica.",
+    "function": "Amortece impactos e distribui cargas entre as vértebras torácicas"
+  },
+  "STR-ESQ-0107": {
+    "description": "Cartilagem hialina que une a primeira costela ao esterno, no lado esquerdo da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0110": {
+    "description": "Cartilagem hialina que une a segunda costela ao esterno, no lado esquerdo da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0113": {
+    "description": "Cartilagem hialina que une a terceira costela ao esterno, no lado esquerdo da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0116": {
+    "description": "Cartilagem hialina que une a quarta costela ao esterno, no lado esquerdo da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0119": {
+    "description": "Cartilagem hialina que une a quinta costela ao esterno, no lado esquerdo da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0122": {
+    "description": "Cartilagem hialina que une a sexta costela ao esterno, no lado esquerdo da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0123": {
+    "description": "Cartilagem hialina que une a sétima costela ao esterno, no lado esquerdo da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0199": {
+    "description": "Cartilagem hialina que une a primeira costela ao esterno, no lado direito da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0201": {
+    "description": "Cartilagem hialina que une a segunda costela ao esterno, no lado direito da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0203": {
+    "description": "Cartilagem hialina que une a terceira costela ao esterno, no lado direito da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0205": {
+    "description": "Cartilagem hialina que une a quarta costela ao esterno, no lado direito da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0207": {
+    "description": "Cartilagem hialina que une a quinta costela ao esterno, no lado direito da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0209": {
+    "description": "Cartilagem hialina que une a sexta costela ao esterno, no lado direito da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0211": {
+    "description": "Cartilagem hialina que une a sétima costela ao esterno, no lado direito da caixa torácica.",
+    "function": "Dá elasticidade à caixa torácica, permitindo sua expansão na respiração"
+  },
+  "STR-ESQ-0108": {
+    "description": "Primeiro osso metacarpal, curto e robusto, que articula com o trapézio e com a falange proximal do polegar, na mão esquerda.",
+    "function": "Transmite forças da mão ao carpo e confere ampla mobilidade ao polegar"
+  },
+  "STR-ESQ-0111": {
+    "description": "Segundo osso metacarpal da mão esquerda, entre o carpo e a falange proximal do dedo indicador.",
+    "function": "Transmite forças da mão ao carpo e compõe o arco palmar"
+  },
+  "STR-ESQ-0114": {
+    "description": "Terceiro osso metacarpal da mão esquerda, entre o carpo e a falange proximal do dedo médio.",
+    "function": "Transmite forças da mão ao carpo e compõe o arco palmar"
+  },
+  "STR-ESQ-0117": {
+    "description": "Quarto osso metacarpal da mão esquerda, entre o carpo e a falange proximal do dedo anular.",
+    "function": "Transmite forças da mão ao carpo e compõe o arco palmar"
+  },
+  "STR-ESQ-0120": {
+    "description": "Quinto osso metacarpal da mão esquerda, entre o carpo e a falange proximal do dedo mínimo.",
+    "function": "Transmite forças da mão ao carpo e compõe o arco palmar"
+  },
+  "STR-ESQ-0216": {
+    "description": "Primeiro osso metacarpal, curto e robusto, que articula com o trapézio e com a falange proximal do polegar, na mão direita.",
+    "function": "Transmite forças da mão ao carpo e confere ampla mobilidade ao polegar"
+  },
+  "STR-ESQ-0218": {
+    "description": "Segundo osso metacarpal da mão direita, entre o carpo e a falange proximal do dedo indicador.",
+    "function": "Transmite forças da mão ao carpo e compõe o arco palmar"
+  },
+  "STR-ESQ-0220": {
+    "description": "Terceiro osso metacarpal da mão direita, entre o carpo e a falange proximal do dedo médio.",
+    "function": "Transmite forças da mão ao carpo e compõe o arco palmar"
+  },
+  "STR-ESQ-0222": {
+    "description": "Quarto osso metacarpal da mão direita, entre o carpo e a falange proximal do dedo anular.",
+    "function": "Transmite forças da mão ao carpo e compõe o arco palmar"
+  },
+  "STR-ESQ-0224": {
+    "description": "Quinto osso metacarpal da mão direita, entre o carpo e a falange proximal do dedo mínimo.",
+    "function": "Transmite forças da mão ao carpo e compõe o arco palmar"
+  },
+  "STR-ESQ-0109": {
+    "description": "Primeiro osso metatarsal, curto e robusto, que forma o arco medial e articula com o cuneiforme medial e o hálux, no pé esquerdo.",
+    "function": "Suporta o peso do corpo no apoio e compõe o arco longitudinal medial do pé"
+  },
+  "STR-ESQ-0112": {
+    "description": "Segundo osso metatarsal do pé esquerdo, entre o tarso e a falange proximal do segundo dedo.",
+    "function": "Suporta o peso do corpo no apoio e compõe os arcos do pé"
+  },
+  "STR-ESQ-0115": {
+    "description": "Terceiro osso metatarsal do pé esquerdo, entre o tarso e a falange proximal do terceiro dedo.",
+    "function": "Suporta o peso do corpo no apoio e compõe os arcos do pé"
+  },
+  "STR-ESQ-0118": {
+    "description": "Quarto osso metatarsal do pé esquerdo, entre o tarso e a falange proximal do quarto dedo.",
+    "function": "Suporta o peso do corpo no apoio e compõe os arcos do pé"
+  },
+  "STR-ESQ-0121": {
+    "description": "Quinto osso metatarsal do pé esquerdo, entre o tarso e a falange proximal do quinto dedo.",
+    "function": "Suporta o peso do corpo no apoio e compõe os arcos do pé"
+  },
+  "STR-ESQ-0217": {
+    "description": "Primeiro osso metatarsal, curto e robusto, que forma o arco medial e articula com o cuneiforme medial e o hálux, no pé direito.",
+    "function": "Suporta o peso do corpo no apoio e compõe o arco longitudinal medial do pé"
+  },
+  "STR-ESQ-0219": {
+    "description": "Segundo osso metatarsal do pé direito, entre o tarso e a falange proximal do segundo dedo.",
+    "function": "Suporta o peso do corpo no apoio e compõe os arcos do pé"
+  },
+  "STR-ESQ-0221": {
+    "description": "Terceiro osso metatarsal do pé direito, entre o tarso e a falange proximal do terceiro dedo.",
+    "function": "Suporta o peso do corpo no apoio e compõe os arcos do pé"
+  },
+  "STR-ESQ-0223": {
+    "description": "Quarto osso metatarsal do pé direito, entre o tarso e a falange proximal do quarto dedo.",
+    "function": "Suporta o peso do corpo no apoio e compõe os arcos do pé"
+  },
+  "STR-ESQ-0225": {
+    "description": "Quinto osso metatarsal do pé direito, entre o tarso e a falange proximal do quinto dedo.",
+    "function": "Suporta o peso do corpo no apoio e compõe os arcos do pé"
+  },
+  "STR-ESQ-0124": {
+    "description": "Maior osso do tarso, localizado na parte posterior do pé, formando o salto do calcanhar no lado esquerdo.",
+    "function": "Suporta o peso do corpo no apoio e dá fixação ao tendão de Aquiles"
+  },
+  "STR-ESQ-0126": {
+    "description": "Osso do tarso lateral do pé esquerdo, entre o calcâneo, o navicular e os metatarsais.",
+    "function": "Participa dos arcos do pé e transmite cargas ao antepé"
+  },
+  "STR-ESQ-0132": {
+    "description": "Osso cuneiforme intermédio do pé esquerdo, menor dos três cuneiformes, entre o navicular e o segundo metatarsal.",
+    "function": "Participa dos arcos do pé e estabiliza a parte média do tarso"
+  },
+  "STR-ESQ-0134": {
+    "description": "Osso cuneiforme lateral do pé esquerdo, entre o navicular e o terceiro metatarsal.",
+    "function": "Participa dos arcos do pé e estabiliza a parte lateral do tarso"
+  },
+  "STR-ESQ-0137": {
+    "description": "Osso cuneiforme medial do pé esquerdo, entre o navicular e o primeiro metatarsal, na face medial do pé.",
+    "function": "Sustenta o arco longitudinal medial do pé e transmite cargas ao antepé"
+  },
+  "STR-ESQ-0146": {
+    "description": "Osso do tarso situado entre a tíbia e o calcâneo, que participa da articulação do tornozelo no lado esquerdo.",
+    "function": "Transmite o peso do corpo ao pé e articula o tornozelo"
+  },
+  "STR-ESQ-0173": {
+    "description": "Osso do tarso na face medial do pé esquerdo, entre o tálus e os ossos cuneiformes.",
+    "function": "Participa dos arcos do pé e conecta o retropé ao médio do pé"
+  },
+  "STR-ESQ-0174": {
+    "description": "Osso do tarso na face medial do pé direito, entre o tálus e os ossos cuneiformes.",
+    "function": "Participa dos arcos do pé e conecta o retropé ao médio do pé"
+  },
+  "STR-ESQ-0226": {
+    "description": "Maior osso do tarso, localizado na parte posterior do pé, formando o salto do calcanhar no lado direito.",
+    "function": "Suporta o peso do corpo no apoio e dá fixação ao tendão de Aquiles"
+  },
+  "STR-ESQ-0229": {
+    "description": "Osso do tarso lateral do pé direito, entre o calcâneo, o navicular e os metatarsais.",
+    "function": "Participa dos arcos do pé e transmite cargas ao antepé"
+  },
+  "STR-ESQ-0235": {
+    "description": "Osso cuneiforme intermédio do pé direito, menor dos três cuneiformes, entre o navicular e o segundo metatarsal.",
+    "function": "Participa dos arcos do pé e estabiliza a parte média do tarso"
+  },
+  "STR-ESQ-0237": {
+    "description": "Osso cuneiforme lateral do pé direito, entre o navicular e o terceiro metatarsal.",
+    "function": "Participa dos arcos do pé e estabiliza a parte lateral do tarso"
+  },
+  "STR-ESQ-0240": {
+    "description": "Osso cuneiforme medial do pé direito, entre o navicular e o primeiro metatarsal, na face medial do pé.",
+    "function": "Sustenta o arco longitudinal medial do pé e transmite cargas ao antepé"
+  },
+  "STR-ESQ-0248": {
+    "description": "Osso do tarso situado entre a tíbia e o calcâneo, que participa da articulação do tornozelo no lado direito.",
+    "function": "Transmite o peso do corpo ao pé e articula o tornozelo"
+  },
+  "STR-ESQ-0128": {
+    "description": "Osso longo e fino da perna esquerda, na face lateral, entre o joelho e o tornozelo, junto à tíbia.",
+    "function": "Estabiliza o tornozelo e dá fixação a músculos da perna sem suportar peso corporal",
+    "alternateNames": ["Perónio esquerdo"]
+  },
+  "STR-ESQ-0130": {
+    "description": "Osso longo do braço esquerdo, entre a escápula e o antebraço, articulando ombro e cotovelo.",
+    "function": "Forma o braço e articula ombro e cotovelo, dando fixação a músculos do membro superior"
+  },
+  "STR-ESQ-0141": {
+    "description": "Osso sesamoide triangular da face anterior do joelho esquerdo, dentro do tendão do quadríceps.",
+    "function": "Protege o joelho e aumenta a vantagem mecânica do quadríceps na extensão",
+    "alternateNames": ["Rótula esquerda"]
+  },
+  "STR-ESQ-0143": {
+    "description": "Osso longo do antebraço esquerdo no lado lateral (polegar), entre o úmero e os ossos do carpo.",
+    "function": "Suporta o antebraço e permite a rotação do punho e do antebraço"
+  },
+  "STR-ESQ-0145": {
+    "description": "Osso triangular e achatado da parte posterior do ombro esquerdo, com cavidade glenoide para o úmero.",
+    "function": "Conecta o membro superior ao tronco e dá fixação a músculos do ombro e do braço",
+    "alternateNames": ["Omoplata esquerda"]
+  },
+  "STR-ESQ-0148": {
+    "description": "Osso longo e medial da perna esquerda, maior suporte de peso entre o fêmur e o pé.",
+    "function": "Suporta o peso do corpo e articula o joelho e o tornozelo"
+  },
+  "STR-ESQ-0152": {
+    "description": "Osso longo do antebraço esquerdo no lado medial (dedo mínimo), entre o úmero e o carpo.",
+    "function": "Estabiliza o antebraço e forma o cotovelo com o úmero"
+  },
+  "STR-ESQ-0215": {
+    "description": "Osso longo do antebraço direito no lado lateral (polegar), entre o úmero e os ossos do carpo.",
+    "function": "Suporta o antebraço e permite a rotação do punho e do antebraço"
+  },
+  "STR-ESQ-0228": {
+    "description": "Osso alongado em forma de S que conecta o membro superior direito à porção superior do tronco.",
+    "function": "Estabiliza a articulação do ombro, transmite forças do membro superior e dá fixação a músculos",
+    "alternateNames": ["Osso da clavícula direita"]
+  },
+  "STR-ESQ-0231": {
+    "description": "Osso longo e fino da perna direita, na face lateral, entre o joelho e o tornozelo, junto à tíbia.",
+    "function": "Estabiliza o tornozelo e dá fixação a músculos da perna sem suportar peso corporal",
+    "alternateNames": ["Perónio direito"]
+  },
+  "STR-ESQ-0233": {
+    "description": "Osso longo do braço direito, entre a escápula e o antebraço, articulando ombro e cotovelo.",
+    "function": "Forma o braço e articula ombro e cotovelo, dando fixação a músculos do membro superior"
+  },
+  "STR-ESQ-0244": {
+    "description": "Osso sesamoide triangular da face anterior do joelho direito, dentro do tendão do quadríceps.",
+    "function": "Protege o joelho e aumenta a vantagem mecânica do quadríceps na extensão",
+    "alternateNames": ["Rótula direita"]
+  },
+  "STR-ESQ-0247": {
+    "description": "Osso triangular e achatado da parte posterior do ombro direito, com cavidade glenoide para o úmero.",
+    "function": "Conecta o membro superior ao tronco e dá fixação a músculos do ombro e do braço",
+    "alternateNames": ["Omoplata direita"]
+  },
+  "STR-ESQ-0250": {
+    "description": "Osso longo e medial da perna direita, maior suporte de peso entre o fêmur e o pé.",
+    "function": "Suporta o peso do corpo e articula o joelho e o tornozelo"
+  },
+  "STR-ESQ-0254": {
+    "description": "Osso longo do antebraço direito no lado medial (dedo mínimo), entre o úmero e o carpo.",
+    "function": "Estabiliza o antebraço e forma o cotovelo com o úmero"
+  },
+  "STR-ESQ-0069": {
+    "description": "Osso ímpar da face anterior do crânio, que forma a testa e o teto das órbitas.",
+    "function": "Protege o lobo frontal do cérebro e participa da órbita e das cavidades nasais"
+  },
+  "STR-ESQ-0133": {
+    "description": "Pequeno osso da parede medial da órbita esquerda, que abriga o canal do ducto nasolacrimal.",
+    "function": "Protege o saco lacrimal e participa da drenagem das lágrimas"
+  },
+  "STR-ESQ-0139": {
+    "description": "Osso em formato de L que compõe a parte posterior do palato duro e as paredes nasal e orbital, no lado esquerdo.",
+    "function": "Compõe o palato duro e separa as cavidades nasal e oral"
+  },
+  "STR-ESQ-0140": {
+    "description": "Osso achatado que forma o teto e as laterais do crânio, no lado esquerdo.",
+    "function": "Protege o cérebro e articula com os demais ossos da abóbada craniana"
+  },
+  "STR-ESQ-0147": {
+    "description": "Osso lateral da base do crânio esquerdo, que contém o meato acústico externo e a fossa para o côndilo mandibular.",
+    "function": "Protege estruturas do ouvido e articula a mandíbula"
+  },
+  "STR-ESQ-0153": {
+    "description": "Osso que forma o relevo lateral da face esquerda, parte da parede e do assoalho da órbita.",
+    "function": "Forma o relevo da face e dá fixação a músculos da mastigação e da expressão",
+    "alternateNames": ["Malar esquerdo"]
+  },
+  "STR-ESQ-0236": {
+    "description": "Pequeno osso da parede medial da órbita direita, que abriga o canal do ducto nasolacrimal.",
+    "function": "Protege o saco lacrimal e participa da drenagem das lágrimas"
+  },
+  "STR-ESQ-0242": {
+    "description": "Osso em formato de L que compõe a parte posterior do palato duro e as paredes nasal e orbital, no lado direito.",
+    "function": "Compõe o palato duro e separa as cavidades nasal e oral"
+  },
+  "STR-ESQ-0243": {
+    "description": "Osso achatado que forma o teto e as laterais do crânio, no lado direito.",
+    "function": "Protege o cérebro e articula com os demais ossos da abóbada craniana"
+  },
+  "STR-ESQ-0249": {
+    "description": "Osso lateral da base do crânio direito, que contém o meato acústico externo e a fossa para o côndilo mandibular.",
+    "function": "Protege estruturas do ouvido e articula a mandíbula"
+  },
+  "STR-ESQ-0255": {
+    "description": "Osso que forma o relevo lateral da face direita, parte da parede e do assoalho da órbita.",
+    "function": "Forma o relevo da face e dá fixação a músculos da mastigação e da expressão",
+    "alternateNames": ["Malar direito"]
+  },
+  "STR-ESQ-0048": {
+    "description": "Falange distal do segundo dedo do pé esquerdo, porção final achatada que sustenta a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do equilíbrio e da marcha"
+  },
+  "STR-ESQ-0049": {
+    "description": "Falange distal do terceiro dedo do pé esquerdo, porção final achatada que sustenta a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do equilíbrio e da marcha"
+  },
+  "STR-ESQ-0050": {
+    "description": "Falange distal do quarto dedo do pé esquerdo, porção final achatada que sustenta a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do equilíbrio e da marcha"
+  },
+  "STR-ESQ-0051": {
+    "name": "Falange distal do hálux esquerdo",
+    "description": "Falange distal do hálux (primeiro dedo) do pé esquerdo, larga e achatada, que sustenta a unha.",
+    "function": "Suporta o peso do corpo durante a marcha e dá sustentação à unha do hálux"
+  },
+  "STR-ESQ-0052": {
+    "description": "Falange distal do dedo indicador da mão esquerda, achatada na ponta do dedo, onde se apoia a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do tato e da preensão fina"
+  },
+  "STR-ESQ-0053": {
+    "description": "Falange distal do dedo mínimo da mão esquerda, achatada na ponta do dedo, onde se apoia a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do tato e da preensão fina"
+  },
+  "STR-ESQ-0054": {
+    "description": "Falange distal do quinto dedo do pé esquerdo, porção final achatada que sustenta a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do equilíbrio e da marcha"
+  },
+  "STR-ESQ-0055": {
+    "description": "Falange distal do dedo médio da mão esquerda, achatada na ponta do dedo, onde se apoia a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do tato e da preensão fina"
+  },
+  "STR-ESQ-0056": {
+    "description": "Falange distal do dedo anular da mão esquerda, achatada na ponta do dedo, onde se apoia a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do tato e da preensão fina"
+  },
+  "STR-ESQ-0057": {
+    "description": "Falange distal do polegar da mão esquerda, larga e achatada, que sustenta a unha e a polpa.",
+    "function": "Dá sustentação à polpa do polegar e participa da oposição e da preensão"
+  },
+  "STR-ESQ-0058": {
+    "description": "Falange distal do segundo dedo do pé direito, porção final achatada que sustenta a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do equilíbrio e da marcha"
+  },
+  "STR-ESQ-0059": {
+    "description": "Falange distal do terceiro dedo do pé direito, porção final achatada que sustenta a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do equilíbrio e da marcha"
+  },
+  "STR-ESQ-0060": {
+    "description": "Falange distal do quarto dedo do pé direito, porção final achatada que sustenta a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do equilíbrio e da marcha"
+  },
+  "STR-ESQ-0061": {
+    "name": "Falange distal do hálux direito",
+    "description": "Falange distal do hálux (primeiro dedo) do pé direito, larga e achatada, que sustenta a unha.",
+    "function": "Suporta o peso do corpo durante a marcha e dá sustentação à unha do hálux"
+  },
+  "STR-ESQ-0062": {
+    "description": "Falange distal do dedo indicador da mão direita, achatada na ponta do dedo, onde se apoia a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do tato e da preensão fina"
+  },
+  "STR-ESQ-0063": {
+    "description": "Falange distal do dedo mínimo da mão direita, achatada na ponta do dedo, onde se apoia a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do tato e da preensão fina"
+  },
+  "STR-ESQ-0064": {
+    "description": "Falange distal do quinto dedo do pé direito, porção final achatada que sustenta a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do equilíbrio e da marcha"
+  },
+  "STR-ESQ-0065": {
+    "description": "Falange distal do dedo médio da mão direita, achatada na ponta do dedo, onde se apoia a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do tato e da preensão fina"
+  },
+  "STR-ESQ-0066": {
+    "description": "Falange distal do dedo anular da mão direita, achatada na ponta do dedo, onde se apoia a unha.",
+    "function": "Dá sustentação à polpa do dedo e à unha, participando do tato e da preensão fina"
+  },
+  "STR-ESQ-0067": {
+    "description": "Falange distal do polegar da mão direita, larga e achatada, que sustenta a unha e a polpa.",
+    "function": "Dá sustentação à polpa do polegar e participa da oposição e da preensão"
+  },
+  "STR-ESQ-0157": {
+    "description": "Falange média do dedo anular da mão esquerda, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão e do toque fino"
+  },
+  "STR-ESQ-0158": {
+    "description": "Falange média do dedo anular da mão direita, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão e do toque fino"
+  },
+  "STR-ESQ-0159": {
+    "description": "Falange média do segundo dedo do pé esquerdo, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0160": {
+    "description": "Falange média do terceiro dedo do pé esquerdo, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0161": {
+    "description": "Falange média do quarto dedo do pé esquerdo, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0162": {
+    "description": "Falange média do dedo indicador da mão esquerda, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão e do toque fino"
+  },
+  "STR-ESQ-0163": {
+    "description": "Falange média do dedo mínimo da mão esquerda, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão e do toque fino"
+  },
+  "STR-ESQ-0164": {
+    "description": "Falange média do quinto dedo do pé esquerdo, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0165": {
+    "description": "Falange média do dedo médio da mão esquerda, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão e do toque fino"
+  },
+  "STR-ESQ-0166": {
+    "description": "Falange média do segundo dedo do pé direito, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0167": {
+    "description": "Falange média do terceiro dedo do pé direito, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0168": {
+    "description": "Falange média do quarto dedo do pé direito, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0169": {
+    "description": "Falange média do dedo indicador da mão direita, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão e do toque fino"
+  },
+  "STR-ESQ-0170": {
+    "description": "Falange média do dedo mínimo da mão direita, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão e do toque fino"
+  },
+  "STR-ESQ-0171": {
+    "description": "Falange média do quinto dedo do pé direito, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0172": {
+    "description": "Falange média do dedo médio da mão direita, entre a falange proximal e a distal.",
+    "function": "Articula as falanges vizinhas e participa da flexão e do toque fino"
+  },
+  "STR-ESQ-0176": {
+    "name": "Falange proximal do hálux direito",
+    "description": "Falange proximal do hálux (primeiro dedo) do pé direito, entre o primeiro metatarsal e a falange distal.",
+    "function": "Suporta o peso durante a marcha e transmite forças do hálux ao arco do pé"
+  },
+  "STR-ESQ-0177": {
+    "description": "Falange proximal do terceiro dedo do pé esquerdo, entre o metatarsal correspondente e a falange média.",
+    "function": "Conecta o dedo ao metatarsal e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0178": {
+    "description": "Falange proximal do quarto dedo do pé esquerdo, entre o metatarsal correspondente e a falange média.",
+    "function": "Conecta o dedo ao metatarsal e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0179": {
+    "description": "Falange proximal do dedo indicador da mão esquerda, entre o segundo metacarpal e a falange média.",
+    "function": "Conecta o dedo à palma e participa da flexão e da preensão fina"
+  },
+  "STR-ESQ-0180": {
+    "description": "Falange proximal do dedo mínimo da mão esquerda, entre o quinto metacarpal e a falange média.",
+    "function": "Conecta o dedo à palma e participa da flexão e da preensão fina"
+  },
+  "STR-ESQ-0181": {
+    "description": "Falange proximal do quinto dedo do pé esquerdo, entre o metatarsal correspondente e a falange média.",
+    "function": "Conecta o dedo ao metatarsal e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0182": {
+    "description": "Falange proximal do dedo médio da mão esquerda, entre o terceiro metacarpal e a falange média.",
+    "function": "Conecta o dedo à palma e participa da flexão e da preensão fina"
+  },
+  "STR-ESQ-0183": {
+    "description": "Falange proximal do dedo anular da mão esquerda, entre o quarto metacarpal e a falange média.",
+    "function": "Conecta o dedo à palma e participa da flexão e da preensão fina"
+  },
+  "STR-ESQ-0184": {
+    "description": "Falange proximal do polegar da mão esquerda, entre o primeiro metacarpal e a falange distal.",
+    "function": "Conecta o polegar à palma e participa da oposição e da preensão"
+  },
+  "STR-ESQ-0185": {
+    "description": "Falange proximal do segundo dedo do pé direito, entre o metatarsal correspondente e a falange média.",
+    "function": "Conecta o dedo ao metatarsal e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0186": {
+    "description": "Falange proximal do terceiro dedo do pé direito, entre o metatarsal correspondente e a falange média.",
+    "function": "Conecta o dedo ao metatarsal e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0187": {
+    "description": "Falange proximal do quarto dedo do pé direito, entre o metatarsal correspondente e a falange média.",
+    "function": "Conecta o dedo ao metatarsal e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0188": {
+    "description": "Falange proximal do dedo indicador da mão direita, entre o segundo metacarpal e a falange média.",
+    "function": "Conecta o dedo à palma e participa da flexão e da preensão fina"
+  },
+  "STR-ESQ-0189": {
+    "description": "Falange proximal do dedo mínimo da mão direita, entre o quinto metacarpal e a falange média.",
+    "function": "Conecta o dedo à palma e participa da flexão e da preensão fina"
+  },
+  "STR-ESQ-0190": {
+    "description": "Falange proximal do quinto dedo do pé direito, entre o metatarsal correspondente e a falange média.",
+    "function": "Conecta o dedo ao metatarsal e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0191": {
+    "description": "Falange proximal do dedo médio da mão direita, entre o terceiro metacarpal e a falange média.",
+    "function": "Conecta o dedo à palma e participa da flexão e da preensão fina"
+  },
+  "STR-ESQ-0192": {
+    "description": "Falange proximal do dedo anular da mão direita, entre o quarto metacarpal e a falange média.",
+    "function": "Conecta o dedo à palma e participa da flexão e da preensão fina"
+  },
+  "STR-ESQ-0193": {
+    "description": "Falange proximal do polegar da mão direita, entre o primeiro metacarpal e a falange distal.",
+    "function": "Conecta o polegar à palma e participa da oposição e da preensão"
+  },
+  "STR-ESQ-0194": {
+    "description": "Falange proximal do segundo dedo do pé esquerdo, entre o metatarsal correspondente e a falange média.",
+    "function": "Conecta o dedo ao metatarsal e participa da flexão dos dedos do pé"
+  },
+  "STR-ESQ-0195": {
+    "name": "Falange proximal do hálux esquerdo",
+    "description": "Falange proximal do hálux (primeiro dedo) do pé esquerdo, entre o primeiro metatarsal e a falange distal.",
+    "function": "Suporta o peso durante a marcha e transmite forças do hálux ao arco do pé"
+  },
+  "STR-ESQ-0001": {
+    "name": "Câmara anterior do globo ocular esquerdo",
+    "description": "Espaço preenchido por humor aquoso entre a córnea e a íris, na parte anterior do olho esquerdo.",
+    "function": "Nutre a córnea e o cristalino e mantém a pressão intraocular"
+  },
+  "STR-ESQ-0002": {
+    "name": "Coróide do olho esquerdo",
+    "description": "Camada vascular do globo ocular esquerdo, situada entre a esclera e a retina.",
+    "function": "Nutre a retina e reduz a dispersão de luz dentro do olho"
+  },
+  "STR-ESQ-0003": {
+    "name": "Coróide do olho esquerdo",
+    "description": "Camada vascular do globo ocular esquerdo, situada entre a esclera e a retina.",
+    "function": "Nutre a retina e reduz a dispersão de luz dentro do olho"
+  },
+  "STR-ESQ-0004": {
+    "name": "Córnea do olho esquerdo",
+    "description": "Camada transparente e curva da face anterior do globo ocular esquerdo, sobre a íris e o cristalino.",
+    "function": "Foca a luz que entra no olho e protege as estruturas internas"
+  },
+  "STR-ESQ-0005": {
+    "name": "Íris do olho esquerdo",
+    "description": "Estrutura circular e pigmentada do olho esquerdo, com a abertura pupilar ao centro.",
+    "function": "Regula a quantidade de luz que chega ao cristalino e à retina"
+  },
+  "STR-ESQ-0006": {
+    "name": "Aparelho lacrimal esquerdo",
+    "description": "Conjunto de estruturas que produzem e drenam as lágrimas, incluindo glândula lacrimal e ductos, no olho esquerdo.",
+    "function": "Produz lágrimas que lubrificam, limpam e protegem a superfície ocular"
+  },
+  "STR-ESQ-0007": {
+    "name": "Cristalino do olho esquerdo",
+    "description": "Lente biconvexa e transparente do olho esquerdo, atrás da íris, capaz de ajustar o foco.",
+    "function": "Foca a luz sobre a retina, permitindo a acomodação para perto e para longe"
+  },
+  "STR-ESQ-0008": {
+    "name": "Esclerótica do olho esquerdo",
+    "description": "Camada fibrosa e branca que forma o revestimento externo do globo ocular esquerdo.",
+    "function": "Protege o globo ocular e dá fixação aos músculos extrínsecos do olho"
+  },
+  "STR-ESQ-0009": {
+    "name": "Ligamento suspensor do cristalino esquerdo",
+    "description": "Conjunto de fibras da zônula que prende o cristalino aos processos ciliares, no olho esquerdo.",
+    "function": "Mantém o cristalino em posição e participa da acomodação visual"
+  },
+  "STR-ESQ-0010": {
+    "name": "Corpo vítreo do olho esquerdo",
+    "description": "Substância gelatinosa e transparente que preenche a câmara posterior do olho esquerdo.",
+    "function": "Mantém a forma do globo ocular e transmite a luz à retina"
+  },
+  "STR-ESQ-0011": {
+    "name": "Coróide do olho direito",
+    "description": "Camada vascular do globo ocular direito, situada entre a esclera e a retina.",
+    "function": "Nutre a retina e reduz a dispersão de luz dentro do olho"
+  },
+  "STR-ESQ-0012": {
+    "name": "Coróide do olho direito",
+    "description": "Camada vascular do globo ocular direito, situada entre a esclera e a retina.",
+    "function": "Nutre a retina e reduz a dispersão de luz dentro do olho"
+  },
+  "STR-ESQ-0013": {
+    "name": "Córnea do olho direito",
+    "description": "Camada transparente e curva da face anterior do globo ocular direito, sobre a íris e o cristalino.",
+    "function": "Foca a luz que entra no olho e protege as estruturas internas"
+  },
+  "STR-ESQ-0014": {
+    "name": "Íris do olho direito",
+    "description": "Estrutura circular e pigmentada do olho direito, com a abertura pupilar ao centro.",
+    "function": "Regula a quantidade de luz que chega ao cristalino e à retina"
+  },
+  "STR-ESQ-0015": {
+    "name": "Aparelho lacrimal direito",
+    "description": "Conjunto de estruturas que produzem e drenam as lágrimas, incluindo glândula lacrimal e ductos, no olho direito.",
+    "function": "Produz lágrimas que lubrificam, limpam e protegem a superfície ocular"
+  },
+  "STR-ESQ-0016": {
+    "name": "Cristalino do olho direito",
+    "description": "Lente biconvexa e transparente do olho direito, atrás da íris, capaz de ajustar o foco.",
+    "function": "Foca a luz sobre a retina, permitindo a acomodação para perto e para longe"
+  },
+  "STR-ESQ-0017": {
+    "name": "Esclerótica do olho direito",
+    "description": "Camada fibrosa e branca que forma o revestimento externo do globo ocular direito.",
+    "function": "Protege o globo ocular e dá fixação aos músculos extrínsecos do olho"
+  },
+  "STR-ESQ-0018": {
+    "name": "Ligamento suspensor do cristalino direito",
+    "description": "Conjunto de fibras da zônula que prende o cristalino aos processos ciliares, no olho direito.",
+    "function": "Mantém o cristalino em posição e participa da acomodação visual"
+  },
+  "STR-ESQ-0019": {
+    "name": "Corpo vítreo do olho direito",
+    "description": "Substância gelatinosa e transparente que preenche a câmara posterior do olho direito.",
+    "function": "Mantém a forma do globo ocular e transmite a luz à retina"
+  },
+  "STR-ESQ-0020": {
+    "name": "Osso hioide",
+    "description": "Osso ímpar em forma de ferradura, na porção anterior do pescoço, abaixo da mandíbula.",
+    "function": "Dá fixação a músculos da língua e da laringe e sustenta o aparelho hioideo"
+  },
+  "STR-ESQ-0070": {
+    "name": "Osso hioide",
+    "description": "Osso ímpar em forma de ferradura, na porção anterior do pescoço, abaixo da mandíbula.",
+    "function": "Dá fixação a músculos da língua e da laringe e sustenta o aparelho hioideo"
+  },
+  "STR-ESQ-0068": {
+    "name": "Osso etmoide",
+    "description": "Osso ímpar da base do crânio, situado entre as órbitas, com a lâmina cribriforme no teto do nariz.",
+    "function": "Compõe o septo nasal e as paredes medial das órbitas e das cavidades nasais"
+  },
+  "STR-ESQ-0136": {
+    "name": "Maxila esquerda",
+    "description": "Osso da face que forma o terço médio da face, o palato e o assoalho da órbita, no lado esquerdo.",
+    "function": "Abriga os dentes superiores e compõe o palato, a cavidade nasal e a órbita"
+  },
+  "STR-ESQ-0239": {
+    "name": "Maxila direita",
+    "description": "Osso da face que forma o terço médio da face, o palato e o assoalho da órbita, no lado direito.",
+    "function": "Abriga os dentes superiores e compõe o palato, a cavidade nasal e a órbita"
+  },
+  "STR-ESQ-0155": {
+    "name": "Mandíbula",
+    "description": "Osso ímpar e móvel que forma o maxilar inferior, o único osso móvel do crânio.",
+    "function": "Abriga os dentes inferiores e articula com os temporais na mastigação e na fala"
+  },
+  "STR-ESQ-0257": {
+    "name": "Osso esfenoide",
+    "description": "Osso ímpar da base do crânio, em forma de borboleta, entre o frontal, o etmoide e os temporais.",
+    "function": "Unifica a base do crânio, abriga a sela túrcica (hipófise) e participa das órbitas"
+  },
+  "STR-ESQ-0131": {
+    "name": "Concha nasal inferior esquerda",
+    "description": "Lâmina óssea curva da parede lateral da cavidade nasal, no lado esquerdo.",
+    "function": "Aumenta a superfície da cavidade nasal, aquecendo e umidificando o ar inspirado"
+  },
+  "STR-ESQ-0234": {
+    "name": "Concha nasal inferior direita",
+    "description": "Lâmina óssea curva da parede lateral da cavidade nasal, no lado direito.",
+    "function": "Aumenta a superfície da cavidade nasal, aquecendo e umidificando o ar inspirado"
+  },
+  "STR-ESQ-0138": {
+    "name": "Osso nasal esquerdo",
+    "description": "Pequeno osso achatado da porção superior do nariz, no lado esquerdo.",
+    "function": "Forma o dorso do nariz e dá suporte à pirâmide nasal"
+  },
+  "STR-ESQ-0241": {
+    "name": "Osso nasal direito",
+    "description": "Pequeno osso achatado da porção superior do nariz, no lado direito.",
+    "function": "Forma o dorso do nariz e dá suporte à pirâmide nasal"
+  },
+  "STR-ESQ-0258": {
+    "name": "Vômer",
+    "description": "Osso ímpar em forma de lâmina que forma a parte posterior e inferior do septo nasal.",
+    "function": "Sustenta o septo nasal junto com a lâmina perpendicular do etmoide"
+  },
+  "STR-ESQ-0021": {
+    "name": "Osso do quadril direito",
+    "description": "Osso do membro inferior formado pela fusão de ílio, ísquio e púbis, que compõe a pelve óssea, no lado direito.",
+    "function": "Forma o anel pélvico, articula com o sacro e o fêmur e dá fixação a músculos do quadril"
+  },
+  "STR-ESQ-0154": {
+    "name": "Osso do quadril esquerdo",
+    "description": "Osso do membro inferior formado pela fusão de ílio, ísquio e púbis, que compõe a pelve óssea, no lado esquerdo.",
+    "function": "Forma o anel pélvico, articula com o sacro e o fêmur e dá fixação a músculos do quadril"
+  },
+  "STR-ESQ-0156": {
+    "name": "Manúbrio do esterno",
+    "description": "Porção superior e alargada do osso esterno, que articula com as clavículas e a primeira costela.",
+    "function": "Ancora o esqueleto do tórax e dá fixação a ligamentos e cartilagens costais"
+  },
+  "STR-ESQ-0256": {
+    "name": "Sacro",
+    "description": "Osso ímpar, triangular e fusionado, formado pelas cinco vértebras sacrais na base da coluna vertebral.",
+    "function": "Transmite o peso do tronco à pelve e articula com os ossos do quadril"
+  },
+  "STR-ESQ-0097": {
+    "name": "Primeira costela esquerda",
+    "description": "Primeira costela esquerda, a mais curta, larga e curva da caixa torácica, articula com a vértebra T1 e o esterno.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0098": {
+    "name": "Segunda costela esquerda",
+    "description": "Segunda costela esquerda, articulada ao esterno por cartilagem costal e à vértebra T2.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0099": {
+    "name": "Terceira costela esquerda",
+    "description": "Terceira costela esquerda, articulada ao esterno por cartilagem costal e à vértebra T3.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0100": {
+    "name": "Quarta costela esquerda",
+    "description": "Quarta costela esquerda, articulada ao esterno por cartilagem costal e à vértebra T4.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0101": {
+    "name": "Quinta costela esquerda",
+    "description": "Quinta costela esquerda, articulada ao esterno por cartilagem costal e à vértebra T5.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0102": {
+    "name": "Sexta costela esquerda",
+    "description": "Sexta costela esquerda, articulada ao esterno por cartilagem costal e à vértebra T6.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0103": {
+    "name": "Sétima costela esquerda",
+    "description": "Sétima costela esquerda (verdadeira), articulada ao esterno por cartilagem costal e à vértebra T7.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0104": {
+    "name": "Oitava costela esquerda",
+    "description": "Oitava costela esquerda (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0105": {
+    "name": "Nona costela esquerda",
+    "description": "Nona costela esquerda (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0094": {
+    "name": "Décima costela esquerda",
+    "description": "Décima costela esquerda (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0095": {
+    "name": "Décima primeira costela esquerda",
+    "description": "Décima primeira costela esquerda (flutuante), articulada apenas à vértebra T11, sem conexão anterior com o esterno.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0096": {
+    "name": "Décima segunda costela esquerda",
+    "description": "Décima segunda costela esquerda (flutuante), a mais curta, articulada apenas à vértebra T12, sem conexão anterior com o esterno.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0200": {
+    "name": "Primeira costela direita",
+    "description": "Primeira costela direita, a mais curta, larga e curva da caixa torácica, articula com a vértebra T1 e o esterno.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0202": {
+    "name": "Segunda costela direita",
+    "description": "Segunda costela direita, articulada ao esterno por cartilagem costal e à vértebra T2.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0204": {
+    "name": "Terceira costela direita",
+    "description": "Terceira costela direita, articulada ao esterno por cartilagem costal e à vértebra T3.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0206": {
+    "name": "Quarta costela direita",
+    "description": "Quarta costela direita, articulada ao esterno por cartilagem costal e à vértebra T4.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0208": {
+    "name": "Quinta costela direita",
+    "description": "Quinta costela direita, articulada ao esterno por cartilagem costal e à vértebra T5.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0210": {
+    "name": "Sexta costela direita",
+    "description": "Sexta costela direita, articulada ao esterno por cartilagem costal e à vértebra T6.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0212": {
+    "name": "Sétima costela direita",
+    "description": "Sétima costela direita (verdadeira), articulada ao esterno por cartilagem costal e à vértebra T7.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0213": {
+    "name": "Oitava costela direita",
+    "description": "Oitava costela direita (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0214": {
+    "name": "Nona costela direita",
+    "description": "Nona costela direita (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0196": {
+    "name": "Décima costela direita",
+    "description": "Décima costela direita (falsa), articulada às vértebras torácicas e unida ao esterno pela cartilagem do arco costal.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0197": {
+    "name": "Décima primeira costela direita",
+    "description": "Décima primeira costela direita (flutuante), articulada apenas à vértebra T11, sem conexão anterior com o esterno.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0198": {
+    "name": "Décima segunda costela direita",
+    "description": "Décima segunda costela direita (flutuante), a mais curta, articulada apenas à vértebra T12, sem conexão anterior com o esterno.",
+    "function": "Protege os órgãos do tórax e participa da expansão da caixa torácica na respiração"
+  },
+  "STR-ESQ-0144": {
+    "name": "Escafoide esquerdo",
+    "description": "Osso do carpo da fileira proximal, no lado radial do punho esquerdo, entre o rádio e os ossos do carpo.",
+    "function": "Transmite cargas do polegar e participa dos movimentos do punho",
+    "alternateNames": ["Osso escafoide esquerdo"]
+  },
+  "STR-ESQ-0135": {
+    "name": "Semilunar esquerdo",
+    "description": "Osso do carpo da fileira proximal, no centro do punho esquerdo, entre o rádio e o capitato.",
+    "function": "Transmite cargas do punho e participa de sua flexão e extensão",
+    "alternateNames": ["Osso semilunar esquerdo"]
+  },
+  "STR-ESQ-0151": {
+    "name": "Piramidal esquerdo",
+    "description": "Osso do carpo da fileira proximal, no lado ulnar do punho esquerdo, junto ao semilunar e ao pisiforme.",
+    "function": "Transmite cargas do lado ulnar e dá fixação a ligamentos e tendões",
+    "alternateNames": ["Osso piramidal esquerdo"]
+  },
+  "STR-ESQ-0142": {
+    "name": "Pisiforme esquerdo",
+    "description": "Osso pequeno do carpo, em formato de ervilha, sobre o osso piramidal, na face palmar do punho esquerdo.",
+    "function": "Faz parte do túnel do carpo e atua como ponto de fixação de tendões e ligamentos",
+    "alternateNames": ["Osso pisiforme esquerdo"]
+  },
+  "STR-ESQ-0149": {
+    "name": "Trapézio esquerdo",
+    "description": "Osso do carpo da fileira distal, no lado radial do punho esquerdo, que articula com o primeiro metacarpal.",
+    "function": "Sustenta a base do polegar e permite sua movimentação e oposição",
+    "alternateNames": ["Osso trapézio esquerdo"]
+  },
+  "STR-ESQ-0150": {
+    "name": "Trapezoide esquerdo",
+    "description": "Osso do carpo da fileira distal, pequeno, entre o trapézio e o capitato, no punho esquerdo.",
+    "function": "Transmite cargas do indicador e participa dos movimentos do punho",
+    "alternateNames": ["Osso trapezoide esquerdo"]
+  },
+  "STR-ESQ-0125": {
+    "name": "Capitato esquerdo",
+    "description": "Maior osso do carpo, no centro da fileira distal do punho esquerdo, entre o semilunar e os metacarpais.",
+    "function": "Forma o eixo do punho e transmite forças da mão ao antebraço",
+    "alternateNames": ["Osso capitato esquerdo"]
+  },
+  "STR-ESQ-0129": {
+    "name": "Hamato esquerdo",
+    "description": "Osso do carpo da fileira distal, no lado ulnar do punho esquerdo, com um gancho na face palmar.",
+    "function": "Ancora ligamentos e tendões da mão e compõe o túnel do carpo",
+    "alternateNames": ["Osso hamato esquerdo"]
+  },
+  "STR-ESQ-0246": {
+    "name": "Escafoide direito",
+    "description": "Osso do carpo da fileira proximal, no lado radial do punho direito, entre o rádio e os ossos do carpo.",
+    "function": "Transmite cargas do polegar e participa dos movimentos do punho",
+    "alternateNames": ["Osso escafoide direito"]
+  },
+  "STR-ESQ-0238": {
+    "name": "Semilunar direito",
+    "description": "Osso do carpo da fileira proximal, no centro do punho direito, entre o rádio e o capitato.",
+    "function": "Transmite cargas do punho e participa de sua flexão e extensão",
+    "alternateNames": ["Osso semilunar direito"]
+  },
+  "STR-ESQ-0253": {
+    "name": "Piramidal direito",
+    "description": "Osso do carpo da fileira proximal, no lado ulnar do punho direito, junto ao semilunar e ao pisiforme.",
+    "function": "Transmite cargas do lado ulnar e dá fixação a ligamentos e tendões",
+    "alternateNames": ["Osso piramidal direito"]
+  },
+  "STR-ESQ-0245": {
+    "name": "Pisiforme direito",
+    "description": "Osso pequeno do carpo, em formato de ervilha, sobre o osso piramidal, na face palmar do punho direito.",
+    "function": "Faz parte do túnel do carpo e atua como ponto de fixação de tendões e ligamentos",
+    "alternateNames": ["Osso pisiforme direito"]
+  },
+  "STR-ESQ-0251": {
+    "name": "Trapézio direito",
+    "description": "Osso do carpo da fileira distal, no lado radial do punho direito, que articula com o primeiro metacarpal.",
+    "function": "Sustenta a base do polegar e permite sua movimentação e oposição",
+    "alternateNames": ["Osso trapézio direito"]
+  },
+  "STR-ESQ-0252": {
+    "name": "Trapezoide direito",
+    "description": "Osso do carpo da fileira distal, pequeno, entre o trapézio e o capitato, no punho direito.",
+    "function": "Transmite cargas do indicador e participa dos movimentos do punho",
+    "alternateNames": ["Osso trapezoide direito"]
+  },
+  "STR-ESQ-0227": {
+    "name": "Capitato direito",
+    "description": "Maior osso do carpo, no centro da fileira distal do punho direito, entre o semilunar e os metacarpais.",
+    "function": "Forma o eixo do punho e transmite forças da mão ao antebraço",
+    "alternateNames": ["Osso capitato direito"]
+  },
+  "STR-ESQ-0232": {
+    "name": "Hamato direito",
+    "description": "Osso do carpo da fileira distal, no lado ulnar do punho direito, com um gancho na face palmar.",
+    "function": "Ancora ligamentos e tendões da mão e compõe o túnel do carpo",
+    "alternateNames": ["Osso hamato direito"]
+  },
+  "STR-ESQ-0045": {
+    "name": "Atlas",
+    "description": "Primeira vértebra cervical (C1), em forma de anel sem corpo vertebral, que sustenta o crânio.",
+    "function": "Sustenta o crânio e permite os movimentos de flexão e extensão da cabeça",
+    "alternateNames": ["Primeira vértebra cervical"]
+  },
+  "STR-ESQ-0046": {
+    "name": "Áxis",
+    "description": "Segunda vértebra cervical (C2), com o processo odontoide (dente) que se articula com o atlas.",
+    "function": "Permite a rotação da cabeça sobre o pescoço e dá suporte ao atlas",
+    "alternateNames": ["Segunda vértebra cervical"]
+  },
+  "STR-ESQ-0030": {
+    "name": "Terceira vértebra cervical",
+    "description": "Terceira vértebra cervical (C3), na parte superior da coluna cervical, articula com o áxis e a quarta cervical.",
+    "function": "Suporta a cabeça e protege a medula espinhal no pescoço"
+  },
+  "STR-ESQ-0033": {
+    "name": "Quarta vértebra cervical",
+    "description": "Quarta vértebra cervical (C4), no segmento médio da coluna cervical.",
+    "function": "Suporta a cabeça e protege a medula espinhal no pescoço"
+  },
+  "STR-ESQ-0036": {
+    "name": "Quinta vértebra cervical",
+    "description": "Quinta vértebra cervical (C5), no segmento médio da coluna cervical.",
+    "function": "Suporta a cabeça e protege a medula espinhal no pescoço"
+  },
+  "STR-ESQ-0039": {
+    "name": "Sexta vértebra cervical",
+    "description": "Sexta vértebra cervical (C6), na transição inferior da coluna cervical.",
+    "function": "Suporta a cabeça e protege a medula espinhal no pescoço"
+  },
+  "STR-ESQ-0027": {
+    "name": "Primeira vértebra torácica",
+    "description": "Primeira vértebra torácica (T1), na transição com a coluna cervical, articula com a primeira costela.",
+    "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas"
+  },
+  "STR-ESQ-0029": {
+    "name": "Segunda vértebra torácica",
+    "description": "Segunda vértebra torácica (T2), articula com a segunda costela e as vértebras vizinhas.",
+    "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas"
+  },
+  "STR-ESQ-0032": {
+    "name": "Terceira vértebra torácica",
+    "description": "Terceira vértebra torácica (T3), articula com a terceira costela e as vértebras vizinhas.",
+    "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas"
+  },
+  "STR-ESQ-0035": {
+    "name": "Quarta vértebra torácica",
+    "description": "Quarta vértebra torácica (T4), articula com a quarta costela e as vértebras vizinhas.",
+    "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas"
+  },
+  "STR-ESQ-0038": {
+    "name": "Quinta vértebra torácica",
+    "description": "Quinta vértebra torácica (T5), articula com a quinta costela e as vértebras vizinhas.",
+    "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas"
+  },
+  "STR-ESQ-0040": {
+    "name": "Sexta vértebra torácica",
+    "description": "Sexta vértebra torácica (T6), articula com a sexta costela e as vértebras vizinhas.",
+    "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas"
+  },
+  "STR-ESQ-0042": {
+    "name": "Sétima vértebra torácica",
+    "description": "Sétima vértebra torácica (T7), articula com a sétima costela e as vértebras vizinhas.",
+    "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas"
+  },
+  "STR-ESQ-0043": {
+    "name": "Oitava vértebra torácica",
+    "description": "Oitava vértebra torácica (T8), articula com a oitava costela e as vértebras vizinhas.",
+    "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas"
+  },
+  "STR-ESQ-0044": {
+    "name": "Nona vértebra torácica",
+    "description": "Nona vértebra torácica (T9), articula com a nona costela e as vértebras vizinhas.",
+    "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas"
+  },
+  "STR-ESQ-0023": {
+    "name": "Décima vértebra torácica",
+    "description": "Décima vértebra torácica (T10), com um corpo de transição em direção à coluna lombar.",
+    "function": "Suporta cargas do tronco, protege a medula espinhal e articula com as costelas"
+  },
+  "STR-ESQ-0025": {
+    "name": "Décima segunda vértebra torácica",
+    "description": "Décima segunda vértebra torácica (T12), a última do segmento torácico, na transição com a coluna lombar.",
+    "function": "Suporta cargas do tronco e articula com a décima segunda costela"
+  },
+  "STR-ESQ-0026": {
+    "name": "Primeira vértebra lombar",
+    "description": "Primeira vértebra lombar (L1), com corpo volumoso, na transição toracolombar da coluna vertebral.",
+    "function": "Suporta as maiores cargas da coluna e protege a medula espinhal e a cauda equina"
+  },
+  "STR-ESQ-0028": {
+    "name": "Segunda vértebra lombar",
+    "description": "Segunda vértebra lombar (L2), com corpo volumoso, na parte superior da coluna lombar.",
+    "function": "Suporta as maiores cargas da coluna e protege a medula espinhal e a cauda equina"
+  },
+  "STR-ESQ-0031": {
+    "name": "Terceira vértebra lombar",
+    "description": "Terceira vértebra lombar (L3), com corpo volumoso, no centro da coluna lombar.",
+    "function": "Suporta as maiores cargas da coluna e protege a medula espinhal e a cauda equina"
+  },
+  "STR-ESQ-0034": {
+    "name": "Quarta vértebra lombar",
+    "description": "Quarta vértebra lombar (L4), com corpo volumoso, na parte inferior da coluna lombar.",
+    "function": "Suporta as maiores cargas da coluna e protege a medula espinhal e a cauda equina"
+  },
+  "STR-ESQ-0037": {
+    "name": "Quinta vértebra lombar",
+    "description": "Quinta vértebra lombar (L5), a última vértebra lombar, na base da coluna, acima do sacro.",
+    "function": "Suporta as maiores cargas da coluna e articula com o sacro"
+  }
+}

@@ -1,0 +1,37 @@
+# Anatomia 3D - ambiente de desenvolvimento
+# Referencia: README.md -> "Infraestrutura e deploy"
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: anatomia
+      POSTGRES_USER: anatomia
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-anatomia}
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U anatomia -d anatomia"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - anatomia_db_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres:5432/anatomia
+      DATABASE_USERNAME: anatomia
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-anatomia}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173}
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  anatomia_db_data:

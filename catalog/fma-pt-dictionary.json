@@ -1,0 +1,321 @@
+{
+  "_comment": "Dicionario curado EN->PT-BR dos conceitos anatomicos usados no catalogo. Conteudo educativo a revisar antes de publicar. A validacao exigira revisao.",
+  "abdominal segment of trunk": {
+    "pt": "Segmento abdominal do tronco"
+  },
+  "anterior chamber of left eyeball": {
+    "pt": "Câmara anterior do globo ocular esquerdo"
+  },
+  "anterior chamber of right eyeball": {
+    "pt": "Câmara anterior do globo ocular direito"
+  },
+  "anterior part of left knee": {
+    "pt": "Parte anterior do joelho esquerdo"
+  },
+  "anterior part of right knee": {
+    "pt": "Parte anterior do joelho direito"
+  },
+  "basicranial part of head proper": {
+    "pt": "Parte basicraniana da cabeça"
+  },
+  "cervical vertebral column": {
+    "pt": "Coluna vertebral cervical"
+  },
+  "thoracic vertebral column": {
+    "pt": "Coluna vertebral torácica"
+  },
+  "frontal bone": {
+    "pt": "Osso frontal"
+  },
+  "intervertebral symphysis": {
+    "pt": "Sínfise intervertebral"
+  },
+  "intervertebral symphysis of axis": {
+    "pt": "Sínfise intervertebral do áxis"
+  },
+  "left free lower limb": {
+    "pt": "Membro inferior livre esquerdo"
+  },
+  "right free lower limb": {
+    "pt": "Membro inferior livre direito"
+  },
+  "left free upper limb": {
+    "pt": "Membro superior livre esquerdo"
+  },
+  "right free upper limb": {
+    "pt": "Membro superior livre direito"
+  },
+  "left lacrimal bone": {
+    "pt": "Osso lacrimal esquerdo"
+  },
+  "right lacrimal bone": {
+    "pt": "Osso lacrimal direito"
+  },
+  "left lateral wall of internal nose": {
+    "pt": "Parede lateral da cavidade nasal esquerda"
+  },
+  "right lateral wall of internal nose": {
+    "pt": "Parede lateral da cavidade nasal direita"
+  },
+  "left orbital compartment": {
+    "pt": "Compartimento orbital esquerdo"
+  },
+  "right orbital compartment": {
+    "pt": "Compartimento orbital direito"
+  },
+  "left palatine bone": {
+    "pt": "Osso palatino esquerdo"
+  },
+  "right palatine bone": {
+    "pt": "Osso palatino direito"
+  },
+  "left parietal part of head": {
+    "pt": "Parte parietal esquerda da cabeça"
+  },
+  "right parietal part of head": {
+    "pt": "Parte parietal direita da cabeça"
+  },
+  "left temporal bone": {
+    "pt": "Osso temporal esquerdo"
+  },
+  "right temporal bone": {
+    "pt": "Osso temporal direito"
+  },
+  "left zygomatic bone": {
+    "pt": "Osso zigomático esquerdo"
+  },
+  "right zygomatic bone": {
+    "pt": "Osso zigomático direito"
+  },
+  "mandibular part of mouth": {
+    "pt": "Parte mandibular da boca"
+  },
+  "navicular bone of left foot": {
+    "pt": "Osso navicular do pé esquerdo"
+  },
+  "navicular bone of right foot": {
+    "pt": "Osso navicular do pé direito"
+  },
+  "occipital part of head": {
+    "pt": "Parte occipital da cabeça"
+  },
+  "osseous skeleton of external nose": {
+    "pt": "Esqueleto ósseo do nariz externo"
+  },
+  "pectoral part of left pectoral girdle": {
+    "pt": "Parte pectoral do cíngulo do membro superior esquerdo"
+  },
+  "pectoral part of right pectoral girdle": {
+    "pt": "Parte pectoral do cíngulo do membro superior direito"
+  },
+  "scapular part of left pectoral girdle": {
+    "pt": "Parte escapular do cíngulo do membro superior esquerdo"
+  },
+  "scapular part of right pectoral girdle": {
+    "pt": "Parte escapular do cíngulo do membro superior direito"
+  },
+  "seventh cervical vertebra": {
+    "pt": "Sétima vértebra cervical"
+  },
+  "skeleton of left hand proper": {
+    "pt": "Esqueleto da mão esquerda"
+  },
+  "skeleton of right hand proper": {
+    "pt": "Esqueleto da mão direita"
+  },
+  "suspensory ligament of left lens": {
+    "pt": "Ligamento suspensor do cristalino esquerdo"
+  },
+  "suspensory ligament of right lens": {
+    "pt": "Ligamento suspensor do cristalino direito"
+  },
+  "thoracic segment of trunk": {
+    "pt": "Segmento torácico do tronco"
+  },
+  "viscerocranium": {
+    "pt": "Viscerocrânio"
+  },
+  "wall of right side of internal nose": {
+    "pt": "Parede do lado direito da cavidade nasal"
+  },
+  "wall of left side of internal nose": {
+    "pt": "Parede do lado esquerdo da cavidade nasal"
+  },
+  "fibrous layer of left eyeball": {
+    "pt": "Camada fibrosa do globo ocular esquerdo"
+  },
+  "fibrous layer of right eyeball": {
+    "pt": "Camada fibrosa do globo ocular direito"
+  },
+  "vascular layer of left eyeball": {
+    "pt": "Camada vascular do globo ocular esquerdo"
+  },
+  "vascular layer of right eyeball": {
+    "pt": "Camada vascular do globo ocular direito"
+  },
+  "sphenoid bone": {
+    "pt": "Osso esfenoide"
+  },
+  "ethmoid bone": {
+    "pt": "Osso etmoide"
+  },
+  "left orbital content": {
+    "pt": "Conteúdo orbital esquerdo"
+  },
+  "right orbital content": {
+    "pt": "Conteúdo orbital direito"
+  },
+  "orbital part of left eye": {
+    "pt": "Parte orbital do olho esquerdo"
+  },
+  "orbital part of right eye": {
+    "pt": "Parte orbital do olho direito"
+  },
+  "left eyeball": {
+    "pt": "Globo ocular esquerdo"
+  },
+  "right eyeball": {
+    "pt": "Globo ocular direito"
+  },
+  "left eye": {
+    "pt": "Olho esquerdo"
+  },
+  "right eye": {
+    "pt": "Olho direito"
+  },
+  "left orbit": {
+    "pt": "Órbita esquerda"
+  },
+  "right orbit": {
+    "pt": "Órbita direita"
+  },
+  "hyoid bone": {
+    "pt": "Osso hioide"
+  },
+  "left hip bone": {
+    "pt": "Osso do quadril esquerdo"
+  },
+  "right hip bone": {
+    "pt": "Osso do quadril direito"
+  },
+  "lumbar vertebral column": {
+    "pt": "Coluna vertebral lombar"
+  },
+  "anterior chest wall": {
+    "pt": "Parede anterior do tórax"
+  },
+  "anterior thoracic wall": {
+    "pt": "Parede anterior do tórax"
+  },
+  "skeleton of left pectoral girdle": {
+    "pt": "Cíngulo do membro superior esquerdo"
+  },
+  "skeleton of right pectoral girdle": {
+    "pt": "Cíngulo do membro superior direito"
+  },
+  "left cuboid bone": {
+    "pt": "Osso cuboide esquerdo"
+  },
+  "right cuboid bone": {
+    "pt": "Osso cuboide direito"
+  },
+  "osseous skeleton of internal nose": {
+    "pt": "Esqueleto ósseo do nariz interno"
+  },
+  "left nasal bone": {
+    "pt": "Osso nasal esquerdo"
+  },
+  "right nasal bone": {
+    "pt": "Osso nasal direito"
+  },
+  "left parietal bone": {
+    "pt": "Osso parietal esquerdo"
+  },
+  "right parietal bone": {
+    "pt": "Osso parietal direito"
+  },
+  "skeleton of mouth": {
+    "pt": "Esqueleto da boca"
+  },
+  "occipital bone": {
+    "pt": "Osso occipital"
+  },
+  "right side of rib cage": {
+    "pt": "Lado direito da caixa torácica"
+  },
+  "left side of rib cage": {
+    "pt": "Lado esquerdo da caixa torácica"
+  },
+  "vertebral column": {
+    "pt": "Coluna vertebral"
+  },
+  "right first metacarpal bone": {
+    "pt": "Osso metacarpal primeiro direito"
+  },
+  "right second metacarpal bone": {
+    "pt": "Osso metacarpal segundo direito"
+  },
+  "right third metacarpal bone": {
+    "pt": "Osso metacarpal terceiro direito"
+  },
+  "right fourth metacarpal bone": {
+    "pt": "Osso metacarpal quarto direito"
+  },
+  "right fifth metacarpal bone": {
+    "pt": "Osso metacarpal quinto direito"
+  },
+  "left first metacarpal bone": {
+    "pt": "Osso metacarpal primeiro esquerdo"
+  },
+  "left second metacarpal bone": {
+    "pt": "Osso metacarpal segundo esquerdo"
+  },
+  "left third metacarpal bone": {
+    "pt": "Osso metacarpal terceiro esquerdo"
+  },
+  "left fourth metacarpal bone": {
+    "pt": "Osso metacarpal quarto esquerdo"
+  },
+  "left fifth metacarpal bone": {
+    "pt": "Osso metacarpal quinto esquerdo"
+  },
+  "first metacarpal bone": {
+    "pt": "Primeiro osso metacarpal"
+  },
+  "second metacarpal bone": {
+    "pt": "Segundo osso metacarpal"
+  },
+  "third metacarpal bone": {
+    "pt": "Terceiro osso metacarpal"
+  },
+  "fourth metacarpal bone": {
+    "pt": "Quarto osso metacarpal"
+  },
+  "fifth metacarpal bone": {
+    "pt": "Quinto osso metacarpal"
+  },
+  "left lacrimal apparatus": {
+    "pt": "Aparelho lacrimal esquerdo"
+  },
+  "right lacrimal apparatus": {
+    "pt": "Aparelho lacrimal direito"
+  },
+  "left side of bony pelvis": {
+    "pt": "Lado esquerdo da pelve óssea"
+  },
+  "right side of bony pelvis": {
+    "pt": "Lado direito da pelve óssea"
+  },
+  "rib cage": {
+    "pt": "Caixa torácica"
+  },
+  "body of sternum": {
+    "pt": "Corpo do esterno"
+  },
+  "nasal skeleton": {
+    "pt": "Esqueleto nasal"
+  },
+  "skeleton of nasal septum": {
+    "pt": "Esqueleto do septo nasal"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "anatomia-3d",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "test": "npm --prefix frontend test",
+    "lint": "npm --prefix frontend run lint",
+    "assets:import": "node scripts/import-skeleton.mjs",
+    "catalog:generate": "node scripts/generate-catalog.mjs",
+    "catalog:validate": "node scripts/validate-catalog.mjs",
+    "catalog:seed": "node scripts/export-catalog-seed.mjs > backend/src/main/resources/db/migration/V3__seed_structures.sql",
+    "catalog:sync": "node scripts/sync-frontend-catalog.mjs"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.5.0",
+    "@gltf-transform/extensions": "^4.5.0",
+    "@gltf-transform/functions": "^4.5.0",
+    "fflate": "^0.8.3",
+    "meshoptimizer": "^1.2.0",
+    "unzipper": "^0.12.5"
+  }
+}

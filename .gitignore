@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+assets/original/
+test-results/
+playwright-report/
+*.log
+
+# Backend
+backend/target/
+*.class
