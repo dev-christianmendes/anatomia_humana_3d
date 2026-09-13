@@ -21,21 +21,21 @@
 - [x] Sistema muscular (Z-Anatomy): extracao no Blender, 462 estruturas, GLB Meshopt, mapa e inventario de licenca.
 - [x] Curadoria do sistema muscular (462/462 revisadas), catálogo final com 720 estruturas (STR-ESQ + STR-MUS), seed/sync atualizados.
 - [x] Viewer com dois GLBs (esqueleto + musculatura), fit compartilhado, creditos/licencas e testes E2E.
+- [x] Busca: debounce, normalizacao sem acentos, prioridade de resultados e foco automatico da camera.
+- [x] Relacoes anatomicas curadas (161 no conjunto inicial, 147 articulacoes + 14 origem/insercao): seed V4, sync para o frontend e painel com resolucao bidirecional de articulacoes.
+- [x] Visualizacao explodida: slider de intensidade 0-100% separando todas as estruturas, com reset.
 
 ## Pendencias da Preparacao
 
-- [ ] Licenca do codigo escolhida pelo responsavel.
+- [x] Licenca do codigo escolhida pelo responsavel (MIT, raiz do repositorio).
 - [ ] Repositorio remoto e publicacao.
 
 ## Proximos Marcos
 
-1. PESQUISA: debounce, resultados, busca sem acentos e foco por bounding box.
-2. RELACOES: exibir relacoes anatomicas no painel por estrutura.
-3. EXPLODED VIEW: grupos, posicoes, interpolacao, slider e reset.
-4. QUALIDADE DE CONTEUDO: revisao didatica das descricoes/funcoes curadas e inclusao de relacoes anatomicas por estrutura.
-5. PERFORMANCE: profiling, draw calls, simplificacao, lazy loading e cache.
-6. QUALIDADE: testes de estado/UI/backend, acessibilidade e matriz de navegadores.
-7. DEPLOY: frontend estatico, backend, banco gerenciado e assets em storage/CDN.
+1. QUALIDADE DE CONTEUDO: revisao didatica das descricoes/funcoes curadas e ampliacao do conjunto de relacoes anatomicas (incluindo mais origens/insercoes).
+2. PERFORMANCE: profiling, draw calls, simplificacao, lazy loading e cache.
+3. QUALIDADE: acessibilidade, matriz de navegadores e auditoria visual mais ampla.
+4. DEPLOY: frontend estatico, backend, banco gerenciado e assets em storage/CDN.
 
 ## Pos-MVP
 

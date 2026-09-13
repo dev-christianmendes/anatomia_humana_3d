@@ -11,7 +11,7 @@ A entrega atual combina o **Milestone 01: First 3D Viewer** com as etapas de **i
 | Status | MVP em desenvolvimento |
 | Plataforma | Web, com prioridade para desktop |
 | Finalidade | Educação, projeto acadêmico e portfólio |
-| Entrega disponível | Viewer dos sistemas esquelético e muscular com seleção de estruturas |
+| Entrega disponível | Viewer dos sistemas esquelético e muscular com seleção, busca, relações e visualização explodida |
 | Backend | Java 21 / Spring Boot, implementado com API `/api/v1` |
 | Banco | PostgreSQL com migrations Flyway (schema, referência e estruturas) |
 | Docker Compose | Backend + PostgreSQL prontos para subir o stack |
@@ -72,6 +72,9 @@ Como projeto de portfólio, a evolução prevista demonstrará integração entr
 | Seleção de estruturas | Raycasting ao clicar; destaque de hover e de seleção sem alterar o asset |
 | Painel por estrutura | Nome, nomes alternativos, sistema, região, descrição, função e fonte educacional |
 | Visibilidade de sistemas | Checkbox por sistema; apenas sistemas presentes no catálogo são listados |
+| Busca | Filtro com debounce (200 ms), normalização sem acentos e foco automático da câmera na estrutura escolhida |
+| Relações anatômicas | Painel por estrutura com articulações (resolvidas nos dois sentidos), origens e inserções; clique na relação seleciona e foca o alvo |
+| Visualização explodida | Slider de intensidade (0–100%) que separa todas as estruturas a partir do centro do corpo |
 | Isolamento | "Isolar estrutura" oculta o restante; "Restaurar visão geral" desfaz |
 | Limpar seleção | Retorna ao painel resumo do modelo |
 | Dados via API | Quando `VITE_API_URL` está configurada, estruturas revisadas são consultadas na API |
@@ -81,13 +84,9 @@ Como projeto de portfólio, a evolução prevista demonstrará integração entr
 
 ### Planejadas para o MVP
 
-- Busca com debounce, normalização de texto e foco automático da câmera.
-- Relações anatômicas exibidas no painel por estrutura.
-- Visualização explodida com posições predefinidas e controle de intensidade.
-- Curadoria completa do catálogo pt-BR (720/720 revisadas: 258 esqueléticas + 462 musculares), com migração V3 e fallback do frontend.
 - Deploy do stack completo e observabilidade básica.
 
-**O viewer atual consulta a API quando configurada; caso contrário, usa o catálogo local sincronizado. A busca os relações ainda não estão implementadas no frontend.**
+**A busca, o painel de relações anatômicas e a visualização explodida já estão implementados no frontend e cobertos por testes de navegador.** O viewer consulta a API quando `VITE_API_URL` está configurada; caso contrário, usa o catálogo local sincronizado e o conjunto curado de relações `catalog/relations.json`.
 
 ### Fora do MVP
 
@@ -198,11 +197,14 @@ O painel por estrutura passará a exibir "Dados via API" para estruturas revisad
 4. Arraste com o botão direito para deslocar o alvo da câmera (pan).
 5. Escolha **Anterior**, **Posterior** ou **Lateral** para mudar a orientação.
 6. Ative **Rotação automática** ou **Malha poligonal**, conforme necessário.
-7. Clique em uma estrutura do esqueleto para selecioná-la; o painel direito mostra nome, sistema, região, descrição e função.
-8. Use **Isolar estrutura** para ocultar o restante do modelo e **Restaurar visão geral** para desfazer.
-9. Marque/desmarque o checkbox de **Sistemas** para ocultar um sistema inteiro.
-10. Use **Limpar seleção** para voltar ao painel resumo, **Resetar câmera** para o enquadramento inicial, ou **Restaurar visualização** para também desligar rotação automática e wireframe.
-11. Abra **Fontes e licença** para consultar a atribuição e acessar o GLB.
+7. Clique em uma estrutura do esqueleto para selecioná-la; o painel direito mostra nome, sistema, região, descrição, função e relações anatômicas.
+8. Use o campo de **busca** para filtrar por nome, nome alternativo, sistema ou região; escolher um resultado seleciona a estrutura e foca a câmera.
+9. No painel, clique em uma **relação anatômica** para selecionar e focar a estrutura relacionada.
+10. Use **Isolar estrutura** para ocultar o restante do modelo e **Restaurar visão geral** para desfazer.
+11. Ajuste o slider de **Explosão** para separar as estruturas e voltar ao 0% para restabelecer a posição original.
+12. Marque/desmarque o checkbox de **Sistemas** para ocultar um sistema inteiro.
+13. Use **Limpar seleção** para voltar ao painel resumo, **Resetar câmera** para o enquadramento inicial, ou **Restaurar visualização** para também desligar rotação, wireframe e explosão.
+14. Abra **Fontes e licença** para consultar a atribuição e acessar o GLB.
 
 Os controles do Drei/OrbitControls também oferecem interações por toque, mas gestos em dispositivos móveis reais ainda não foram certificados. Botões e controles da interface podem ser acessados por teclado; o diálogo de créditos pode ser fechado com `Esc`.
 
@@ -222,9 +224,11 @@ Execute os comandos abaixo a partir da raiz:
 | `npm --prefix frontend run preview` | Serve localmente um build já gerado |
 | `npm run assets:import` | Reconstrói o GLB e atualiza os inventários de assets |
 | `npm run catalog:generate` | Regenera o rascunho do catálogo pt-BR |
-| `npm run catalog:validate` | Valida o catálogo (exige as 720 estruturas revisadas) |
+| `npm run catalog:validate` | Valida o catálogo e as relações curadas (exige as 720 estruturas revisadas) |
 | `npm run catalog:sync` | Sincroniza o catálogo para o frontend (`structures.ts`) |
 | `npm run catalog:seed` | Gera a migration `V3__seed_structures.sql` com as entradas revisadas |
+| `npm run relations:sync` | Sincroniza as relações curadas para o frontend (`relations.ts`) |
+| `npm run relations:seed` | Gera a migration `V4__seed_relations.sql` com as relações curadas |
 | `(cd backend && ./mvnw -B test)` | Testes do backend (JDK 21 via `JAVA_HOME`) |
 | `docker compose up -d` | Sobe PostgreSQL e backend |
 
@@ -266,13 +270,18 @@ flowchart LR
     Catalog[catálogo pt-BR] --> Generate[Gerador + validação]
     Generate --> Sync[structures.ts no frontend]
     Generate --> Seed[Flyway V3]
+    Relations[relações curadas] --> ValidateR[Validador + exportador]
+    ValidateR --> SyncR[relations.ts no frontend]
+    ValidateR --> SeedR[Flyway V4]
 ```
 
 - [frontend/src/main.tsx](frontend/src/main.tsx) inicializa a aplicação e monta o atlas.
 - [frontend/src/Atlas.tsx](frontend/src/Atlas.tsx) contém a interface, o painel por estrutura e a sidebar de sistemas.
 - [frontend/src/store/atlas.ts](frontend/src/store/atlas.ts) centraliza seleção, hover, sistemas visíveis e isolamento (Zustand).
 - [frontend/src/features/structure/catalog.ts](frontend/src/features/structure/catalog.ts) consulta o catálogo local e os rótulos de sistema/região.
-- [frontend/src/features/structure/api.ts](frontend/src/features/structure/api.ts) busca dados da API quando `VITE_API_URL` está configurada.
+- [frontend/src/features/structure/api.ts](frontend/src/features/structure/api.ts) busca dados e relações da API quando `VITE_API_URL` está configurada.
+- [frontend/src/features/structure/search.ts](frontend/src/features/structure/search.ts) normaliza e ranqueia resultados de busca com debounce.
+- [frontend/src/features/structure/relations.ts](frontend/src/features/structure/relations.ts) resolve as relações curadas localmente e rotula os tipos em português.
 - [frontend/src/features/viewer/AnatomyViewport.tsx](frontend/src/features/viewer/AnatomyViewport.tsx) controla o carregamento GLB, a cena, os materiais, a câmera e o raycasting.
 - [frontend/src/features/viewer/camera.ts](frontend/src/features/viewer/camera.ts) calcula o enquadramento e as posições das vistas.
 - [frontend/src/atlas.css](frontend/src/atlas.css) define o layout e a identidade visual.
@@ -318,21 +327,22 @@ anatomia_3d/
 │   │   ├── atlas.css
 │   │   ├── store/atlas.ts
 │   │   ├── data/structures.ts
+│   │   ├── data/relations.ts
 │   │   └── features/
 │   │       ├── viewer/ (AnatomyViewport, camera, testes)
-│   │       └── structure/ (catalog, api, testes)
-│   ├── e2e/ (viewer, structure, api)
+│   │       └── structure/ (catalog, api, search, relations, testes)
+│   ├── e2e/ (viewer, structure, features, api)
 │   ├── playwright.config.ts
 │   ├── vite.config.ts
 │   └── package.json
 ├── backend/
 │   ├── src/main/java/com/anatomia3d/ (controller/service/repository/entity/dto/mapper/exception/config/util)
-│   ├── src/main/resources/db/migration/ (V1 schema, V2 referência, V3 seed)
+│   ├── src/main/resources/db/migration/ (V1 schema, V2 referência, V3 seed, V4 relações)
 │   ├── src/test/java/com/anatomia3d/ (Testcontainers + MockMvc)
 │   ├── pom.xml
 │   └── Dockerfile
-├── scripts/ (import-skeleton, gerador/validador/exportador/sync do catálogo)
-├── catalog/ (fma-pt-dictionary.json, catalog.json)
+├── scripts/ (import-skeleton, gerador/validador/exportador/sync do catálogo e das relações)
+├── catalog/ (fma-pt-dictionary.json, catalog.json, relations.json)
 ├── assets/ (licenses.json, structure-map.json)
 ├── compose.yaml
 ├── docs/ (DESIGN-DOC, ARCHITECTURE, DATABASE, API, ASSETS-LICENSING, ROADMAP, ADR/)
@@ -428,6 +438,8 @@ O modelo relacional inclui `ANATOMICAL_SYSTEM`, `ANATOMICAL_REGION`, `ANATOMICAL
 
 **Catálogo educacional:** o catálogo pt-BR com as 720 estruturas é gerado a partir do `structure-map.json` (esqueleto) e do `z-anatomy-map.json` (musculatura), com traduções curadas em [catalog/fma-pt-dictionary.json](catalog/fma-pt-dictionary.json) e [catalog/muscles-pt.json](catalog/muscles-pt.json). Para os músculos, nomes vêm das traduções curadas e descrição/função são derivadas por regras anatômicas em `scripts/generate-catalog.mjs`. O seed `V3__seed_structures.sql` só recebe entradas revisadas, e o `catalog:validate` exige as 720 revisadas. Processo: `catalog:generate → catalog:validate → catalog:seed → catalog:sync`.
 
+**Relações anatômicas:** o conjunto curado em [catalog/relations.json](catalog/relations.json) cobre articulações (incluindo as suturas do crânio e as cadeias da coluna e dos membros) e vínculos de origem/inserção de músculos. `ARTICULATION` é simétrica e resolvida nos dois sentidos na API e no catálogo local; `ORIGIN`/`INSERTION` são direcionais (músculo → osso). O `catalog:validate` verifica referências, duplicatas e o vocabulário. Processo: `relations:seed → relations:sync`, gerando `V4__seed_relations.sql` e `frontend/src/data/relations.ts`.
+
 ## Testes e Qualidade
 
 ### Verificações Locais
@@ -458,16 +470,20 @@ O navegador de teste usa SwiftShader para oferecer WebGL por software. Por ser m
 | Camada | Verificações existentes |
 | --- | --- |
 | Câmera | Três testes unitários de distância de enquadramento, tela estreita e posições das vistas |
-| Estado | Testes do store Zustand (seleção, hover, sistemas, isolamento/restauração) |
+| Estado | Testes do store Zustand (seleção, hover, sistemas, isolamento/restauração, explosão) |
 | Catálogo | Testes de integridade das 720 estruturas sincronizadas e dos rótulos/sistemas |
+| Busca | Testes de normalização, prioridade de resultados, nomes alternativos, sistemas e limites |
+| Relações | Testes de integridade (referências, vocabulário), resolução nos dois sentidos e direcionalidade origem/inserção |
 | API adapter | Testes com fetch simulado (mapeamento da resposta e fallback local) |
 | Renderização | Carregamento do GLB e detecção de pixels visíveis no canvas |
 | Interação | Zoom, mudança de vistas anatômicas, retorno ao enquadramento e gesto de arrasto no canvas |
 | Seleção | E2E de clique → painel por estrutura → isolamento → restauração → limpar seleção |
+| Busca e relações | E2E de busca → foco de câmera → painel de relações → navegação por relação |
+| Explodida | E2E do slider de intensidade com alteração de pixel e reset |
 | Integração API | E2E com backend real (gate `API_E2E=1 VITE_API_URL=...`): painel "Dados via API" |
 | Interface | Abertura/fechamento do diálogo de créditos |
 | Responsividade | Capturas em 1440×900 e 390×844, limites da silhueta e ausência de overflow horizontal |
-| Backend | 19 testes (normalização, serviço de estruturas e integração Testcontainers + MockMvc) |
+| Backend | 20 testes (normalização, serviço de estruturas e integração Testcontainers + MockMvc, incluindo resolução reversa de articulações) |
 | Execução | Verificação de erros JavaScript na página |
 
 O smoke test também executa o gesto de pan, mas ainda não contém uma asserção visual dedicada ao seu deslocamento. As capturas são verificações de renderização e enquadramento, não uma certificação de exatidão anatômica ou uma suíte completa de regressão visual.
@@ -546,9 +562,9 @@ Use HTTPS em produção. Backend, banco e CORS já têm configuração Docker Co
 | Interação | Seleção, highlight, painel por estrutura | Entregue |
 | Sistemas | Filtros, mostrar/ocultar e isolamento | Entregue |
 | Catálogo pt-BR | Geração, curadoria, validação e seed das 720 estruturas (258 esqueléticas + 462 musculares) | Entregue (720/720) |
-| Pesquisa | Debounce, resultados e foco automático | Planejado |
-| Relações | Relações anatômicas no painel | Planejado |
-| Exploded view | Grupos, posições predefinidas e interpolação | Planejado |
+| Pesquisa | Debounce, resultados e foco automático | Entregue |
+| Relações | Relações anatômicas no painel (articulações nos dois sentidos + origem/inserção) | Entregue |
+| Exploded view | Slider de intensidade separando todas as estruturas | Entregue |
 | Otimização e qualidade | Profiling, acessibilidade e testes ampliados | Em evolução |
 | Infraestrutura e deploy | Deploy completo e observabilidade | Planejado |
 
@@ -594,28 +610,30 @@ Orientações adicionais em [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
 
 ## Licenças e Créditos
 
-### Modelo Anatômico
+### Código
+
+O código do projeto é distribuído sob a **licença MIT** ([LICENSE](LICENSE)), conforme definido pelo responsável. A licença MIT não se aplica aos modelos 3D incorporados, que mantêm suas próprias licenças (abaixo).
+
+### Modelo Anatômico (Esqueleto)
 
 O asset incorporado foi obtido diretamente do **BodyParts3D**, disponibilizado pelo **The Database Center for Life Science**.
 
 - [Fonte oficial e downloads](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html).
 - [Página oficial de licença](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html), atualizada em 27 de fevereiro de 2025 e verificada na obtenção do asset em 10 de setembro de 2026.
-- [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+- [Creative Commons Attribution-ShareAlike 2.1 Japan](https://creativecommons.org/licenses/by-sa/2.1/jp/).
 
-Atribuição exigida pela fonte:
+Atribuição registrada:
 
-> BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.
+> BodyParts3D, © The Database Center for Life Science, licensed under CC Attribution-ShareAlike 2.1 Japan.
 
 O projeto utiliza um recorte adaptado: conversão de formato, transformação de eixos, material de exibição, indexação, quantização, compressão e associação de identificadores. As alterações, os links de origem, as permissões e o checksum estão registrados em [assets/licenses.json](assets/licenses.json).
 
-### Z-Anatomy
+### Z-Anatomy (Musculatura)
 
-Z-Anatomy foi considerado no planejamento e permanece como candidato para futuras estruturas, mas **nenhum asset desse pacote foi incorporado à entrega atual**. Seu material inclui referências a componentes com licenças distintas, inclusive restrições não comerciais. Cada arquivo deve ser verificado antes da incorporação; uma licença geral não substitui essa análise.
+O sistema muscular do **Z-Anatomy — Models of human anatomy** foi incorporado como segundo asset, sob [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), com 462 estruturas (tecido conjuntivo excluído) e pipeline documentado em [docs/ASSETS-LICENSING.md](docs/ASSETS-LICENSING.md). O repositorio inclui referências a componentes com licencas distintas, inclusive restricoes nao comerciais; os setores incorporados foram extraidos apenas da colecao muscular e seus checksums estao registrados em `assets/licenses.json`.
 
-### Fontes, Ícones e Código
+### Fontes e Ícones
 
 DM Sans e Manrope são distribuídas via Fontsource, com licenças OFL presentes nos pacotes. Os ícones Lucide seguem a licença ISC do pacote. Outras dependências mantêm suas respectivas licenças e obrigações.
-
-**A licença do código deste projeto ainda não foi definida.** A CC BY 4.0 do modelo não licencia automaticamente a aplicação. Antes de redistribuir o código, confirme a autorização e a licença aplicáveis com o responsável pelo projeto.
 
 Consulte [docs/ASSETS-LICENSING.md](docs/ASSETS-LICENSING.md) antes de adicionar ou publicar qualquer novo asset.

@@ -71,10 +71,11 @@ O MVP somente estara concluido com frontend, backend, banco e Docker funcionando
 interacoes F01-F15 verificadas; API, banco, assets e licencas documentados;
 performance aceitavel, README atualizado, testes executados e deploy realizado.
 
-Estado atual: F01-F08 e F10-F13 (selecao, destaque, painel, sistemas e
-isolamento) estao implementados; backend, banco e Docker funcionam. F09 (busca)
-e F14-F15 (exploded view) seguem no roadmap. O catalogo educacional aguarda a
-curadoria manual completa.
+Estado atual: F01-F15 estao implementados (selecao, destaque, painel com
+relacoes, busca com foco de camera, sistemas, isolamento e exploded view com
+slider de intensidade); backend, banco e Docker funcionam. O catalogo
+educacional possui 720/720 estruturas revisadas e um conjunto curado inicial de
+relacoes (seed V4 + sync no frontend).
 
 Sucesso: uma pessoa nova abre o site, ve o corpo, gira, aproxima, seleciona e le
 informacoes, pesquisa, oculta sistemas, isola, explode e restaura a visualizacao.
