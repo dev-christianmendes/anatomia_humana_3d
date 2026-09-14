@@ -36,10 +36,27 @@ backend/ (Spring Boot /api/v1) -> PostgreSQL (Flyway V1/V2/V3/V4)
 ```
 
 A cena GLTF e clonada antes de alterar materiais. Geometrias carregadas sao
-compartilhadas. Os materiais de exibicao sao descartados no unmount.
-Modelo centralizado e normalizado para altura 3. Camera perspectiva a 45 graus,
-distancia ajustada ao aspecto do viewport. OrbitControls fornece rotacao, pan e
-zoom. Renderizacao sob demanda quando nao ha rotacao automatica.
+compartilhadas. Os materiais de exibicao sao descartados no unmount ou quando o
+modelo e recriado. Cada clone e recriado via `useMemo` quando o offset de layout
+muda. Modelo centralizado e normalizado para altura 3. Camera perspectiva a 45
+graus, distancia ajustada ao aspecto do viewport. O enquadramento das vistas
+(reset e troca de vista) e derivado das caixas reais em `boxesRef` via
+`combinedFraming` em `features/viewer/viewport.ts`: uniao das caixas de todas as
+estruturas define centro e raio, com fallback para o raio 1.7 na origem antes do
+carregamento. OrbitControls fornece rotacao, pan e zoom. Renderizacao sob demanda
+quando nao ha rotacao automatica.
+
+## Fluxo de visualizacao e explosao
+
+O store Zustand mantem `layout` ('side' por padrao, ou 'overlay') e
+`modelVisibility` (esqueleto/musculatura) alem dos campos de interacao. Em
+`SceneContent`, a largura de cada modelo (pos-fit) alimenta
+`computeModelOffsets` em `features/viewer/viewport.ts`, que devolve offsets
+simetricos em X (`skeleton` negativo, `muscles` positivo) com um intervalo fixo
+`MODEL_GAP`; em `overlay` os offsets sao zero. O `SceneModel` aplica o offset no
+clone e recria o modelo quando ele muda, de modo que caixas, explosao e foco
+acompanham o layout. Visibilidade por modelo entra na mesma varredura que
+sistemas e isolamento (`object.visible`), sem alterar o GLB.
 
 A selecao usa raycasting do R3F e le o `userData.structureId` das malhas.
 O destaque (hover/selecao) apenas altera a cor do material; visibilidade de
@@ -64,6 +81,14 @@ store convertendo a posicao local da malha para o espaco do mundo
 (`base * parent.matrixWorld` + offset) e de volta via `parent.worldToLocal`, o que
 preserva direcao e escala do modelo independentemente da rotacao/pai de cada malha.
 Nenhuma alteracao permanente ao GLB.
+
+A malha poligonal (`wireframe`) apenas alterna a propriedade do material por
+malha; o modo nao recria cena nem geometria. Para conter o custo de rasterizacao
+de linhas (~1M de triangulos viram ~3.2M de segmentos com MSAA), o Canvas limita
+o `dpr` para 1 enquanto o modo esta ativo (de `[1, 1.75]`). O efeito de
+visibilidade nao depende de hover/selecao, evitando varredura e redraw completo
+dos dois modelos a cada movimento de ponteiro; metricas de malhas/triangulos sao
+reportadas apenas no carregamento, nao no toggle.
 
 Relacoes: `STRUCTURE_RELATION` armazena um registro por relacao com
 `relation_type`. `ARTICULATION` e resolvida nos dois sentidos (forward + reverse

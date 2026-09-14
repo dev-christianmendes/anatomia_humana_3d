@@ -11,7 +11,7 @@ A entrega atual combina o **Milestone 01: First 3D Viewer** com as etapas de **i
 | Status | MVP em desenvolvimento |
 | Plataforma | Web, com prioridade para desktop |
 | Finalidade | Educação, projeto acadêmico e portfólio |
-| Entrega disponível | Viewer dos sistemas esquelético e muscular com seleção, busca, relações e visualização explodida |
+| Entrega disponível | Viewer dos sistemas esquelético e muscular com seleção, busca, relações, visualização explodida e modos de layout |
 | Backend | Java 21 / Spring Boot, implementado com API `/api/v1` |
 | Banco | PostgreSQL com migrations Flyway (schema, referência e estruturas) |
 | Docker Compose | Backend + PostgreSQL prontos para subir o stack |
@@ -67,7 +67,9 @@ Como projeto de portfólio, a evolução prevista demonstrará integração entr
 | Reset da câmera | Retorno à vista anterior e ao enquadramento inicial |
 | Restauração geral | Restaura a vista, desativa rotação automática e malha poligonal |
 | Rotação automática | Movimento contínuo controlado por checkbox |
-| Malha poligonal | Alternância entre material sólido e wireframe |
+| Malha poligonal | Alternância entre material sólido e wireframe; limita a resolução do canvas para manter a fluidez |
+| Layout dos modelos | Exibição lado a lado (padrão) ou sobreposta, com enquadramento automático da câmera |
+| Visibilidade por modelo | Toggles para ligar/desligar o esqueleto e a musculatura individualmente |
 | Informações do modelo | Visão geral do sistema, fonte, formato e contagem de malhas/triângulos |
 | Seleção de estruturas | Raycasting ao clicar; destaque de hover e de seleção sem alterar o asset |
 | Painel por estrutura | Nome, nomes alternativos, sistema, região, descrição, função e fonte educacional |
@@ -202,9 +204,10 @@ O painel por estrutura passará a exibir "Dados via API" para estruturas revisad
 9. No painel, clique em uma **relação anatômica** para selecionar e focar a estrutura relacionada.
 10. Use **Isolar estrutura** para ocultar o restante do modelo e **Restaurar visão geral** para desfazer.
 11. Ajuste o slider de **Explosão** para separar as estruturas e voltar ao 0% para restabelecer a posição original.
-12. Marque/desmarque o checkbox de **Sistemas** para ocultar um sistema inteiro.
-13. Use **Limpar seleção** para voltar ao painel resumo, **Resetar câmera** para o enquadramento inicial, ou **Restaurar visualização** para também desligar rotação, wireframe e explosão.
-14. Abra **Fontes e licença** para consultar a atribuição e acessar o GLB.
+12. Em **Visualização**, alterne entre **Lado a lado** e **Sobreposto** para dispor os dois modelos, e marque/desmarque **Esqueleto** e **Muscular** para mostrar ou ocultar cada um.
+13. Marque/desmarque o checkbox de **Sistemas** para ocultar um sistema inteiro.
+14. Use **Limpar seleção** para voltar ao painel resumo, **Resetar câmera** para o enquadramento inicial, ou **Restaurar visualização** para também desligar rotação, wireframe e explosão.
+15. Abra **Fontes e licença** para consultar a atribuição e acessar o GLB.
 
 Os controles do Drei/OrbitControls também oferecem interações por toque, mas gestos em dispositivos móveis reais ainda não foram certificados. Botões e controles da interface podem ser acessados por teclado; o diálogo de créditos pode ser fechado com `Esc`.
 
@@ -480,6 +483,7 @@ O navegador de teste usa SwiftShader para oferecer WebGL por software. Por ser m
 | Seleção | E2E de clique → painel por estrutura → isolamento → restauração → limpar seleção |
 | Busca e relações | E2E de busca → foco de câmera → painel de relações → navegação por relação |
 | Explodida | E2E do slider de intensidade com alteração de pixel e reset |
+| Layout e modelos | E2E dos modos lado a lado/sobreposto e da visibilidade de esqueleto/musculatura |
 | Integração API | E2E com backend real (gate `API_E2E=1 VITE_API_URL=...`): painel "Dados via API" |
 | Interface | Abertura/fechamento do diálogo de créditos |
 | Responsividade | Capturas em 1440×900 e 390×844, limites da silhueta e ausência de overflow horizontal |
@@ -565,6 +569,7 @@ Use HTTPS em produção. Backend, banco e CORS já têm configuração Docker Co
 | Pesquisa | Debounce, resultados e foco automático | Entregue |
 | Relações | Relações anatômicas no painel (articulações nos dois sentidos + origem/inserção) | Entregue |
 | Exploded view | Slider de intensidade separando todas as estruturas | Entregue |
+| Layout e visibilidade por modelo | Modos lado a lado/sobreposto e toggles de esqueleto/musculatura | Entregue |
 | Otimização e qualidade | Profiling, acessibilidade e testes ampliados | Em evolução |
 | Infraestrutura e deploy | Deploy completo e observabilidade | Planejado |
 
