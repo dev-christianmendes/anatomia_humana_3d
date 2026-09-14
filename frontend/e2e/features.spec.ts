@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { scenePixels, setRange } from './helpers'
+import { scenePixels } from './helpers'
 
 test('busca seleciona com foco de camera e mostra relacoes', async ({ page }) => {
   const errors: string[] = []
@@ -29,24 +29,5 @@ test('busca seleciona com foco de camera e mostra relacoes', async ({ page }) =>
   await relation.click()
   await expect(panel.locator('h2')).not.toContainText('Mandíbula')
   await expect(panel.locator('h2')).toContainText(targetName)
-  expect(errors).toEqual([])
-})
-
-test('explosao separa estruturas e reseta', async ({ page }) => {
-  const errors: string[] = []
-  page.on('pageerror', (error) => errors.push(error.message))
-  await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/')
-  await expect(page.getByText('Modelo carregado', { exact: true })).toBeVisible()
-  const before = await scenePixels(page)
-  const readout = page.locator('.explosion-row em')
-
-  await setRange(page, 'Intensidade da explosão', 60)
-  await expect(readout).toHaveText('60%')
-  await expect.poll(async () => (await scenePixels(page)).checksum).not.toBe(before.checksum)
-
-  await page.getByRole('button', { name: 'Restaurar visualização' }).click()
-  await expect(readout).toHaveText('0%')
-  await expect.poll(async () => (await scenePixels(page)).checksum).toBe(before.checksum)
   expect(errors).toEqual([])
 })

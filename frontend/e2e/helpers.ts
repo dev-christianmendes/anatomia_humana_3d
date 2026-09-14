@@ -15,12 +15,31 @@ export async function scenePixels(page: Page) {
     return { visible, checksum }
 }
 
-export async function setRange(page: Page, label: string, value: number) {
-  await page.getByLabel(label).evaluate((element, next) => {
-    const input = element as HTMLInputElement
-    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')!.set!
-    setter.call(input, String(next))
-    input.dispatchEvent(new Event('input', { bubbles: true }))
-    input.dispatchEvent(new Event('change', { bubbles: true }))
-  }, value)
+export async function sceneChecksum(page: Page) {
+  return (await scenePixels(page)).checksum
+}
+
+export async function waitForChecksum(
+  page: Page,
+  predicate: (checksum: number) => boolean,
+  timeoutMs = 60000,
+) {
+  const deadline = Date.now() + timeoutMs
+  for (;;) {
+    const checksum = await sceneChecksum(page)
+    if (predicate(checksum)) return checksum
+    if (Date.now() > deadline) {
+      throw new Error(`checksum ${checksum} never satisfied predicate within ${timeoutMs}ms`)
+    }
+    await page.waitForTimeout(4000)
+  }
+}
+
+export async function raiseRange(page: Page, label: string, steps: number) {
+  const slider = page.getByLabel(label)
+  await slider.scrollIntoViewIfNeeded()
+  await slider.focus()
+  for (let index = 0; index < steps; index += 1) {
+    await slider.press('ArrowRight')
+  }
 }
