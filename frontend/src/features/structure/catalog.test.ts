@@ -57,4 +57,18 @@ describe('estruturas locais (sincronizadas do catalogo)', () => {
     expect(muscular!.count).toBe(462)
     expect(SYSTEMS.find((system) => system.code === 'SYS-ESQ')?.count).toBe(258)
   })
+
+  it('expoe metadados de exibicao por sistema', () => {
+    expect(SYSTEMS).toHaveLength(2)
+    for (const system of SYSTEMS) {
+      expect(system.label).toBeTruthy()
+      expect(system.description).toBeTruthy()
+      expect(system.color).toMatch(/^#[0-9a-f]{6}$/i)
+      expect(system.defaultVisible).toBe(true)
+      expect(system.count).toBeGreaterThan(0)
+    }
+    expect(SYSTEMS.find((system) => system.code === 'SYS-ESQ')!.color).not.toBe(SYSTEMS.find((system) => system.code === 'SYS-MUS')!.color)
+    const total = SYSTEMS.reduce((sum, system) => sum + system.count, 0)
+    expect(total).toBe(720)
+  })
 })

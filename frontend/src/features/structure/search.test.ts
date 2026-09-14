@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { STRUCTURES } from '../../data/structures'
-import { searchStructures } from './search'
+import { searchStructures, suggestedStructures } from './search'
 
 function normalizePt(value: string): string {
   return value.normalize('NFD').replace(/\p{M}+/gu, '').toLowerCase().trim()
@@ -49,5 +49,20 @@ describe('busca de estruturas', () => {
   it('respeita o limite de resultados', () => {
     const results = searchStructures('músculo', 5)
     expect(results.length).toBeLessThanOrEqual(5)
+  })
+
+  it('sugere estruturas principais sem consulta', () => {
+    const suggested = suggestedStructures(8)
+    expect(suggested.length).toBeGreaterThan(0)
+    expect(suggested.length).toBeLessThanOrEqual(8)
+    const ids = suggested.map((entry) => entry.structureId)
+    expect(new Set(ids).size).toBe(ids.length)
+    for (const entry of suggested) {
+      expect(STRUCTURES.some((item) => item.structureId === entry.structureId)).toBe(true)
+    }
+  })
+
+  it('respeita o limite de sugestoes', () => {
+    expect(suggestedStructures(3).length).toBeLessThanOrEqual(3)
   })
 })

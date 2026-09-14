@@ -17,4 +17,11 @@ describe('camera framing', () => {
     expect(cameraPosition('back', 5)).toEqual([0, 0, -5])
     expect(cameraPosition('left', 5)).toEqual([5, 0, 0])
   })
+  it('provides a three-quarter position keeping the front dominance', () => {
+    const [x, y, z] = cameraPosition('threequarter', 5)
+    expect(x).toBeGreaterThan(0)
+    expect(y).toBeGreaterThan(0)
+    expect(z).toBeGreaterThan(0)
+    expect(z).toBeGreaterThan(x)
+  })
 })

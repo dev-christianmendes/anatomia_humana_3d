@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { SYSTEMS } from '../features/structure/catalog'
-import { systemVisible, useAtlas } from './atlas'
+import { systemVisible, totalStructureCount, useAtlas, visibleStructureCount } from './atlas'
 
 describe('atlas store', () => {
   beforeEach(() => {
@@ -80,5 +80,33 @@ describe('atlas store', () => {
     expect(useAtlas.getState().modelVisibility.skeleton).toBe(true)
     useAtlas.getState().toggleModel('muscles')
     expect(useAtlas.getState().modelVisibility.muscles).toBe(true)
+  })
+
+  it('isolates a single system and restores all', () => {
+    useAtlas.getState().showOnlySystem('SYS-MUS')
+    expect(useAtlas.getState().systemVisibility['SYS-MUS']).toBe(true)
+    for (const system of SYSTEMS) {
+      if (system.code !== 'SYS-MUS') expect(systemVisible(useAtlas.getState().systemVisibility, system.code)).toBe(false)
+    }
+    useAtlas.getState().showAllSystems()
+    for (const system of SYSTEMS) {
+      expect(systemVisible(useAtlas.getState().systemVisibility, system.code)).toBe(true)
+    }
+  })
+
+  it('hides every system through hideAllSystems', () => {
+    useAtlas.getState().hideAllSystems()
+    for (const system of SYSTEMS) {
+      expect(systemVisible(useAtlas.getState().systemVisibility, system.code)).toBe(false)
+    }
+  })
+
+  it('counts visible structures from system visibility', () => {
+    expect(visibleStructureCount(useAtlas.getState().systemVisibility)).toBe(totalStructureCount())
+    useAtlas.getState().showOnlySystem('SYS-ESQ')
+    const esq = SYSTEMS.find((system) => system.code === 'SYS-ESQ')!.count
+    expect(visibleStructureCount(useAtlas.getState().systemVisibility)).toBe(esq)
+    useAtlas.getState().hideAllSystems()
+    expect(visibleStructureCount(useAtlas.getState().systemVisibility)).toBe(0)
   })
 })
