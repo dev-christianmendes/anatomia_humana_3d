@@ -9,6 +9,8 @@ describe('atlas store', () => {
       hoveredStructureId: null,
       isolatedStructureId: null,
       systemVisibility: Object.fromEntries(SYSTEMS.map((system) => [system.code, true])),
+      layout: 'side',
+      modelVisibility: { skeleton: true, muscles: true },
     })
   })
 
@@ -60,5 +62,23 @@ describe('atlas store', () => {
     expect(useAtlas.getState().explosionProgress).toBe(100)
     useAtlas.getState().setExplosion(-10)
     expect(useAtlas.getState().explosionProgress).toBe(0)
+  })
+
+  it('starts with side-by-side layout and switches to overlay', () => {
+    expect(useAtlas.getState().layout).toBe('side')
+    useAtlas.getState().setLayout('overlay')
+    expect(useAtlas.getState().layout).toBe('overlay')
+    useAtlas.getState().setLayout('side')
+    expect(useAtlas.getState().layout).toBe('side')
+  })
+
+  it('toggles model visibility independently', () => {
+    expect(useAtlas.getState().modelVisibility.skeleton).toBe(true)
+    expect(useAtlas.getState().modelVisibility.muscles).toBe(true)
+    useAtlas.getState().toggleModel('muscles')
+    expect(useAtlas.getState().modelVisibility.muscles).toBe(false)
+    expect(useAtlas.getState().modelVisibility.skeleton).toBe(true)
+    useAtlas.getState().toggleModel('muscles')
+    expect(useAtlas.getState().modelVisibility.muscles).toBe(true)
   })
 })

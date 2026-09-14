@@ -9,6 +9,9 @@ describe('camera framing', () => {
     expect(cameraDistance(0.6)).toBeGreaterThan(cameraDistance(1.6))
     expect(Number.isFinite(cameraDistance(0))).toBe(true)
   })
+  it('pushes the camera back for wider composed scenes', () => {
+    expect(cameraDistance(1.6, 2.8)).toBeGreaterThan(cameraDistance(1.6, 1.7))
+  })
   it('provides reproducible front, back and lateral positions', () => {
     expect(cameraPosition('front', 5)).toEqual([0, 0, 5])
     expect(cameraPosition('back', 5)).toEqual([0, 0, -5])

@@ -25,6 +25,9 @@ test('seleciona, isola e restaura uma estrutura', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByText('Modelo carregado', { exact: true })).toBeVisible()
 
+  await page.getByRole('group', { name: 'Modo de exibição dos modelos' }).getByRole('button', { name: 'Sobreposto' }).click()
+  await expect(page.getByRole('group', { name: 'Modo de exibição dos modelos' }).getByRole('button', { name: 'Sobreposto' })).toHaveAttribute('aria-pressed', 'true')
+
   expect(await clickStructureCandidates(page), 'nenhuma estrutura selecionada por raycast').toBe(true)
 
   const panel = page.locator('.structure-panel')
