@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
-import { Activity, Bone, Box, CircleHelp, ExternalLink, Focus, Layers3, Minus, Plus, RotateCcw, RotateCw, ScanLine, Search, X } from 'lucide-react'
+import { Activity, Bone, Box, CircleHelp, Columns2, Dumbbell, ExternalLink, Focus, Layers, Layers3, Minus, Plus, RotateCcw, RotateCw, ScanLine, Search, X } from 'lucide-react'
 import type { AnatomicalView } from './features/viewer/camera'
 import type { CameraCommand } from './features/viewer/AnatomyViewport'
 import type { StructureRecord } from './data/structures'
@@ -138,6 +138,8 @@ export default function Atlas() {
   const isolatedStructureId = useAtlas((state) => state.isolatedStructureId)
   const systemVisibility = useAtlas((state) => state.systemVisibility)
   const explosionProgress = useAtlas((state) => state.explosionProgress)
+  const layout = useAtlas((state) => state.layout)
+  const modelVisibility = useAtlas((state) => state.modelVisibility)
 
   function changeView(next: AnatomicalView) {
     setView(next)
@@ -176,6 +178,12 @@ export default function Atlas() {
         </section>
         <section className="control-section">
           <h2>Visualização</h2>
+          <div className="view-options layout-options" role="group" aria-label="Modo de exibição dos modelos">
+            <button aria-pressed={layout === 'side'} onClick={() => useAtlas.getState().setLayout('side')}><Columns2 size={15} />Lado a lado</button>
+            <button aria-pressed={layout === 'overlay'} onClick={() => useAtlas.getState().setLayout('overlay')}><Layers size={15} />Sobreposto</button>
+          </div>
+          <label className="toggle-row"><span><Bone size={17} />Esqueleto</span><input type="checkbox" aria-label="Mostrar esqueleto" checked={modelVisibility.skeleton !== false} onChange={() => useAtlas.getState().toggleModel('skeleton')} /></label>
+          <label className="toggle-row"><span><Dumbbell size={17} />Muscular</span><input type="checkbox" aria-label="Mostrar musculatura" checked={modelVisibility.muscles !== false} onChange={() => useAtlas.getState().toggleModel('muscles')} /></label>
           <label className="toggle-row"><span><RotateCw size={17} />Rotação automática</span><input type="checkbox" checked={rotating} onChange={() => setRotating(!rotating)} /></label>
           <label className="toggle-row"><span><Box size={17} />Malha poligonal</span><input type="checkbox" checked={wireframe} onChange={() => setWireframe(!wireframe)} /></label>
         </section>

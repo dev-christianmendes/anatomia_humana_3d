@@ -8,6 +8,7 @@ import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import { cameraDistance, cameraPosition } from './camera'
 import type { AnatomicalView } from './camera'
 import { computeExplosionWorldOffsets } from './explosion'
+import { combinedFraming, computeModelOffsets } from './viewport'
 import { getStructure } from '../structure/catalog'
 import { systemVisible, useAtlas } from '../../store/atlas'
 
@@ -45,11 +46,13 @@ function fitTransform(scene: Object3D) {
   return { center, scale }
 }
 
-function SceneModel({ scene, fit, color, wireframe, boxesRef, onLoaded }: {
+function SceneModel({ scene, fit, color, wireframe, visible, offsetX, boxesRef, onLoaded }: {
   scene: Object3D
   fit: { center: Vector3; scale: number }
   color: string
   wireframe: boolean
+  visible: boolean
+  offsetX: number
   boxesRef: StructureBoxes
   onLoaded: (meshes: number, triangles: number) => void
 }) {
@@ -60,7 +63,7 @@ function SceneModel({ scene, fit, color, wireframe, boxesRef, onLoaded }: {
   const systemVisibility = useAtlas((state) => state.systemVisibility)
   const explosionProgress = useAtlas((state) => state.explosionProgress)
 
-  const [model] = useState(() => {
+  const model = useMemo(() => {
     const copy = scene.clone(true)
     copy.traverse((object) => {
       if (object instanceof Mesh) {
@@ -68,9 +71,10 @@ function SceneModel({ scene, fit, color, wireframe, boxesRef, onLoaded }: {
       }
     })
     copy.position.copy(fit.center).multiplyScalar(-fit.scale)
+    copy.position.x += offsetX
     copy.scale.setScalar(fit.scale)
     return copy
-  })
+  }, [scene, fit.center, fit.scale, color, offsetX])
 
   const materialsByStructure = useMemo(() => {
     const refs = new Map<string, MeshStandardMaterial[]>()
@@ -133,22 +137,30 @@ function SceneModel({ scene, fit, color, wireframe, boxesRef, onLoaded }: {
       if (object instanceof Mesh) {
         meshes += 1
         triangles += (object.geometry.index?.count ?? object.geometry.attributes.position.count) / 3
-        ;(object.material as MeshStandardMaterial).wireframe = wireframe
       }
     })
     onLoaded(meshes, triangles)
-  }, [model, onLoaded, wireframe])
+  }, [model, onLoaded])
+
+  useEffect(() => {
+    model.traverse((object) => {
+      if (object instanceof Mesh) {
+        ;(object.material as MeshStandardMaterial).wireframe = wireframe
+      }
+    })
+    invalidate()
+  }, [model, wireframe, invalidate])
 
   useEffect(() => {
     model.traverse((object) => {
       if (!(object instanceof Mesh)) return
       const id = object.userData?.structureId
-      object.visible = isolated === null
+      object.visible = visible && (isolated === null
         ? systemVisible(systemVisibility, getStructure(id)?.system ?? 'SYS-ESQ')
-        : isolated === id
+        : isolated === id)
     })
     invalidate()
-  }, [model, systemVisibility, isolated, hovered, selected, invalidate])
+  }, [model, visible, systemVisibility, isolated, invalidate])
 
   useEffect(() => {
     for (const [structureId, materials] of materialsByStructure) {
@@ -209,10 +221,13 @@ function Controls({ view, command, rotating, boxes }: Omit<ViewerProps, 'wirefra
         controls.current.target.copy(center)
       }
     } else {
-      camera.position.set(...cameraPosition(view, cameraDistance(size.width / size.height)))
+      const framing = combinedFraming(boxes.current)
+      const target = framing?.center ?? new Vector3(0, 0, 0)
+      const radius = Math.max(framing?.radius ?? 1.7, 0.6)
+      camera.position.set(...cameraPosition(view, cameraDistance(size.width / size.height, radius)))
       camera.up.set(0, 1, 0)
       camera.updateProjectionMatrix()
-      controls.current.target.set(0, 0, 0)
+      controls.current.target.copy(target)
     }
     controls.current.update()
     invalidate()
@@ -243,10 +258,19 @@ function SceneContent({ wireframe, boxesRef, onLoaded, onMusclesLoaded }: {
 }) {
   const skeleton = useGLTF(MODEL_PATH)
   const muscles = useGLTF(MUSCLE_MODEL_PATH)
+  const layout = useAtlas((state) => state.layout)
+  const modelVisibility = useAtlas((state) => state.modelVisibility)
   const fit = useMemo(() => fitTransform(skeleton.scene), [skeleton.scene])
+
+  const offsets = useMemo(() => {
+    if (layout === 'overlay') return { skeleton: 0, muscles: 0 }
+    const width = (scene: Object3D) => new Box3().setFromObject(scene).getSize(new Vector3()).x * fit.scale
+    return computeModelOffsets(width(skeleton.scene), width(muscles.scene))
+  }, [layout, fit.scale, skeleton.scene, muscles.scene])
+
   return <group>
-    <SceneModel scene={skeleton.scene} fit={fit} color="#d4bfb1" wireframe={wireframe} boxesRef={boxesRef} onLoaded={onLoaded} />
-    <SceneModel scene={muscles.scene} fit={fit} color="#b8433a" wireframe={wireframe} boxesRef={boxesRef} onLoaded={onMusclesLoaded} />
+    <SceneModel scene={skeleton.scene} fit={fit} color="#d4bfb1" wireframe={wireframe} visible={modelVisibility.skeleton !== false} offsetX={offsets.skeleton} boxesRef={boxesRef} onLoaded={onLoaded} />
+    <SceneModel scene={muscles.scene} fit={fit} color="#b8433a" wireframe={wireframe} visible={modelVisibility.muscles !== false} offsetX={offsets.muscles} boxesRef={boxesRef} onLoaded={onMusclesLoaded} />
   </group>
 }
 
@@ -286,7 +310,7 @@ export default function AnatomyViewport(props: ViewerProps) {
     <Canvas className="viewport-canvas"
       frameloop={props.rotating ? 'always' : 'demand'}
       camera={{ position: [0, 0, 5], fov: 45, near: 0.01, far: 100 }}
-      dpr={[1, 1.75]} gl={{ antialias: true }}
+      dpr={props.wireframe ? 1 : [1, 1.75]} gl={{ antialias: true }}
       onPointerMissed={() => {
         useAtlas.getState().hover(null)
         useAtlas.getState().select(null)
