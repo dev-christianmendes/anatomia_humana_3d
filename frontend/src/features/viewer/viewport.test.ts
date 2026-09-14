@@ -49,4 +49,15 @@ describe('combinedFraming', () => {
     expect(framing.center.x).toBeCloseTo(0, 10)
     expect(framing.radius).toBeCloseTo(Math.sqrt(3 * 3 + 1 * 1 + 1), 10)
   })
+
+  it('excludes hidden models through the include predicate', () => {
+    const boxes = new Map([
+      ['STR-ESQ-0001', new Box3(new Vector3(-3, -1, -1), new Vector3(-2, 1, 1))],
+      ['STR-MUS-0001', new Box3(new Vector3(2, -1, -1), new Vector3(3, 1, 1))],
+    ])
+    const musclesOnly = combinedFraming(boxes, (id) => id.startsWith('STR-MUS-'))!
+    expect(musclesOnly.center.x).toBeCloseTo(2.5, 10)
+    expect(musclesOnly.radius).toBeCloseTo(Math.sqrt(0.5 * 0.5 + 1 * 1 + 1), 10)
+    expect(combinedFraming(boxes, () => false)).toBeNull()
+  })
 })

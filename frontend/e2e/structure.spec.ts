@@ -34,7 +34,7 @@ test('seleciona, isola e restaura uma estrutura', async ({ page }) => {
   await expect(panel.locator('h2')).not.toBeEmpty()
   const name = (await panel.locator('h2').innerText()).trim()
   expect(name.length).toBeGreaterThan(0)
-  await expect(panel).toContainText(/Sistema|Região/)
+  await expect(panel.locator('.tag')).toHaveCount(2)
 
   await page.getByRole('button', { name: 'Isolar estrutura', exact: true }).click()
   await expect(page.getByRole('button', { name: 'Restaurar visão geral', exact: true })).toBeVisible()
