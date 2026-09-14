@@ -59,18 +59,27 @@ acompanham o layout. Visibilidade por modelo entra na mesma varredura que
 sistemas e isolamento (`object.visible`), sem alterar o GLB.
 
 A selecao usa raycasting do R3F e le o `userData.structureId` das malhas.
-O destaque (hover/selecao) apenas altera a cor do material; visibilidade de
-sistemas e isolamento alternam `object.visible`. Nenhuma alteracao permanente ao
-asset. O estado de interacao vive no store Zustand; o painel consulta o catalogo
-local e, quando `VITE_API_URL` esta configurada, complementa com a API
-(estruturas revisadas) e com as relacoes do endpoint `/relations`, mantendo o
-fallback local (`relations.json` via `sync-frontend-relations.mjs`).
+O destaque (hover/selecao) altera cor e emissive do material (sem recriar
+materiais) e troca o cursor do canvas; visibilidade de sistemas e isolamento
+alternam `object.visible`. Nenhuma alteracao permanente ao asset. O estado de
+interacao vive no store Zustand; o painel consulta o catalogo local e, quando
+`VITE_API_URL` esta configurada, complementa com a API (estruturas revisadas) e
+com as relacoes do endpoint `/relations`, mantendo o fallback local
+(`relations.json` via `sync-frontend-relations.mjs`).
 
 A busca (`search.ts`) normaliza texto sem acentos e ranqueia: nome exato no
 inicio > nome contido > nome alternativo > rotulos de sistema/regiao. Ao escolher
 um resultado, o Atlas emite o comando de camera `focus`; o `AnatomyViewport`
 mantem em `boxesRef` o bounding box de cada estrutura e reposiciona alvo e
 distancia para enquadrar o centro.
+
+O enquadramento automatico usa `combinedFraming(boxes, include?)` no
+`AnatomyViewport`: soma as caixas das estruturas visiveis (formato/continuacao)
+e deriva centro e raio. Quando o modelo carrega, muda `layout`, muda a
+visibilidade de um modelo ou o predicado `include` (prefixos `STR-ESQ-`/
+`STR-MUS-`) variar, a camera se reposiciona preservando a direcao do
+enquadramento anterior a partir do direcional de luz, de modo que a composicao
+interna do modelo nao sofre saltos durante a transicao.
 
 A exploracao (`features/viewer/explosion.ts`, `computeExplosionWorldOffsets`) calcula
 um offset por estrutura em unidades de mundo: direcao radial a partir do centro do
@@ -82,13 +91,12 @@ store convertendo a posicao local da malha para o espaco do mundo
 preserva direcao e escala do modelo independentemente da rotacao/pai de cada malha.
 Nenhuma alteracao permanente ao GLB.
 
-A malha poligonal (`wireframe`) apenas alterna a propriedade do material por
-malha; o modo nao recria cena nem geometria. Para conter o custo de rasterizacao
-de linhas (~1M de triangulos viram ~3.2M de segmentos com MSAA), o Canvas limita
-o `dpr` para 1 enquanto o modo esta ativo (de `[1, 1.75]`). O efeito de
-visibilidade nao depende de hover/selecao, evitando varredura e redraw completo
-dos dois modelos a cada movimento de ponteiro; metricas de malhas/triangulos sao
-reportadas apenas no carregamento, nao no toggle.
+A interface do Atlas oferece feedback pontual: cursor `pointer` sobre estruturas,
+efeito emissive sutil em hover/selecao, sidebar colapsavel (botao recolher na
+cabecalho do painel e botao expandir flutuante na margem do viewport) e atalhos
+de teclado (`R` reset, `1/2/3` vistas, `+`/`-` zoom, `F` focar, `0` limpar
+selecao) que ignoram eventos quando o foco esta em campos de texto. O numero de
+malhas/triangulos e reportado apenas no carregamento.
 
 Relacoes: `STRUCTURE_RELATION` armazena um registro por relacao com
 `relation_type`. `ARTICULATION` e resolvida nos dois sentidos (forward + reverse

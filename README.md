@@ -11,7 +11,7 @@ A entrega atual combina o **Milestone 01: First 3D Viewer** com as etapas de **i
 | Status | MVP em desenvolvimento |
 | Plataforma | Web, com prioridade para desktop |
 | Finalidade | Educação, projeto acadêmico e portfólio |
-| Entrega disponível | Viewer dos sistemas esquelético e muscular com seleção, busca, relações, visualização explodida e modos de layout |
+| Entrega disponível | Viewer dos sistemas esquelético e muscular com seleção, busca, relações, visualização explodida, modos de layout, enquadramento automático e atalhos de teclado |
 | Backend | Java 21 / Spring Boot, implementado com API `/api/v1` |
 | Banco | PostgreSQL com migrations Flyway (schema, referência e estruturas) |
 | Docker Compose | Backend + PostgreSQL prontos para subir o stack |
@@ -67,9 +67,12 @@ Como projeto de portfólio, a evolução prevista demonstrará integração entr
 | Reset da câmera | Retorno à vista anterior e ao enquadramento inicial |
 | Restauração geral | Restaura a vista, desativa rotação automática e malha poligonal |
 | Rotação automática | Movimento contínuo controlado por checkbox |
-| Malha poligonal | Alternância entre material sólido e wireframe; limita a resolução do canvas para manter a fluidez |
 | Layout dos modelos | Exibição lado a lado (padrão) ou sobreposta, com enquadramento automático da câmera |
 | Visibilidade por modelo | Toggles para ligar/desligar o esqueleto e a musculatura individualmente |
+| Enquadramento automático | A câmera se reajusta sozinha ao carregar, trocar de layout ou ocultar/mostrar um modelo |
+| Feedback de interação | Cursor de ponteiro sobre estruturas, brilho suave no hover e cor de destaque na seleção |
+| Painel colapsável | Sidebar de controles pode ser recolhida/expandida para ampliar a área 3D |
+| Atalhos de teclado | `R` reset, `1/2/3` vistas, `+`/`−` zoom, `F` focar selecionado, `0` limpar seleção |
 | Informações do modelo | Visão geral do sistema, fonte, formato e contagem de malhas/triângulos |
 | Seleção de estruturas | Raycasting ao clicar; destaque de hover e de seleção sem alterar o asset |
 | Painel por estrutura | Nome, nomes alternativos, sistema, região, descrição, função e fonte educacional |
@@ -198,7 +201,7 @@ O painel por estrutura passará a exibir "Dados via API" para estruturas revisad
 3. Use a roda do mouse ou os botões `+` e `−` para ajustar a distância.
 4. Arraste com o botão direito para deslocar o alvo da câmera (pan).
 5. Escolha **Anterior**, **Posterior** ou **Lateral** para mudar a orientação.
-6. Ative **Rotação automática** ou **Malha poligonal**, conforme necessário.
+6. Ative **Rotação automática**, conforme necessário.
 7. Clique em uma estrutura do esqueleto para selecioná-la; o painel direito mostra nome, sistema, região, descrição, função e relações anatômicas.
 8. Use o campo de **busca** para filtrar por nome, nome alternativo, sistema ou região; escolher um resultado seleciona a estrutura e foca a câmera.
 9. No painel, clique em uma **relação anatômica** para selecionar e focar a estrutura relacionada.
@@ -206,8 +209,9 @@ O painel por estrutura passará a exibir "Dados via API" para estruturas revisad
 11. Ajuste o slider de **Explosão** para separar as estruturas e voltar ao 0% para restabelecer a posição original.
 12. Em **Visualização**, alterne entre **Lado a lado** e **Sobreposto** para dispor os dois modelos, e marque/desmarque **Esqueleto** e **Muscular** para mostrar ou ocultar cada um.
 13. Marque/desmarque o checkbox de **Sistemas** para ocultar um sistema inteiro.
-14. Use **Limpar seleção** para voltar ao painel resumo, **Resetar câmera** para o enquadramento inicial, ou **Restaurar visualização** para também desligar rotação, wireframe e explosão.
-15. Abra **Fontes e licença** para consultar a atribuição e acessar o GLB.
+14. Recolha a **barra lateral** para ampliar a área 3D e use os **atalhos**: `R` reset, `1/2/3` vistas, `+`/`−` zoom, `F` focar selecionado e `0` limpar seleção.
+15. Use **Limpar seleção** para voltar ao painel resumo, **Resetar câmera** para o enquadramento inicial, ou **Restaurar visualização** para também desligar rotação e explosão.
+16. Abra **Fontes e licença** para consultar a atribuição e acessar o GLB.
 
 Os controles do Drei/OrbitControls também oferecem interações por toque, mas gestos em dispositivos móveis reais ainda não foram certificados. Botões e controles da interface podem ser acessados por teclado; o diálogo de créditos pode ser fechado com `Esc`.
 
@@ -484,6 +488,7 @@ O navegador de teste usa SwiftShader para oferecer WebGL por software. Por ser m
 | Busca e relações | E2E de busca → foco de câmera → painel de relações → navegação por relação |
 | Explodida | E2E do slider de intensidade com alteração de pixel e reset |
 | Layout e modelos | E2E dos modos lado a lado/sobreposto e da visibilidade de esqueleto/musculatura |
+| Experiência | E2E de sidebar colapsável e atalhos de teclado (vistas e reset) |
 | Integração API | E2E com backend real (gate `API_E2E=1 VITE_API_URL=...`): painel "Dados via API" |
 | Interface | Abertura/fechamento do diálogo de créditos |
 | Responsividade | Capturas em 1440×900 e 390×844, limites da silhueta e ausência de overflow horizontal |
@@ -570,6 +575,7 @@ Use HTTPS em produção. Backend, banco e CORS já têm configuração Docker Co
 | Relações | Relações anatômicas no painel (articulações nos dois sentidos + origem/inserção) | Entregue |
 | Exploded view | Slider de intensidade separando todas as estruturas | Entregue |
 | Layout e visibilidade por modelo | Modos lado a lado/sobreposto e toggles de esqueleto/musculatura | Entregue |
+| Experiência de uso | Enquadramento automático, feedback de hover, sidebar colapsável e atalhos de teclado | Entregue |
 | Otimização e qualidade | Profiling, acessibilidade e testes ampliados | Em evolução |
 | Infraestrutura e deploy | Deploy completo e observabilidade | Planejado |
 
