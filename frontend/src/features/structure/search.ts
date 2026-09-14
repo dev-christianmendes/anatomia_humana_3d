@@ -32,3 +32,23 @@ export function searchStructures(query: string, limit = MAX_RESULTS): StructureR
   scored.sort((a, b) => a[1] - b[1] || a[0].name.localeCompare(b[0].name, 'pt-BR'))
   return scored.slice(0, limit).map(([entry]) => entry)
 }
+
+const SUGGESTED_QUERIES = ['fêmur', 'úmero', 'mandíbula', 'costela', 'escápula', 'rótula', 'tíbia', 'quadril', 'crânio', 'vértebra']
+
+export function suggestedStructures(limit = 8): StructureRecord[] {
+  const seen = new Set<string>()
+  const suggested: StructureRecord[] = []
+  for (const query of SUGGESTED_QUERIES) {
+    for (const entry of STRUCTURES) {
+      if (seen.has(entry.structureId)) continue
+      const name = entry.normalizedName
+      if (name.startsWith(normalize(query)) || name.includes(normalize(query))) {
+        seen.add(entry.structureId)
+        suggested.push(entry)
+        break
+      }
+    }
+    if (suggested.length >= limit) break
+  }
+  return suggested.slice(0, limit)
+}

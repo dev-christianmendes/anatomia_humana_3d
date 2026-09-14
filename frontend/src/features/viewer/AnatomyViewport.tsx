@@ -2,14 +2,14 @@ import { Component, Suspense, useCallback, useEffect, useMemo, useRef, useState 
 import type { MutableRefObject, ReactNode } from 'react'
 import { Canvas, useThree } from '@react-three/fiber'
 import type { ThreeEvent } from '@react-three/fiber'
-import { Html, OrbitControls, useGLTF } from '@react-three/drei'
-import { Box3, Mesh, MeshStandardMaterial, Object3D, Sphere, Vector3 } from 'three'
+import { Html, OrbitControls, Points, useGLTF } from '@react-three/drei'
+import { Box3, Mesh, MeshStandardMaterial, MOUSE, Object3D, Sphere, Vector3 } from 'three'
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import { cameraDistance, cameraPosition } from './camera'
 import type { AnatomicalView } from './camera'
-import { computeExplosionWorldOffsets } from './explosion'
+import { computeExplosionWorldOffsets, computeInventoryWorldOffsets, explosionPhase, EXPLODE_RADIAL_MAX, INVENTORY_SIDE_X, inventoryCameraRadius } from './explosion'
 import { combinedFraming, computeModelOffsets } from './viewport'
-import { getStructure } from '../structure/catalog'
+import { getStructure, systemColor } from '../structure/catalog'
 import { systemVisible, useAtlas } from '../../store/atlas'
 
 const MODEL_PATH = 'models/bodyparts3d-skeleton.glb'
@@ -56,12 +56,13 @@ function framingFilter(visibility: { skeleton: boolean; muscles: boolean }) {
       : visibility.skeleton
 }
 
-function SceneModel({ scene, fit, color, visible, offsetX, boxesRef, onLoaded, onFraming }: {
+function SceneModel({ scene, fit, color, visible, offsetX, inventoryX, boxesRef, onLoaded, onFraming }: {
   scene: Object3D
   fit: { center: Vector3; scale: number }
   color: string
   visible: boolean
   offsetX: number
+  inventoryX: number
   boxesRef: StructureBoxes
   onLoaded: (meshes: number, triangles: number) => void
   onFraming: () => void
@@ -129,20 +130,60 @@ function SceneModel({ scene, fit, color, visible, offsetX, boxesRef, onLoaded, o
   }, [model])
 
   const worldExplosionOffsets = useMemo(() => computeExplosionWorldOffsets(structureBoxes), [structureBoxes])
+  const inventoryCenter = useMemo(() => new Vector3(inventoryX, 0, 0), [inventoryX])
+  const worldInventoryOffsets = useMemo(
+    () => computeInventoryWorldOffsets(structureBoxes, inventoryCenter),
+    [structureBoxes, inventoryCenter],
+  )
+
+  const phase = explosionPhase(explosionProgress)
+  const progressRatio = explosionProgress / 100
+
+  const explosionTargets = useMemo(() => {
+    const targets = new Map<string, Vector3>()
+    for (const [structureId, box] of structureBoxes) {
+      const radial = worldExplosionOffsets.get(structureId) ?? new Vector3()
+      let offset: Vector3
+      if (phase === 'inventory') {
+        const start = radial.clone()
+        const inventory = worldInventoryOffsets.get(structureId) ?? radial.clone()
+        offset = start.lerp(inventory, (progressRatio - EXPLODE_RADIAL_MAX / 100) / (1 - EXPLODE_RADIAL_MAX / 100))
+      } else {
+        const factor = phase === 'radial' ? progressRatio / (EXPLODE_RADIAL_MAX / 100) : 0
+        offset = radial.clone().multiplyScalar(factor)
+      }
+      targets.set(structureId, box.getCenter(new Vector3()).add(offset))
+    }
+    return targets
+  }, [structureBoxes, worldExplosionOffsets, worldInventoryOffsets, phase, progressRatio])
+
+  const dotPositions = useMemo(() => {
+    const ids = [...structureBoxes.keys()].filter((id) =>
+      systemVisible(systemVisibility, getStructure(id)?.system ?? 'SYS-ESQ'),
+    )
+    const positions = new Float32Array(ids.length * 3)
+    for (let index = 0; index < ids.length; index += 1) {
+      const world = explosionTargets.get(ids[index])
+      if (!world) continue
+      positions[index * 3] = world.x
+      positions[index * 3 + 1] = world.y
+      positions[index * 3 + 2] = world.z
+    }
+    return positions
+  }, [structureBoxes, systemVisibility, explosionTargets])
 
   useEffect(() => {
-    const progress = explosionProgress / 100
     for (const [mesh, base] of basePositions) {
-      mesh.position.copy(base)
       const id = mesh.userData?.structureId
-      const offset = typeof id === 'string' ? worldExplosionOffsets.get(id) : undefined
-      if (offset && mesh.parent) {
-        const targetWorld = base.clone().applyMatrix4(mesh.parent.matrixWorld).addScaledVector(offset, progress)
-        mesh.position.copy(mesh.parent.worldToLocal(targetWorld))
+      const target = typeof id === 'string' ? explosionTargets.get(id) : undefined
+      if (target && mesh.parent) {
+        mesh.position.copy(mesh.parent.worldToLocal(target.clone()))
+      } else {
+        mesh.position.copy(base)
       }
     }
     invalidate()
-  }, [explosionProgress, basePositions, worldExplosionOffsets, invalidate])
+  }, [explosionProgress, basePositions, explosionTargets, invalidate])
 
   useEffect(() => {
     let meshes = 0
@@ -188,7 +229,9 @@ function SceneModel({ scene, fit, color, visible, offsetX, boxesRef, onLoaded, o
   function hoverStructure(event: ThreeEvent<PointerEvent>) {
     event.stopPropagation()
     const id = resolveStructureId(event)
-    useAtlas.getState().hover(id)
+    const native = event.nativeEvent
+    const rect = (native.target as HTMLElement).getBoundingClientRect()
+    useAtlas.getState().hover(id, { x: native.clientX - rect.left, y: native.clientY - rect.top })
     document.body.style.cursor = id ? 'pointer' : 'auto'
   }
 
@@ -197,13 +240,20 @@ function SceneModel({ scene, fit, color, visible, offsetX, boxesRef, onLoaded, o
     useAtlas.getState().select(resolveStructureId(event))
   }
 
-  return <primitive object={model}
-    onPointerMove={hoverStructure}
-    onPointerOut={() => {
-      useAtlas.getState().hover(null)
-      document.body.style.cursor = 'auto'
-    }}
-    onPointerDown={selectStructure} />
+  return <group>
+    <primitive object={model}
+      onPointerMove={hoverStructure}
+      onPointerOut={() => {
+        useAtlas.getState().hover(null)
+        document.body.style.cursor = 'auto'
+      }}
+      onPointerDown={selectStructure} />
+    {phase === 'inventory' && visible && (
+      <Points positions={dotPositions}>
+        <pointsMaterial color={color} size={0.045} sizeAttenuation transparent opacity={0.9} depthWrite={false} />
+      </Points>
+    )}
+  </group>
 }
 
 function Controls({ view, command, rotating, framingTick, boxes }: Omit<ViewerProps, 'onLoaded'> & { framingTick: number; boxes: StructureBoxes }) {
@@ -212,11 +262,15 @@ function Controls({ view, command, rotating, framingTick, boxes }: Omit<ViewerPr
   const applied = useRef(-1)
   const modelVisibility = useAtlas((state) => state.modelVisibility)
   const layout = useAtlas((state) => state.layout)
+  const explosionProgress = useAtlas((state) => state.explosionProgress)
   const appliedKey = useRef<string | null>(null)
+  const phase = explosionPhase(explosionProgress)
+  const previousInventory = useRef(false)
 
   useEffect(() => {
     if (!controls.current || applied.current === command.sequence) return
     applied.current = command.sequence
+    if (explosionPhase(useAtlas.getState().explosionProgress) === 'inventory') return
     if (command.action === 'in' || command.action === 'out') {
       const offset = camera.position.clone().sub(controls.current.target)
       offset.multiplyScalar(command.action === 'in' ? 0.8 : 1.25).clampLength(0.6, 30)
@@ -248,6 +302,7 @@ function Controls({ view, command, rotating, framingTick, boxes }: Omit<ViewerPr
 
   useEffect(() => {
     if (!controls.current) return
+    if (explosionPhase(useAtlas.getState().explosionProgress) === 'inventory') return
     const key = `${layout}|${modelVisibility.skeleton !== false}|${modelVisibility.muscles !== false}`
     if (appliedKey.current === key) return
     const known = appliedKey.current !== null
@@ -264,8 +319,39 @@ function Controls({ view, command, rotating, framingTick, boxes }: Omit<ViewerPr
     invalidate()
   }, [boxes, camera, framingTick, invalidate, layout, modelVisibility, size.width, size.height, view])
 
+  useEffect(() => {
+    if (!controls.current) return
+    const isInventory = phase === 'inventory'
+    if (isInventory === previousInventory.current) return
+    previousInventory.current = isInventory
+    if (isInventory) {
+      const distance = Math.max(cameraDistance(size.width / size.height, inventoryCameraRadius()), 0.6)
+      camera.position.set(...cameraPosition('front', distance))
+      camera.up.set(0, 1, 0)
+      camera.updateProjectionMatrix()
+      controls.current.target.set(0, 0, 0)
+      controls.current.update()
+      invalidate()
+      return
+    }
+    const framing = combinedFraming(boxes.current, framingFilter(useAtlas.getState().modelVisibility))
+    const target = framing?.center ?? new Vector3(0, 0, 0)
+    const distance = Math.max(cameraDistance(size.width / size.height, Math.max(framing?.radius ?? 1.7, 0.6)), 0.6)
+    camera.position.set(...cameraPosition(view, distance))
+    camera.up.set(0, 1, 0)
+    camera.updateProjectionMatrix()
+    controls.current.target.copy(target)
+    controls.current.update()
+    invalidate()
+  }, [phase, boxes, camera, invalidate, size.width, size.height, view])
+
   return <OrbitControls ref={controls} makeDefault enableDamping dampingFactor={0.08}
-    autoRotate={rotating} autoRotateSpeed={0.65} minDistance={0.6} maxDistance={30} />
+    enableRotate={phase !== 'inventory'}
+    autoRotate={rotating && phase !== 'inventory'} autoRotateSpeed={0.65}
+    mouseButtons={phase === 'inventory'
+      ? { LEFT: MOUSE.PAN, MIDDLE: MOUSE.DOLLY, RIGHT: MOUSE.ROTATE }
+      : { LEFT: MOUSE.ROTATE, MIDDLE: MOUSE.DOLLY, RIGHT: MOUSE.PAN }}
+    minDistance={0.6} maxDistance={30} />
 }
 
 class ViewerBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
@@ -300,8 +386,8 @@ function SceneContent({ boxesRef, onLoaded, onMusclesLoaded, onFraming }: {
   }, [layout, fit.scale, skeleton.scene, muscles.scene])
 
   return <group>
-    <SceneModel scene={skeleton.scene} fit={fit} color="#d4bfb1" visible={modelVisibility.skeleton !== false} offsetX={offsets.skeleton} boxesRef={boxesRef} onLoaded={onLoaded} onFraming={onFraming} />
-    <SceneModel scene={muscles.scene} fit={fit} color="#b8433a" visible={modelVisibility.muscles !== false} offsetX={offsets.muscles} boxesRef={boxesRef} onLoaded={onMusclesLoaded} onFraming={onFraming} />
+    <SceneModel scene={skeleton.scene} fit={fit} color={systemColor('SYS-ESQ')} visible={modelVisibility.skeleton !== false} offsetX={offsets.skeleton} inventoryX={-INVENTORY_SIDE_X} boxesRef={boxesRef} onLoaded={onLoaded} onFraming={onFraming} />
+    <SceneModel scene={muscles.scene} fit={fit} color={systemColor('SYS-MUS')} visible={modelVisibility.muscles !== false} offsetX={offsets.muscles} inventoryX={INVENTORY_SIDE_X} boxesRef={boxesRef} onLoaded={onMusclesLoaded} onFraming={onFraming} />
   </group>
 }
 

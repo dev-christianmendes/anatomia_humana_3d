@@ -1,18 +1,34 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
-import { Activity, Bone, CircleHelp, Columns2, Dumbbell, ExternalLink, Focus, Keyboard as KeyboardIcon, Layers, Layers3, Minus, PanelLeftClose, PanelLeftOpen, Plus, RotateCcw, RotateCw, ScanLine, Search, X } from 'lucide-react'
+import type { RefObject } from 'react'
+import { Activity, Bone, CircleHelp, Columns2, Dumbbell, ExternalLink, EyeOff, Focus, Keyboard as KeyboardIcon, Layers, Layers3, Minus, PanelLeftClose, PanelLeftOpen, Plus, RotateCcw, RotateCw, ScanLine, Search, X } from 'lucide-react'
+import { useProgress } from '@react-three/drei'
 import type { AnatomicalView } from './features/viewer/camera'
 import type { CameraCommand } from './features/viewer/AnatomyViewport'
 import type { StructureRecord } from './data/structures'
-import { getStructure, regionLabel, systemLabel, SYSTEMS } from './features/structure/catalog'
-import { searchStructures } from './features/structure/search'
+import { getStructure, regionLabel, systemColor, systemLabel, SYSTEMS } from './features/structure/catalog'
+import { searchStructures, suggestedStructures } from './features/structure/search'
 import { fetchApiStructure, fetchApiRelations, type ApiRelation } from './features/structure/api'
 import { getRelations, relationLabel } from './features/structure/relations'
-import { useAtlas } from './store/atlas'
+import { registerMcpTools } from './features/mcp/mcp'
+import { totalStructureCount, useAtlas, visibleStructureCount } from './store/atlas'
 import './atlas.css'
 
 const AnatomyViewport = lazy(() => import('./features/viewer/AnatomyViewport'))
+const SEARCH_LIMIT = 12
 
-function StructureSearch({ onChoose }: { onChoose: (structureId: string) => void }) {
+function LoadingOverlay() {
+  const { active, progress, loaded, total } = useProgress()
+  if (!active || total === 0 || progress >= 100) return null
+  return (
+    <div className="viewer-loading" role="status">
+      <h2>Preparando as estruturas</h2>
+      <div className="loading-bar" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
+      <p>{Math.round(progress)}% · Carregando {loaded}/{total} peças</p>
+    </div>
+  )
+}
+
+function StructureSearch({ inputRef, onChoose }: { inputRef: RefObject<HTMLInputElement | null>; onChoose: (structureId: string) => void }) {
   const [term, setTerm] = useState('')
   const [debounced, setDebounced] = useState('')
 
@@ -21,7 +37,8 @@ function StructureSearch({ onChoose }: { onChoose: (structureId: string) => void
     return () => clearTimeout(timer)
   }, [term])
 
-  const results = useMemo(() => searchStructures(debounced, 8), [debounced])
+  const results = useMemo(() => searchStructures(debounced, SEARCH_LIMIT), [debounced])
+  const suggestions = useMemo(() => suggestedStructures(8), [])
 
   function choose(structureId: string) {
     onChoose(structureId)
@@ -32,18 +49,40 @@ function StructureSearch({ onChoose }: { onChoose: (structureId: string) => void
   return <div className="search">
     <label className="search-field">
       <Search size={15} />
-      <input type="search" placeholder="Buscar estrutura, músculo, região…" value={term}
+      <input ref={inputRef} type="search" placeholder="Buscar estrutura, músculo, região…" value={term}
         onChange={(event) => setTerm(event.target.value)} aria-label="Buscar estrutura" />
+      <kbd title="Tecla /">/</kbd>
       {term && <button type="button" className="search-clear" aria-label="Limpar busca" onClick={() => { setTerm(''); setDebounced('') }}><X size={14} /></button>}
     </label>
-    {debounced.trim() && (results.length > 0 ? <ul className="search-results">
-      {results.map((entry) => <li key={entry.structureId}>
-        <button type="button" onClick={() => choose(entry.structureId)}>
-          <span className="search-result-name"><Focus size={13} />{entry.name}</span>
-          <span className="search-result-meta">{systemLabel(entry.system)} · {regionLabel(entry.region)}</span>
-        </button>
-      </li>)}
-    </ul> : <p className="search-empty">Nenhum resultado encontrado.</p>)}
+    {debounced.trim() ? (
+      results.length > 0 ? (
+        <>
+          <ul className="search-results">
+            {results.map((entry) => <li key={entry.structureId}>
+              <button type="button" onClick={() => choose(entry.structureId)}>
+                <span className="search-result-name"><Focus size={13} />{entry.name}</span>
+                <span className="search-result-meta">{systemLabel(entry.system)} · {regionLabel(entry.region)}</span>
+              </button>
+            </li>)}
+          </ul>
+          {results.length >= SEARCH_LIMIT && <p className="search-note">Mostrando até {SEARCH_LIMIT} resultados. Refine a busca para encontrar estruturas menores.</p>}
+        </>
+      ) : <p className="search-empty">Nenhuma estrutura encontrada.</p>
+    ) : (
+      suggestions.length > 0 && (
+        <div className="search-suggestions">
+          <p className="search-hint">Comece por um órgão principal ou procure qualquer estrutura nomeada.</p>
+          <ul className="search-results">
+            {suggestions.map((entry) => <li key={entry.structureId}>
+              <button type="button" onClick={() => choose(entry.structureId)}>
+                <span className="search-result-name"><Focus size={13} />{entry.name}</span>
+                <span className="search-result-meta">{systemLabel(entry.system)} · {regionLabel(entry.region)}</span>
+              </button>
+            </li>)}
+          </ul>
+        </div>
+      )
+    )}
   </div>
 }
 
@@ -100,7 +139,7 @@ function StructureInfo({ structureId, onChoose }: { structureId: string; onChoos
     <h2>{active.name}</h2>
     {active.alternateNames[0] && <div className="latin-names">{active.alternateNames.map((name) => <span className="latin-name" key={name}>{name}</span>)}</div>}
     <div className="structure-tags">
-      <span className="tag"><span className="system-dot" />{systemLabel(active.system)}</span>
+      <span className="tag"><span className="system-dot" style={{ background: systemColor(active.system) }} />{systemLabel(active.system)}</span>
       <span className="tag">{regionLabel(active.region)}</span>
     </div>
     <div className="info-rule" />
@@ -135,16 +174,38 @@ export default function Atlas() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [metrics, setMetrics] = useState<{ meshes: number; triangles: number } | null>(null)
   const credits = useRef<HTMLDialogElement>(null)
+  const searchRef = useRef<HTMLInputElement>(null)
   const [onLoaded] = useState(() => (meshes: number, triangles: number) => setMetrics({ meshes, triangles }))
 
+  useEffect(() => {
+    registerMcpTools(document as unknown as Parameters<typeof registerMcpTools>[0], {
+      select: (structureId: string) => useAtlas.getState().select(structureId),
+      focus: (structureId: string) =>
+        setCommand((previous) => ({ action: 'focus' as const, structureId, sequence: previous.sequence + 1 })),
+    })
+  }, [])
+
   const selectedStructureId = useAtlas((state) => state.selectedStructureId)
+  const hoveredStructureId = useAtlas((state) => state.hoveredStructureId)
+  const hoverPosition = useAtlas((state) => state.hoverPosition)
   const isolatedStructureId = useAtlas((state) => state.isolatedStructureId)
   const systemVisibility = useAtlas((state) => state.systemVisibility)
   const explosionProgress = useAtlas((state) => state.explosionProgress)
   const layout = useAtlas((state) => state.layout)
   const modelVisibility = useAtlas((state) => state.modelVisibility)
+  const visibleCount = visibleStructureCount(systemVisibility)
+  const totalCount = totalStructureCount()
+
+  const sceneCaption = isolatedStructureId
+    ? 'ESTRUTURA SELECIONADA'
+    : explosionProgress > 45
+      ? 'INVENTÁRIO ANATÔMICO'
+      : explosionProgress > 5
+        ? 'ESTRUTURAS SEPARADAS'
+        : 'CORPO HUMANO ADULTO · MASCULINO'
 
   function changeView(next: AnatomicalView) {
+    if (explosionProgress > 80 && next !== 'front') return
     setView(next)
     setCommand((previous) => ({ action: 'reset', sequence: previous.sequence + 1 }))
   }
@@ -172,9 +233,15 @@ export default function Atlas() {
       if (key === '1') { changeView('front'); return }
       if (key === '2') { changeView('back'); return }
       if (key === '3') { changeView('left'); return }
+      if (key === '4') { changeView('threequarter'); return }
       if (key === '+' || key === '=') { zoom('in'); event.preventDefault(); return }
       if (key === '-' || key === '_') { zoom('out'); event.preventDefault(); return }
       if (key === '0') { useAtlas.getState().select(null); return }
+      if (key === '/') {
+        searchRef.current?.focus()
+        event.preventDefault()
+        return
+      }
       if (key === 'f') {
         const selected = useAtlas.getState().selectedStructureId
         if (selected) {
@@ -200,11 +267,11 @@ export default function Atlas() {
         </div>
         <h1>Corpo humano</h1>
         <div className="catalog-item"><span className="bone-icon"><Bone size={22} /></span><div><strong>Esquelético · Muscular</strong><span>BodyParts3D + Z-Anatomy</span></div><span className="status-dot" /></div>
-        <StructureSearch onChoose={chooseFromSearch} />
+        <StructureSearch inputRef={searchRef} onChoose={chooseFromSearch} />
         <section className="control-section">
           <h2>Orientação</h2>
           <div className="view-options" role="group" aria-label="Vista anatômica">
-            {([['front', 'Anterior'], ['back', 'Posterior'], ['left', 'Lateral']] as const).map(([value, label]) => <button key={value} aria-pressed={view === value} onClick={() => changeView(value)}>{label}</button>)}
+            {([['threequarter', '¾'], ['front', 'Anterior'], ['back', 'Posterior'], ['left', 'Lateral']] as const).map(([value, label]) => <button key={value} aria-pressed={view === value} disabled={explosionProgress > 80 && value !== 'front'} onClick={() => changeView(value)}>{label}</button>)}
           </div>
         </section>
         <section className="control-section">
@@ -228,17 +295,33 @@ export default function Atlas() {
         </section>
         <section className="control-section">
           <h2>Sistemas</h2>
+          <div className="system-tools">
+            <div className="system-presets" role="group" aria-label="Mostrar apenas um sistema">
+              {SYSTEMS.map((system) => {
+                const only = systemVisibility[system.code] !== false && SYSTEMS.every((other) => other.code === system.code || systemVisibility[other.code] === false)
+                return <button key={system.code} aria-pressed={only} onClick={() => useAtlas.getState().showOnlySystem(system.code)}>{system.label}</button>
+              })}
+              <button aria-pressed={SYSTEMS.every((system) => systemVisibility[system.code] !== false)} onClick={() => useAtlas.getState().showAllSystems()}>Ambos</button>
+            </div>
+            <button className="system-hide-all" aria-label="Ocultar todos os sistemas" title="Ocultar todos os sistemas" disabled={visibleCount === 0} onClick={() => useAtlas.getState().hideAllSystems()}><EyeOff size={15} /></button>
+          </div>
           <div className="system-list">
             {SYSTEMS.map((system) => {
               const checked = systemVisibility[system.code] !== false
+              const only = checked && SYSTEMS.every((other) => other.code === system.code || systemVisibility[other.code] === false)
               return (
-                <label className="toggle-row" key={system.code}>
-                  <span className="system-label"><span className={`system-dot ${checked ? '' : 'muted'}`} />{system.label}<em>{system.count} estruturas</em></span>
-                  <input type="checkbox" aria-label={`Sistema ${system.label}`} checked={checked} onChange={() => useAtlas.getState().toggleSystem(system.code)} />
-                </label>
+                <div className="system-row" key={system.code}>
+                  <button type="button" className="system-name" aria-pressed={only} title={`Mostrar apenas ${system.label.toLowerCase()}`} onClick={() => useAtlas.getState().showOnlySystem(system.code)}>
+                    <span className="system-dot" style={{ background: system.color, opacity: checked ? 1 : 0.35 }} />
+                    <span className="system-label">{system.label}<em>{system.count} estruturas</em></span>
+                  </button>
+                  <input type="checkbox" aria-label={`Mostrar sistema ${system.label}`} checked={checked} onChange={() => useAtlas.getState().toggleSystem(system.code)} />
+                  <span className="system-description">{system.description}</span>
+                </div>
               )
             })}
           </div>
+          <p className="system-summary">{visibleCount} de {totalCount} estruturas visíveis</p>
         </section>
         {(selectedStructureId || isolatedStructureId) && <div className="structure-actions">
           {selectedStructureId && !isolatedStructureId && <button className="isolate-button" onClick={() => useAtlas.getState().isolate(selectedStructureId)}><Focus size={16} />Isolar estrutura</button>}
@@ -246,7 +329,7 @@ export default function Atlas() {
           {selectedStructureId && <button className="text-button" onClick={() => useAtlas.getState().select(null)}><X size={15} />Limpar seleção</button>}
         </div>}
         <button className="reset-button" onClick={reset}><RotateCcw size={17} />Restaurar visualização</button>
-        <div className="shortcuts-note" aria-label="Atalhos de teclado"><KeyboardIcon size={13} /><span>Atalhos: <kbd>R</kbd> reset · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> vistas · <kbd>+</kbd>/<kbd>−</kbd> zoom · <kbd>F</kbd> foco · <kbd>0</kbd> limpar</span></div>
+        <div className="shortcuts-note" aria-label="Atalhos de teclado"><KeyboardIcon size={13} /><span>Atalhos: <kbd>R</kbd> reset · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd> vistas · <kbd>+</kbd>/<kbd>−</kbd> zoom · <kbd>F</kbd> foco · <kbd>0</kbd> limpar</span></div>
         <div className="sidebar-bottom"><span className="edition">ATLAS / EDIÇÃO INICIAL</span><p>Uma perspectiva sobre<br />o corpo humano.</p><span className="small-note">Uso educacional. Não diagnóstico.</span></div>
       </aside>
       <section className="viewport" aria-label="Atlas 3D">
@@ -255,7 +338,13 @@ export default function Atlas() {
         <Suspense fallback={<div className="viewer-message" role="status">Preparando visualização…</div>}>
           <AnatomyViewport view={view} command={command} rotating={rotating} onLoaded={onLoaded} />
         </Suspense>
-        <div className="orientation-label">{view === 'front' ? 'ANTERIOR' : view === 'back' ? 'POSTERIOR' : 'LATERAL'}</div>
+        <LoadingOverlay />
+        <div className="orientation-label">{view === 'front' ? 'ANTERIOR' : view === 'back' ? 'POSTERIOR' : view === 'left' ? 'LATERAL' : 'SEMI-VISTA'}</div>
+        <span className="scene-caption" role="status">{sceneCaption}</span>
+        {hoveredStructureId && hoverPosition && (() => {
+          const name = getStructure(hoveredStructureId)?.name
+          return name ? <div className="hover-tooltip" style={{ left: hoverPosition.x, top: hoverPosition.y - 22 }}>{name}</div> : null
+        })()}
         <div className="viewport-tools" role="toolbar" aria-label="Câmera">
           <button className="icon-button" aria-label="Aproximar" title="Aproximar" onClick={() => setCommand((previous) => ({ action: 'in', sequence: previous.sequence + 1 }))}><Plus size={20} /></button>
           <button className="icon-button" aria-label="Afastar" title="Afastar" onClick={() => setCommand((previous) => ({ action: 'out', sequence: previous.sequence + 1 }))}><Minus size={20} /></button>
@@ -263,6 +352,11 @@ export default function Atlas() {
           <button className="icon-button" aria-label="Resetar câmera" title="Resetar câmera" onClick={() => changeView('front')}><Focus size={20} /></button>
         </div>
         <div className="viewport-footer"><span className="model-status" role="status"><span className={`status-dot ${metrics ? '' : 'pending'}`} />{metrics ? 'Modelo carregado' : 'Carregando modelo'}</span><span>BodyParts3D + Z-Anatomy</span></div>
+        <div className="viewport-hints" aria-label="Como interagir">
+          <span>Arraste para {explosionProgress > 45 ? 'deslocar' : 'orbitar'}</span>
+          <span>Scroll para aproximar</span>
+          <span>Clique para inspecionar</span>
+        </div>
       </section>
       <aside className="info-panel" aria-label="Informações do modelo">
         {selectedStructureId
