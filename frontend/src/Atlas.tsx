@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
-import { Activity, Bone, Box, CircleHelp, Columns2, Dumbbell, ExternalLink, Focus, Layers, Layers3, Minus, Plus, RotateCcw, RotateCw, ScanLine, Search, X } from 'lucide-react'
+import { Activity, Bone, CircleHelp, Columns2, Dumbbell, ExternalLink, Focus, Keyboard as KeyboardIcon, Layers, Layers3, Minus, PanelLeftClose, PanelLeftOpen, Plus, RotateCcw, RotateCw, ScanLine, Search, X } from 'lucide-react'
 import type { AnatomicalView } from './features/viewer/camera'
 import type { CameraCommand } from './features/viewer/AnatomyViewport'
 import type { StructureRecord } from './data/structures'
@@ -98,12 +98,15 @@ function StructureInfo({ structureId, onChoose }: { structureId: string; onChoos
     <span className="eyebrow">ESTRUTURA SELECIONADA</span>
     <div className="info-illustration"><Bone size={38} strokeWidth={1.2} /><span>{active.structureId.slice(-4)}</span></div>
     <h2>{active.name}</h2>
-    {active.alternateNames[0] && <span className="latin-name">{active.alternateNames[0]}</span>}
+    {active.alternateNames[0] && <div className="latin-names">{active.alternateNames.map((name) => <span className="latin-name" key={name}>{name}</span>)}</div>}
+    <div className="structure-tags">
+      <span className="tag"><span className="system-dot" />{systemLabel(active.system)}</span>
+      <span className="tag">{regionLabel(active.region)}</span>
+    </div>
     <div className="info-rule" />
     <dl className="metadata">
-      <div><dt>Sistema</dt><dd>{systemLabel(active.system)}</dd></div>
-      <div><dt>Região</dt><dd>{regionLabel(active.region)}</dd></div>
       <div><dt>Identificador</dt><dd>{active.structureId}</dd></div>
+      <div><dt>Situação</dt><dd>{active.reviewed ? 'Revisada' : 'Em curadoria'}</dd></div>
     </dl>
     <h3>Descrição</h3>
     {active.description ? <p>{active.description}</p> : <p className="pending-note">Descrição em curadoria.</p>}
@@ -129,7 +132,7 @@ export default function Atlas() {
   const [view, setView] = useState<AnatomicalView>('front')
   const [command, setCommand] = useState<CameraCommand>({ action: 'reset', sequence: 0 })
   const [rotating, setRotating] = useState(false)
-  const [wireframe, setWireframe] = useState(false)
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [metrics, setMetrics] = useState<{ meshes: number; triangles: number } | null>(null)
   const credits = useRef<HTMLDialogElement>(null)
   const [onLoaded] = useState(() => (meshes: number, triangles: number) => setMetrics({ meshes, triangles }))
@@ -145,10 +148,12 @@ export default function Atlas() {
     setView(next)
     setCommand((previous) => ({ action: 'reset', sequence: previous.sequence + 1 }))
   }
+  function zoom(direction: 'in' | 'out') {
+    setCommand((previous) => ({ action: direction, sequence: previous.sequence + 1 }))
+  }
   function reset() {
     changeView('front')
     setRotating(false)
-    setWireframe(false)
     useAtlas.getState().setExplosion(0)
   }
 
@@ -157,7 +162,31 @@ export default function Atlas() {
     setCommand((previous) => ({ action: 'focus', structureId, sequence: previous.sequence + 1 }))
   }
 
-  return <div className="app-shell">
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      const target = event.target as HTMLElement | null
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) return
+      if (event.metaKey || event.ctrlKey || event.altKey) return
+      const key = event.key.toLowerCase()
+      if (key === 'r') { reset(); event.preventDefault(); return }
+      if (key === '1') { changeView('front'); return }
+      if (key === '2') { changeView('back'); return }
+      if (key === '3') { changeView('left'); return }
+      if (key === '+' || key === '=') { zoom('in'); event.preventDefault(); return }
+      if (key === '-' || key === '_') { zoom('out'); event.preventDefault(); return }
+      if (key === '0') { useAtlas.getState().select(null); return }
+      if (key === 'f') {
+        const selected = useAtlas.getState().selectedStructureId
+        if (selected) {
+          setCommand((previous) => ({ action: 'focus', structureId: selected, sequence: previous.sequence + 1 }))
+        }
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  })
+
+  return <div className={`app-shell${sidebarCollapsed ? ' sidebar-collapsed' : ''}`}>
     <header className="header">
       <a className="brand" href="./" aria-label="Anatomia 3D, início"><span className="brand-symbol"><Activity size={23} /></span><span>anatomia<span className="brand-suffix">3D</span></span></a>
       <div className="header-divider" /><span className="header-title">Atlas humano</span>
@@ -166,7 +195,9 @@ export default function Atlas() {
     </header>
     <main className="workspace">
       <aside className="sidebar" aria-label="Controles de visualização">
-        <div className="sidebar-heading"><span className="eyebrow">EXPLORAR</span><Layers3 size={17} /></div>
+        <div className="sidebar-heading"><span className="eyebrow">EXPLORAR</span>
+          <span className="sidebar-heading-actions"><Layers3 size={17} /><button className="icon-button" title="Recolher painel de controles" aria-label="Recolher painel de controles" onClick={() => setSidebarCollapsed(true)}><PanelLeftClose size={18} /></button></span>
+        </div>
         <h1>Corpo humano</h1>
         <div className="catalog-item"><span className="bone-icon"><Bone size={22} /></span><div><strong>Esquelético · Muscular</strong><span>BodyParts3D + Z-Anatomy</span></div><span className="status-dot" /></div>
         <StructureSearch onChoose={chooseFromSearch} />
@@ -185,7 +216,6 @@ export default function Atlas() {
           <label className="toggle-row"><span><Bone size={17} />Esqueleto</span><input type="checkbox" aria-label="Mostrar esqueleto" checked={modelVisibility.skeleton !== false} onChange={() => useAtlas.getState().toggleModel('skeleton')} /></label>
           <label className="toggle-row"><span><Dumbbell size={17} />Muscular</span><input type="checkbox" aria-label="Mostrar musculatura" checked={modelVisibility.muscles !== false} onChange={() => useAtlas.getState().toggleModel('muscles')} /></label>
           <label className="toggle-row"><span><RotateCw size={17} />Rotação automática</span><input type="checkbox" checked={rotating} onChange={() => setRotating(!rotating)} /></label>
-          <label className="toggle-row"><span><Box size={17} />Malha poligonal</span><input type="checkbox" checked={wireframe} onChange={() => setWireframe(!wireframe)} /></label>
         </section>
         <section className="control-section">
           <h2>Explosão</h2>
@@ -216,12 +246,14 @@ export default function Atlas() {
           {selectedStructureId && <button className="text-button" onClick={() => useAtlas.getState().select(null)}><X size={15} />Limpar seleção</button>}
         </div>}
         <button className="reset-button" onClick={reset}><RotateCcw size={17} />Restaurar visualização</button>
+        <div className="shortcuts-note" aria-label="Atalhos de teclado"><KeyboardIcon size={13} /><span>Atalhos: <kbd>R</kbd> reset · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> vistas · <kbd>+</kbd>/<kbd>−</kbd> zoom · <kbd>F</kbd> foco · <kbd>0</kbd> limpar</span></div>
         <div className="sidebar-bottom"><span className="edition">ATLAS / EDIÇÃO INICIAL</span><p>Uma perspectiva sobre<br />o corpo humano.</p><span className="small-note">Uso educacional. Não diagnóstico.</span></div>
       </aside>
       <section className="viewport" aria-label="Atlas 3D">
+        {sidebarCollapsed && <button className="sidebar-expand" title="Expandir painel de controles" aria-label="Expandir painel de controles" onClick={() => setSidebarCollapsed(false)}><PanelLeftOpen size={18} /></button>}
         <div className="viewport-heading"><div><span className="eyebrow">ANATOMIA HUMANA</span><h2>Esqueleto e musculatura</h2></div><span className="view-badge"><span className="status-dot" />3D</span></div>
         <Suspense fallback={<div className="viewer-message" role="status">Preparando visualização…</div>}>
-          <AnatomyViewport view={view} command={command} rotating={rotating} wireframe={wireframe} onLoaded={onLoaded} />
+          <AnatomyViewport view={view} command={command} rotating={rotating} onLoaded={onLoaded} />
         </Suspense>
         <div className="orientation-label">{view === 'front' ? 'ANTERIOR' : view === 'back' ? 'POSTERIOR' : 'LATERAL'}</div>
         <div className="viewport-tools" role="toolbar" aria-label="Câmera">

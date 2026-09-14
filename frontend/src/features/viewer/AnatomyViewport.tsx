@@ -16,6 +16,9 @@ const MODEL_PATH = 'models/bodyparts3d-skeleton.glb'
 const MUSCLE_MODEL_PATH = 'models/z-anatomy-muscles.glb'
 const HOVER_COLOR = '#eec39a'
 const SELECTED_COLOR = '#1f7a5b'
+const HOVER_GLOW = '#b06a1c'
+const SELECTED_GLOW = '#0e5c44'
+const EMISSIVE_INTENSITY = 0.5
 useGLTF.preload(MODEL_PATH)
 useGLTF.preload(MUSCLE_MODEL_PATH)
 
@@ -25,7 +28,6 @@ type ViewerProps = {
   view: AnatomicalView
   command: CameraCommand
   rotating: boolean
-  wireframe: boolean
   onLoaded: (meshes: number, triangles: number) => void
 }
 
@@ -46,15 +48,23 @@ function fitTransform(scene: Object3D) {
   return { center, scale }
 }
 
-function SceneModel({ scene, fit, color, wireframe, visible, offsetX, boxesRef, onLoaded }: {
+function framingFilter(visibility: { skeleton: boolean; muscles: boolean }) {
+  return (id: string) => id.startsWith('STR-ESQ-')
+    ? visibility.skeleton
+    : id.startsWith('STR-MUS-')
+      ? visibility.muscles
+      : visibility.skeleton
+}
+
+function SceneModel({ scene, fit, color, visible, offsetX, boxesRef, onLoaded, onFraming }: {
   scene: Object3D
   fit: { center: Vector3; scale: number }
   color: string
-  wireframe: boolean
   visible: boolean
   offsetX: number
   boxesRef: StructureBoxes
   onLoaded: (meshes: number, triangles: number) => void
+  onFraming: () => void
 }) {
   const invalidate = useThree((state) => state.invalidate)
   const hovered = useAtlas((state) => state.hoveredStructureId)
@@ -67,7 +77,7 @@ function SceneModel({ scene, fit, color, wireframe, visible, offsetX, boxesRef, 
     const copy = scene.clone(true)
     copy.traverse((object) => {
       if (object instanceof Mesh) {
-        object.material = new MeshStandardMaterial({ color, roughness: 0.55 })
+        object.material = new MeshStandardMaterial({ color, roughness: 0.55, emissive: '#000000', emissiveIntensity: EMISSIVE_INTENSITY })
       }
     })
     copy.position.copy(fit.center).multiplyScalar(-fit.scale)
@@ -105,6 +115,10 @@ function SceneModel({ scene, fit, color, wireframe, visible, offsetX, boxesRef, 
   useEffect(() => {
     for (const [structureId, box] of structureBoxes) boxesRef.current.set(structureId, box)
   }, [boxesRef, structureBoxes])
+
+  useEffect(() => {
+    onFraming()
+  }, [onFraming, structureBoxes])
 
   const basePositions = useMemo(() => {
     const base = new Map<Mesh, Vector3>()
@@ -144,15 +158,6 @@ function SceneModel({ scene, fit, color, wireframe, visible, offsetX, boxesRef, 
 
   useEffect(() => {
     model.traverse((object) => {
-      if (object instanceof Mesh) {
-        ;(object.material as MeshStandardMaterial).wireframe = wireframe
-      }
-    })
-    invalidate()
-  }, [model, wireframe, invalidate])
-
-  useEffect(() => {
-    model.traverse((object) => {
       if (!(object instanceof Mesh)) return
       const id = object.userData?.structureId
       object.visible = visible && (isolated === null
@@ -164,12 +169,12 @@ function SceneModel({ scene, fit, color, wireframe, visible, offsetX, boxesRef, 
 
   useEffect(() => {
     for (const [structureId, materials] of materialsByStructure) {
-      const next = selected === structureId || isolated === structureId
-        ? SELECTED_COLOR
-        : hovered === structureId
-          ? HOVER_COLOR
-          : color
-      for (const material of materials) material.color.set(next)
+      const isSelected = selected === structureId || isolated === structureId
+      const isHovered = hovered === structureId
+      for (const material of materials) {
+        material.color.set(isSelected ? SELECTED_COLOR : isHovered ? HOVER_COLOR : color)
+        material.emissive.set(isSelected ? SELECTED_GLOW : isHovered ? HOVER_GLOW : '#000000')
+      }
     }
     invalidate()
   }, [materialsByStructure, selected, hovered, isolated, invalidate, color])
@@ -182,7 +187,9 @@ function SceneModel({ scene, fit, color, wireframe, visible, offsetX, boxesRef, 
 
   function hoverStructure(event: ThreeEvent<PointerEvent>) {
     event.stopPropagation()
-    useAtlas.getState().hover(resolveStructureId(event))
+    const id = resolveStructureId(event)
+    useAtlas.getState().hover(id)
+    document.body.style.cursor = id ? 'pointer' : 'auto'
   }
 
   function selectStructure(event: ThreeEvent<PointerEvent>) {
@@ -192,14 +199,20 @@ function SceneModel({ scene, fit, color, wireframe, visible, offsetX, boxesRef, 
 
   return <primitive object={model}
     onPointerMove={hoverStructure}
-    onPointerOut={() => useAtlas.getState().hover(null)}
+    onPointerOut={() => {
+      useAtlas.getState().hover(null)
+      document.body.style.cursor = 'auto'
+    }}
     onPointerDown={selectStructure} />
 }
 
-function Controls({ view, command, rotating, boxes }: Omit<ViewerProps, 'wireframe' | 'onLoaded'> & { boxes: StructureBoxes }) {
+function Controls({ view, command, rotating, framingTick, boxes }: Omit<ViewerProps, 'onLoaded'> & { framingTick: number; boxes: StructureBoxes }) {
   const controls = useRef<OrbitControlsImpl>(null)
   const { camera, size, invalidate } = useThree()
   const applied = useRef(-1)
+  const modelVisibility = useAtlas((state) => state.modelVisibility)
+  const layout = useAtlas((state) => state.layout)
+  const appliedKey = useRef<string | null>(null)
 
   useEffect(() => {
     if (!controls.current || applied.current === command.sequence) return
@@ -221,7 +234,7 @@ function Controls({ view, command, rotating, boxes }: Omit<ViewerProps, 'wirefra
         controls.current.target.copy(center)
       }
     } else {
-      const framing = combinedFraming(boxes.current)
+      const framing = combinedFraming(boxes.current, framingFilter(useAtlas.getState().modelVisibility))
       const target = framing?.center ?? new Vector3(0, 0, 0)
       const radius = Math.max(framing?.radius ?? 1.7, 0.6)
       camera.position.set(...cameraPosition(view, cameraDistance(size.width / size.height, radius)))
@@ -232,6 +245,24 @@ function Controls({ view, command, rotating, boxes }: Omit<ViewerProps, 'wirefra
     controls.current.update()
     invalidate()
   }, [boxes, camera, command, invalidate, size.width, size.height, view])
+
+  useEffect(() => {
+    if (!controls.current) return
+    const key = `${layout}|${modelVisibility.skeleton !== false}|${modelVisibility.muscles !== false}`
+    if (appliedKey.current === key) return
+    const known = appliedKey.current !== null
+    appliedKey.current = key
+    if (!known) return
+    const framing = combinedFraming(boxes.current, framingFilter(modelVisibility))
+    if (!framing) return
+    const distance = Math.max(cameraDistance(size.width / size.height, framing.radius), 0.6)
+    camera.position.set(...cameraPosition(view, distance))
+    camera.up.set(0, 1, 0)
+    camera.updateProjectionMatrix()
+    controls.current.target.copy(framing.center)
+    controls.current.update()
+    invalidate()
+  }, [boxes, camera, framingTick, invalidate, layout, modelVisibility, size.width, size.height, view])
 
   return <OrbitControls ref={controls} makeDefault enableDamping dampingFactor={0.08}
     autoRotate={rotating} autoRotateSpeed={0.65} minDistance={0.6} maxDistance={30} />
@@ -250,11 +281,11 @@ class ViewerBoundary extends Component<{ children: ReactNode }, { failed: boolea
   }
 }
 
-function SceneContent({ wireframe, boxesRef, onLoaded, onMusclesLoaded }: {
-  wireframe: boolean
+function SceneContent({ boxesRef, onLoaded, onMusclesLoaded, onFraming }: {
   boxesRef: StructureBoxes
   onLoaded: (meshes: number, triangles: number) => void
   onMusclesLoaded: (meshes: number, triangles: number) => void
+  onFraming: () => void
 }) {
   const skeleton = useGLTF(MODEL_PATH)
   const muscles = useGLTF(MUSCLE_MODEL_PATH)
@@ -269,13 +300,15 @@ function SceneContent({ wireframe, boxesRef, onLoaded, onMusclesLoaded }: {
   }, [layout, fit.scale, skeleton.scene, muscles.scene])
 
   return <group>
-    <SceneModel scene={skeleton.scene} fit={fit} color="#d4bfb1" wireframe={wireframe} visible={modelVisibility.skeleton !== false} offsetX={offsets.skeleton} boxesRef={boxesRef} onLoaded={onLoaded} />
-    <SceneModel scene={muscles.scene} fit={fit} color="#b8433a" wireframe={wireframe} visible={modelVisibility.muscles !== false} offsetX={offsets.muscles} boxesRef={boxesRef} onLoaded={onMusclesLoaded} />
+    <SceneModel scene={skeleton.scene} fit={fit} color="#d4bfb1" visible={modelVisibility.skeleton !== false} offsetX={offsets.skeleton} boxesRef={boxesRef} onLoaded={onLoaded} onFraming={onFraming} />
+    <SceneModel scene={muscles.scene} fit={fit} color="#b8433a" visible={modelVisibility.muscles !== false} offsetX={offsets.muscles} boxesRef={boxesRef} onLoaded={onMusclesLoaded} onFraming={onFraming} />
   </group>
 }
 
 export default function AnatomyViewport(props: ViewerProps) {
   const { onLoaded } = props
+  const [framingTick, setFramingTick] = useState(0)
+  const onFraming = useCallback(() => setFramingTick((tick) => tick + 1), [])
   const [supported] = useState(() => {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('webgl2', { failIfMajorPerformanceCaveat: false })
@@ -310,7 +343,7 @@ export default function AnatomyViewport(props: ViewerProps) {
     <Canvas className="viewport-canvas"
       frameloop={props.rotating ? 'always' : 'demand'}
       camera={{ position: [0, 0, 5], fov: 45, near: 0.01, far: 100 }}
-      dpr={props.wireframe ? 1 : [1, 1.75]} gl={{ antialias: true }}
+      dpr={[1, 1.75]} gl={{ antialias: true }}
       onPointerMissed={() => {
         useAtlas.getState().hover(null)
         useAtlas.getState().select(null)
@@ -321,9 +354,9 @@ export default function AnatomyViewport(props: ViewerProps) {
       <directionalLight position={[4, 5, 6]} intensity={1.2} />
       <directionalLight position={[-4, 2, -3]} intensity={0.6} color="#c4e5df" />
       <Suspense fallback={<Html center><div className="loading" role="status">Carregando modelos…</div></Html>}>
-        <SceneContent wireframe={props.wireframe} boxesRef={boxesRef} onLoaded={skeletonLoaded} onMusclesLoaded={musclesLoaded} />
+        <SceneContent boxesRef={boxesRef} onLoaded={skeletonLoaded} onMusclesLoaded={musclesLoaded} onFraming={onFraming} />
       </Suspense>
-      <Controls view={props.view} command={props.command} rotating={props.rotating} boxes={boxesRef} />
+      <Controls view={props.view} command={props.command} rotating={props.rotating} framingTick={framingTick} boxes={boxesRef} />
     </Canvas>
   </ViewerBoundary>
 }

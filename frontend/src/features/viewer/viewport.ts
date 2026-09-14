@@ -11,9 +11,14 @@ export function computeModelOffsets(skeletonWidth: number, musclesWidth: number,
 
 export type CombinedFraming = { center: Vector3; radius: number }
 
-export function combinedFraming(boxes: Map<string, Box3>): CombinedFraming | null {
+export function combinedFraming(
+  boxes: Map<string, Box3>,
+  include?: (structureId: string) => boolean,
+): CombinedFraming | null {
   const combined = new Box3()
-  for (const box of boxes.values()) combined.union(box)
+  for (const [id, box] of boxes) {
+    if (!include || include(id)) combined.union(box)
+  }
   if (combined.isEmpty()) return null
   const center = combined.getCenter(new Vector3())
   const radius = combined.getBoundingSphere(new Sphere()).radius
