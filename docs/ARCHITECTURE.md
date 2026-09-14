@@ -55,10 +55,15 @@ um resultado, o Atlas emite o comando de camera `focus`; o `AnatomyViewport`
 mantem em `boxesRef` o bounding box de cada estrutura e reposiciona alvo e
 distancia para enquadrar o centro.
 
-A exploracao usa offsets predefinidos por estrutura (direcao a partir do centro
-do corpo, magnitude proporcional ao raio da malha) interpolados pelo
-`explosionProgress` (0-100) do store. Os offsets sao calculados na fase de
-unpacking e nao modificam o GLB.
+A exploracao (`features/viewer/explosion.ts`, `computeExplosionWorldOffsets`) calcula
+um offset por estrutura em unidades de mundo: direcao radial a partir do centro do
+corpo (caixa envolvente geral) e magnitude `0.25 * raio + 0.12` (minimo 0.15),
+todos derivados das caixas de cada estrutura ja na fase de unpacking. O
+`AnatomyViewport` aplica o offset interpolado pelo `explosionProgress` (0-100) do
+store convertendo a posicao local da malha para o espaco do mundo
+(`base * parent.matrixWorld` + offset) e de volta via `parent.worldToLocal`, o que
+preserva direcao e escala do modelo independentemente da rotacao/pai de cada malha.
+Nenhuma alteracao permanente ao GLB.
 
 Relacoes: `STRUCTURE_RELATION` armazena um registro por relacao com
 `relation_type`. `ARTICULATION` e resolvida nos dois sentidos (forward + reverse
