@@ -11,7 +11,7 @@ A entrega atual combina o **Milestone 01: First 3D Viewer** com as etapas de **i
 | Status | MVP em desenvolvimento |
 | Plataforma | Web, com prioridade para desktop |
 | Finalidade | Educação, projeto acadêmico e portfólio |
-| Entrega disponível | Viewer dos sistemas esquelético e muscular com seleção, busca, relações, visualização explodida, modos de layout, enquadramento automático e atalhos de teclado |
+| Entrega disponível | Viewer dos sistemas esquelético e muscular com painel de sistemas, presets, busca com sugestões, relações, visualização explodida com **fase inventário**, modos de layout, enquadramento automático, vistas ¾/anteriores/posteriores/laterais, legendas de cena, dicas de interação, loading progressivo, atalhos de teclado e integração MCP |
 | Backend | Java 21 / Spring Boot, implementado com API `/api/v1` |
 | Banco | PostgreSQL com migrations Flyway (schema, referência e estruturas) |
 | Docker Compose | Backend + PostgreSQL prontos para subir o stack |
@@ -63,10 +63,13 @@ Como projeto de portfólio, a evolução prevista demonstrará integração entr
 | Rotação | Exploração por arrasto com OrbitControls |
 | Zoom | Roda do mouse e botões de aproximação/afastamento |
 | Pan | Deslocamento do alvo da câmera pelo mouse |
-| Vistas anatômicas | Anterior, posterior e lateral |
+| Vistas anatômicas | Anterior, posterior, lateral e semivista (¾), com indicador no viewport |
 | Reset da câmera | Retorno à vista anterior e ao enquadramento inicial |
 | Restauração geral | Restaura a vista, desativa rotação automática e malha poligonal |
 | Rotação automática | Movimento contínuo controlado por checkbox |
+| Hints de interação | Dicas contextuais no viewport (orbitar, deslocar, aproximar, clicar para inspecionar) |
+| Legendas de cena | Textos de contexto exibidos sobre o 3D (sistema selecionado, fase da explosão, identificação do corpo) |
+| Tooltip de hover | Nome da estrutura sob o cursor enquanto explora a cena |
 | Layout dos modelos | Exibição lado a lado (padrão) ou sobreposta, com enquadramento automático da câmera |
 | Visibilidade por modelo | Toggles para ligar/desligar o esqueleto e a musculatura individualmente |
 | Enquadramento automático | A câmera se reajusta sozinha ao carregar, trocar de layout ou ocultar/mostrar um modelo |
@@ -76,15 +79,17 @@ Como projeto de portfólio, a evolução prevista demonstrará integração entr
 | Informações do modelo | Visão geral do sistema, fonte, formato e contagem de malhas/triângulos |
 | Seleção de estruturas | Raycasting ao clicar; destaque de hover e de seleção sem alterar o asset |
 | Painel por estrutura | Nome, nomes alternativos, sistema, região, descrição, função e fonte educacional |
+| Painel de sistemas | Cards coloridos com descrição e contagem por sistema; presets Esqueleto/Muscular/Ambos, ocultar tudo e resumo `<N> de 720 estruturas visíveis` |
 | Visibilidade de sistemas | Checkbox por sistema; apenas sistemas presentes no catálogo são listados |
-| Busca | Filtro com debounce (200 ms), normalização sem acentos e foco automático da câmera na estrutura escolhida |
+| Busca | Filtro com debounce (200 ms), normalização sem acentos, sugestões ao iniciar, limite com aviso, atalho `/` e foco automático da câmera na estrutura escolhida |
 | Relações anatômicas | Painel por estrutura com articulações (resolvidas nos dois sentidos), origens e inserções; clique na relação seleciona e foca o alvo |
-| Visualização explodida | Slider de intensidade (0–100%) que separa todas as estruturas a partir do centro do corpo |
+| Visualização explodida | Slider de intensidade (0–100%) com três fases: montado, explosão radial e **inventário** (estruturas separadas em grade com rótulos e câmera automática) |
+| Integração MCP | Quando um cliente MCP está conectado (ex.: IDE com Decapod), expõe `find_anatomy` e `inspect_anatomical_structure` |
+| Estados de carregamento | Overlay de progresso com `NN% · Carregando N/N peças`, indicador de erro do modelo e aviso de WebGL indisponível |
 | Isolamento | "Isolar estrutura" oculta o restante; "Restaurar visão geral" desfaz |
 | Limpar seleção | Retorna ao painel resumo do modelo |
 | Dados via API | Quando `VITE_API_URL` está configurada, estruturas revisadas são consultadas na API |
 | Créditos | Diálogo com atribuição, licença e download do GLB |
-| Estados de carregamento | Indicador de carregamento, erro do modelo e aviso de WebGL indisponível |
 | Responsividade | Layout desktop e disposição adaptada para telas estreitas |
 
 ### Planejadas para o MVP
@@ -200,16 +205,16 @@ O painel por estrutura passará a exibir "Dados via API" para estruturas revisad
 2. Arraste com o botão esquerdo do mouse para rotacionar a vista.
 3. Use a roda do mouse ou os botões `+` e `−` para ajustar a distância.
 4. Arraste com o botão direito para deslocar o alvo da câmera (pan).
-5. Escolha **Anterior**, **Posterior** ou **Lateral** para mudar a orientação.
+5. Escolha **¾**, **Anterior**, **Posterior** ou **Lateral** (atalhos `4/1/2/3`) para mudar a orientação; durante a explosão, apenas a vista anterior é permitida.
 6. Ative **Rotação automática**, conforme necessário.
-7. Clique em uma estrutura do esqueleto para selecioná-la; o painel direito mostra nome, sistema, região, descrição, função e relações anatômicas.
-8. Use o campo de **busca** para filtrar por nome, nome alternativo, sistema ou região; escolher um resultado seleciona a estrutura e foca a câmera.
+7. Clique em uma estrutura do esqueleto para selecioná-la; o painel direito mostra nome, sistema, região, descrição, função e relações anatômicas. Passe o cursor sobre o modelo para ver o nome da estrutura.
+8. Use o campo de **busca** (atalho `/`): sugere estruturas ao iniciar e filtra por nome, nome alternativo, sistema ou região; escolher um resultado seleciona a estrutura e foca a câmera.
 9. No painel, clique em uma **relação anatômica** para selecionar e focar a estrutura relacionada.
 10. Use **Isolar estrutura** para ocultar o restante do modelo e **Restaurar visão geral** para desfazer.
-11. Ajuste o slider de **Explosão** para separar as estruturas e voltar ao 0% para restabelecer a posição original.
+11. Ajuste o slider de **Explosão** para separar as estruturas (radial) e, em intensidades altas, observe a fase **inventário**: as peças formam uma grade com rótulos e a câmera se reposiciona sozinha; volte a 0% para restabelecer a posição original.
 12. Em **Visualização**, alterne entre **Lado a lado** e **Sobreposto** para dispor os dois modelos, e marque/desmarque **Esqueleto** e **Muscular** para mostrar ou ocultar cada um.
-13. Marque/desmarque o checkbox de **Sistemas** para ocultar um sistema inteiro.
-14. Recolha a **barra lateral** para ampliar a área 3D e use os **atalhos**: `R` reset, `1/2/3` vistas, `+`/`−` zoom, `F` focar selecionado e `0` limpar seleção.
+13. No painel de **Sistemas**, use os presets **Esqueleto**, **Muscular** ou **Ambos** para exibir sistemas completos, ou o botão **Ocultar todas**; cada card mostra a cor, a descrição e o total de estruturas do sistema.
+14. Recolha a **barra lateral** para ampliar a área 3D; use os **atalhos**: `R` reset, `1/2/3/4` vistas, `+`/`−` zoom, `F` focar selecionado, `/` busca e `0` limpar seleção.
 15. Use **Limpar seleção** para voltar ao painel resumo, **Resetar câmera** para o enquadramento inicial, ou **Restaurar visualização** para também desligar rotação e explosão.
 16. Abra **Fontes e licença** para consultar a atribuição e acessar o GLB.
 
@@ -336,9 +341,10 @@ anatomia_3d/
 │   │   ├── data/structures.ts
 │   │   ├── data/relations.ts
 │   │   └── features/
-│   │       ├── viewer/ (AnatomyViewport, camera, testes)
-│   │       └── structure/ (catalog, api, search, relations, testes)
-│   ├── e2e/ (viewer, structure, features, api)
+│   │       ├── viewer/ (AnatomyViewport, camera, explosion, testes)
+│   │       ├── structure/ (catalog, api, search, relations, testes)
+│   │       └── mcp/ (integração MCP e testes)
+│   ├── e2e/ (viewer, structure, features, layout, explosion, systems, ux, api)
 │   ├── playwright.config.ts
 │   ├── vite.config.ts
 │   └── package.json
@@ -476,11 +482,13 @@ O navegador de teste usa SwiftShader para oferecer WebGL por software. Por ser m
 
 | Camada | Verificações existentes |
 | --- | --- |
-| Câmera | Três testes unitários de distância de enquadramento, tela estreita e posições das vistas |
+| Câmera | Testes unitários de distância de enquadramento, tela estreita e posições das vistas (incluindo a semivista ¾) |
 | Estado | Testes do store Zustand (seleção, hover, sistemas, isolamento/restauração, explosão) |
-| Catálogo | Testes de integridade das 720 estruturas sincronizadas e dos rótulos/sistemas |
-| Busca | Testes de normalização, prioridade de resultados, nomes alternativos, sistemas e limites |
+| Catálogo | Testes de integridade das 720 estruturas sincronizadas, dos rótulos/sistemas (cores, presets e contagens) |
+| Explosão | Testes das três fases (montado/radial/inventário), offsets da grade e raio da câmera no inventário |
+| Busca | Testes de normalização, prioridade de resultados, nomes alternativos, sistemas, sugestões e limites |
 | Relações | Testes de integridade (referências, vocabulário), resolução nos dois sentidos e direcionalidade origem/inserção |
+| MCP | Testes das ferramentas `find_anatomy` e `inspect_anatomical_structure` |
 | API adapter | Testes com fetch simulado (mapeamento da resposta e fallback local) |
 | Renderização | Carregamento do GLB e detecção de pixels visíveis no canvas |
 | Interação | Zoom, mudança de vistas anatômicas, retorno ao enquadramento e gesto de arrasto no canvas |
@@ -488,7 +496,8 @@ O navegador de teste usa SwiftShader para oferecer WebGL por software. Por ser m
 | Busca e relações | E2E de busca → foco de câmera → painel de relações → navegação por relação |
 | Explodida | E2E do slider de intensidade com alteração de pixel e reset |
 | Layout e modelos | E2E dos modos lado a lado/sobreposto e da visibilidade de esqueleto/musculatura |
-| Experiência | E2E de sidebar colapsável e atalhos de teclado (vistas e reset) |
+| Sistemas e explosão | E2E dos presets/Hide all/contagens, legendas de cena e transição radial → inventário |
+| Experiência | E2E de sidebar colapsável, atalhos de teclado (vistas ¾/F/S/B, `+`/`−`, reset e `/`) e dicas de interação |
 | Integração API | E2E com backend real (gate `API_E2E=1 VITE_API_URL=...`): painel "Dados via API" |
 | Interface | Abertura/fechamento do diálogo de créditos |
 | Responsividade | Capturas em 1440×900 e 390×844, limites da silhueta e ausência de overflow horizontal |
@@ -571,9 +580,14 @@ Use HTTPS em produção. Backend, banco e CORS já têm configuração Docker Co
 | Interação | Seleção, highlight, painel por estrutura | Entregue |
 | Sistemas | Filtros, mostrar/ocultar e isolamento | Entregue |
 | Catálogo pt-BR | Geração, curadoria, validação e seed das 720 estruturas (258 esqueléticas + 462 musculares) | Entregue (720/720) |
-| Pesquisa | Debounce, resultados e foco automático | Entregue |
+| Pesquisa | Debounce, resultados, sugestões e foco automático | Entregue |
 | Relações | Relações anatômicas no painel (articulações nos dois sentidos + origem/inserção) | Entregue |
-| Exploded view | Slider de intensidade separando todas as estruturas | Entregue |
+| Painel de sistemas | Cards com cor/descrição/contagem, presets e ocultar tudo | Entregue |
+| Exploded view | Slider de intensidade (radial) separando todas as estruturas | Entregue |
+| Inventário anatômico | Fase de alta explosão com grade de peças, rótulos e câmera automática | Entregue |
+| Vistas e navegação | Presets ¾/anterior/posterior/lateral, hints, tooltip de hover e legendas de cena | Entregue |
+| Loading progressivo | Overlay com porcentagem e peças carregadas | Entregue |
+| Integração MCP | Ferramentas `find_anatomy` e `inspect_anatomical_structure` | Entregue |
 | Layout e visibilidade por modelo | Modos lado a lado/sobreposto e toggles de esqueleto/musculatura | Entregue |
 | Experiência de uso | Enquadramento automático, feedback de hover, sidebar colapsável e atalhos de teclado | Entregue |
 | Otimização e qualidade | Profiling, acessibilidade e testes ampliados | Em evolução |

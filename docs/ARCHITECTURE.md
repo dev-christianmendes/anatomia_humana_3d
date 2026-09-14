@@ -3,16 +3,20 @@
 ## Atual
 
 ```text
-main.tsx -> Atlas.tsx (UI / painel / sidebar)
+main.tsx -> Atlas.tsx (UI / painel / sidebar / sistemas / vistas / busca / loading / MCP)
                 -> store/atlas.ts (Zustand: selecao, hover, sistemas, isolamento, explosao)
                 -> features/structure (catalog local, api adapter, search, relations, labels)
-                -> `StructureSearch` -> debounce 200ms -> search.ts -> foco por bounding box
+                -> `StructureSearch` -> debounce 200ms -> search.ts -> sugestoes + foco por bounding box
                 -> `StructureInfo` -> relacoes via api adapter ou relations.ts local
+                -> features/mcp/mcp.ts -> registerMcpTools -> host.modelContext (tools find_anatomy / inspect_anatomical_structure)
                 -> AnatomyViewport (lazy)
                      -> Canvas / SceneContent (esqueleto + musculatura)
-                     -> camera.ts
+                     -> camera.ts (vistas front/back/side/threequarter)
                      -> foco: CameraCommand `focus` -> boxesRef (unidades no unpacked scene)
-                     -> explode: explosionOffsets por estrutura -> offset aplicado ao mesh
+                     -> explode: explosion.ts -> fases assembled/radial/inventory + offsets
+                     -> inventory: drei Points (dots) + grade grid + camera auto (front view)
+                     -> LoadingOverlay (drei useProgress) -> % e pecas carregadas
+                     -> hints, tooltip de hover e scene-caption via store/viewport
                      -> /models/bodyparts3d-skeleton.glb
                      -> /models/z-anatomy-muscles.glb
 
@@ -93,10 +97,53 @@ Nenhuma alteracao permanente ao GLB.
 
 A interface do Atlas oferece feedback pontual: cursor `pointer` sobre estruturas,
 efeito emissive sutil em hover/selecao, sidebar colapsavel (botao recolher na
-cabecalho do painel e botao expandir flutuante na margem do viewport) e atalhos
-de teclado (`R` reset, `1/2/3` vistas, `+`/`-` zoom, `F` focar, `0` limpar
-selecao) que ignoram eventos quando o foco esta em campos de texto. O numero de
-malhas/triangulos e reportado apenas no carregamento.
+cabecalho do painel e botao expandir flutuante na margem do viewport), tooltip
+com o nome da estrutura na posicao do cursor, `viewport-hints` contextuais
+(orbitar, deslocar, aproximar, clique para inspecionar), `scene-caption` com o
+contexto da cena (sistema selecionado / INVENTARIO ANATOMICO / ESTRUTURAS
+SEPARADAS / CORPO HUMANO ADULTO · MASCULINO) e atalhos de teclado (`R` reset,
+`1/2/3/4` vistas, `+`/`-` zoom, `F` focar, `/` busca, `0` limpar selecao) que
+ignoram eventos quando o foco esta em campos de texto. O numero de
+malhas/triangulos e reportado apenas no carregamento, com overlay progressivo
+(`NN% · Carregando N/N pecas`) derivado do `useProgress` do Drei.
+
+## Painel de sistemas, vistas e explosao
+
+O painel de sistemas consulta `features/structure/catalog.ts` (`SYSTEMS`, que
+declara cor, descricao, `defaultVisible` e contagem por sistema via
+`systemColor`) e usa acoes do store `showOnlySystem`, `showAllSystems` e
+`hideAllSystems`, com o resumo `<N> de 720 estruturas visiveis` computado por
+`visibleStructureCount`/`totalStructureCount`. Presets Esqueleto/Muscular/Ambos
+mapeiam o conjunto `defaultVisible` de cada sistema; "Ocultar todas" liga apenas
+`SYS-ESQ-none`/`SYS-MUS-none`. A visibilidade entra na mesma varredura de
+`object.visible` do `SceneModel`.
+
+As vistas adicionam a semivista `threequarter` (`camera.ts`,
+`[0.35d, 0.26d, 0.9d]`) e o label `SEMI-VISTA`; durante o inventario
+(`explosionProgress > 80`) `changeView` restringe a escolha a `front`, pois a
+transicao para dentro da grade usa a camera anterior. O `Controls`
+(`@react-three/drei`) move camera e target para a posicao anterior no inventario
+e volta ao enquadramento de corpo ao sair; `OrbitControls` desabilita rotacao
+durante o inventario (mantendo zoom/pan) e o botao do meio orbitar retorna ao
+padrao no modo radial.
+
+## Explosao em inventario
+
+`features/viewer/explosion.ts` divide a explosao em tres fases a partir do
+`explosionProgress` (0-100): `assembled` (<15), `radial` (ate 45) e `inventory`.
+Na fase radial o offset e direcional a partir do centro do corpo (magnitude
+`0.25 * raio + 0.12`, minimo 0.15), como antes. Na fase de inventario
+`computeInventoryWorldOffsets` distribui cada estrutura em uma grade
+(span 3.6, lado em X 2.2 por modelo) mantendo a ordem original das caixas e
+aplicando um deslocamento +Z para preservar a distancia visual. O blend entre
+radial e inventario usa a mesma interpolacao suave do slider.
+
+Ao entrar no inventario, `AnatomyViewport` anima camera e target para a vista
+anterior em `inventoryCameraRadius` e liga dots via `<Points>` do Drei junto as
+estruturas (facilitando a associacao peca/rotulo); ao sair, a camera volta ao
+enquadramento do corpo e os dots sao removidos. A transicao radical nao
+dispara os reframes de layout/mudanca de sistema para nao competir com o
+enquadramento do inventario.
 
 Relacoes: `STRUCTURE_RELATION` armazena um registro por relacao com
 `relation_type`. `ARTICULATION` e resolvida nos dois sentidos (forward + reverse

@@ -24,21 +24,26 @@
 - [x] Busca: debounce, normalizacao sem acentos, prioridade de resultados e foco automatico da camera.
 - [x] Relacoes anatomicas curadas (161 no conjunto inicial, 147 articulacoes + 14 origem/insercao): seed V4, sync para o frontend e painel com resolucao bidirecional de articulacoes.
 - [x] Visualizacao explodida: slider de intensidade 0-100% separando todas as estruturas, com reset.
+- [x] Paridade UX com a referencia (Human Atlas): painel de sistemas com cores/descricoes/presets/"Ocultar todas", explosao com fase inventario (grade + rotulos + camera automatica), vista 3/4, hints de interacao, tooltip de hover, legendas de cena e loading progressivo.
+- [x] Busca com sugestoes e atalho `/` (foco no campo).
+- [x] Integracao MCP (`find_anatomy` e `inspect_anatomical_structure`) quando um host MCP esta conectado.
 
 ## Pendencias da Preparacao
 
 - [x] Licenca do codigo escolhida pelo responsavel (MIT, raiz do repositorio).
 - [ ] Repositorio remoto e publicacao.
+- [ ] Reconciliar a atribuicao do BodyParts3D (CC BY-SA 2.1 JP registrada no projeto vs. CA BY 4.0 citada pela referencia) antes de importar o corpo completo.
 
 ## Proximos Marcos
 
-1. QUALIDADE DE CONTEUDO: revisao didatica das descricoes/funcoes curadas e ampliacao do conjunto de relacoes anatomicas (incluindo mais origens/insercoes).
-2. PERFORMANCE: profiling, draw calls, simplificacao, lazy loading e cache.
-3. QUALIDADE: acessibilidade, matriz de navegadores e auditoria visual mais ampla.
-4. DEPLOY: frontend estatico, backend, banco gerenciado e assets em storage/CDN.
+1. EXPANSAO ANATOMICA (V2 da referencia, seguindo o mapa de 16 sistemas do Human Atlas): importar demais sistemas do BodyParts3D para o padrão `SYSTEMS`.
+2. QUALIDADE DE CONTEUDO: revisao didatica das descricoes/funcoes curadas e ampliacao do conjunto de relacoes anatomicas (incluindo mais origens/insercoes).
+3. PERFORMANCE: profiling, draw calls, simplificacao, lazy loading e cache.
+4. QUALIDADE: acessibilidade, matriz de navegadores e auditoria visual mais ampla.
+5. DEPLOY: frontend estatico, backend, banco gerenciado e assets em storage/CDN.
 
 ## Pos-MVP
 
-V2: mais estruturas/sistemas, favoritos, historico e comparacao.
+V2: mais estruturas/sistemas (16 sistemas da referencia), favoritos, historico e comparacao.
 V3: usuarios, aulas, quizzes e progresso. V4: IA baseada em conteudo aprovado,
 explicacoes e busca semantica. V5: WebXR, VR e AR.
