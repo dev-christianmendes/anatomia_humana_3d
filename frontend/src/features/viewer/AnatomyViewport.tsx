@@ -7,6 +7,7 @@ import { Box3, Mesh, MeshStandardMaterial, Object3D, Sphere, Vector3 } from 'thr
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import { cameraDistance, cameraPosition } from './camera'
 import type { AnatomicalView } from './camera'
+import { computeExplosionWorldOffsets } from './explosion'
 import { getStructure } from '../structure/catalog'
 import { systemVisible, useAtlas } from '../../store/atlas'
 
@@ -109,31 +110,21 @@ function SceneModel({ scene, fit, color, wireframe, boxesRef, onLoaded }: {
     return base
   }, [model])
 
-  const explosionOffsets = useMemo(() => {
-    const offsets = new Map<string, Vector3>()
-    const bodyCenter = new Vector3()
-    for (const box of structureBoxes.values()) bodyCenter.add(box.getCenter(new Vector3()))
-    bodyCenter.divideScalar(Math.max(structureBoxes.size, 1))
-    for (const [structureId, box] of structureBoxes) {
-      const direction = box.getCenter(new Vector3()).sub(bodyCenter)
-      if (direction.lengthSq() < 1e-8) direction.set(0, 1, 0)
-      direction.normalize()
-      const radius = box.getBoundingSphere(new Sphere()).radius
-      offsets.set(structureId, direction.multiplyScalar(0.25 * radius + 0.12))
-    }
-    return offsets
-  }, [structureBoxes])
+  const worldExplosionOffsets = useMemo(() => computeExplosionWorldOffsets(structureBoxes), [structureBoxes])
 
   useEffect(() => {
     const progress = explosionProgress / 100
     for (const [mesh, base] of basePositions) {
       mesh.position.copy(base)
       const id = mesh.userData?.structureId
-      const offset = typeof id === 'string' ? explosionOffsets.get(id) : undefined
-      if (offset) mesh.position.addScaledVector(offset, progress)
+      const offset = typeof id === 'string' ? worldExplosionOffsets.get(id) : undefined
+      if (offset && mesh.parent) {
+        const targetWorld = base.clone().applyMatrix4(mesh.parent.matrixWorld).addScaledVector(offset, progress)
+        mesh.position.copy(mesh.parent.worldToLocal(targetWorld))
+      }
     }
     invalidate()
-  }, [explosionProgress, basePositions, explosionOffsets, invalidate])
+  }, [explosionProgress, basePositions, worldExplosionOffsets, invalidate])
 
   useEffect(() => {
     let meshes = 0
