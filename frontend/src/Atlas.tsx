@@ -1,392 +1,555 @@
-import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
-import type { RefObject } from 'react'
-import { Activity, Bone, CircleHelp, Columns2, Dumbbell, ExternalLink, EyeOff, Focus, Keyboard as KeyboardIcon, Layers, Layers3, Minus, PanelLeftClose, PanelLeftOpen, Plus, RotateCcw, RotateCw, ScanLine, Search, X } from 'lucide-react'
-import { useProgress } from '@react-three/drei'
-import type { AnatomicalView } from './features/viewer/camera'
-import type { CameraCommand } from './features/viewer/AnatomyViewport'
-import type { StructureRecord } from './data/structures'
-import { getStructure, regionLabel, systemColor, systemLabel, SYSTEMS } from './features/structure/catalog'
-import { searchStructures, suggestedStructures } from './features/structure/search'
-import { fetchApiStructure, fetchApiRelations, type ApiRelation } from './features/structure/api'
-import { getRelations, relationLabel } from './features/structure/relations'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { Activity, ArrowUpRight, ChevronRight, Focus, Info, Layers3, Pause, RotateCcw, RotateCw, Search, X } from 'lucide-react'
+import AtlasScene from './features/viewer/atlas/scene'
+import type { Atlas, SystemCode, View } from './features/viewer/atlas/types'
+import { activeSystems, conceptExplanation, hasCuratedExplanation, SYSTEM_COLORS, systemDefinition, systemLabel } from './features/viewer/atlas/systems'
+import { searchConcepts, suggestedConcepts } from './features/viewer/atlas/search'
+import { useAtlas } from './store/atlas'
 import { registerMcpTools } from './features/mcp/mcp'
-import { totalStructureCount, useAtlas, visibleStructureCount } from './store/atlas'
+import { conceptParts, conceptRecord, structureNamePt, STRUCTURES_V2 } from './data/catalogV2'
+import type { ConceptRecordV2 } from './data/catalogV2'
 import './atlas.css'
 
-const AnatomyViewport = lazy(() => import('./features/viewer/AnatomyViewport'))
-const SEARCH_LIMIT = 12
+const ORGANS_PRESET: SystemCode[] = ['SYS-CAR', 'SYS-RES', 'SYS-DIG', 'SYS-URI', 'SYS-END', 'SYS-REP']
 
-function LoadingOverlay() {
-  const { active, progress, loaded, total } = useProgress()
-  if (!active || total === 0 || progress >= 100) return null
-  return (
-    <div className="viewer-loading" role="status">
-      <h2>Preparando as estruturas</h2>
-      <div className="loading-bar" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
-      <p>{Math.round(progress)}% · Carregando {loaded}/{total} peças</p>
-    </div>
-  )
-}
+export default function Home() {
+  const detailTitle = useRef<HTMLHeadingElement>(null)
+  const searchInput = useRef<HTMLInputElement>(null)
+  const chooseConceptRef = useRef<((concept: ConceptRecordV2) => void) | null>(null)
+  const [atlas, setAtlas] = useState<Atlas | null>(null)
+  const [progress, setProgress] = useState(0)
+  const [error, setError] = useState('')
+  const [query, setQuery] = useState('')
+  const [panel, setPanel] = useState<'layers' | 'search' | null>(null)
+  const [details, setDetails] = useState(false)
+  const [about, setAbout] = useState(false)
+  const [chosen, setChosen] = useState<ConceptRecordV2 | null>(null)
 
-function StructureSearch({ inputRef, onChoose }: { inputRef: RefObject<HTMLInputElement | null>; onChoose: (structureId: string) => void }) {
-  const [term, setTerm] = useState('')
-  const [debounced, setDebounced] = useState('')
+  const store = useAtlas()
 
   useEffect(() => {
-    const timer = setTimeout(() => setDebounced(term), 200)
-    return () => clearTimeout(timer)
-  }, [term])
-
-  const results = useMemo(() => searchStructures(debounced, SEARCH_LIMIT), [debounced])
-  const suggestions = useMemo(() => suggestedStructures(8), [])
-
-  function choose(structureId: string) {
-    onChoose(structureId)
-    setTerm('')
-    setDebounced('')
-  }
-
-  return <div className="search">
-    <label className="search-field">
-      <Search size={15} />
-      <input ref={inputRef} type="search" placeholder="Buscar estrutura, músculo, região…" value={term}
-        onChange={(event) => setTerm(event.target.value)} aria-label="Buscar estrutura" />
-      <kbd title="Tecla /">/</kbd>
-      {term && <button type="button" className="search-clear" aria-label="Limpar busca" onClick={() => { setTerm(''); setDebounced('') }}><X size={14} /></button>}
-    </label>
-    {debounced.trim() ? (
-      results.length > 0 ? (
-        <>
-          <ul className="search-results">
-            {results.map((entry) => <li key={entry.structureId}>
-              <button type="button" onClick={() => choose(entry.structureId)}>
-                <span className="search-result-name"><Focus size={13} />{entry.name}</span>
-                <span className="search-result-meta">{systemLabel(entry.system)} · {regionLabel(entry.region)}</span>
-              </button>
-            </li>)}
-          </ul>
-          {results.length >= SEARCH_LIMIT && <p className="search-note">Mostrando até {SEARCH_LIMIT} resultados. Refine a busca para encontrar estruturas menores.</p>}
-        </>
-      ) : <p className="search-empty">Nenhuma estrutura encontrada.</p>
-    ) : (
-      suggestions.length > 0 && (
-        <div className="search-suggestions">
-          <p className="search-hint">Comece por um órgão principal ou procure qualquer estrutura nomeada.</p>
-          <ul className="search-results">
-            {suggestions.map((entry) => <li key={entry.structureId}>
-              <button type="button" onClick={() => choose(entry.structureId)}>
-                <span className="search-result-name"><Focus size={13} />{entry.name}</span>
-                <span className="search-result-meta">{systemLabel(entry.system)} · {regionLabel(entry.region)}</span>
-              </button>
-            </li>)}
-          </ul>
-        </div>
-      )
-    )}
-  </div>
-}
-
-function RelationMatch({ relation, onChoose }: { relation: ApiRelation; onChoose: (id: string) => void }) {
-  return <button type="button" className="relation-row" onClick={() => onChoose(relation.targetId)}>
-    <span className="relation-type">{relationLabel(relation.relationType)}</span>
-    <span className="relation-target">{getStructure(relation.targetId)?.name ?? relation.targetId}</span>
-    {relation.description && <span className="relation-description">{relation.description}</span>}
-  </button>
-}
-
-function StructureInfo({ structureId, onChoose }: { structureId: string; onChoose: (structureId: string) => void }) {
-  const structure = getStructure(structureId)
-  const isolated = useAtlas((state) => state.isolatedStructureId)
-  const [remote, setRemote] = useState<StructureRecord | null | undefined>(undefined)
-  const [relations, setRelations] = useState<ApiRelation[]>([])
-  const [relationsLoaded, setRelationsLoaded] = useState<'idle' | 'loaded' | 'absent'>('idle')
+    const abort = new AbortController()
+    fetch('/models/fullbody/atlas.json', { signal: abort.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error('O catálogo de anatomia não pôde ser carregado.')
+        return response.json()
+      })
+      .then((data) => setAtlas(data as Atlas))
+      .catch((e: unknown) => {
+        if (e instanceof Error && e.name !== 'AbortError') setError(e.message)
+      })
+    return () => abort.abort()
+  }, [])
 
   useEffect(() => {
-    let cancelled = false
-    void fetchApiStructure(structureId).then((value) => {
-      if (!cancelled) setRemote(value)
-    })
-    return () => { cancelled = true }
-  }, [structureId])
-
-  useEffect(() => {
-    let cancelled = false
-    void fetchApiRelations(structureId).then((value) => {
-      if (!cancelled) {
-        setRelations(value ? value.filter((r) => getStructure(r.targetId)) : [])
-        setRelationsLoaded(value ? 'loaded' : 'absent')
-      }
-    })
-    return () => { cancelled = true }
-  }, [structureId])
-
-  const localRelations = useMemo(() => getRelations(structureId), [structureId])
-
-  const active = remote ?? structure
-  if (!active) {
-    return <span className="eyebrow">ESTRUTURA NÃO ENCONTRADA</span>
-  }
-  const viaApi = Boolean(remote)
-
-  function focusRelation(targetId: string) {
-    useAtlas.getState().select(targetId)
-    onChoose(targetId)
-  }
-  return <div className="structure-panel">
-    {isolated === structureId && <span className="isolated-badge">Visão isolada</span>}
-    <span className="eyebrow">ESTRUTURA SELECIONADA</span>
-    <div className="info-illustration"><Bone size={38} strokeWidth={1.2} /><span>{active.structureId.slice(-4)}</span></div>
-    <h2>{active.name}</h2>
-    {active.alternateNames[0] && <div className="latin-names">{active.alternateNames.map((name) => <span className="latin-name" key={name}>{name}</span>)}</div>}
-    <div className="structure-tags">
-      <span className="tag"><span className="system-dot" style={{ background: systemColor(active.system) }} />{systemLabel(active.system)}</span>
-      <span className="tag">{regionLabel(active.region)}</span>
-    </div>
-    <div className="info-rule" />
-    <dl className="metadata">
-      <div><dt>Identificador</dt><dd>{active.structureId}</dd></div>
-      <div><dt>Situação</dt><dd>{active.reviewed ? 'Revisada' : 'Em curadoria'}</dd></div>
-    </dl>
-    <h3>Descrição</h3>
-    {active.description ? <p>{active.description}</p> : <p className="pending-note">Descrição em curadoria.</p>}
-    <h3>Função</h3>
-    {active.function ? <p>{active.function}</p> : <p className="pending-note">Função em curadoria.</p>}
-    <h3>Relações anatômicas</h3>
-    {(() => {
-      const shown = relationsLoaded === 'absent'
-        ? localRelations.map((entry) => ({ targetId: entry.targetId, relationType: entry.relationType, description: entry.description ?? null }))
-        : relations
-      if (shown.length === 0) {
-        return <p className="pending-note">{relationsLoaded === 'loaded' ? 'Nenhuma relação catalogada.' : 'Relações em curadoria.'}</p>
-      }
-      return <div className="relation-list">{shown.map((entry) => <RelationMatch key={entry.relationType + entry.targetId} relation={entry} onChoose={focusRelation} />)}</div>
-    })()}
-    {active.educationalSourceUrl && <a className="source-link" href={active.educationalSourceUrl} target="_blank" rel="noreferrer">{active.educationalSourceName ?? 'Consultar fonte'} <ExternalLink size={14} /></a>}
-    {!active.reviewed && <p className="curation-note">Conteúdo pendente de curadoria.</p>}
-    <p className="data-origin">Dados {viaApi ? 'via API' : 'locais'}</p>
-  </div>
-}
-
-export default function Atlas() {
-  const [view, setView] = useState<AnatomicalView>('front')
-  const [command, setCommand] = useState<CameraCommand>({ action: 'reset', sequence: 0 })
-  const [rotating, setRotating] = useState(false)
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
-  const [metrics, setMetrics] = useState<{ meshes: number; triangles: number } | null>(null)
-  const credits = useRef<HTMLDialogElement>(null)
-  const searchRef = useRef<HTMLInputElement>(null)
-  const [onLoaded] = useState(() => (meshes: number, triangles: number) => setMetrics({ meshes, triangles }))
+    chooseConceptRef.current = chooseConcept
+  })
 
   useEffect(() => {
     registerMcpTools(document as unknown as Parameters<typeof registerMcpTools>[0], {
-      select: (structureId: string) => useAtlas.getState().select(structureId),
-      focus: (structureId: string) =>
-        setCommand((previous) => ({ action: 'focus' as const, structureId, sequence: previous.sequence + 1 })),
+      selectConcept: (conceptId: string) => {
+        const concept = conceptRecord(conceptId)
+        if (concept) chooseConceptRef.current?.(concept)
+      },
     })
   }, [])
 
-  const selectedStructureId = useAtlas((state) => state.selectedStructureId)
-  const hoveredStructureId = useAtlas((state) => state.hoveredStructureId)
-  const hoverPosition = useAtlas((state) => state.hoverPosition)
-  const isolatedStructureId = useAtlas((state) => state.isolatedStructureId)
-  const systemVisibility = useAtlas((state) => state.systemVisibility)
-  const explosionProgress = useAtlas((state) => state.explosionProgress)
-  const layout = useAtlas((state) => state.layout)
-  const modelVisibility = useAtlas((state) => state.modelVisibility)
-  const visibleCount = visibleStructureCount(systemVisibility)
-  const totalCount = totalStructureCount()
-
-  const sceneCaption = isolatedStructureId
-    ? 'ESTRUTURA SELECIONADA'
-    : explosionProgress > 45
-      ? 'INVENTÁRIO ANATÔMICO'
-      : explosionProgress > 5
-        ? 'ESTRUTURAS SEPARADAS'
-        : 'CORPO HUMANO ADULTO · MASCULINO'
-
-  function changeView(next: AnatomicalView) {
-    if (explosionProgress > 80 && next !== 'front') return
-    setView(next)
-    setCommand((previous) => ({ action: 'reset', sequence: previous.sequence + 1 }))
-  }
-  function zoom(direction: 'in' | 'out') {
-    setCommand((previous) => ({ action: direction, sequence: previous.sequence + 1 }))
-  }
-  function reset() {
-    changeView('front')
-    setRotating(false)
-    useAtlas.getState().setExplosion(0)
-  }
-
-  function chooseFromSearch(structureId: string) {
-    useAtlas.getState().select(structureId)
-    setCommand((previous) => ({ action: 'focus', structureId, sequence: previous.sequence + 1 }))
-  }
-
   useEffect(() => {
-    function onKeyDown(event: KeyboardEvent) {
+    const onKeyDown = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement | null
-      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) return
-      if (event.metaKey || event.ctrlKey || event.altKey) return
+      const editing = Boolean(target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable))
       const key = event.key.toLowerCase()
-      if (key === 'r') { reset(); event.preventDefault(); return }
-      if (key === '1') { changeView('front'); return }
-      if (key === '2') { changeView('back'); return }
-      if (key === '3') { changeView('left'); return }
-      if (key === '4') { changeView('threequarter'); return }
-      if (key === '+' || key === '=') { zoom('in'); event.preventDefault(); return }
-      if (key === '-' || key === '_') { zoom('out'); event.preventDefault(); return }
-      if (key === '0') { useAtlas.getState().select(null); return }
-      if (key === '/') {
-        searchRef.current?.focus()
+      if (key === 'escape') {
+        setAbout(false)
+        setDetails(false)
+        setPanel(null)
+        if (editing) (target as HTMLElement).blur()
+        return
+      }
+      if (editing || event.metaKey || event.ctrlKey || event.altKey) return
+      if (key === 'r') {
+        resetAll()
         event.preventDefault()
         return
       }
-      if (key === 'f') {
-        const selected = useAtlas.getState().selectedStructureId
-        if (selected) {
-          setCommand((previous) => ({ action: 'focus', structureId: selected, sequence: previous.sequence + 1 }))
-        }
+      if (key === '/') {
+        openSearch()
+        event.preventDefault()
+        return
       }
+      const viewKeys: Record<string, View> = { '1': 'front', '2': 'back', '3': 'side', '4': 'three-quarter' }
+      if (viewKeys[key]) changeView(viewKeys[key])
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
   })
 
-  return <div className={`app-shell${sidebarCollapsed ? ' sidebar-collapsed' : ''}`}>
-    <header className="header">
-      <a className="brand" href="./" aria-label="Anatomia 3D, início"><span className="brand-symbol"><Activity size={23} /></span><span>anatomia<span className="brand-suffix">3D</span></span></a>
-      <div className="header-divider" /><span className="header-title">Atlas humano</span>
-      <span className="milestone">Viewer <span>01</span></span>
-      <button className="icon-button" title="Créditos e licença" aria-label="Créditos e licença" onClick={() => credits.current?.showModal()}><CircleHelp size={20} /></button>
-    </header>
-    <main className="workspace">
-      <aside className="sidebar" aria-label="Controles de visualização">
-        <div className="sidebar-heading"><span className="eyebrow">EXPLORAR</span>
-          <span className="sidebar-heading-actions"><Layers3 size={17} /><button className="icon-button" title="Recolher painel de controles" aria-label="Recolher painel de controles" onClick={() => setSidebarCollapsed(true)}><PanelLeftClose size={18} /></button></span>
+  const parts = useMemo(() => new Map(atlas?.parts.map((p) => [p.id, p]) ?? []), [atlas])
+  const counts = useMemo(() => {
+    const result = new Map<string, number>()
+    atlas?.parts.forEach((p) => result.set(p.system, (result.get(p.system) ?? 0) + 1))
+    return result
+  }, [atlas])
+  const active = useMemo(() => activeSystems().filter((s) => counts.size === 0 || (counts.get(s.code) ?? 0) > 0), [counts])
+  const selectedParts = store.selected.map((id) => parts.get(id)).filter((p): p is NonNullable<typeof p> => Boolean(p))
+  const primaryStructure = selectedParts[0]
+  const selectedSystem = primaryStructure ? systemDefinition(primaryStructure.system) : undefined
+  const visibleCount = atlas
+    ? atlas.parts.filter((p) => (store.isolate ? store.selected.includes(p.id) : store.visible.includes(p.system) || store.selected.includes(p.id))).length
+    : 0
+
+  const results = useMemo(() => (query.trim() ? searchConcepts(query, 80) : suggestedConcepts(8)), [query])
+
+  function openPanel(next: 'layers' | 'search') {
+    setDetails(false)
+    setAbout(false)
+    setPanel((p) => (p === next ? null : next))
+    if (next === 'search') requestAnimationFrame(() => searchInput.current?.focus())
+  }
+
+  function openSearch() {
+    setDetails(false)
+    setPanel('search')
+    requestAnimationFrame(() => searchInput.current?.focus())
+  }
+
+  function chooseConcept(concept: ConceptRecordV2) {
+    setChosen(concept)
+    store.selectStructures(conceptParts(concept))
+    setDetails(true)
+    setPanel(null)
+    setAbout(false)
+  }
+
+  function choosePart(id: string) {
+    const part = parts.get(id)
+    if (!part) return
+    setChosen({
+      id: part.conceptId,
+      namePt: structureNamePt(id),
+      normalizedNamePt: structureNamePt(id),
+      elements: [id],
+      elementCount: 1,
+      systems: [part.system],
+    })
+    store.selectStructures([id])
+    setDetails(true)
+    setPanel(null)
+    setAbout(false)
+  }
+
+  function toggleSystem(code: SystemCode) {
+    setDetails(false)
+    store.toggleSystem(code)
+  }
+
+  function preset(codes: SystemCode[]) {
+    setDetails(false)
+    store.presetSystems(codes)
+    store.clearSelection()
+  }
+
+  function resetAll() {
+    store.resetView()
+    setChosen(null)
+    setDetails(false)
+    setPanel(null)
+    setAbout(false)
+    setQuery('')
+  }
+
+  function changeView(view: View) {
+    if (store.explode > 0.8 && view !== 'front') return
+    store.setView(view)
+    store.setRotate(false)
+  }
+
+  function setExplode(value: number) {
+    const progressValue = value / 100
+    if (progressValue > 0.8 && store.view !== 'front') store.setView('front')
+    store.setExplode(progressValue)
+    store.setRotate(false)
+  }
+
+  const sceneCaption = store.isolate
+    ? chosen?.namePt ?? 'ESTRUTURA SELECIONADA'
+    : store.explode > 0.95
+      ? 'INVENTÁRIO ANATÔMICO'
+      : store.explode > 0.05
+        ? 'ESTRUTURAS SEPARADAS'
+        : 'CORPO HUMANO ADULTO · MASCULINO'
+
+  return (
+    <main className="studio">
+      {atlas && (
+        <AtlasScene
+          atlas={atlas}
+          state={{
+            ...store,
+            inspectorOpen: details && selectedParts.length > 0,
+          }}
+          onSelect={choosePart}
+          onProgress={(n) => {
+            setProgress(n)
+            if (n === 100) setError('')
+          }}
+          onError={setError}
+        />
+      )}
+      <div className="vignette" />
+      <header className="identity">
+        <div className="eyebrow">
+          <span className="status-dot" /> ANATOMIA INTERATIVA
         </div>
-        <h1>Corpo humano</h1>
-        <div className="catalog-item"><span className="bone-icon"><Bone size={22} /></span><div><strong>Esquelético · Muscular</strong><span>BodyParts3D + Z-Anatomy</span></div><span className="status-dot" /></div>
-        <StructureSearch inputRef={searchRef} onChoose={chooseFromSearch} />
-        <section className="control-section">
-          <h2>Orientação</h2>
-          <div className="view-options" role="group" aria-label="Vista anatômica">
-            {([['threequarter', '¾'], ['front', 'Anterior'], ['back', 'Posterior'], ['left', 'Lateral']] as const).map(([value, label]) => <button key={value} aria-pressed={view === value} disabled={explosionProgress > 80 && value !== 'front'} onClick={() => changeView(value)}>{label}</button>)}
-          </div>
-        </section>
-        <section className="control-section">
-          <h2>Visualização</h2>
-          <div className="view-options layout-options" role="group" aria-label="Modo de exibição dos modelos">
-            <button aria-pressed={layout === 'side'} onClick={() => useAtlas.getState().setLayout('side')}><Columns2 size={15} />Lado a lado</button>
-            <button aria-pressed={layout === 'overlay'} onClick={() => useAtlas.getState().setLayout('overlay')}><Layers size={15} />Sobreposto</button>
-          </div>
-          <label className="toggle-row"><span><Bone size={17} />Esqueleto</span><input type="checkbox" aria-label="Mostrar esqueleto" checked={modelVisibility.skeleton !== false} onChange={() => useAtlas.getState().toggleModel('skeleton')} /></label>
-          <label className="toggle-row"><span><Dumbbell size={17} />Muscular</span><input type="checkbox" aria-label="Mostrar musculatura" checked={modelVisibility.muscles !== false} onChange={() => useAtlas.getState().toggleModel('muscles')} /></label>
-          <label className="toggle-row"><span><RotateCw size={17} />Rotação automática</span><input type="checkbox" checked={rotating} onChange={() => setRotating(!rotating)} /></label>
-        </section>
-        <section className="control-section">
-          <h2>Explosão</h2>
-          <label className="explosion-row">
-            <span>Separação das estruturas <em>{explosionProgress}%</em></span>
-            <input type="range" min={0} max={100} step={1} value={explosionProgress}
-              onChange={(event) => useAtlas.getState().setExplosion(Number(event.target.value))}
-              aria-label="Intensidade da explosão" />
-          </label>
-        </section>
-        <section className="control-section">
-          <h2>Sistemas</h2>
-          <div className="system-tools">
-            <div className="system-presets" role="group" aria-label="Mostrar apenas um sistema">
-              {SYSTEMS.map((system) => {
-                const only = systemVisibility[system.code] !== false && SYSTEMS.every((other) => other.code === system.code || systemVisibility[other.code] === false)
-                return <button key={system.code} aria-pressed={only} onClick={() => useAtlas.getState().showOnlySystem(system.code)}>{system.label}</button>
-              })}
-              <button aria-pressed={SYSTEMS.every((system) => systemVisibility[system.code] !== false)} onClick={() => useAtlas.getState().showAllSystems()}>Ambos</button>
+        <h1>
+          Anatomia 3D<span className="edition">3D</span>
+        </h1>
+        <div className="identity-meta">
+          {atlas ? atlas.parts.length.toLocaleString('pt-BR') : '2.234'} peças modeladas <span>·</span> BodyParts3D
+        </div>
+      </header>
+
+      <nav className="top-actions" aria-label="Painéis de exploração">
+        <button type="button" className={panel === 'search' ? 'active' : ''} onClick={() => openPanel('search')} aria-label="Buscar estrutura">
+          <Search size={18} />
+          <span>Encontrar estrutura</span>
+          <kbd>/</kbd>
+        </button>
+        <button
+          type="button"
+          className="icon-button"
+          aria-label="Sobre este atlas"
+          title="Sobre este atlas"
+          onClick={() => {
+            setDetails(false)
+            setPanel(null)
+            setAbout(true)
+          }}
+        >
+          <Info size={18} />
+        </button>
+      </nav>
+
+      <section className={`layers-panel glass ${panel === 'layers' ? 'mobile-open' : ''}`} aria-label="Camadas anatômicas">
+        <div className="panel-heading">
+          <span>Sistemas</span>
+          <button type="button" className="mobile-only icon-button" aria-label="Fechar sistemas" onClick={() => setPanel(null)}>
+            <X size={18} />
+          </button>
+          <span className="desktop-only small-number">{active.length}</span>
+        </div>
+        <div className="layer-presets">
+          <button
+            type="button"
+            aria-pressed={active.length > 0 && active.every((s) => store.visible.includes(s.code))}
+            onClick={() => preset(active.map((s) => s.code))}
+          >
+            Todos
+          </button>
+          <button
+            type="button"
+            aria-pressed={store.visible.length === 1 && store.visible[0] === 'SYS-ESQ'}
+            onClick={() => preset(['SYS-ESQ'])}
+          >
+            Esqueleto
+          </button>
+          <button
+            type="button"
+            aria-pressed={ORGANS_PRESET.length === store.visible.length && ORGANS_PRESET.every((code) => store.visible.includes(code))}
+            onClick={() => preset(ORGANS_PRESET)}
+          >
+            Órgãos
+          </button>
+        </div>
+        <div className="system-list">
+          {active.map((system) => (
+            <div className={`system-row ${store.visible.includes(system.code) ? 'enabled' : ''}`} key={system.code}>
+              <button
+                type="button"
+                className="system-name"
+                title={`Mostrar apenas ${systemLabel(system.code).toLowerCase()}`}
+                onClick={() => {
+                  store.presetSystems([system.code])
+                  store.clearSelection()
+                  setDetails(false)
+                }}
+              >
+                <span className="system-dot" style={{ background: system.color }} />
+                {systemLabel(system.code)}
+                <span className="system-count">{atlas ? (counts.get(system.code) ?? 0).toLocaleString('pt-BR') : systemCountFor(system.code)}</span>
+              </button>
+              <input
+                type="checkbox"
+                aria-label={`Mostrar ${systemLabel(system.code).toLowerCase()}`}
+                checked={store.visible.includes(system.code)}
+                onChange={() => toggleSystem(system.code)}
+              />
             </div>
-            <button className="system-hide-all" aria-label="Ocultar todos os sistemas" title="Ocultar todos os sistemas" disabled={visibleCount === 0} onClick={() => useAtlas.getState().hideAllSystems()}><EyeOff size={15} /></button>
-          </div>
-          <div className="system-list">
-            {SYSTEMS.map((system) => {
-              const checked = systemVisibility[system.code] !== false
-              const only = checked && SYSTEMS.every((other) => other.code === system.code || systemVisibility[other.code] === false)
-              return (
-                <div className="system-row" key={system.code}>
-                  <button type="button" className="system-name" aria-pressed={only} title={`Mostrar apenas ${system.label.toLowerCase()}`} onClick={() => useAtlas.getState().showOnlySystem(system.code)}>
-                    <span className="system-dot" style={{ background: system.color, opacity: checked ? 1 : 0.35 }} />
-                    <span className="system-label">{system.label}<em>{system.count} estruturas</em></span>
-                  </button>
-                  <input type="checkbox" aria-label={`Mostrar sistema ${system.label}`} checked={checked} onChange={() => useAtlas.getState().toggleSystem(system.code)} />
-                  <span className="system-description">{system.description}</span>
-                </div>
-              )
-            })}
-          </div>
-          <p className="system-summary">{visibleCount} de {totalCount} estruturas visíveis</p>
-        </section>
-        {(selectedStructureId || isolatedStructureId) && <div className="structure-actions">
-          {selectedStructureId && !isolatedStructureId && <button className="isolate-button" onClick={() => useAtlas.getState().isolate(selectedStructureId)}><Focus size={16} />Isolar estrutura</button>}
-          {isolatedStructureId && <button className="reset-button" onClick={() => useAtlas.getState().restore()}><RotateCcw size={16} />Restaurar visão geral</button>}
-          {selectedStructureId && <button className="text-button" onClick={() => useAtlas.getState().select(null)}><X size={15} />Limpar seleção</button>}
-        </div>}
-        <button className="reset-button" onClick={reset}><RotateCcw size={17} />Restaurar visualização</button>
-        <div className="shortcuts-note" aria-label="Atalhos de teclado"><KeyboardIcon size={13} /><span>Atalhos: <kbd>R</kbd> reset · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd> vistas · <kbd>+</kbd>/<kbd>−</kbd> zoom · <kbd>F</kbd> foco · <kbd>0</kbd> limpar</span></div>
-        <div className="sidebar-bottom"><span className="edition">ATLAS / EDIÇÃO INICIAL</span><p>Uma perspectiva sobre<br />o corpo humano.</p><span className="small-note">Uso educacional. Não diagnóstico.</span></div>
-      </aside>
-      <section className="viewport" aria-label="Atlas 3D">
-        {sidebarCollapsed && <button className="sidebar-expand" title="Expandir painel de controles" aria-label="Expandir painel de controles" onClick={() => setSidebarCollapsed(false)}><PanelLeftOpen size={18} /></button>}
-        <div className="viewport-heading"><div><span className="eyebrow">ANATOMIA HUMANA</span><h2>Esqueleto e musculatura</h2></div><span className="view-badge"><span className="status-dot" />3D</span></div>
-        <Suspense fallback={<div className="viewer-message" role="status">Preparando visualização…</div>}>
-          <AnatomyViewport view={view} command={command} rotating={rotating} onLoaded={onLoaded} />
-        </Suspense>
-        <LoadingOverlay />
-        <div className="orientation-label">{view === 'front' ? 'ANTERIOR' : view === 'back' ? 'POSTERIOR' : view === 'left' ? 'LATERAL' : 'SEMI-VISTA'}</div>
-        <span className="scene-caption" role="status">{sceneCaption}</span>
-        {hoveredStructureId && hoverPosition && (() => {
-          const name = getStructure(hoveredStructureId)?.name
-          return name ? <div className="hover-tooltip" style={{ left: hoverPosition.x, top: hoverPosition.y - 22 }}>{name}</div> : null
-        })()}
-        <div className="viewport-tools" role="toolbar" aria-label="Câmera">
-          <button className="icon-button" aria-label="Aproximar" title="Aproximar" onClick={() => setCommand((previous) => ({ action: 'in', sequence: previous.sequence + 1 }))}><Plus size={20} /></button>
-          <button className="icon-button" aria-label="Afastar" title="Afastar" onClick={() => setCommand((previous) => ({ action: 'out', sequence: previous.sequence + 1 }))}><Minus size={20} /></button>
-          <span className="tool-divider" />
-          <button className="icon-button" aria-label="Resetar câmera" title="Resetar câmera" onClick={() => changeView('front')}><Focus size={20} /></button>
+          ))}
         </div>
-        <div className="viewport-footer"><span className="model-status" role="status"><span className={`status-dot ${metrics ? '' : 'pending'}`} />{metrics ? 'Modelo carregado' : 'Carregando modelo'}</span><span>BodyParts3D + Z-Anatomy</span></div>
-        <div className="viewport-hints" aria-label="Como interagir">
-          <span>Arraste para {explosionProgress > 45 ? 'deslocar' : 'orbitar'}</span>
-          <span>Scroll para aproximar</span>
-          <span>Clique para inspecionar</span>
+        <div className="panel-foot">
+          <span>{visibleCount.toLocaleString('pt-BR')} peças visíveis</span>
+          <button type="button" onClick={() => { store.hideAllSystems(); setDetails(false) }}>Ocultar todas</button>
         </div>
       </section>
-      <aside className="info-panel" aria-label="Informações do modelo">
-        {selectedStructureId
-          ? <StructureInfo key={selectedStructureId} structureId={selectedStructureId} onChoose={chooseFromSearch} />
-          : <div className="model-panel">
-            <span className="eyebrow">MODELO EM EXIBIÇÃO</span>
-            <div className="info-illustration"><Bone size={38} strokeWidth={1.2} /><span>02</span></div>
-            <h2>Esqueleto e<br />musculatura</h2><span className="latin-name">Systema skeletale et musculare</span>
-            <div className="info-rule" />
-            <h3>Visão geral</h3><p>O esqueleto sustenta o corpo e protege órgãos internos; os músculos, em conjunto com ele, produzem o movimento.</p>
-            <dl className="metadata"><div><dt>Representação</dt><dd>Corpo inteiro</dd></div><div><dt>Fonte</dt><dd>BodyParts3D · Z-Anatomy</dd></div><div><dt>Formato</dt><dd>glTF 2.0 / GLB</dd></div><div><dt>Malhas</dt><dd>{metrics?.meshes.toLocaleString('pt-BR') ?? '—'}</dd></div><div><dt>Triângulos</dt><dd>{metrics ? Math.round(metrics.triangles).toLocaleString('pt-BR') : '—'}</dd></div></dl>
-            <a className="source-link" href="https://github.com/Z-Anatomy/Models-of-human-anatomy" target="_blank" rel="noreferrer">Consultar fonte <ExternalLink size={14} /></a>
-            <div className="asset-footer"><ScanLine size={20} /><span>Modelo anatômico reduzido<br /><strong>Referência visual educacional</strong></span></div>
-          </div>}
-      </aside>
-    </main>
-    <footer className="footer"><span>ANATOMIA 3D</span><span>Milestone 01 · First 3D Viewer</span><button onClick={() => credits.current?.showModal()}>Fontes e licença <ExternalLink size={12} /></button></footer>
-    <dialog ref={credits} aria-labelledby="credits-title" className="credits-dialog">
-      <span className="eyebrow">PROCEDÊNCIA DO ASSET</span><h2 id="credits-title">Fontes e licença</h2>
-      <p><strong>BodyParts3D</strong>, © The Database Center for Life Science, licensed under CC Attribution-ShareAlike 2.1 Japan.</p>
-      <p>Recorte do sistema esquelético (FMA23876 + membros), conversão OBJ para GLB, rotação dos eixos e material de exibição. Malhas reduzidas da versão 4.0.</p>
-      <a href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html" target="_blank" rel="noreferrer">Licença BodyParts3D <ExternalLink size={14} /></a>
-      <p><strong>Z-Anatomy — Models of human anatomy</strong>, licensed under CC BY-SA 4.0.</p>
-      <p>Sistema muscular extraído do Startup.blend oficial, excluído tecido conjuntivo (462 estruturas), conversão para milímetros (Y-up), material compartilhado e compressão Meshopt.</p>
-      <a href="https://github.com/Z-Anatomy/Models-of-human-anatomy/blob/main/LICENSE" target="_blank" rel="noreferrer">Licença Z-Anatomy <ExternalLink size={14} /></a>
-      <div className="credits-downloads">
-        <a href="models/bodyparts3d-skeleton.glb" download>Baixar esqueleto</a>
-        <a href="models/z-anatomy-muscles.glb" download>Baixar musculatura</a>
+
+      {panel === 'search' && (
+        <section className="search-panel glass" aria-label="Encontrar anatomia">
+          <div className="panel-heading">
+            <span>Encontrar estrutura</span>
+            <button type="button" className="icon-button" aria-label="Fechar busca" onClick={() => setPanel(null)}>
+              <X size={18} />
+            </button>
+          </div>
+          <label className="search-field">
+            <Search size={16} />
+            <input
+              ref={searchInput}
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Coração, fêmur, nervo craniano…"
+              aria-label="Buscar estrutura"
+            />
+          </label>
+          <div className="anatomy-search-results">
+            {results.length === 0 ? (
+              <p className="search-empty">Nenhuma estrutura corresponde à busca.</p>
+            ) : (
+              results.map((concept) => (
+                <button type="button" className="search-result" key={concept.id} onClick={() => chooseConcept(concept)}>
+                  <span className="search-result-name">{concept.namePt}</span>
+                  <span className="small-number">
+                    {concept.elementCount} {concept.elementCount === 1 ? 'peça' : 'peças'}
+                  </span>
+                </button>
+              ))
+            )}
+          </div>
+          <p className="search-note">
+            {query
+              ? 'Mostrando até 80 resultados. Refine a busca para encontrar estruturas menores.'
+              : 'Comece por um órgão principal ou procure qualquer estrutura nomeada.'}
+          </p>
+        </section>
+      )}
+
+      <nav className="view-controls glass" aria-label="Controles de câmera">
+        {(['three-quarter', 'front', 'side', 'back'] as View[]).map((v, i) => (
+          <button
+            type="button"
+            key={v}
+            className={store.view === v ? 'active' : ''}
+            aria-pressed={store.view === v}
+            disabled={store.explode > 0.8 && v !== 'front'}
+            onClick={() => changeView(v)}
+            title={`Vista ${viewLabel(v)}`}
+            aria-label={`Vista ${viewLabel(v)}`}
+          >
+            <span>{['¾', 'F', 'S', 'B'][i]}</span>
+          </button>
+        ))}
+        <i />
+        <button
+          type="button"
+          disabled={store.explode >= 0.4}
+          aria-label={store.rotate ? 'Pausar rotação' : 'Rotacionar o corpo'}
+          title="Rotação automática"
+          className={store.rotate ? 'active' : ''}
+          onClick={() => store.setRotate(!store.rotate)}
+        >
+          {store.rotate ? <Pause size={17} /> : <RotateCw size={18} />}
+        </button>
+        <button type="button" aria-label="Restaurar vista e camadas" title="Restaurar" onClick={resetAll}>
+          <RotateCcw size={17} />
+        </button>
+      </nav>
+
+      <div className="scene-caption">
+        <span className="caption-line" />
+        <span>{sceneCaption}</span>
+        <span className="caption-line" />
       </div>
-      <form method="dialog"><button className="reset-button">Fechar</button></form>
-    </dialog>
-  </div>
+
+      <div className="bottom-dock glass">
+        <button type="button" className="mobile-only dock-layers" onClick={() => openPanel('layers')} aria-label="Abrir camadas de sistemas">
+          <Layers3 size={20} />
+          <span>Sistemas</span>
+        </button>
+        <div className="explode-control">
+          <div className="explode-label">
+            <label id="explode-label" htmlFor="explode-slider">Explodir anatomia</label>
+            <output htmlFor="explode-slider">
+              {Math.round(store.explode * 100)}<span>%</span>
+            </output>
+          </div>
+          <input
+            id="explode-slider"
+            type="range"
+            aria-labelledby="explode-label"
+            min={0}
+            max={100}
+            step={1}
+            value={Math.round(store.explode * 100)}
+            onChange={(event) => setExplode(Number(event.target.value))}
+          />
+          <div className="slider-endpoints">
+            <span>Montado</span>
+            <span>Toda peça</span>
+          </div>
+        </div>
+        <button type="button" className="dock-reset" onClick={resetAll} aria-label="Montar e restaurar">
+          <RotateCcw size={18} />
+          <span>Restaurar</span>
+        </button>
+      </div>
+
+      <footer className="studio-footer">
+        <span>
+          {store.explode > 0.8 ? 'Arraste para deslocar' : 'Arraste para orbitar'} <b>·</b> Pinça para aproximar <b>·</b> Toque para inspecionar
+        </span>
+        <button
+          type="button"
+          onClick={() => {
+            setDetails(false)
+            setPanel(null)
+            setAbout(true)
+          }}
+        >
+          Fonte e créditos <ArrowUpRight size={12} />
+        </button>
+      </footer>
+
+      {progress < 100 && !error && (
+        <div className="loading glass" role="status">
+          <Activity size={18} />
+          <div>
+            <strong>Preparando a anatomia</strong>
+            <span>
+              {progress}% · Carregando {(atlas?.parts.length ?? 2234).toLocaleString('pt-BR')} peças
+            </span>
+            <div className="loading-track">
+              <i style={{ width: `${progress}%` }} />
+            </div>
+          </div>
+        </div>
+      )}
+      {error && (
+        <div className="loading glass error" role="alert">
+          <p>{error}</p>
+          <button type="button" onClick={() => location.reload()}>Recarregar visualizador</button>
+        </div>
+      )}
+
+      {details && selectedParts.length > 0 && chosen && (
+        <div className="detail-sheet glass" role="dialog" aria-modal="false" aria-labelledby="detail-title">
+          <div className="sheet-heading">
+            <span className={`status-dot ${store.isolate ? 'isolated' : ''}`} />
+            <button type="button" className="icon-button" aria-label="Fechar detalhes" onClick={() => setDetails(false)}>
+              <X size={18} />
+            </button>
+          </div>
+          <div className="detail-header">
+            <div className="detail-accent" style={{ background: selectedSystem ? SYSTEM_COLORS[selectedSystem.code] : undefined }} />
+            <div className="eyebrow">{selectedSystem?.namePt ?? 'ANATOMIA'}</div>
+            <h2 id="detail-title" ref={detailTitle} className="structure-title">{chosen.namePt}</h2>
+          </div>
+          <div className="detail-scroll" key={`${chosen.id}-${store.isolate}`}>
+            <p className="structure-description">{conceptExplanation(chosen.id, primaryStructure?.system ?? 'SYS-ESQ')}</p>
+            {!hasCuratedExplanation(chosen.id) && (
+              <span className="context-note">Visão geral do sistema · estrutura identificada a partir da anatomia de origem</span>
+            )}
+            <div className="structure-meta">
+              <span>
+                Referência do atlas<strong>{chosen.id}</strong>
+              </span>
+              <span>
+                Peças selecionadas<strong>{store.selected.length.toLocaleString('pt-BR')}</strong>
+              </span>
+            </div>
+            {selectedParts.length > 1 && (
+              <div className="member-list">
+                <h3>Estruturas incluídas</h3>
+                {selectedParts.slice(0, 50).map((p) => (
+                  <button type="button" key={p.id} onClick={() => choosePart(p.id)}>
+                    <span>{structureNamePt(p.id)}</span>
+                    <ChevronRight size={14} />
+                  </button>
+                ))}
+                {selectedParts.length > 50 && <p>E mais {selectedParts.length - 50} peças modeladas.</p>}
+              </div>
+            )}
+          </div>
+          <div className="detail-actions">
+            <button
+              type="button"
+              className={`primary-action ${store.isolate ? 'active' : ''}`}
+              onClick={() => {
+                useAtlas.getState().isolateSelection()
+                if (useAtlas.getState().isolate) useAtlas.getState().setExplode(0)
+              }}
+            >
+              <Focus size={18} />
+              {store.isolate ? 'Mostrar anatomia ao redor' : 'Isolar estrutura'}
+              <ChevronRight size={16} />
+            </button>
+            <button
+              type="button"
+              className="secondary-action"
+              onClick={() => {
+                useAtlas.getState().clearSelection()
+                setDetails(false)
+              }}
+            >
+              Limpar seleção
+            </button>
+          </div>
+        </div>
+      )}
+
+      {about && (
+        <div className="about-sheet glass" role="dialog" aria-modal="false" aria-labelledby="about-title">
+          <div className="sheet-heading">
+            <button type="button" className="icon-button" aria-label="Fechar sobre" onClick={() => setAbout(false)}>
+              <X size={18} />
+            </button>
+          </div>
+          <div className="eyebrow">FONTE E ESCOPO</div>
+          <h2 id="about-title" className="structure-title">Um corpo, revelado.</h2>
+          <p className="about-lead">Explore a anatomia de referência adulta masculina do BodyParts3D.</p>
+          <div className="about-copy">
+            <p>
+              <strong>Masculino · BodyParts3D</strong>
+              <br />
+              {atlas ? atlas.parts.length.toLocaleString('pt-BR') : '2.234'} malhas individuais e{' '}
+              {atlas ? atlas.concepts.length.toLocaleString('pt-BR') : '3.432'} conceitos nomeados de uma anatomia de referência adulta masculina.
+            </p>
+            <p>
+              Esta referência não contém todas as estruturas ou variações humanas. Conceitos nomeados podem conter várias peças; cada malha de
+              origem é renderizada uma vez.
+            </p>
+            <p>
+              As cores e os agrupamentos por sistema foram pensados para a exploração. A geometria é simplificada para a web, e as explicações
+              curtas oferecem contexto educacional geral. Esta é uma referência anatômica, não uma ferramenta diagnóstica ou cirúrgica.
+            </p>
+            <h3>Fonte</h3>
+            <p>BodyParts3D © The Database Center for Life Science, licenciado sob CC Attribution 4.0 International.</p>
+            <a href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html" target="_blank" rel="noreferrer">
+              Licença do conjunto de dados <ArrowUpRight size={14} />
+            </a>
+            <a href="https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html" target="_blank" rel="noreferrer">
+              Geometria e metadados originais <ArrowUpRight size={14} />
+            </a>
+          </div>
+        </div>
+      )}
+    </main>
+  )
+}
+
+function systemCountFor(code: string): number {
+  return STRUCTURES_V2.filter((entry) => entry.system === code).length
+}
+
+function viewLabel(view: View): string {
+  return view === 'three-quarter' ? 'semivista ¾' : view === 'front' ? 'anterior' : view === 'back' ? 'posterior' : 'lateral'
 }
