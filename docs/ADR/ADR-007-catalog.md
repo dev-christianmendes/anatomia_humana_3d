@@ -1,6 +1,6 @@
 # ADR-007: Catalogo educacional pt-BR e portao de curadoria
 
-Status: adotada.
+Status: **superada** (ver ADR-008). Adotada na fase V1/MVP (recorte 720 estruturas).
 
 Decisao: manter o conteudo educacional em um catalogo proprio
 (`catalog/catalog.json`) derivado dos conceitos do `structure-map.json`
@@ -24,6 +24,14 @@ frontend. A fonte educacional (BodyParts3D e Z-Anatomy) e citada como referencia
 nao como fonte cientifica das descricoes. Musculos tem descricao/funcao derivadas
 por regras anatomicas no gerador. O bloqueio para completar a curadoria e
 intencional e configuravel pelo validador.
+
+Motivo da superacao: no V2 o catalogo passou a ser derivado do atlas completo
+(`catalog/v2/structures.json` + `concepts.json`, 2.234 estruturas / 3.432
+conceitos, consumo direto pelo frontend via `catalogV2.ts`) e o conceito FMA
+virou o nivel de busca/selecao. O `frontend/src/data/structures.ts` foi
+removido; o V1 (720 estruturas, seed V3 e `catalog/catalog.json`) permanece
+como legado no repo e na API. A curadoria incremental do V2 usa
+`catalog/v2/curated.json`.
 
 Alternativas: embutir dados no GLB (viola a separacao malha/dados), apenas
 dicionario estatico (sem percurso de curadoria e seed), curar direto no banco

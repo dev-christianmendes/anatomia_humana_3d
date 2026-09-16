@@ -1,11 +1,39 @@
 # Assets e Licenciamento
 
-## Asset Incorporado: BodyParts3D
+## Asset Incorporado (V2): Atlas Full-Body
+
+Fonte: [BodyParts3D](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html),
+release 4.0, arquivo `isa_BP3D_4.0_obj_99.zip` (objeto completo, 2.234 malhas).
+Classificacao em 15 sistemas e 3.432 conceitos FMA herdada da referencia
+`ashemag/human-atlas` (derivada de BodyParts3D 4.0, CC BY 4.0).
+
+A [pagina oficial de licenca](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html)
+(2025-02-27) declara **CC BY 4.0 International**; o checksum do ZIP de origem,
+as transformacoes e a rastreabilidade estao em [licenses.json](../assets/licenses.json)
+(entrada `fullbody/*`). Os chunks versionados sao `frontend/public/models/fullbody/
+atlas.json` + `body-N.bin(.gz)`.
+
+Transformacoes: OBJ -> Y-up; solda de vertices (0,1 mm); simplificacao meshoptimizer
+0,22x com erro relativo 0,2% por estrutura; normais Int16; particionamento por
+sistema em chunks com offsets em `atlas.json` (unidade mm, escala 0.001 no loader).
+
+Pipeline: `npm run atlas:derive` (mapa de sistemas/conceitos), `npm run atlas:build`
+(chunks + `atlas.json`), `npm run atlas:validate` (contagens, offsets, checksum).
+Os arquivos `*.bin` intermediarios nao sao versionados; somente os `*.bin.gz`.
+
+Inventario V2: [licenses.json](../assets/licenses.json). Vinculo
+`partIndex` -> `source_id` FJ e sistema/conceito em [assets/full-body-map.json](../assets/full-body-map.json)
+e [assets/system-map.json](../assets/system-map.json).
+
+## Asset Legado: BodyParts3D (esqueleto V1)
+
+> O recorte do esqueleto (V1/MVP) foi arquivado com a introducao do atlas completo;
+> as secoes abaixo permanecem apenas como historico de licenciamento.
 
 Fonte: [BodyParts3D](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html),
 release 4.0, arquivo `partof_BP3D_4.0_obj_99.zip`.
 A [pagina oficial de licenca](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html)
-(atualizada em 2025-02-27) declara **CC BY 4.0 International**, que supera o
+(2025-02-27) declara **CC BY 4.0 International**, que supera o
 texto historico `CC BY-SA 2.1 JP` presente nos comentarios dos OBJ. A licenca
 vigente permite acesso, redistribuicao e criacao de obras derivadas com
 atribuicao. Registrada/reconciliada no inventario em 2026-09-14.
@@ -31,7 +59,10 @@ O script usa requisicoes HTTP Range para extrair apenas as malhas necessarias,
 verifica a quantidade esperada, gera GLB e grava tamanho e SHA-256 no inventario.
 O checksum deve ser revisado quando a fonte ou o pipeline mudar.
 
-## Asset Incorporado: Z-Anatomy (Musculatura)
+## Asset Legado: Z-Anatomy (Musculatura)
+
+> O sistema muscular do Z-Anatomy integrou o viewer V1/MVP e foi arquivado com o
+> atlas completo; permanece apenas como historico de licenciamento.
 
 Fonte: [Z-Anatomy — Models of human anatomy](https://github.com/Z-Anatomy/Models-of-human-anatomy),
 colecao "4: Muscular system" do `Startup.blend`.

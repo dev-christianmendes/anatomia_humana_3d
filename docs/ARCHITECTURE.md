@@ -1,169 +1,141 @@
 # Arquitetura
 
-## Atual
+## Fluxo do frontend (V2 "Human Atlas")
 
 ```text
-main.tsx -> Atlas.tsx (UI / painel / sidebar / sistemas / vistas / busca / loading / MCP)
-                -> store/atlas.ts (Zustand: selecao, hover, sistemas, isolamento, explosao)
-                -> features/structure (catalog local, api adapter, search, relations, labels)
-                -> `StructureSearch` -> debounce 200ms -> search.ts -> sugestoes + foco por bounding box
-                -> `StructureInfo` -> relacoes via api adapter ou relations.ts local
-                -> features/mcp/mcp.ts -> registerMcpTools -> host.modelContext (tools find_anatomy / inspect_anatomical_structure)
-                -> AnatomyViewport (lazy)
-                     -> Canvas / SceneContent (esqueleto + musculatura)
-                     -> camera.ts (vistas front/back/side/threequarter)
-                     -> foco: CameraCommand `focus` -> boxesRef (unidades no unpacked scene)
-                     -> explode: explosion.ts -> fases assembled/radial/inventory + offsets
-                     -> inventory: drei Points (dots) + grade grid + camera auto (front view)
-                     -> LoadingOverlay (drei useProgress) -> % e pecas carregadas
-                     -> hints, tooltip de hover e scene-caption via store/viewport
-                     -> /models/bodyparts3d-skeleton.glb
-                     -> /models/z-anatomy-muscles.glb
-
-scripts/import-skeleton.mjs -> fonte oficial -> OBJ -> GLB Meshopt
-                           -> assets/licenses.json
-                           -> assets/structure-map.json
-
-scripts/export-zanatomy-muscles.py -> Blender -> malhas + CSV (músculos)
-scripts/build-zanatomy-muscles.mjs -> assets/z-anatomy-map.json + GLB
-                                  -> assets/licenses.json / z-anatomy-excluded.json
-
-scripts/generate-catalog.mjs -> structure-map + z-anatomy-map + dicionarios
-                           -> catalog/catalog.json (pt-BR, 720)
-scripts/validate-catalog.mjs -> valida catalogo + relacoes (tipos, refs, duplicatas)
-scripts/export-catalog-seed.mjs -> V3__seed_structures.sql (somente revisadas)
-scripts/sync-frontend-catalog.mjs -> frontend/src/data/structures.ts
-scripts/export-relations-seed.mjs -> V4__seed_relations.sql (relacoes curadas)
-scripts/sync-frontend-relations.mjs -> frontend/src/data/relations.ts
-
-backend/ (Spring Boot /api/v1) -> PostgreSQL (Flyway V1/V2/V3/V4)
+main.tsx -> Atlas.tsx (overlay studio: busca, camadas, vistas, explosao, creditos, atalhos, MCP)
+                -> store/atlas.ts (Zustand: view, explode, visible, selected, isolate, rotate)
+                -> features/viewer/atlas/scene.tsx (loader de chunks + renderer batched)
+                     -> public/models/fullbody/atlas.json + body-N.bin(.gz)
+                     -> catalogV2.ts -> catalog/v2/structures.json + concepts.json
+                     -> explosionLayout.ts (fases assembled/radial/inventory)
+                     -> pointerTap.ts (picking por partIndex no buffer)
+                     -> modelDownload.ts (download do modelo para analise)
+                -> features/mcp/mcp.ts (find_anatomy / inspect_anatomical_structure por conceito)
 ```
 
-A cena GLTF e clonada antes de alterar materiais. Geometrias carregadas sao
-compartilhadas. Os materiais de exibicao sao descartados no unmount ou quando o
-modelo e recriado. Cada clone e recriado via `useMemo` quando o offset de layout
-muda. Modelo centralizado e normalizado para altura 3. Camera perspectiva a 45
-graus, distancia ajustada ao aspecto do viewport. O enquadramento das vistas
-(reset e troca de vista) e derivado das caixas reais em `boxesRef` via
-`combinedFraming` em `features/viewer/viewport.ts`: uniao das caixas de todas as
-estruturas define centro e raio, com fallback para o raio 1.7 na origem antes do
-carregamento. OrbitControls fornece rotacao, pan e zoom. Renderizacao sob demanda
-quando nao ha rotacao automatica.
+### Carregamento do atlas
 
-## Fluxo de visualizacao e explosao
+O `atlas.json` descreve 15 sistemas, cada um com um chunk `body-N.bin` (e variante
+`.gz`). O `scene.tsx` carrega cada chunk de forma incremental (com abort) e
+descomprime com `DecompressionStream` quando disponivel, com fallback para o
+arquivo comprimido servido como resposta gzip. Cada chunk contem positions
+(Float32), normals (Int16) e indices (Uint32) em milimetros; o loader multiplica
+as posicoes por `0.001` (mm -> m) e troca/centra o sistema em cada chunk.
 
-O store Zustand mantem `layout` ('side' por padrao, ou 'overlay') e
-`modelVisibility` (esqueleto/musculatura) alem dos campos de interacao. Em
-`SceneContent`, a largura de cada modelo (pos-fit) alimenta
-`computeModelOffsets` em `features/viewer/viewport.ts`, que devolve offsets
-simetricos em X (`skeleton` negativo, `muscles` positivo) com um intervalo fixo
-`MODEL_GAP`; em `overlay` os offsets sao zero. O `SceneModel` aplica o offset no
-clone e recria o modelo quando ele muda, de modo que caixas, explosao e foco
-acompanham o layout. Visibilidade por modelo entra na mesma varredura que
-sistemas e isolamento (`object.visible`), sem alterar o GLB.
+O atlas usa um buffer global de posicoes: cada sistema copia a regiao do seu
+chunk e atribui a suas partes um `partIndex` global (nao o `partId` local do
+arquivo). O indice global e usado nos textos, no picking e no shader.
 
-A selecao usa raycasting do R3F e le o `userData.structureId` das malhas.
-O destaque (hover/selecao) altera cor e emissive do material (sem recriar
-materiais) e troca o cursor do canvas; visibilidade de sistemas e isolamento
-alternam `object.visible`. Nenhuma alteracao permanente ao asset. O estado de
-interacao vive no store Zustand; o painel consulta o catalogo local e, quando
-`VITE_API_URL` esta configurada, complementa com a API (estruturas revisadas) e
-com as relacoes do endpoint `/relations`, mantendo o fallback local
-(`relations.json` via `sync-frontend-relations.mjs`).
+### Renderer batched
 
-A busca (`search.ts`) normaliza texto sem acentos e ranqueia: nome exato no
-inicio > nome contido > nome alternativo > rotulos de sistema/regiao. Ao escolher
-um resultado, o Atlas emite o comando de camera `focus`; o `AnatomyViewport`
-mantem em `boxesRef` o bounding box de cada estrutura e reposiciona alvo e
-distancia para enquadrar o centro.
+Cada chunk vira um unico `Mesh` com `BufferGeometry` (positions Float32, normals
+quantizadas Int16, indices Uint32) e um atributo `partIndex` por vertice. O
+material usa shader customizado:
 
-O enquadramento automatico usa `combinedFraming(boxes, include?)` no
-`AnatomyViewport`: soma as caixas das estruturas visiveis (formato/continuacao)
-e deriva centro e raio. Quando o modelo carrega, muda `layout`, muda a
-visibilidade de um modelo ou o predicado `include` (prefixos `STR-ESQ-`/
-`STR-MUS-`) variar, a camera se reposiciona preservando a direcao do
-enquadramento anterior a partir do direcional de luz, de modo que a composicao
-interna do modelo nao sofre saltos durante a transicao.
+- um `DataTexture` (`partState`) por sistema guarda visibilidade + offset de
+  explosao de cada parte (leitura por `partIndex` no vertex shader);
+- um `DataTexture` (`selectionState`) guarda selecao/hover;
+- hover/selecao nao recria materiais: apenas troca valores nas textures.
 
-A exploracao (`features/viewer/explosion.ts`, `computeExplosionWorldOffsets`) calcula
-um offset por estrutura em unidades de mundo: direcao radial a partir do centro do
-corpo (caixa envolvente geral) e magnitude `0.25 * raio + 0.12` (minimo 0.15),
-todos derivados das caixas de cada estrutura ja na fase de unpacking. O
-`AnatomyViewport` aplica o offset interpolado pelo `explosionProgress` (0-100) do
-store convertendo a posicao local da malha para o espaco do mundo
-(`base * parent.matrixWorld` + offset) e de volta via `parent.worldToLocal`, o que
-preserva direcao e escala do modelo independentemente da rotacao/pai de cada malha.
-Nenhuma alteracao permanente ao GLB.
+Isso permite 1 draw call por sistema (15 meshes), visibilidade e explosao por
+dados, sem malhas individuais por estrutura. As normais Int16 sao
+desquantizadas no shader (reconversao do intervalo Int16 para [-1, 1]).
 
-A interface do Atlas oferece feedback pontual: cursor `pointer` sobre estruturas,
-efeito emissive sutil em hover/selecao, sidebar colapsavel (botao recolher na
-cabecalho do painel e botao expandir flutuante na margem do viewport), tooltip
-com o nome da estrutura na posicao do cursor, `viewport-hints` contextuais
-(orbitar, deslocar, aproximar, clique para inspecionar), `scene-caption` com o
-contexto da cena (sistema selecionado / INVENTARIO ANATOMICO / ESTRUTURAS
-SEPARADAS / CORPO HUMANO ADULTO · MASCULINO) e atalhos de teclado (`R` reset,
-`1/2/3/4` vistas, `+`/`-` zoom, `F` focar, `/` busca, `0` limpar selecao) que
-ignoram eventos quando o foco esta em campos de texto. O numero de
-malhas/triangulos e reportado apenas no carregamento, com overlay progressivo
-(`NN% · Carregando N/N pecas`) derivado do `useProgress` do Drei.
+### Interacao (picking) e feedback
 
-## Painel de sistemas, vistas e explosao
+O `pointerTap.ts` faz raycast no mesh mesclado e le o atributo `partIndex` do
+triangulo intersectado. Com o `partIndex` global, o `catalogV2.ts` resolve o
+`structureId` e o conceito pt-BR para hover (tooltip) e selecao. O estado de
+interacao fica no store Zustand; isolamento e visibilidade de sistemas entram
+pelas DataTextures (sem alterar a geometria).
 
-O painel de sistemas consulta `features/structure/catalog.ts` (`SYSTEMS`, que
-declara cor, descricao, `defaultVisible` e contagem por sistema via
-`systemColor`) e usa acoes do store `showOnlySystem`, `showAllSystems` e
-`hideAllSystems`, com o resumo `<N> de 720 estruturas visiveis` computado por
-`visibleStructureCount`/`totalStructureCount`. Presets Esqueleto/Muscular/Ambos
-mapeiam o conjunto `defaultVisible` de cada sistema; "Ocultar todas" liga apenas
-`SYS-ESQ-none`/`SYS-MUS-none`. A visibilidade entra na mesma varredura de
-`object.visible` do `SceneModel`.
+Marcadores (`Points` com cone + esfera) indicam a estrutura selecionada e as
+sugestoes multi-selecao (`ghosts`), visiveis quando `explode > 0.75` ou ha
+isolamento. O hover realca a parte no shader e a legenda de cena (`.scene-caption`)
+informa a fase (CORPO HUMANO ADULTO / ESTRUTURAS SEPARADAS / INVENTARIO
+ANATOMICO).
 
-As vistas adicionam a semivista `threequarter` (`camera.ts`,
-`[0.35d, 0.26d, 0.9d]`) e o label `SEMI-VISTA`; durante o inventario
-(`explosionProgress > 80`) `changeView` restringe a escolha a `front`, pois a
-transicao para dentro da grade usa a camera anterior. O `Controls`
-(`@react-three/drei`) move camera e target para a posicao anterior no inventario
-e volta ao enquadramento de corpo ao sair; `OrbitControls` desabilita rotacao
-durante o inventario (mantendo zoom/pan) e o botao do meio orbitar retorna ao
-padrao no modo radial.
+### Camera, vistas e explosao
 
-## Explosao em inventario
+`OrbitControls` fornece rotacao/pan/zoom; o controle desabilita rotacao durante
+o inventario. A selecao de vista (front/back/side/three-quarter, atalhos
+`4/1/2/3`) usa `fit(view, explode)`: desliga a rotacao automatica, reposiciona
+camera e alvo a partir do bounding box geral com damping. `resetView` volta para
+a vista 3/4 padrao.
 
-`features/viewer/explosion.ts` divide a explosao em tres fases a partir do
-`explosionProgress` (0-100): `assembled` (<15), `radial` (ate 45) e `inventory`.
-Na fase radial o offset e direcional a partir do centro do corpo (magnitude
-`0.25 * raio + 0.12`, minimo 0.15), como antes. Na fase de inventario
-`computeInventoryWorldOffsets` distribui cada estrutura em uma grade
-(span 3.6, lado em X 2.2 por modelo) mantendo a ordem original das caixas e
-aplicando um deslocamento +Z para preservar a distancia visual. O blend entre
-radial e inventario usa a mesma interpolacao suave do slider.
+A explosao (`explode` em 0..1) usa `explosionLayout.ts` em tres fases:
+`assembled` (montado), `radial` (offsets por partIndex a partir do centro do
+corpo) e `inventory` (grade de pecas com rotulos e camera frontal). O `scene.tsx`
+anima `amount` com `damp` em direcao ao valor do store e reaproxima (fit) durante
+a transicao: acima de 0.5 (radial) so a vista frontal e permitida. Ao montar
+novamente, a camera retorna ao enquadramento original da vista.
 
-Ao entrar no inventario, `AnatomyViewport` anima camera e target para a vista
-anterior em `inventoryCameraRadius` e liga dots via `<Points>` do Drei junto as
-estruturas (facilitando a associacao peca/rotulo); ao sair, a camera volta ao
-enquadramento do corpo e os dots sao removidos. A transicao radical nao
-dispara os reframes de layout/mudanca de sistema para nao competir com o
-enquadramento do inventario.
+### Store (Zustand)
 
-Relacoes: `STRUCTURE_RELATION` armazena um registro por relacao com
-`relation_type`. `ARTICULATION` e resolvida nos dois sentidos (forward + reverse
-filtrado pelo tipo), tanto na API quanto no modulo local `relations.ts`;
-`ORIGIN`/`INSERTION` sao direcionais (musculo -> osso) e aparecem apenas no lado
-da origem. Vocabulario validado por `catalog:validate`.
+`store/atlas.ts` centraliza:
 
-O asset tem IDs locais associados aos IDs FJ da fonte. Uma malha pode
-corresponder a varios conceitos de origem; a curadoria do cadastro educacional e
-uma etapa explicita (reviewed), nao uma inferencia pelo nome.
+- `view` (three-quarter por padrao), `explode` (0..1), `rotate` (bool);
+- `visible` (lista de `SystemCode` ativos; `presetSystems`, `hideAllSystems`,
+  toggle por sistema);
+- `selected` (lista de structureIds, multi-selecao por conceito) e `isolate`;
+- acoes: `setView`, `setExplode`, `setRotate`, `selectStructures`,
+  `isolateSelection`, `restore`, `resetView` (restaura vista + explode + sistemas
+  padrao + selecao + isolamento + rotacao).
 
-## Alvo
+## Catalogo V2 (estruturas e conceitos)
+
+`catalog/v2/structures.json` mapeia 2.234 estruturas (chave `structureId`,
+`sourceId` FJ) e `catalog/v2/concepts.json` mapeia 3.432 conceitos FMA (`id`,
+`namePt`, `elements` = ids FJ, `elementCount`). O `data/catalogV2.ts` consome
+esses arquivos no frontend: rotula sistemas, resolve nomes pt-BR, agrupa partes
+por conceito e alimenta a busca e as ferramentas MCP. A busca normaliza sem
+acentos e ranqueia conceitos/estruturas; escolher um resultado seleciona as
+partes do conceito (`selectStructures`), isola e abre o painel de detalhes com o
+ID FMA.
+
+## Pipeline de assets
 
 ```text
-React -> HTTPS REST /api/v1 -> Spring Boot -> PostgreSQL
-   -> GLB/glTF via hosting estatico ou object storage/CDN
+scripts/derive-system-map.mjs        -> assets/system-map.json (15 sistemas, 2.234 partes, 3.432 conceitos)
+scripts/build-full-body.mjs          -> frontend/public/models/fullbody/atlas.json + body-N.bin(.gz)
+scripts/validate-full-body.mjs       -> validacao (contagens, offsets, checksum)
+scripts/derive-catalog-v2.mjs        -> catalog/v2/structures.json + concepts.json (pt-BR derivado)
+scripts/validate-catalog-v2.mjs      -> validacao do catalogo v2 (referencias, nomes)
+scripts/export-expanded-structures.mjs -> V6 (estruturas expandidas + source_id)
+scripts/export-concepts-seed.mjs     -> V7 (conceitos) + V8 (vincular por source_id)
 ```
 
-Backend implementado em controller, service, repository, entity, dto, mapper,
-exception e config. Controllers nao expoem entidades JPA diretamente.
-Zustand centraliza selectedStructureId, hoveredStructureId, systemVisibility,
-isolatedStructureId e explosionProgress. Camera target e searchTerm permanecem
-em estado local do componente enquanto houver um unico consumidor.
+O `build-full-body` importa o OBJ oficial (BodyParts3D 4.0), rotaciona Z-up ->
+Y-up, solda vertices (0.1 mm), simplifica com meshoptimizer (0.22x, erro relativo
+0.2% por estrutura, mesma estrategia da referencia), quantiza normais Int16 e
+grava um chunk por sistema. Dependencias de runtime do frontend: apenas os
+`*.bin.gz` e o `atlas.json` (os `*.bin` intermediarios nao sao versionados).
+
+## Backend e banco
+
+Migrations Flyway V1-V8: V5 cria `ANATOMICAL_CONCEPT` e `CONCEPT_STRUCTURE` e
+adiciona `source_id` em `ANATOMICAL_STRUCTURE`; V6 expande o seed para as 2.234
+estruturas derivadas (publicado=false) e preenche `source_id`; V7 seeda 3.432
+conceitos com `name_pt`; V8 resolve 46.825 vinculos conceito->estrutura por
+`source_id` (idempotente).
+
+A API `/api/v1` expoe: `GET /structures`, `GET /structures/{id}`,
+`GET /structures/{id}/relations`, `GET /structures/{id}/concepts`,
+`GET /concepts` (filtros `search`, `system`, `page`, `size`),
+`GET /concepts/{id}`, alem de `systems`, `regions` e `assets`. Controllers nao
+expoem entidades JPA; services contem regras; DTOs definem os contratos.
+
+## Arquitetura Alvo
+
+```text
+React (Three.js puro, atlas estatico + catalogo V2) -> HTTPS REST /api/v1 -> Spring Boot -> PostgreSQL
+```
+
+Atlas e catalogo sao servidos com o frontend (custo de deploy baixo). A API
+permanece como fonte de dados curados (estruturas, conceitos, relacoes) para
+integracao e evolucao do conteudo educacional, com os seeds V3/V4 (V1) e
+V6-V8 (V2) gerados por script e revisados via validators (`catalog:validate`,
+`catalog:v2:validate`, `atlas:validate`). Estado do viewport fica no Zustand;
+detalhes de cena/camera permanecem locais ao renderer enquanto houver um unico
+consumidor.
