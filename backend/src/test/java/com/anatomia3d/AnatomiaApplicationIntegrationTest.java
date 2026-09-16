@@ -1,16 +1,20 @@
 package com.anatomia3d;
 
 import com.anatomia3d.entity.AlternateName;
+import com.anatomia3d.entity.AnatomicalConcept;
 import com.anatomia3d.entity.AnatomicalRegion;
 import com.anatomia3d.entity.AnatomicalStructure;
 import com.anatomia3d.entity.AnatomicalSystem;
 import com.anatomia3d.entity.Asset;
+import com.anatomia3d.entity.ConceptStructure;
 import com.anatomia3d.entity.SourceLicense;
 import com.anatomia3d.entity.StructureRelation;
+import com.anatomia3d.repository.AnatomicalConceptRepository;
 import com.anatomia3d.repository.AnatomicalRegionRepository;
 import com.anatomia3d.repository.AnatomicalStructureRepository;
 import com.anatomia3d.repository.AnatomicalSystemRepository;
 import com.anatomia3d.repository.AssetRepository;
+import com.anatomia3d.repository.ConceptStructureRepository;
 import com.anatomia3d.repository.SourceLicenseRepository;
 import com.anatomia3d.repository.StructureRelationRepository;
 import com.anatomia3d.util.TextNormalizer;
@@ -36,6 +40,8 @@ class AnatomiaApplicationIntegrationTest extends AbstractPostgresTest {
     private static final String TIBIA_ID = "STR-TST-TIBIA";
     private static final String PATELA_ID = "STR-TST-PATELA";
     private static final String INACTIVE_ID = "STR-TST-INACT";
+    private static final String FEMUR_CONCEPT_ID = "FMA-TST-FEMUR";
+    private static final String TIBIA_CONCEPT_ID = "FMA-TST-TIBIA";
 
     @Autowired
     private MockMvc mockMvc;
@@ -58,11 +64,19 @@ class AnatomiaApplicationIntegrationTest extends AbstractPostgresTest {
     @Autowired
     private SourceLicenseRepository licenseRepository;
 
+    @Autowired
+    private AnatomicalConceptRepository conceptRepository;
+
+    @Autowired
+    private ConceptStructureRepository conceptStructureRepository;
+
     @BeforeEach
     void seedFixtures() {
         relationRepository.deleteAll();
         assetRepository.deleteAll();
         structureRepository.deleteAll();
+        conceptStructureRepository.deleteAll();
+        conceptRepository.deleteAll();
 
         AnatomicalSystem skeletal = systemRepository.findByCode("SYS-ESQ")
             .orElseThrow(IllegalStateException::new);
@@ -100,6 +114,14 @@ class AnatomiaApplicationIntegrationTest extends AbstractPostgresTest {
         reverse.setDescription("Patela com tróclea femoral.");
         relationRepository.save(reverse);
 
+        AnatomicalConcept femurConcept = concept(FEMUR_CONCEPT_ID, "Fêmur protótipo teste", "SYS-ESQ");
+        AnatomicalConcept tibiaConcept = concept(TIBIA_CONCEPT_ID, "Tíbia protótipo teste", "SYS-ESQ,SYS-MUS");
+        conceptRepository.save(femurConcept);
+        conceptRepository.save(tibiaConcept);
+        link(femurConcept, femur);
+        link(femurConcept, tibia);
+        link(tibiaConcept, tibia);
+
         SourceLicense license = licenseRepository.findBySourceName("BodyParts3D")
             .orElseThrow(IllegalStateException::new);
         Asset asset = new Asset();
@@ -129,11 +151,40 @@ class AnatomiaApplicationIntegrationTest extends AbstractPostgresTest {
         return s;
     }
 
+    private AnatomicalConcept concept(String id, String namePt, String systems) {
+        AnatomicalConcept c = new AnatomicalConcept();
+        c.setExternalCode(id);
+        c.setName(namePt.toLowerCase());
+        c.setNamePt(namePt);
+        c.setNormalizedNamePt(TextNormalizer.normalize(namePt));
+        c.setSystems(systems);
+        c.setElementCount(1);
+        c.setNameDerived(true);
+        return c;
+    }
+
+    private void link(AnatomicalConcept concept, AnatomicalStructure structure) {
+        ConceptStructure link = new ConceptStructure();
+        link.setConcept(concept);
+        link.setStructure(structure);
+        conceptStructureRepository.save(link);
+    }
+
     @Test
     void listaSistemasRedeReferencia() throws Exception {
         mockMvc.perform(get("/api/v1/systems"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$[*].code", org.hamcrest.Matchers.hasItem("SYS-ESQ")));
+    }
+
+    @Test
+    void sistemasDaExpansaoPresentesNaReferencia() throws Exception {
+        mockMvc.perform(get("/api/v1/systems"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$[*].code",
+                org.hamcrest.Matchers.hasItems("SYS-ART", "SYS-CAR", "SYS-CON", "SYS-END",
+                    "SYS-INT", "SYS-LIN", "SYS-REP", "SYS-SEN", "SYS-URI", "SYS-VEN")))
+            .andExpect(jsonPath("$[?(@.code=='SYS-ART')].name", hasItem("Artérias")));
     }
 
     @Test
@@ -224,6 +275,59 @@ class AnatomiaApplicationIntegrationTest extends AbstractPostgresTest {
         mockMvc.perform(get("/api/v1/structures/{id}", "STR-NOPE"))
             .andExpect(status().isNotFound())
             .andExpect(jsonPath("$.status", is(404)));
+    }
+
+    @Test
+    void listaEPesquisaConceitos() throws Exception {
+        mockMvc.perform(get("/api/v1/concepts").param("search", "femur prototipo"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.content", hasSize(1)))
+            .andExpect(jsonPath("$.content[0].id", is(FEMUR_CONCEPT_ID)))
+            .andExpect(jsonPath("$.content[0].structureCount", is(2)));
+    }
+
+    @Test
+    void filtraConceitosPorSistema() throws Exception {
+        mockMvc.perform(get("/api/v1/concepts")
+                .param("search", "prototipo")
+                .param("system", "SYS-MUS"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.content", hasSize(1)))
+            .andExpect(jsonPath("$.content[0].id", is(TIBIA_CONCEPT_ID)));
+    }
+
+    @Test
+    void detalheDoConceito() throws Exception {
+        mockMvc.perform(get("/api/v1/concepts/{id}", FEMUR_CONCEPT_ID))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.id", is(FEMUR_CONCEPT_ID)))
+            .andExpect(jsonPath("$.namePt", is("Fêmur protótipo teste")))
+            .andExpect(jsonPath("$.structures", hasSize(2)))
+            .andExpect(jsonPath("$.structures[*].id",
+                org.hamcrest.Matchers.containsInAnyOrder(FEMUR_ID, TIBIA_ID)));
+    }
+
+    @Test
+    void conceitosDaEstrutura() throws Exception {
+        mockMvc.perform(get("/api/v1/structures/{id}/concepts", TIBIA_ID))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$[*].id",
+                org.hamcrest.Matchers.containsInAnyOrder(FEMUR_CONCEPT_ID, TIBIA_CONCEPT_ID)));
+    }
+
+    @Test
+    void conceitoInexistenteRetorna404() throws Exception {
+        mockMvc.perform(get("/api/v1/concepts/{id}", "FMA-NOPE"))
+            .andExpect(status().isNotFound())
+            .andExpect(jsonPath("$.status", is(404)));
+    }
+
+    @Test
+    void parametroInvalidoDeConceitoRetorna400() throws Exception {
+        mockMvc.perform(get("/api/v1/concepts").param("page", "-1"))
+            .andExpect(status().isBadRequest());
+        mockMvc.perform(get("/api/v1/concepts").param("size", "500"))
+            .andExpect(status().isBadRequest());
     }
 
     @Test
