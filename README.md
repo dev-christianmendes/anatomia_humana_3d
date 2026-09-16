@@ -377,7 +377,7 @@ O ponto de entrada do frontend é `Atlas.tsx`. O backend é um aplicativo Spring
 | Malhas | 258 |
 | Triângulos | 783.874 |
 | Tamanho | 4.236.112 bytes, aproximadamente 4,24 MB |
-| Licença registrada | CC BY-SA 2.1 JP |
+| Licença registrada | CC BY 4.0 |
 | Data de obtenção registrada | 10 de setembro de 2026 |
 
 **258 malhas não significam 258 ossos.** O conjunto inclui subpartes e elementos do catálogo original; um elemento pode estar associado a vários conceitos anatômicos. O mapa de origem não substitui um cadastro educacional revisado.
@@ -644,12 +644,14 @@ O código do projeto é distribuído sob a **licença MIT** ([LICENSE](LICENSE))
 O asset incorporado foi obtido diretamente do **BodyParts3D**, disponibilizado pelo **The Database Center for Life Science**.
 
 - [Fonte oficial e downloads](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html).
-- [Página oficial de licença](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html), atualizada em 27 de fevereiro de 2025 e verificada na obtenção do asset em 10 de setembro de 2026.
-- [Creative Commons Attribution-ShareAlike 2.1 Japan](https://creativecommons.org/licenses/by-sa/2.1/jp/).
+- [Página oficial de licença](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html), atualizada em 27 de fevereiro de 2025, verificada na obtenção do asset em 10 de setembro de 2026 e reconciliada em 14 de setembro de 2026.
+- [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+
+A página oficial declara **CC BY 4.0**, que supera o texto histórico `CC BY-SA 2.1 JP` presente nos comentários dos OBJ; a licença vigente permite redistribuição e obras derivadas com atribuição.
 
 Atribuição registrada:
 
-> BodyParts3D, © The Database Center for Life Science, licensed under CC Attribution-ShareAlike 2.1 Japan.
+> BodyParts3D, © The Database Center for Life Science, licensed under CC Attribution 4.0 International.
 
 O projeto utiliza um recorte adaptado: conversão de formato, transformação de eixos, material de exibição, indexação, quantização, compressão e associação de identificadores. As alterações, os links de origem, as permissões e o checksum estão registrados em [assets/licenses.json](assets/licenses.json).
 

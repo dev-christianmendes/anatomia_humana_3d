@@ -9,6 +9,9 @@ Status: **implementada** no backend Java/Spring Boot, base `/api/v1`.
 | GET | /structures | Listar/pesquisar estruturas ativas |
 | GET | /structures/{id} | Dados educacionais de uma estrutura |
 | GET | /structures/{id}/relations | Relacoes anatomicas |
+| GET | /structures/{id}/concepts | Conceitos que agrupam uma estrutura |
+| GET | /concepts | Listar/pesquisar conceitos anatomicos (FMA) |
+| GET | /concepts/{id} | Dados de um conceito e suas estruturas |
 | GET | /assets/{structureId} | Assets publicados associados a estrutura |
 
 Implementacao em `backend/src/main/java/com/anatomia3d/controller/`. Documentacao
@@ -18,6 +21,11 @@ interativa (OpenAPI/Swagger) em `http://localhost:8080/swagger-ui.html`, schema 
 Filtros de structures: `search`, `system`, `region`, `page`, `size`.
 Busca por nome, nomes alternativos, sistema e regiao; normalizacao sem acentos.
 Paginacao: page >= 0, size entre 1 e 100, padrao 20, resposta `PageResponse`.
+
+Filtros de concepts: `search`, `system`, `page`, `size`. Busca por nome pt-BR
+ou nome FMA; normalizacao sem acentos. `system` filtra por CSV de `systems`.
+`GET /concepts/{id}` (id = external_code FMA) retorna as estruturas agrupadas.
+`GET /structures/{id}/concepts` retorna os conceitos da estrutura.
 
 Exemplo real de `GET /structures/{id}` (servidor em execucao):
 

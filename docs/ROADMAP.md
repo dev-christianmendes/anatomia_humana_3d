@@ -32,11 +32,27 @@
 
 - [x] Licenca do codigo escolhida pelo responsavel (MIT, raiz do repositorio).
 - [ ] Repositorio remoto e publicacao.
-- [ ] Reconciliar a atribuicao do BodyParts3D (CC BY-SA 2.1 JP registrada no projeto vs. CA BY 4.0 citada pela referencia) antes de importar o corpo completo.
+- [x] Reconciliar a atribuicao do BodyParts3D: a pagina oficial de licenca (2025-02-27) declara CC BY 4.0, superando o texto legado CC BY-SA 2.1 JP dos OBJ. Reconciliado em 2026-09-14 em `assets/licenses.json`, `docs/ASSETS-LICENSING.md` e README.
+
+## Expansao Anatomica (V2 - paridade Human Atlas)
+
+Arquitetura confirmada em 2026-09-14 (docs em preparacao):
+
+- [x] Decisao D1: BodyParts3D 4.0 completo substitui o recorte atual; Z-Anatomy arquivado como asset legado.
+- [x] Decisao D2: introduzir o nivel de conceito (3.432 conceitos FMA agrupando 2.234 estruturas) - busca e selecao multi.
+- [x] Decisao D3: catalogo pt-BR em fases (nomes derivados por sistema + revisao incremental; porta de curadoria mantida para publicado).
+- [x] Decisao D4: renderer batched estilo referencia (chunks binarios + atributo partId + DataTexture por estrutura no shader + picking).
+- [x] Spike D4 (`frontend/experiments/batched-spike/`): 1 draw call para 240 pecas, visibilidade/explosao por DataTexture no shader, picking por partId com pre-filtro de esferas - validado (vite build + smoke Playwright SwiftShader).
+- [x] Fase 1: importar o corpo completo (`isa_BP3D_4.0_obj_99.zip`) — mapa de sistemas/conceitos (`scripts/derive-system-map.mjs` → `assets/system-map.json`; 15 sistemas, 2.234 partes, 3.432 conceitos) e chunks batched por sistema (`scripts/build-full-body.mjs` → `frontend/public/models/fullbody/atlas.json` + `body-N.bin(.gz)`; simplificacao meshoptimizer 0.22x/erro 0.2% como a referencia, normais Int16, 2.104.882 triângulos, ~25 MB gzip; `assets/full-body-map.json` e `assets/licenses.json` atualizados; validacao em `scripts/validate-full-body.mjs`).
+- [x] Fase 2: catalogo pt-BR de estruturas e conceitos derivados + validacao. (`scripts/derive-catalog-v2.mjs` → `catalog/v2/structures.json` + `catalog/v2/concepts.json`; 2.234 estruturas e 3.432 conceitos, ambos 100% com nome pt-BR derivado por motor EN→pt — ordem dos tokens, concordancia de genero/numero, `Set of…`/`Zone of…`, padroes para dentes, vacuos musculares, folhetos valvulares, arvore biliar e cardiovasculares; `scripts/validate-catalog-v2.mjs` com 0 erros; npm scripts `catalog:v2` / `catalog:v2:validate`; curadoria incremental pendente em `catalog/v2/curated.json`).
+- [x] Fase 3: backend/DB (ANATOMICAL_CONCEPT + migrations V5-V8 + API de conceitos). (`V5__concept_schema.sql` cria `anatomical_concept`, `concept_structure` e `source_id`; `V6__seed_expanded_structures.sql` expande o seed para as 2.234 estruturas derivadas (publicado=false) e preenche `source_id`; `V7__seed_concepts.sql` seeda 3.432 conceitos FMA com nome pt-BR; `V8__seed_concept_structures.sql` resolve 46.825 vinculos conceito->estrutura por `source_id`; geradores em `scripts/export-expanded-structures.mjs` e `scripts/export-concepts-seed.mjs`, npm script `catalog:seed:v2`; API `GET /concepts`, `GET /concepts/{id}` e `GET /structures/{id}/concepts` com `ConceptService`/`ConceptController`/DTOs; 12 testes novos, suíte total 32 verdes).
+- [ ] Fase 4: renderer batched (chunks, shader, picking, explosao) - spike aprovado na Fase 0.
+- [ ] Fase 5: frontend (15 sistemas, presets Todos/Esqueleto/Orgaos, multi-selecao, busca por ID/conceito).
+- [ ] Fase 6: testes, benchmark de performance, ajustes e acessibilidade.
 
 ## Proximos Marcos
 
-1. EXPANSAO ANATOMICA (V2 da referencia, seguindo o mapa de 16 sistemas do Human Atlas): importar demais sistemas do BodyParts3D para o padrão `SYSTEMS`.
+1. EXPANSAO ANATOMICA (V2 da referencia, conforme decisoes D1-D4 acima).
 2. QUALIDADE DE CONTEUDO: revisao didatica das descricoes/funcoes curadas e ampliacao do conjunto de relacoes anatomicas (incluindo mais origens/insercoes).
 3. PERFORMANCE: profiling, draw calls, simplificacao, lazy loading e cache.
 4. QUALIDADE: acessibilidade, matriz de navegadores e auditoria visual mais ampla.

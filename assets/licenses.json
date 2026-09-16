@@ -4,11 +4,13 @@
     "source": "BodyParts3D 4.0",
     "author": "The Database Center for Life Science",
     "sourceUrl": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/partof_BP3D_4.0_obj_99.zip",
-    "license": "CC BY-SA 2.1 JP",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
     "verificationUrl": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
+    "verificationAt": "2026-09-14",
     "obtainedAt": "2026-09-10",
-    "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution-ShareAlike 2.1 Japan.",
+    "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.",
+    "licenseNote": "A pagina oficial de licenca (atualizada em 2025-02-27) declara CC BY 4.0, superando o texto legado CC BY-SA 2.1 JP presente nos comentarios dos OBJ. Reconciliado em 2026-09-14 com a pagina oficial e os mesmos termos do V2__seed_reference.sql.",
     "modifications": [
       "Skeleton FMA23876 plus limb bone concepts from official catalog",
       "OBJ to glTF 2.0 binary conversion",
@@ -18,8 +20,8 @@
       "Local structureId and original sourceId metadata"
     ],
     "permissions": [
-      "Redistribution with attribution and same license",
-      "Adaptation with attribution and same license"
+      "Redistribution with attribution",
+      "Adaptation with attribution"
     ],
     "sha256": "28e6795383b05925b262ec498c90f7eb2830b2bb6cab3ebdd85ed3b690569be6",
     "bytes": 4236112,
@@ -52,5 +54,37 @@
     "meshes": 462,
     "structures": 462,
     "triangles": 298084
+  },
+  {
+    "asset": "fullbody/* (atlas.json + body-N.bin + .gz)",
+    "source": "BodyParts3D 4.0",
+    "author": "The Database Center for Life Science (DBCLS)",
+    "sourceUrl": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/isa_BP3D_4.0_obj_99.zip",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "verificationUrl": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
+    "verificationAt": "2026-09-14",
+    "obtainedAt": "2026-09-14",
+    "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International. System/concept classification per ashemag/human-atlas (derived from BodyParts3D 4.0, CC BY 4.0).",
+    "licenseNote": "Concordancia de sistema (15) e conceito por parte baseada no atlas de referencia ashemag/human-atlas; pertencimento elemento->conceito derivado dos arquivos oficiais isa_*/partof_* do DBCLS.",
+    "modifications": [
+      "Full body import from isa_BP3D_4.0_obj_99.zip (2.234 meshes)",
+      "Z-up to Y-up rotation (OBJ meters)",
+      "Vertex welding (0.1 mm) with averaged normals",
+      "Meshopt quadric simplification 0.22x with 0.2% relative error per structure (same method as ashemag/human-atlas)",
+      "Normals quantized to Int16 (positions Float32, indices Uint32)",
+      "Per-system binary chunks (positions/normals/indices) + gzip",
+      "partId local por chunk e metadata no atlas.json"
+    ],
+    "permissions": [
+      "Redistribution with attribution",
+      "Adaptation with attribution"
+    ],
+    "sha256": "565a152e62924fd23b9e8523fa3622ee479e4b59d4025a03b868410198f63113",
+    "bytes": 44261776,
+    "meshes": 2234,
+    "structures": 2234,
+    "triangles": 2104882,
+    "chunks": 15
   }
 ]

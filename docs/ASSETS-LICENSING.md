@@ -5,12 +5,15 @@
 Fonte: [BodyParts3D](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html),
 release 4.0, arquivo `partof_BP3D_4.0_obj_99.zip`.
 A [pagina oficial de licenca](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html)
-declara **CC BY-SA 2.1 Japan**. Registrada no inventario em 2026-09-10.
+(atualizada em 2025-02-27) declara **CC BY 4.0 International**, que supera o
+texto historico `CC BY-SA 2.1 JP` presente nos comentarios dos OBJ. A licenca
+vigente permite acesso, redistribuicao e criacao de obras derivadas com
+atribuicao. Registrada/reconciliada no inventario em 2026-09-14.
 Nao reutilizar automaticamente a licenca de versoes historicas ou de um mirror.
 
 Atribuicao registrada:
 
-> BodyParts3D, © The Database Center for Life Science, licensed under CC Attribution-ShareAlike 2.1 Japan.
+> BodyParts3D, © The Database Center for Life Science, licensed under CC Attribution 4.0 International.
 
 Inventario: [licenses.json](../assets/licenses.json). Relacao entre estrutura local,
 malha original e conceitos: [structure-map.json](../assets/structure-map.json).
