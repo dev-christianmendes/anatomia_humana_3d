@@ -1,112 +1,106 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { SYSTEMS } from '../features/structure/catalog'
-import { systemVisible, totalStructureCount, useAtlas, visibleStructureCount } from './atlas'
+import { DEFAULT_VISIBLE, systemCount } from '../features/viewer/atlas/systems'
+import type { SystemCode } from '../features/viewer/atlas/types'
+import { systemVisible, useAtlas, visibleStructureCount } from './atlas'
 
 describe('atlas store', () => {
   beforeEach(() => {
     useAtlas.setState({
-      selectedStructureId: null,
-      hoveredStructureId: null,
-      isolatedStructureId: null,
-      systemVisibility: Object.fromEntries(SYSTEMS.map((system) => [system.code, true])),
-      layout: 'side',
-      modelVisibility: { skeleton: true, muscles: true },
+      view: 'three-quarter',
+      explode: 0,
+      visible: [...DEFAULT_VISIBLE],
+      selected: [],
+      isolate: false,
+      rotate: false,
+      reset: 0,
     })
   })
 
-  it('starts with no selection or isolation and every system visible', () => {
-    expect(useAtlas.getState().selectedStructureId).toBeNull()
-    expect(useAtlas.getState().isolatedStructureId).toBeNull()
-    for (const system of SYSTEMS) {
-      expect(systemVisible(useAtlas.getState().systemVisibility, system.code)).toBe(true)
-    }
-  })
-
-  it('records selection and hover by structure id', () => {
-    useAtlas.getState().hover('STR-ESQ-0127')
-    useAtlas.getState().select('STR-ESQ-0127')
-    expect(useAtlas.getState().hoveredStructureId).toBe('STR-ESQ-0127')
-    expect(useAtlas.getState().selectedStructureId).toBe('STR-ESQ-0127')
-  })
-
-  it('clears selection and hover with null', () => {
-    useAtlas.getState().select('STR-ESQ-0175')
-    useAtlas.getState().select(null)
-    useAtlas.getState().hover(null)
-    expect(useAtlas.getState().selectedStructureId).toBeNull()
-    expect(useAtlas.getState().hoveredStructureId).toBeNull()
+  it('starts with default systems visible, no selection and isolation off', () => {
+    const state = useAtlas.getState()
+    expect(state.visible).toEqual(DEFAULT_VISIBLE)
+    for (const code of DEFAULT_VISIBLE) expect(systemVisible(state.visible, code)).toBe(true)
+    expect(state.selected).toEqual([])
+    expect(state.isolate).toBe(false)
+    expect(state.rotate).toBe(false)
+    expect(state.view).toBe('three-quarter')
   })
 
   it('toggles system visibility independently', () => {
-    const code = useAtlas.getState().systemVisibility['SYS-ESQ'] ? 'SYS-ESQ' : SYSTEMS[0].code
+    const code: SystemCode = 'SYS-ESQ'
     useAtlas.getState().toggleSystem(code)
-    expect(systemVisible(useAtlas.getState().systemVisibility, code)).toBe(false)
+    expect(systemVisible(useAtlas.getState().visible, code)).toBe(false)
     useAtlas.getState().toggleSystem(code)
-    expect(systemVisible(useAtlas.getState().systemVisibility, code)).toBe(true)
+    expect(systemVisible(useAtlas.getState().visible, code)).toBe(true)
   })
 
-  it('isolates and restores a structure', () => {
-    useAtlas.getState().select('STR-ESQ-0230')
-    useAtlas.getState().isolate('STR-ESQ-0230')
-    expect(useAtlas.getState().isolatedStructureId).toBe('STR-ESQ-0230')
+  it('applies presets and hides all systems', () => {
+    useAtlas.getState().presetSystems(['SYS-ESQ'])
+    expect(useAtlas.getState().visible).toEqual(['SYS-ESQ'])
+    useAtlas.getState().hideAllSystems()
+    expect(useAtlas.getState().visible).toEqual([])
+  })
+
+  it('selects one or many structures and clears selection', () => {
+    useAtlas.getState().selectStructure('SYS-ESQ-0001')
+    expect(useAtlas.getState().selected).toEqual(['SYS-ESQ-0001'])
+    expect(useAtlas.getState().isolate).toBe(false)
+    useAtlas.getState().selectStructures(['SYS-ESQ-0001', 'SYS-MUS-0020'])
+    expect(useAtlas.getState().selected).toEqual(['SYS-ESQ-0001', 'SYS-MUS-0020'])
+    useAtlas.getState().clearSelection()
+    expect(useAtlas.getState().selected).toEqual([])
+  })
+
+  it('isolates selection only when something is selected', () => {
+    useAtlas.getState().isolateSelection()
+    expect(useAtlas.getState().isolate).toBe(false)
+    useAtlas.getState().selectStructure('SYS-ESQ-0001')
+    useAtlas.getState().isolateSelection()
+    expect(useAtlas.getState().isolate).toBe(true)
     useAtlas.getState().restore()
-    expect(useAtlas.getState().isolatedStructureId).toBeNull()
-    expect(useAtlas.getState().selectedStructureId).toBe('STR-ESQ-0230')
+    expect(useAtlas.getState().isolate).toBe(false)
+    expect(useAtlas.getState().selected).toEqual(['SYS-ESQ-0001'])
   })
 
   it('controls explosion progress within bounds', () => {
-    expect(useAtlas.getState().explosionProgress).toBe(0)
-    useAtlas.getState().setExplosion(45)
-    expect(useAtlas.getState().explosionProgress).toBe(45)
-    useAtlas.getState().setExplosion(120)
-    expect(useAtlas.getState().explosionProgress).toBe(100)
-    useAtlas.getState().setExplosion(-10)
-    expect(useAtlas.getState().explosionProgress).toBe(0)
+    expect(useAtlas.getState().explode).toBe(0)
+    useAtlas.getState().setExplode(0.45)
+    expect(useAtlas.getState().explode).toBe(0.45)
+    useAtlas.getState().setExplode(2)
+    expect(useAtlas.getState().explode).toBe(1)
+    useAtlas.getState().setExplode(-1)
+    expect(useAtlas.getState().explode).toBe(0)
   })
 
-  it('starts with side-by-side layout and switches to overlay', () => {
-    expect(useAtlas.getState().layout).toBe('side')
-    useAtlas.getState().setLayout('overlay')
-    expect(useAtlas.getState().layout).toBe('overlay')
-    useAtlas.getState().setLayout('side')
-    expect(useAtlas.getState().layout).toBe('side')
-  })
-
-  it('toggles model visibility independently', () => {
-    expect(useAtlas.getState().modelVisibility.skeleton).toBe(true)
-    expect(useAtlas.getState().modelVisibility.muscles).toBe(true)
-    useAtlas.getState().toggleModel('muscles')
-    expect(useAtlas.getState().modelVisibility.muscles).toBe(false)
-    expect(useAtlas.getState().modelVisibility.skeleton).toBe(true)
-    useAtlas.getState().toggleModel('muscles')
-    expect(useAtlas.getState().modelVisibility.muscles).toBe(true)
-  })
-
-  it('isolates a single system and restores all', () => {
-    useAtlas.getState().showOnlySystem('SYS-MUS')
-    expect(useAtlas.getState().systemVisibility['SYS-MUS']).toBe(true)
-    for (const system of SYSTEMS) {
-      if (system.code !== 'SYS-MUS') expect(systemVisible(useAtlas.getState().systemVisibility, system.code)).toBe(false)
-    }
-    useAtlas.getState().showAllSystems()
-    for (const system of SYSTEMS) {
-      expect(systemVisible(useAtlas.getState().systemVisibility, system.code)).toBe(true)
-    }
-  })
-
-  it('hides every system through hideAllSystems', () => {
-    useAtlas.getState().hideAllSystems()
-    for (const system of SYSTEMS) {
-      expect(systemVisible(useAtlas.getState().systemVisibility, system.code)).toBe(false)
-    }
+  it('switches views and toggles rotation', () => {
+    useAtlas.getState().setView('back')
+    expect(useAtlas.getState().view).toBe('back')
+    useAtlas.getState().setRotate(true)
+    expect(useAtlas.getState().rotate).toBe(true)
   })
 
   it('counts visible structures from system visibility', () => {
-    expect(visibleStructureCount(useAtlas.getState().systemVisibility)).toBe(totalStructureCount())
-    useAtlas.getState().showOnlySystem('SYS-ESQ')
-    const esq = SYSTEMS.find((system) => system.code === 'SYS-ESQ')!.count
-    expect(visibleStructureCount(useAtlas.getState().systemVisibility)).toBe(esq)
+    const total = DEFAULT_VISIBLE.reduce((n, code) => n + systemCount(code), 0)
+    expect(visibleStructureCount(useAtlas.getState().visible)).toBe(total)
+    useAtlas.getState().presetSystems(['SYS-ESQ'])
+    expect(visibleStructureCount(useAtlas.getState().visible)).toBe(systemCount('SYS-ESQ'))
     useAtlas.getState().hideAllSystems()
-    expect(visibleStructureCount(useAtlas.getState().systemVisibility)).toBe(0)
+    expect(visibleStructureCount(useAtlas.getState().visible)).toBe(0)
+  })
+
+  it('resets the view and increments reset counter', () => {
+    useAtlas.getState().selectStructure('SYS-ESQ-0001')
+    useAtlas.getState().isolateSelection()
+    useAtlas.getState().setView('side')
+    const before = useAtlas.getState().reset
+    useAtlas.getState().resetView()
+    const state = useAtlas.getState()
+    expect(state.view).toBe('three-quarter')
+    expect(state.explode).toBe(0)
+    expect(state.visible).toEqual(DEFAULT_VISIBLE)
+    expect(state.rotate).toBe(false)
+    expect(state.isolate).toBe(false)
+    expect(state.selected).toEqual([])
+    expect(state.reset).toBe(before + 1)
   })
 })

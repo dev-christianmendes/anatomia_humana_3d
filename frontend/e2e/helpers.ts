@@ -35,6 +35,26 @@ export async function waitForChecksum(
   }
 }
 
+export async function waitForSceneReady(page: Page) {
+  await page.locator('.loading').waitFor({ state: 'detached', timeout: 120000 })
+  const deadline = Date.now() + 120000
+  for (;;) {
+    const { visible } = await scenePixels(page)
+    if (visible > 1000) return
+    if (Date.now() > deadline) throw new Error(`scene never rendered (${visible} px visible)`)
+    await page.waitForTimeout(2000)
+  }
+}
+
+export async function setRange(page: Page, label: string, value: number) {
+  const slider = page.getByLabel(label)
+  await slider.scrollIntoViewIfNeeded()
+  await slider.focus()
+  for (let step = 0; step < value; step += 1) {
+    await slider.press('ArrowRight')
+  }
+}
+
 export async function raiseRange(page: Page, label: string, steps: number) {
   const slider = page.getByLabel(label)
   await slider.scrollIntoViewIfNeeded()

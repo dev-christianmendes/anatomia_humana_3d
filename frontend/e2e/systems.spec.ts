@@ -1,54 +1,54 @@
 import { expect, test } from '@playwright/test'
+import { scenePixels, setRange, waitForSceneReady } from './helpers'
 
 test('painel de sistemas com presets, ocultar tudo e contagem', async ({ page }) => {
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(error.message))
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.goto('/')
-  await expect(page.getByText('Modelo carregado', { exact: true })).toBeVisible()
+  await waitForSceneReady(page)
+  const before = await scenePixels(page)
 
-  const summary = page.locator('.system-summary')
-  await expect(summary).toContainText('720 de 720 estruturas visíveis')
+  const layers = page.getByRole('region', { name: 'Camadas anatômicas' })
+  await expect(layers.getByText('Sistemas', { exact: true })).toBeVisible()
+  await expect(page.getByText('peças visíveis')).toBeVisible()
 
-  const esqueletoRow = page.locator('.system-row').first()
-  await expect(esqueletoRow).toContainText('Esquelético')
-  await expect(esqueletoRow).toContainText('258 estruturas')
-  await expect(esqueletoRow).toContainText('O esqueleto sustenta o corpo')
+  const esqueletoToggle = page.getByLabel('Mostrar esqueleto')
+  await expect(esqueletoToggle).toBeChecked()
+  await expect(page.getByLabel('Mostrar muscular')).toBeChecked()
 
-  const presets = page.getByRole('group', { name: 'Mostrar apenas um sistema' })
-  await presets.getByRole('button', { name: 'Esquelético', exact: true }).click()
-  await expect(summary).toContainText('258 de 720 estruturas visíveis')
-  await expect(page.getByLabel('Mostrar sistema Esquelético')).toBeChecked()
-  await expect(page.getByLabel('Mostrar sistema Muscular')).not.toBeChecked()
+  await layers.getByRole('button', { name: 'Esqueleto', exact: true }).click()
+  await expect(esqueletoToggle).toBeChecked()
+  await expect(page.getByLabel('Mostrar muscular')).not.toBeChecked()
+  await expect.poll(async () => (await scenePixels(page)).visible).toBeLessThan(before.visible)
 
-  await page.getByRole('button', { name: 'Ocultar todos os sistemas' }).click()
-  await expect(summary).toContainText('0 de 720 estruturas visíveis')
-  await expect(page.getByLabel('Mostrar sistema Esquelético')).not.toBeChecked()
-  await expect(page.getByLabel('Mostrar sistema Muscular')).not.toBeChecked()
+  await page.getByRole('button', { name: 'Ocultar todas' }).click()
+  await expect(esqueletoToggle).not.toBeChecked()
+  await expect(page.getByLabel('Mostrar muscular')).not.toBeChecked()
 
-  await presets.getByRole('button', { name: 'Ambos', exact: true }).click()
-  await expect(summary).toContainText('720 de 720 estruturas visíveis')
-
-  await page.getByRole('button', { name: 'Restaurar visualização' }).click()
+  await layers.getByRole('button', { name: 'Todos', exact: true }).click()
+  await expect(esqueletoToggle).toBeChecked()
+  await expect(page.getByLabel('Mostrar muscular')).toBeChecked()
+  await expect(page.getByLabel('Mostrar superfície corporal')).toBeChecked()
+  await expect(page.getByText('2.234 peças visíveis')).toBeVisible()
   expect(errors).toEqual([])
 })
 
-test('legendas de cena e gerencia de explosao alternam', async ({ page }) => {
+test('cenários de explosao alternam a legenda da cena', async ({ page }) => {
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(error.message))
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.goto('/')
-  await expect(page.getByText('Modelo carregado', { exact: true })).toBeVisible()
+  await waitForSceneReady(page)
 
-  await expect(page.locator('.scene-caption')).toHaveText('CORPO HUMANO ADULTO · MASCULINO')
-  await expect(page.locator('.viewport-hints')).toBeVisible()
-  await expect(page.locator('.viewport-hints')).toContainText('Arraste para orbitar')
+  await expect(page.locator('.scene-caption')).toContainText('CORPO HUMANO ADULTO')
+  await setRange(page, 'Explodir anatomia', 60)
+  await expect(page.locator('.scene-caption')).toHaveText('ESTRUTURAS SEPARADAS')
 
-  await page.getByLabel('Intensidade da explosão').fill('60')
+  await setRange(page, 'Explodir anatomia', 100)
   await expect(page.locator('.scene-caption')).toHaveText('INVENTÁRIO ANATÔMICO')
-  await expect(page.locator('.viewport-hints')).toContainText('Arraste para deslocar')
 
-  await page.getByRole('button', { name: 'Restaurar visualização' }).click()
-  await expect(page.locator('.scene-caption')).toHaveText('CORPO HUMANO ADULTO · MASCULINO')
+  await page.getByRole('button', { name: 'Montar e restaurar' }).click()
+  await expect(page.locator('.scene-caption')).toContainText('CORPO HUMANO ADULTO')
   expect(errors).toEqual([])
 })
