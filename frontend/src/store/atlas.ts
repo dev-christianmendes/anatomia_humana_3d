@@ -1,84 +1,71 @@
 import { create } from 'zustand'
-import { SYSTEMS } from '../features/structure/catalog'
-
-type VisibleSystems = Record<string, boolean>
-type ViewModel = 'skeleton' | 'muscles'
-type ViewModelVisibility = Record<ViewModel, boolean>
-export type ViewerLayout = 'overlay' | 'side'
-export type HoverPosition = { x: number; y: number }
+import { DEFAULT_VISIBLE, systemCount, SYSTEM_CODES_LIST } from '../features/viewer/atlas/systems'
+import type { SystemCode, View } from '../features/viewer/atlas/types'
 
 type AtlasState = {
-  selectedStructureId: string | null
-  hoveredStructureId: string | null
-  hoverPosition: HoverPosition | null
-  isolatedStructureId: string | null
-  explosionProgress: number
-  systemVisibility: VisibleSystems
-  layout: ViewerLayout
-  modelVisibility: ViewModelVisibility
-  select: (structureId: string | null) => void
-  hover: (structureId: string | null, position?: HoverPosition | null) => void
-  toggleSystem: (code: string) => void
-  showOnlySystem: (code: string) => void
-  showAllSystems: () => void
+  view: View
+  explode: number
+  visible: SystemCode[]
+  selected: string[]
+  isolate: boolean
+  rotate: boolean
+  reset: number
+  setView: (view: View) => void
+  setExplode: (progress: number) => void
+  toggleSystem: (code: SystemCode) => void
+  presetSystems: (codes: SystemCode[]) => void
   hideAllSystems: () => void
-  setLayout: (layout: ViewerLayout) => void
-  toggleModel: (model: ViewModel) => void
-  isolate: (structureId: string) => void
+  selectStructure: (structureId: string) => void
+  selectStructures: (structureIds: string[]) => void
+  clearSelection: () => void
+  isolateSelection: () => void
   restore: () => void
-  setExplosion: (progress: number) => void
+  setRotate: (rotate: boolean) => void
+  resetView: () => void
 }
 
-const initialVisibility: VisibleSystems = Object.fromEntries(SYSTEMS.map((system) => [system.code, true]))
-const initialModelVisibility: ViewModelVisibility = { skeleton: true, muscles: true }
+const initialVisible = () => [...DEFAULT_VISIBLE]
 
 export const useAtlas = create<AtlasState>((set) => ({
-  selectedStructureId: null,
-  hoveredStructureId: null,
-  hoverPosition: null,
-  isolatedStructureId: null,
-  explosionProgress: 0,
-  systemVisibility: initialVisibility,
-  layout: 'side',
-  modelVisibility: initialModelVisibility,
-  select: (structureId) => set({ selectedStructureId: structureId }),
-  hover: (structureId, position) => set({ hoveredStructureId: structureId, hoverPosition: position ?? null }),
+  view: 'three-quarter',
+  explode: 0,
+  visible: initialVisible(),
+  selected: [],
+  isolate: false,
+  rotate: false,
+  reset: 0,
+  setView: (view) => set({ view }),
+  setExplode: (progress) => set({ explode: Math.max(0, Math.min(1, progress)) }),
   toggleSystem: (code) =>
     set((state) => ({
-      systemVisibility: {
-        ...state.systemVisibility,
-        [code]: !(state.systemVisibility[code] ?? true),
-      },
+      visible: state.visible.includes(code)
+        ? state.visible.filter((entry) => entry !== code)
+        : [...state.visible, code],
     })),
-  showOnlySystem: (code) =>
-    set(() => ({
-      systemVisibility: Object.fromEntries(SYSTEMS.map((system) => [system.code, system.code === code])),
-    })),
-  showAllSystems: () =>
-    set(() => ({ systemVisibility: Object.fromEntries(SYSTEMS.map((system) => [system.code, true])) })),
-  hideAllSystems: () =>
-    set(() => ({ systemVisibility: Object.fromEntries(SYSTEMS.map((system) => [system.code, false])) })),
-  setLayout: (layout) => set({ layout }),
-  toggleModel: (model) =>
+  presetSystems: (codes) => set({ visible: [...codes] }),
+  hideAllSystems: () => set({ visible: [] }),
+  selectStructure: (structureId) => set({ selected: [structureId], isolate: false }),
+  selectStructures: (structureIds) => set({ selected: structureIds, isolate: false }),
+  clearSelection: () => set({ selected: [], isolate: false }),
+  isolateSelection: () => set((state) => ({ isolate: state.selected.length > 0 ? !state.isolate : false })),
+  restore: () => set({ isolate: false }),
+  setRotate: (rotate) => set({ rotate }),
+  resetView: () =>
     set((state) => ({
-      modelVisibility: { ...state.modelVisibility, [model]: !(state.modelVisibility[model] ?? true) },
+      view: 'three-quarter',
+      explode: 0,
+      visible: initialVisible(),
+      selected: [],
+      isolate: false,
+      rotate: false,
+      reset: state.reset + 1,
     })),
-  isolate: (structureId) => set({ isolatedStructureId: structureId }),
-  restore: () => set({ isolatedStructureId: null }),
-  setExplosion: (progress) => set({ explosionProgress: Math.max(0, Math.min(100, progress)) }),
 }))
 
-export function visibleStructureCount(systemVisibility: VisibleSystems): number {
-  return SYSTEMS.reduce(
-    (total, system) => total + (systemVisible(systemVisibility, system.code) ? system.count : 0),
-    0,
-  )
+export function systemVisible(visible: SystemCode[], code: SystemCode): boolean {
+  return visible.includes(code)
 }
 
-export function totalStructureCount(): number {
-  return SYSTEMS.reduce((total, system) => total + system.count, 0)
-}
-
-export function systemVisible(systemVisibility: VisibleSystems, code: string): boolean {
-  return !(systemVisibility[code] === false)
+export function visibleStructureCount(visible: SystemCode[]): number {
+  return SYSTEM_CODES_LIST.reduce((total, code) => total + (visible.includes(code) ? systemCount(code) : 0), 0)
 }

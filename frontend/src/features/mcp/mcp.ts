@@ -1,5 +1,5 @@
-import { getStructure } from '../structure/catalog'
-import { searchStructures } from '../structure/search'
+import { CONCEPTS_V2 } from '../../data/catalogV2'
+import { normalizeSearchTerm } from '../viewer/atlas/search'
 
 export type McpTool = {
   name: string
@@ -15,35 +15,44 @@ export type McpHost = {
 }
 
 export function findAnatomyResults(query: string, limit = 30) {
-  const queryText = query.trim()
-  const matches = searchStructures(queryText, limit).map((entry) => ({
-    id: entry.structureId,
-    name: entry.name,
-    pieces: 1,
-  }))
-  return { query: queryText, count: matches.length, results: matches }
+  const normalized = normalizeSearchTerm(query)
+  const matches = CONCEPTS_V2.filter(
+    (concept) =>
+      (normalized && (concept.normalizedNamePt.includes(normalized) || concept.id.toLowerCase().includes(normalized))) ||
+      (concept.id === query.trim()),
+  ).slice(0, limit)
+  return {
+    query: query.trim(),
+    count: matches.length,
+    results: matches.map((concept) => ({
+      id: concept.id,
+      name: concept.namePt,
+      pieces: concept.elementCount,
+    })),
+  }
 }
 
 export function resolveInspectTarget(id: unknown): { id: string } | { error: string } {
   if (typeof id !== 'string' || !id.trim()) {
     return { error: 'Um identificador do atlas é necessário.' }
   }
-  if (!getStructure(id)) {
+  const concept = CONCEPTS_V2.find((entry) => entry.id === id)
+  if (!concept) {
     return { error: 'Essa estrutura não está presente neste atlas.' }
   }
-  return { id }
+  return { id: concept.id }
 }
 
 export function registerMcpTools(
   host: McpHost,
-  deps: { select: (structureId: string) => void; focus: (structureId: string) => void },
+  deps: { selectConcept: (conceptId: string) => void },
 ): boolean {
   const register = host.modelContext?.registerTool
   if (typeof register !== 'function') return false
 
   register({
     name: 'find_anatomy',
-    description: 'Encontra estruturas anatômicas pelo nome ou identificador do atlas.',
+    description: 'Encontra estruturas anatômicas pelo nome ou identificador de origem (FMA).',
     inputSchema: {
       type: 'object',
       properties: { query: { type: 'string', description: 'Nome ou identificador da estrutura.' } },
@@ -54,18 +63,18 @@ export function registerMcpTools(
 
   register({
     name: 'inspect_anatomical_structure',
-    description: 'Seleciona uma estrutura no atlas 3D e abre o painel de detalhes dela.',
+    description: 'Seleciona um conceito anatômico no atlas 3D e abre o painel de detalhes dele.',
     inputSchema: {
       type: 'object',
-      properties: { id: { type: 'string', description: 'Identificador do atlas (ex.: STR-ESQ-0001).' } },
+      properties: { id: { type: 'string', description: 'Identificador do atlas (ex.: FMA7088).' } },
       required: ['id'],
     },
     run: async (input) => {
       const target = resolveInspectTarget(input.id)
       if ('error' in target) return { error: target.error }
-      deps.select(target.id)
-      deps.focus(target.id)
-      return { id: target.id, name: getStructure(target.id)?.name ?? target.id }
+      const concept = CONCEPTS_V2.find((entry) => entry.id === target.id)
+      deps.selectConcept(target.id)
+      return { id: concept?.id ?? target.id, name: concept?.namePt ?? target.id, selectedPieces: concept?.elementCount ?? 0 }
     },
   })
 
