@@ -11,3 +11,9 @@ playwright-report/
 # Backend
 backend/target/
 *.class
+
+# Experimentos
+frontend/experiments/
+
+# Builds intermediários do atlas (o frontend consome apenas os .bin.gz)
+frontend/public/models/fullbody/*.bin
