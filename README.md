@@ -101,6 +101,7 @@ Frames reais do viewer (renderer SwiftShader), não mockups. As capturas reflete
 | **Preset Esqueleto** — filtro por sistema isola apenas as 296 estruturas do esqueleto | ![Preset Esqueleto](docs/screenshots/02-preset-esqueleto.png) |
 | **Busca por conceito** — sugestões ao digitar "coração" (3.432 conceitos e 2.234 estruturas consultados em pt-BR; atalho `/`) | ![Busca por conceito](docs/screenshots/03-busca-conceito.png) |
 | **Detalhe e isolamento** — seleção do conceito abre o sheet com ID FMA, sistema e contagem de peças, com enquadramento automático | ![Detalhe e isolamento](docs/screenshots/04-detalhe-isolamento.png) |
+| **Isolamento do cérebro** — mesmo fluxo de detalhe agora com o conceito *Cérebro* (FMA50801, 59 peças): encéfalo isolado, destacado e enquadrado pela câmera | ![Isolamento do cérebro](docs/screenshots/08-isolamento-cerebro.png) |
 | **Explosão radial** — slider em 60% (fase `ESTRUTURAS SEPARADAS`) agrupa as peças por sistema em torno do corpo | ![Explosão radial](docs/screenshots/05-explosao-radial.png) |
 | **Inventário anatômico** — slider em 100% (fase `INVENTÁRIO ANATÔMICO`) organiza as peças visíveis em grade com rótulos e câmera automática | ![Inventário anatômico](docs/screenshots/06-inventario-anatomico.png) |
 | **Responsividade** — mesmo atlas adaptado para telas estreitas (390×844), com controles recolhidos | ![Responsividade mobile](docs/screenshots/07-responsivo-mobile.png) |
