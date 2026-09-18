@@ -7,13 +7,18 @@ export interface LayoutCell {
   height: number
 }
 
-/** Empacota apenas as peças visíveis. Cada caixa projetada recebe a própria célula. */
+/** Os bounds do atlas vêm em milímetros; o cena é em metros (0.001 no carregamento). */
+const MM_TO_M = 0.001
+
+const cardSize = (min: number, max: number) => Math.max(0.04, (max - min) * MM_TO_M) + 0.015
+
+/** Empacota apenas as peças visíveis. Cada caixa projetada recebe a própria célula (unidades em metros). */
 export function createExplosionLayout(parts: Part[], aspect = 1) {
   const cards = parts.map((p) => ({
     id: p.id,
     system: p.system,
-    width: Math.max(0.035, p.bounds[1][0] - p.bounds[0][0]) + 0.04,
-    height: Math.max(0.035, p.bounds[1][1] - p.bounds[0][1]) + 0.04,
+    width: cardSize(p.bounds[0][0], p.bounds[1][0]),
+    height: cardSize(p.bounds[0][1], p.bounds[1][1]),
   }))
   const area = cards.reduce((n, c) => n + c.width * c.height, 0)
   const maxWidth = Math.max(0.3, ...cards.map((c) => c.width))

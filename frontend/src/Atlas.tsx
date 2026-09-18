@@ -275,7 +275,7 @@ export default function Home() {
                 }}
               >
                 <span className="system-dot" style={{ background: system.color }} />
-                {systemLabel(system.code)}
+                <span className="system-label">{systemLabel(system.code)}</span>
                 <span className="system-count">{atlas ? (counts.get(system.code) ?? 0).toLocaleString('pt-BR') : systemCountFor(system.code)}</span>
               </button>
               <input

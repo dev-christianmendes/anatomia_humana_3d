@@ -18,6 +18,17 @@ interface Props {
   onError: (s: string) => void
 }
 
+const basePixelRatio = () => Math.min(window.devicePixelRatio || 1, 1.5)
+
+/** As cores do UI ficam claras; o material 3D usa um tom mais profundo para contraste com o fundo claro. */
+const sceneMaterialColor = (hex: string) => {
+  const c = new T.Color(hex)
+  c.convertSRGBToLinear()
+  c.multiplyScalar(0.55)
+  c.convertLinearToSRGB()
+  return c
+}
+
 export default function AtlasScene({ atlas, state, onSelect, onProgress, onError }: Props) {
   const host = useRef<HTMLDivElement>(null)
   const latest = useRef(state)
@@ -42,6 +53,8 @@ export default function AtlasScene({ atlas, state, onSelect, onProgress, onError
     let lastIsolate = ''
     let layoutKey = ''
     let amount = 0
+    let activePointers = 0
+    let lastFollowExtent = -1
     let lastState: SceneState | null = null
     const abort = new AbortController()
 
@@ -52,8 +65,8 @@ export default function AtlasScene({ atlas, state, onSelect, onProgress, onError
       callbacks.current.onError('Este navegador não conseguiu iniciar o visualizador 3D. Experimente um navegador com WebGL habilitado.')
       return
     }
-    renderer.setPixelRatio(Math.min(devicePixelRatio, innerWidth < 768 ? 1.5 : 2))
-    renderer.setClearColor('#f2f3f3')
+    renderer.setPixelRatio(basePixelRatio())
+    renderer.setClearColor('#dfe2e6')
     renderer.outputColorSpace = T.SRGBColorSpace
     renderer.toneMapping = T.ACESFilmicToneMapping
     renderer.toneMappingExposure = 1.12
@@ -81,42 +94,44 @@ export default function AtlasScene({ atlas, state, onSelect, onProgress, onError
     const room = new RoomEnvironment()
     const env = pmrem.fromScene(room, 0.04)
     scene.environment = env.texture
+    scene.environmentIntensity = 0.35
     room.dispose()
     pmrem.dispose()
     scene.add(new T.HemisphereLight(0xffffff, 0xa7acb2, 1.05))
-    const key = new T.DirectionalLight(0xfffaf4, 2.3)
+    const key = new T.DirectionalLight(0xfffaf4, 2.6)
     key.position.set(-2, 4, 3)
     scene.add(key)
-    const rim = new T.DirectionalLight(0xe9f0ff, 1.8)
+    const rim = new T.DirectionalLight(0xeaf3ff, 2.1)
     rim.position.set(2, 2, -3)
     scene.add(rim)
 
+    const soleY = Math.min(...atlas.parts.map((p) => p.bounds[0][1] * 0.001))
     const ground = new T.Mesh(
       new T.CircleGeometry(30, 96),
-      new T.MeshStandardMaterial({ color: 0xd5d9dc, roughness: 1 }),
+      new T.MeshStandardMaterial({ color: 0xc9ced2, roughness: 1 }),
     )
     ground.rotation.x = -Math.PI / 2
-    ground.position.y = -0.019
+    ground.position.y = soleY - 0.05
     scene.add(ground)
     const platform = new T.Mesh(
       new T.CylinderGeometry(0.68, 0.7, 0.028, 100),
-      new T.MeshStandardMaterial({ color: 0xeeeeec, metalness: 0.12, roughness: 0.67 }),
+      new T.MeshStandardMaterial({ color: 0xe7e9e8, metalness: 0.12, roughness: 0.67 }),
     )
-    platform.position.y = -0.016
+    platform.position.y = soleY - 0.016
     scene.add(platform)
     const ring = new T.Mesh(
       new T.RingGeometry(0.63, 0.632, 128),
       new T.MeshBasicMaterial({ color: 0x8c969f, transparent: true, opacity: 0.4, side: T.DoubleSide }),
     )
     ring.rotation.x = -Math.PI / 2
-    ring.position.y = 0.001
+    ring.position.y = soleY + 0.001
     scene.add(ring)
     const innerRing = new T.Mesh(
       new T.RingGeometry(0.55, 0.551, 128),
       new T.MeshBasicMaterial({ color: 0xa4aeb8, transparent: true, opacity: 0.16, side: T.DoubleSide }),
     )
     innerRing.rotation.x = -Math.PI / 2
-    innerRing.position.y = 0.001
+    innerRing.position.y = soleY + 0.001
     scene.add(innerRing)
 
     const width = T.MathUtils.ceilPowerOfTwo(atlas.parts.length)
@@ -194,8 +209,9 @@ export default function AtlasScene({ atlas, state, onSelect, onProgress, onError
     }
 
     const materialForSystem = (system: string) => {
+      const baseColor = SYSTEM_COLORS[system as keyof typeof SYSTEM_COLORS] ?? '#aebbb8'
       const m = new T.MeshStandardMaterial({
-        color: SYSTEM_COLORS[system as keyof typeof SYSTEM_COLORS] ?? '#aebbb8',
+        color: sceneMaterialColor(baseColor),
         metalness: 0.08,
         roughness: 0.53,
         side: T.DoubleSide,
@@ -341,7 +357,7 @@ export default function AtlasScene({ atlas, state, onSelect, onProgress, onError
     const resize = () => {
       layoutKey = ''
       lastState = null
-      renderer.setPixelRatio(Math.min(devicePixelRatio, el.clientWidth < 768 || el.clientHeight < 600 ? 1.5 : 2))
+      renderer.setPixelRatio(activePointers > 0 ? 1 : basePixelRatio())
       camera.aspect = el.clientWidth / el.clientHeight
       camera.updateProjectionMatrix()
       renderer.setSize(el.clientWidth, el.clientHeight)
@@ -356,8 +372,15 @@ export default function AtlasScene({ atlas, state, onSelect, onProgress, onError
     const worldBox = new T.Box3()
     const hitPoint = new T.Vector3()
 
+    const setViewport = (ratio: number) => {
+      renderer.setPixelRatio(ratio)
+      renderer.setSize(el.clientWidth, el.clientHeight)
+    }
+
     const down = (e: PointerEvent) => {
       hover.hidden = true
+      activePointers += 1
+      if (activePointers === 1) setViewport(1)
       tap.down(e.pointerId, e.clientX, e.clientY, e.pointerType === 'touch' ? 12 : 5)
     }
     const move = (e: PointerEvent) => {
@@ -378,8 +401,20 @@ export default function AtlasScene({ atlas, state, onSelect, onProgress, onError
         hover.style.top = `${Math.max(8, Math.min(y + 18, el.clientHeight - 55))}px`
       }
     }
-    const cancel = (e: PointerEvent) => tap.cancel(e.pointerId)
+    const cancel = (e: PointerEvent) => {
+      activePointers = Math.max(0, activePointers - 1)
+      if (activePointers === 0) setViewport(basePixelRatio())
+      tap.cancel(e.pointerId)
+    }
+    const leave = (e: PointerEvent) => {
+      if (e.pointerType === 'mouse' && e.buttons === 0) {
+        activePointers = 0
+        setViewport(basePixelRatio())
+      }
+    }
     const up = (e: PointerEvent) => {
+      activePointers = Math.max(0, activePointers - 1)
+      if (activePointers === 0) setViewport(basePixelRatio())
       const validTap = tap.up(e.pointerId, e.clientX, e.clientY)
       if (!validTap || !ready) return
       const rect = renderer.domElement.getBoundingClientRect()
@@ -409,13 +444,14 @@ export default function AtlasScene({ atlas, state, onSelect, onProgress, onError
     renderer.domElement.addEventListener('pointermove', move)
     renderer.domElement.addEventListener('pointerup', up)
     renderer.domElement.addEventListener('pointercancel', cancel)
+    renderer.domElement.addEventListener('pointerleave', leave)
 
     const clock = new T.Clock()
     let lastExtent = -1
     const animate = () => {
       if (disposed) return
       frame = requestAnimationFrame(animate)
-      const dt = Math.min(clock.getDelta(), 0.05)
+      const dt = Math.min(clock.getDelta(), 0.5)
       const s = latest.current
       const changed = lastState?.visible !== s.visible || lastState?.selected !== s.selected || lastState?.isolate !== s.isolate
       const moving = Math.abs(amount - s.explode) > 0.0001
@@ -437,7 +473,7 @@ export default function AtlasScene({ atlas, state, onSelect, onProgress, onError
             offsets[i] = cell ? new T.Vector3(cell.x, cell.y + 0.85, 0) : centers[i].clone()
           })
           layoutKey = nextLayoutKey
-          if (amount > 0.05 && !s.isolate) fit(s.view, Math.max(0, (amount - 0.3) / 0.7))
+          if (amount > 0.05 && !s.isolate && activePointers === 0) fit(s.view, Math.max(0, (amount - 0.3) / 0.7))
         }
 
         atlas.parts.forEach((p, i) => {
@@ -483,10 +519,24 @@ export default function AtlasScene({ atlas, state, onSelect, onProgress, onError
         fit(s.view, amount)
         lastView = s.view
         lastReset = s.reset
+        lastFollowExtent = -1
       }
-      if (moving && !s.isolate) fit(amount > 0.5 ? 'front' : s.view, Math.max(0, (amount - 0.3) / 0.7))
+      const interacting = activePointers > 0
+      if (amount > 0.05 && !s.isolate && !interacting) {
+        const followView = amount > 0.5 ? 'front' : s.view
+        const followExtent = Math.max(0, (amount - 0.3) / 0.7)
+        if (moving) {
+          if (amount - lastFollowExtent >= 0.05) {
+            fit(followView, followExtent)
+            lastFollowExtent = amount
+          }
+        } else if (lastFollowExtent >= 0 && Math.abs(amount - lastFollowExtent) > 0.0001) {
+          fit(followView, followExtent)
+          lastFollowExtent = amount
+        }
+      }
       const isolateKey = s.isolate ? s.selected.join(',') + ':' + s.reset + ':' + s.inspectorOpen + ':' + camera.aspect : ''
-      if (isolateKey !== lastIsolate || (s.isolate && moving)) {
+      if (isolateKey !== lastIsolate || (s.isolate && moving && activePointers === 0)) {
         if (s.isolate) {
           const box = new T.Box3()
           atlas.parts.forEach((p, i) => {
