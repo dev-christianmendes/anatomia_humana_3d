@@ -1,0 +1,50 @@
+name: Frontend (lint, typecheck, testes)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend:
+    name: Qualidade do frontend e do catálogo
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Instalar dependências
+        working-directory: frontend
+        run: npm ci
+
+      - name: Lint (ESLint)
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Typecheck e build (tsc -b + Vite)
+        run: npm run build
+
+      - name: Testes unitários (Vitest)
+        run: npm test
+
+      - name: Validação do catálogo V2 (estruturas e conceitos pt-BR)
+        run: npm run catalog:v2:validate
+
+      - name: Validação do catálogo (legado)
+        run: npm run catalog:validate

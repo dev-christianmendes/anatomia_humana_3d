@@ -1,5 +1,9 @@
 # Anatomia 3D
 
+[![CI: Frontend](https://github.com/dev-christianmendes/anatomia_humana_3d/actions/workflows/frontend.yml/badge.svg)](https://github.com/dev-christianmendes/anatomia_humana_3d/actions/workflows/frontend.yml)
+[![CI: E2E](https://github.com/dev-christianmendes/anatomia_humana_3d/actions/workflows/e2e.yml/badge.svg)](https://github.com/dev-christianmendes/anatomia_humana_3d/actions/workflows/e2e.yml)
+[![CI: Backend](https://github.com/dev-christianmendes/anatomia_humana_3d/actions/workflows/backend.yml/badge.svg)](https://github.com/dev-christianmendes/anatomia_humana_3d/actions/workflows/backend.yml)
+
 **Plataforma Web interativa para exploração tridimensional da anatomia humana.**
 
 O Anatomia 3D tem como objetivo combinar renderização 3D em tempo real, dados anatômicos estruturados e uma API REST para transformar o navegador em um atlas humano interativo.
@@ -419,6 +423,16 @@ npm run build
 ```
 
 O comando `npm test` executa somente os testes Vitest do código-fonte; os testes Playwright são executados separadamente.
+
+### Integração Contínua (GitHub Actions)
+
+A cada `push` e `pull request` para `main`, três pipelines executam os gates de qualidade (status nos badges no topo deste arquivo):
+
+| Workflow | Verificações |
+| --- | --- |
+| [frontend.yml](.github/workflows/frontend.yml) | ESLint, typecheck + build (Vite), testes Vitest e validação dos catálogos (V2 e legado) |
+| [e2e.yml](.github/workflows/e2e.yml) | Testes Playwright no Chromium + SwiftShader contra o Vite dev server (acionáveis manualmente via `workflow_dispatch`) |
+| [backend.yml](.github/workflows/backend.yml) | Testes do backend com `./mvnw test` (Spring Boot + PostgreSQL via Testcontainers) |
 
 ### Testes de Navegador
 
