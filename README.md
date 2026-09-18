@@ -24,6 +24,7 @@ O Anatomia 3D é desenvolvido em etapas: após o **Milestone 01 (First 3D Viewer
 
 - [Visão Geral](#visão-geral)
 - [Funcionalidades e Escopo](#funcionalidades-e-escopo)
+- [Capturas](#capturas)
 - [Tecnologias](#tecnologias)
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação e Execução](#instalação-e-execução)
@@ -89,6 +90,22 @@ Como projeto de portfólio, a evolução prevista demonstrará integração entr
 ### Fora do MVP
 
 Diagnóstico médico, análise de exames, prontuários, autenticação obrigatória, aplicativos nativos, IA generativa, quizzes, gamificação, acompanhamento de alunos, realidade virtual e realidade aumentada não fazem parte da primeira versão.
+
+## Capturas
+
+Frames reais do viewer (renderer SwiftShader), não mockups. As capturas refletem a versão atual do V2 "Human Atlas" em desktop 1440×900 e mobile 390×844.
+
+| Funcionalidade | Captura |
+| --- | --- |
+| **Visualização principal** — corpo completo em semivista ¾, painel de camadas com os 15 sistemas, presets **Todos/Esqueleto/Órgãos** e resumo de peças visíveis | ![Visualização principal](docs/screenshots/01-visualizacao-principal.png) |
+| **Preset Esqueleto** — filtro por sistema isola apenas as 296 estruturas do esqueleto | ![Preset Esqueleto](docs/screenshots/02-preset-esqueleto.png) |
+| **Busca por conceito** — sugestões ao digitar "coração" (3.432 conceitos e 2.234 estruturas consultados em pt-BR; atalho `/`) | ![Busca por conceito](docs/screenshots/03-busca-conceito.png) |
+| **Detalhe e isolamento** — seleção do conceito abre o sheet com ID FMA, sistema e contagem de peças, com enquadramento automático | ![Detalhe e isolamento](docs/screenshots/04-detalhe-isolamento.png) |
+| **Explosão radial** — slider em 60% (fase `ESTRUTURAS SEPARADAS`) agrupa as peças por sistema em torno do corpo | ![Explosão radial](docs/screenshots/05-explosao-radial.png) |
+| **Inventário anatômico** — slider em 100% (fase `INVENTÁRIO ANATÔMICO`) organiza as peças visíveis em grade com rótulos e câmera automática | ![Inventário anatômico](docs/screenshots/06-inventario-anatomico.png) |
+| **Responsividade** — mesmo atlas adaptado para telas estreitas (390×844), com controles recolhidos | ![Responsividade mobile](docs/screenshots/07-responsivo-mobile.png) |
+
+As capturas podem ser regeneradas com Playwright (Chromium/SwiftShader) contra o viewer real; veja [Testes e Qualidade](#testes-e-qualidade).
 
 ## Tecnologias
 
