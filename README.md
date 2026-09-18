@@ -426,7 +426,7 @@ O navegador de teste usa SwiftShader para oferecer WebGL por software. Por ser m
 | Renderização | E2E de carregamento do atlas (chunks) e detecção de pixels visíveis no canvas |
 | Interação | E2E de zoom, mudança de vistas anatômicas, enquadramento e gesto de arrasto no canvas |
 | Busca E2E | E2E de busca por conceito (ex.: coração) → detalhe com FMA → isolar → limpar → `Esc` |
-| Sistemas e explosão | E2E dos presets/contagens, legendas de cena, ocultar tudo e transição radial → inventário |
+| Sistemas e explosão | E2E dos presets/contagens, legendas de cena, ocultar tudo, transição radial → inventário e manutenção das peças visíveis ao explodir/mover a câmera |
 | Experiência | E2E de atalhos de teclado (vistas ¾/F/S/B, `/`, restore e `Esc`) e estado inicial das vistas |
 | Interface | E2E de abertura/fechamento do diálogo de créditos |
 | Responsividade | Capturas em 1440×900 e 390×844, limites da silhueta e ausência de overflow horizontal |
@@ -517,7 +517,7 @@ Use HTTPS em produção. Backend, banco e CORS já têm configuração Docker Co
 | **Catálogo V2** | Estruturas e conceitos pt-BR derivados (`catalog/v2`), seeds V6–V8 | Entregue |
 | **Renderer batched** | Three.js puro, 1 draw call/sistema, picking por `partIndex`, DataTextures | Entregue |
 | **UI Atlas** | Overlay studio: camadas, busca por conceito, explosão, vistas, atalhos e detalhe | Entregue |
-| **Testes V2** | 25 testes unitários + 5 E2E (Vitest + Playwright/SwiftShader) | Entregue |
+| **Testes V2** | 25 testes unitários + 6 E2E (Vitest + Playwright/SwiftShader) | Entregue |
 | Curadoria incremental V2 | Revisão dos nomes derivados por sistema | Em evolução |
 | Otimização e qualidade | Profiling, acessibilidade, matrix de navegadores | Em evolução |
 | Infraestrutura e deploy | Deploy completo e observabilidade | Planejado |

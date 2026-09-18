@@ -83,6 +83,14 @@ gera o GLB, o mapa `assets/z-anatomy-map.json` e atualiza o inventario de
 licencas com checksum e metricas. Todos os conceitos e acoes da exclusao estao
 documentados em `assets/z-anatomy-excluded.json`.
 
+## Codigo do Projeto
+
+O codigo-fonte do repositorio (scripts, frontend, backend e documentacao
+tecnica) e distribuido sob a licenca MIT, conforme [LICENSE](../LICENSE).
+As licencas CC BY 4.0 / CC BY-SA 4.0 aqui referidas aplicam-se somente aos
+assets 3D incorporados, nunca ao codigo do projeto; uma escolha de licenca
+para o codigo nunca e inferida automaticamente.
+
 ## Outros Recursos
 
 Fontes DM Sans e Manrope via Fontsource, com licencas OFL incluidas nos pacotes.
