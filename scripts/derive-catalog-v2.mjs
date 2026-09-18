@@ -883,7 +883,7 @@ function patternTranslations(name) {
     };
     return `${HEAD_PT[head_rule[1]]} do ${HEAD_M[head_rule[3]]} ${SIDES_M[head_rule[2]]}`;
   }
-  const part_rule = /^((?:abdominal|clavicular|sternocostal|acromial|spinal|ascending|descending|transverse|oblique|straight|superior oblique|inferior oblique|vertical intermediate) part) of (left|right) (.*)$/.exec(n);
+  const part_rule = /^((?:abdominal|clavicular|sternocostal|acromial|spinal|ascending|descending|transverse|oblique|straight|superior oblique|inferior oblique|vertical intermediate)) part of (left|right) (.*)$/.exec(n);
   const PART_M = {
     'pectoralis major': 'peitoral maior', deltoid: 'deltoide', trapezius: 'trapézio',
     cricothyroid: 'cricotireóideo', 'longus colli': 'músculo longo do pescoço',
@@ -1092,6 +1092,9 @@ function applyCurated(entry) {
 
 // ---- Montagem ----
 
+const INVALID_MARKERS = ['undefined', '[object Object]'];
+const cleanPt = (value) => (value && INVALID_MARKERS.some((marker) => value.includes(marker)) ? null : value);
+
 function buildStructures() {
   const fjToConcepts = new Map();
   for (const c of systemMap.concepts) {
@@ -1105,7 +1108,7 @@ function buildStructures() {
     const conceptNames = (item.sourceConcepts ?? []).map((c) => c.name);
     const best = bestName(conceptNames);
     const sourceName = item.name || best || '';
-    const pt = sourceName ? derivePt(sourceName) : null;
+    const pt = sourceName ? cleanPt(derivePt(sourceName)) : null;
     const system = systemByCode.get(item.system);
     const name = pt || sourceName || '(sem nome derivado)';
     const entry = {
@@ -1133,7 +1136,7 @@ function buildStructures() {
 function buildConcepts() {
   const systemOfFj = new Map(fullBodyMap.map((p) => [p.sourceId, p.system]));
   return systemMap.concepts.map((c) => {
-    const pt = derivePt(c.name);
+    const pt = cleanPt(derivePt(c.name));
     const systems = new Set(c.elements.map((fj) => systemOfFj.get(fj)).filter(Boolean));
     return {
       id: c.id,

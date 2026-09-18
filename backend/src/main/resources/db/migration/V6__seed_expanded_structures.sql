@@ -9941,41 +9941,41 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-HEAD')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0121 FJ1446 -> undefined do peitoral maior direito
+-- SYS-MUS-0121 FJ1446 -> Parte abdominal do peitoral maior direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0121', 'FJ1446', 'undefined do peitoral maior direito', 'undefined do peitoral maior direito',
+    'SYS-MUS-0121', 'FJ1446', 'Parte abdominal do peitoral maior direito', 'parte abdominal do peitoral maior direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-UPPER-LIMB')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0122 FJ1446M -> undefined do peitoral maior esquerdo
+-- SYS-MUS-0122 FJ1446M -> Parte abdominal do peitoral maior esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0122', 'FJ1446M', 'undefined do peitoral maior esquerdo', 'undefined do peitoral maior esquerdo',
+    'SYS-MUS-0122', 'FJ1446M', 'Parte abdominal do peitoral maior esquerdo', 'parte abdominal do peitoral maior esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-UPPER-LIMB')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0123 FJ1447 -> undefined do peitoral maior direito
+-- SYS-MUS-0123 FJ1447 -> Parte clavicular do peitoral maior direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0123', 'FJ1447', 'undefined do peitoral maior direito', 'undefined do peitoral maior direito',
+    'SYS-MUS-0123', 'FJ1447', 'Parte clavicular do peitoral maior direito', 'parte clavicular do peitoral maior direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-HEAD')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0124 FJ1447M -> undefined do peitoral maior esquerdo
+-- SYS-MUS-0124 FJ1447M -> Parte clavicular do peitoral maior esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0124', 'FJ1447M', 'undefined do peitoral maior esquerdo', 'undefined do peitoral maior esquerdo',
+    'SYS-MUS-0124', 'FJ1447M', 'Parte clavicular do peitoral maior esquerdo', 'parte clavicular do peitoral maior esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-HEAD')
@@ -10241,21 +10241,21 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0151 FJ1464 -> undefined do peitoral maior direito
+-- SYS-MUS-0151 FJ1464 -> Parte esternocostal do peitoral maior direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0151', 'FJ1464', 'undefined do peitoral maior direito', 'undefined do peitoral maior direito',
+    'SYS-MUS-0151', 'FJ1464', 'Parte esternocostal do peitoral maior direito', 'parte esternocostal do peitoral maior direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-UPPER-LIMB')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0152 FJ1464M -> undefined do peitoral maior esquerdo
+-- SYS-MUS-0152 FJ1464M -> Parte esternocostal do peitoral maior esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0152', 'FJ1464M', 'undefined do peitoral maior esquerdo', 'undefined do peitoral maior esquerdo',
+    'SYS-MUS-0152', 'FJ1464M', 'Parte esternocostal do peitoral maior esquerdo', 'parte esternocostal do peitoral maior esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-UPPER-LIMB')
@@ -10281,41 +10281,41 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-UPPER-LIMB')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0155 FJ1467 -> undefined do deltoide direito
+-- SYS-MUS-0155 FJ1467 -> Parte acromial do deltoide direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0155', 'FJ1467', 'undefined do deltoide direito', 'undefined do deltoide direito',
+    'SYS-MUS-0155', 'FJ1467', 'Parte acromial do deltoide direito', 'parte acromial do deltoide direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0156 FJ1467M -> undefined do deltoide esquerdo
+-- SYS-MUS-0156 FJ1467M -> Parte acromial do deltoide esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0156', 'FJ1467M', 'undefined do deltoide esquerdo', 'undefined do deltoide esquerdo',
+    'SYS-MUS-0156', 'FJ1467M', 'Parte acromial do deltoide esquerdo', 'parte acromial do deltoide esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0157 FJ1468 -> undefined do deltoide direito
+-- SYS-MUS-0157 FJ1468 -> Parte clavicular do deltoide direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0157', 'FJ1468', 'undefined do deltoide direito', 'undefined do deltoide direito',
+    'SYS-MUS-0157', 'FJ1468', 'Parte clavicular do deltoide direito', 'parte clavicular do deltoide direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0158 FJ1468M -> undefined do deltoide esquerdo
+-- SYS-MUS-0158 FJ1468M -> Parte clavicular do deltoide esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0158', 'FJ1468M', 'undefined do deltoide esquerdo', 'undefined do deltoide esquerdo',
+    'SYS-MUS-0158', 'FJ1468M', 'Parte clavicular do deltoide esquerdo', 'parte clavicular do deltoide esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
@@ -11141,21 +11141,21 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-HEAD')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0241 FJ1513 -> undefined do deltoide direito
+-- SYS-MUS-0241 FJ1513 -> Parte espinal do deltoide direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0241', 'FJ1513', 'undefined do deltoide direito', 'undefined do deltoide direito',
+    'SYS-MUS-0241', 'FJ1513', 'Parte espinal do deltoide direito', 'parte espinal do deltoide direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0242 FJ1513M -> undefined do deltoide esquerdo
+-- SYS-MUS-0242 FJ1513M -> Parte espinal do deltoide esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0242', 'FJ1513M', 'undefined do deltoide esquerdo', 'undefined do deltoide esquerdo',
+    'SYS-MUS-0242', 'FJ1513M', 'Parte espinal do deltoide esquerdo', 'parte espinal do deltoide esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
@@ -11261,41 +11261,41 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-UPPER-LIMB')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0253 FJ1520 -> undefined do trapézio direito
+-- SYS-MUS-0253 FJ1520 -> Parte ascendente do trapézio direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0253', 'FJ1520', 'undefined do trapézio direito', 'undefined do trapezio direito',
+    'SYS-MUS-0253', 'FJ1520', 'Parte ascendente do trapézio direito', 'parte ascendente do trapezio direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0254 FJ1520M -> undefined do trapézio esquerdo
+-- SYS-MUS-0254 FJ1520M -> Parte ascendente do trapézio esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0254', 'FJ1520M', 'undefined do trapézio esquerdo', 'undefined do trapezio esquerdo',
+    'SYS-MUS-0254', 'FJ1520M', 'Parte ascendente do trapézio esquerdo', 'parte ascendente do trapezio esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0255 FJ1521 -> undefined do trapézio direito
+-- SYS-MUS-0255 FJ1521 -> Parte descendente do trapézio direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0255', 'FJ1521', 'undefined do trapézio direito', 'undefined do trapezio direito',
+    'SYS-MUS-0255', 'FJ1521', 'Parte descendente do trapézio direito', 'parte descendente do trapezio direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0256 FJ1521M -> undefined do trapézio esquerdo
+-- SYS-MUS-0256 FJ1521M -> Parte descendente do trapézio esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0256', 'FJ1521M', 'undefined do trapézio esquerdo', 'undefined do trapezio esquerdo',
+    'SYS-MUS-0256', 'FJ1521M', 'Parte descendente do trapézio esquerdo', 'parte descendente do trapezio esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
@@ -11841,21 +11841,21 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0311 FJ1554 -> undefined do trapézio direito
+-- SYS-MUS-0311 FJ1554 -> Parte transversa do trapézio direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0311', 'FJ1554', 'undefined do trapézio direito', 'undefined do trapezio direito',
+    'SYS-MUS-0311', 'FJ1554', 'Parte transversa do trapézio direito', 'parte transversa do trapezio direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0312 FJ1554M -> undefined do trapézio esquerdo
+-- SYS-MUS-0312 FJ1554M -> Parte transversa do trapézio esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0312', 'FJ1554M', 'undefined do trapézio esquerdo', 'undefined do trapezio esquerdo',
+    'SYS-MUS-0312', 'FJ1554M', 'Parte transversa do trapézio esquerdo', 'parte transversa do trapezio esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
@@ -11881,11 +11881,11 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-NECK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0315 FJ1557 -> undefined do músculo longo do pescoço esquerdo
+-- SYS-MUS-0315 FJ1557 -> Parte oblíqua inferior do músculo longo do pescoço esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0315', 'FJ1557', 'undefined do músculo longo do pescoço esquerdo', 'undefined do musculo longo do pescoco esquerdo',
+    'SYS-MUS-0315', 'FJ1557', 'Parte oblíqua inferior do músculo longo do pescoço esquerdo', 'parte obliqua inferior do musculo longo do pescoco esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
@@ -12301,21 +12301,21 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-NECK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0357 FJ1600 -> undefined do músculo longo do pescoço esquerdo
+-- SYS-MUS-0357 FJ1600 -> Parte oblíqua superior do músculo longo do pescoço esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0357', 'FJ1600', 'undefined do músculo longo do pescoço esquerdo', 'undefined do musculo longo do pescoco esquerdo',
+    'SYS-MUS-0357', 'FJ1600', 'Parte oblíqua superior do músculo longo do pescoço esquerdo', 'parte obliqua superior do musculo longo do pescoco esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0358 FJ1601 -> undefined do músculo longo do pescoço esquerdo
+-- SYS-MUS-0358 FJ1601 -> Parte vertical intermediária do músculo longo do pescoço esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0358', 'FJ1601', 'undefined do músculo longo do pescoço esquerdo', 'undefined do musculo longo do pescoco esquerdo',
+    'SYS-MUS-0358', 'FJ1601', 'Parte vertical intermediária do músculo longo do pescoço esquerdo', 'parte vertical intermediaria do musculo longo do pescoco esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-TRUNK')
@@ -12591,11 +12591,11 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-NECK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0386 FJ2781 -> undefined do cricotireóideo esquerdo
+-- SYS-MUS-0386 FJ2781 -> Parte oblíqua do cricotireóideo esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0386', 'FJ2781', 'undefined do cricotireóideo esquerdo', 'undefined do cricotireoideo esquerdo',
+    'SYS-MUS-0386', 'FJ2781', 'Parte oblíqua do cricotireóideo esquerdo', 'parte obliqua do cricotireoideo esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-NECK')
@@ -12611,11 +12611,11 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-NECK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0388 FJ2783 -> undefined do cricotireóideo esquerdo
+-- SYS-MUS-0388 FJ2783 -> Parte reta do cricotireóideo esquerdo
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0388', 'FJ2783', 'undefined do cricotireóideo esquerdo', 'undefined do cricotireoideo esquerdo',
+    'SYS-MUS-0388', 'FJ2783', 'Parte reta do cricotireóideo esquerdo', 'parte reta do cricotireoideo esquerdo',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-NECK')
@@ -12681,11 +12681,11 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-NECK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0395 FJ2799 -> undefined do cricotireóideo direito
+-- SYS-MUS-0395 FJ2799 -> Parte oblíqua do cricotireóideo direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0395', 'FJ2799', 'undefined do cricotireóideo direito', 'undefined do cricotireoideo direito',
+    'SYS-MUS-0395', 'FJ2799', 'Parte oblíqua do cricotireóideo direito', 'parte obliqua do cricotireoideo direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-NECK')
@@ -12701,11 +12701,11 @@ INSERT INTO anatomical_structure (
     (SELECT id FROM anatomical_region WHERE code = 'REG-NECK')
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- SYS-MUS-0397 FJ2801 -> undefined do cricotireóideo direito
+-- SYS-MUS-0397 FJ2801 -> Parte reta do cricotireóideo direito
 INSERT INTO anatomical_structure (
     external_code, source_id, name, normalized_name, description, function_description,
     active, published, system_id, region_id) VALUES (
-    'SYS-MUS-0397', 'FJ2801', 'undefined do cricotireóideo direito', 'undefined do cricotireoideo direito',
+    'SYS-MUS-0397', 'FJ2801', 'Parte reta do cricotireóideo direito', 'parte reta do cricotireoideo direito',
     'Estrutura do sistema Muscular — musculatura esquelética responsável pelo movimento.', NULL, true, false,
     (SELECT id FROM anatomical_system WHERE code = 'SYS-MUS'),
     (SELECT id FROM anatomical_region WHERE code = 'REG-NECK')

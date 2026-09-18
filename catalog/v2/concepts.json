@@ -23797,8 +23797,8 @@
   {
     "id": "FMA33581",
     "name": "ascending part of right trapezius",
-    "namePt": "undefined do trapézio direito",
-    "normalizedNamePt": "undefined do trapezio direito",
+    "namePt": "Parte ascendente do trapézio direito",
+    "normalizedNamePt": "parte ascendente do trapezio direito",
     "nameDerived": true,
     "elements": [
       "FJ1520"
@@ -23811,8 +23811,8 @@
   {
     "id": "FMA33583",
     "name": "ascending part of left trapezius",
-    "namePt": "undefined do trapézio esquerdo",
-    "normalizedNamePt": "undefined do trapezio esquerdo",
+    "namePt": "Parte ascendente do trapézio esquerdo",
+    "normalizedNamePt": "parte ascendente do trapezio esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1520M"
@@ -23825,8 +23825,8 @@
   {
     "id": "FMA33584",
     "name": "transverse part of right trapezius",
-    "namePt": "undefined do trapézio direito",
-    "normalizedNamePt": "undefined do trapezio direito",
+    "namePt": "Parte transversa do trapézio direito",
+    "normalizedNamePt": "parte transversa do trapezio direito",
     "nameDerived": true,
     "elements": [
       "FJ1554"
@@ -23839,8 +23839,8 @@
   {
     "id": "FMA33585",
     "name": "transverse part of left trapezius",
-    "namePt": "undefined do trapézio esquerdo",
-    "normalizedNamePt": "undefined do trapezio esquerdo",
+    "namePt": "Parte transversa do trapézio esquerdo",
+    "normalizedNamePt": "parte transversa do trapezio esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1554M"
@@ -23853,8 +23853,8 @@
   {
     "id": "FMA33586",
     "name": "descending part of right trapezius",
-    "namePt": "undefined do trapézio direito",
-    "normalizedNamePt": "undefined do trapezio direito",
+    "namePt": "Parte descendente do trapézio direito",
+    "normalizedNamePt": "parte descendente do trapezio direito",
     "nameDerived": true,
     "elements": [
       "FJ1521"
@@ -23867,8 +23867,8 @@
   {
     "id": "FMA33587",
     "name": "descending part of left trapezius",
-    "namePt": "undefined do trapézio esquerdo",
-    "normalizedNamePt": "undefined do trapezio esquerdo",
+    "namePt": "Parte descendente do trapézio esquerdo",
+    "normalizedNamePt": "parte descendente do trapezio esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1521M"
@@ -24036,8 +24036,8 @@
   {
     "id": "FMA34680",
     "name": "clavicular part of right deltoid",
-    "namePt": "undefined do deltoide direito",
-    "normalizedNamePt": "undefined do deltoide direito",
+    "namePt": "Parte clavicular do deltoide direito",
+    "normalizedNamePt": "parte clavicular do deltoide direito",
     "nameDerived": true,
     "elements": [
       "FJ1468"
@@ -24050,8 +24050,8 @@
   {
     "id": "FMA34681",
     "name": "clavicular part of left deltoid",
-    "namePt": "undefined do deltoide esquerdo",
-    "normalizedNamePt": "undefined do deltoide esquerdo",
+    "namePt": "Parte clavicular do deltoide esquerdo",
+    "normalizedNamePt": "parte clavicular do deltoide esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1468M"
@@ -24064,8 +24064,8 @@
   {
     "id": "FMA34682",
     "name": "acromial part of right deltoid",
-    "namePt": "undefined do deltoide direito",
-    "normalizedNamePt": "undefined do deltoide direito",
+    "namePt": "Parte acromial do deltoide direito",
+    "normalizedNamePt": "parte acromial do deltoide direito",
     "nameDerived": true,
     "elements": [
       "FJ1467"
@@ -24078,8 +24078,8 @@
   {
     "id": "FMA34683",
     "name": "acromial part of left deltoid",
-    "namePt": "undefined do deltoide esquerdo",
-    "normalizedNamePt": "undefined do deltoide esquerdo",
+    "namePt": "Parte acromial do deltoide esquerdo",
+    "normalizedNamePt": "parte acromial do deltoide esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1467M"
@@ -24092,8 +24092,8 @@
   {
     "id": "FMA34684",
     "name": "spinal part of right deltoid",
-    "namePt": "undefined do deltoide direito",
-    "normalizedNamePt": "undefined do deltoide direito",
+    "namePt": "Parte espinal do deltoide direito",
+    "normalizedNamePt": "parte espinal do deltoide direito",
     "nameDerived": true,
     "elements": [
       "FJ1513"
@@ -24106,8 +24106,8 @@
   {
     "id": "FMA34685",
     "name": "spinal part of left deltoid",
-    "namePt": "undefined do deltoide esquerdo",
-    "normalizedNamePt": "undefined do deltoide esquerdo",
+    "namePt": "Parte espinal do deltoide esquerdo",
+    "normalizedNamePt": "parte espinal do deltoide esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1513M"
@@ -24152,8 +24152,8 @@
   {
     "id": "FMA34690",
     "name": "clavicular part of right pectoralis major",
-    "namePt": "undefined do peitoral maior direito",
-    "normalizedNamePt": "undefined do peitoral maior direito",
+    "namePt": "Parte clavicular do peitoral maior direito",
+    "normalizedNamePt": "parte clavicular do peitoral maior direito",
     "nameDerived": true,
     "elements": [
       "FJ1447"
@@ -24166,8 +24166,8 @@
   {
     "id": "FMA34691",
     "name": "clavicular part of left pectoralis major",
-    "namePt": "undefined do peitoral maior esquerdo",
-    "normalizedNamePt": "undefined do peitoral maior esquerdo",
+    "namePt": "Parte clavicular do peitoral maior esquerdo",
+    "normalizedNamePt": "parte clavicular do peitoral maior esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1447M"
@@ -31496,8 +31496,8 @@
   {
     "id": "FMA45874",
     "name": "abdominal part of right pectoralis major",
-    "namePt": "undefined do peitoral maior direito",
-    "normalizedNamePt": "undefined do peitoral maior direito",
+    "namePt": "Parte abdominal do peitoral maior direito",
+    "normalizedNamePt": "parte abdominal do peitoral maior direito",
     "nameDerived": true,
     "elements": [
       "FJ1446"
@@ -31510,8 +31510,8 @@
   {
     "id": "FMA45875",
     "name": "abdominal part of left pectoralis major",
-    "namePt": "undefined do peitoral maior esquerdo",
-    "normalizedNamePt": "undefined do peitoral maior esquerdo",
+    "namePt": "Parte abdominal do peitoral maior esquerdo",
+    "normalizedNamePt": "parte abdominal do peitoral maior esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1446M"
@@ -32110,8 +32110,8 @@
   {
     "id": "FMA46284",
     "name": "superior oblique part of left longus colli",
-    "namePt": "undefined do músculo longo do pescoço esquerdo",
-    "normalizedNamePt": "undefined do musculo longo do pescoco esquerdo",
+    "namePt": "Parte oblíqua superior do músculo longo do pescoço esquerdo",
+    "normalizedNamePt": "parte obliqua superior do musculo longo do pescoco esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1600"
@@ -32124,8 +32124,8 @@
   {
     "id": "FMA46286",
     "name": "vertical intermediate part of left longus colli",
-    "namePt": "undefined do músculo longo do pescoço esquerdo",
-    "normalizedNamePt": "undefined do musculo longo do pescoco esquerdo",
+    "namePt": "Parte vertical intermediária do músculo longo do pescoço esquerdo",
+    "normalizedNamePt": "parte vertical intermediaria do musculo longo do pescoco esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1601"
@@ -32138,8 +32138,8 @@
   {
     "id": "FMA46288",
     "name": "inferior oblique part of left longus colli",
-    "namePt": "undefined do músculo longo do pescoço esquerdo",
-    "normalizedNamePt": "undefined do musculo longo do pescoco esquerdo",
+    "namePt": "Parte oblíqua inferior do músculo longo do pescoço esquerdo",
+    "normalizedNamePt": "parte obliqua inferior do musculo longo do pescoco esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1557"
@@ -32995,8 +32995,8 @@
   {
     "id": "FMA46611",
     "name": "straight part of right cricothyroid",
-    "namePt": "undefined do cricotireóideo direito",
-    "normalizedNamePt": "undefined do cricotireoideo direito",
+    "namePt": "Parte reta do cricotireóideo direito",
+    "normalizedNamePt": "parte reta do cricotireoideo direito",
     "nameDerived": true,
     "elements": [
       "FJ2801"
@@ -33009,8 +33009,8 @@
   {
     "id": "FMA46612",
     "name": "straight part of left cricothyroid",
-    "namePt": "undefined do cricotireóideo esquerdo",
-    "normalizedNamePt": "undefined do cricotireoideo esquerdo",
+    "namePt": "Parte reta do cricotireóideo esquerdo",
+    "normalizedNamePt": "parte reta do cricotireoideo esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ2783"
@@ -33023,8 +33023,8 @@
   {
     "id": "FMA46613",
     "name": "oblique part of right cricothyroid",
-    "namePt": "undefined do cricotireóideo direito",
-    "normalizedNamePt": "undefined do cricotireoideo direito",
+    "namePt": "Parte oblíqua do cricotireóideo direito",
+    "normalizedNamePt": "parte obliqua do cricotireoideo direito",
     "nameDerived": true,
     "elements": [
       "FJ2799"
@@ -33037,8 +33037,8 @@
   {
     "id": "FMA46614",
     "name": "oblique part of left cricothyroid",
-    "namePt": "undefined do cricotireóideo esquerdo",
-    "normalizedNamePt": "undefined do cricotireoideo esquerdo",
+    "namePt": "Parte oblíqua do cricotireóideo esquerdo",
+    "normalizedNamePt": "parte obliqua do cricotireoideo esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ2781"
@@ -80065,8 +80065,8 @@
   {
     "id": "FMA79979",
     "name": "sternocostal part of right pectoralis major",
-    "namePt": "undefined do peitoral maior direito",
-    "normalizedNamePt": "undefined do peitoral maior direito",
+    "namePt": "Parte esternocostal do peitoral maior direito",
+    "normalizedNamePt": "parte esternocostal do peitoral maior direito",
     "nameDerived": true,
     "elements": [
       "FJ1464"
@@ -80079,8 +80079,8 @@
   {
     "id": "FMA79980",
     "name": "sternocostal part of left pectoralis major",
-    "namePt": "undefined do peitoral maior esquerdo",
-    "normalizedNamePt": "undefined do peitoral maior esquerdo",
+    "namePt": "Parte esternocostal do peitoral maior esquerdo",
+    "normalizedNamePt": "parte esternocostal do peitoral maior esquerdo",
     "nameDerived": true,
     "elements": [
       "FJ1464M"

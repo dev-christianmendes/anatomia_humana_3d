@@ -6979,37 +6979,37 @@ SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA33531' AND s.source_id IN ('FJ1459', 'FJ1459M', 'FJ1500', 'FJ1500M', 'FJ1504', 'FJ1504M', 'FJ1506', 'FJ1506M', 'FJ1507', 'FJ1507M', 'FJ1508', 'FJ1508M', 'FJ1532', 'FJ1532M', 'FJ1536', 'FJ1536M', 'FJ1537', 'FJ1537M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA33581 (undefined do trapézio direito) -> SYS-MUS-0253, SYS-MUS-0254
+-- FMA33581 (Parte ascendente do trapézio direito) -> SYS-MUS-0253, SYS-MUS-0254
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA33581' AND s.source_id IN ('FJ1520', 'FJ1520M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA33583 (undefined do trapézio esquerdo) -> SYS-MUS-0254
+-- FMA33583 (Parte ascendente do trapézio esquerdo) -> SYS-MUS-0254
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA33583' AND s.source_id IN ('FJ1520M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA33584 (undefined do trapézio direito) -> SYS-MUS-0311, SYS-MUS-0312
+-- FMA33584 (Parte transversa do trapézio direito) -> SYS-MUS-0311, SYS-MUS-0312
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA33584' AND s.source_id IN ('FJ1554', 'FJ1554M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA33585 (undefined do trapézio esquerdo) -> SYS-MUS-0312
+-- FMA33585 (Parte transversa do trapézio esquerdo) -> SYS-MUS-0312
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA33585' AND s.source_id IN ('FJ1554M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA33586 (undefined do trapézio direito) -> SYS-MUS-0255, SYS-MUS-0256
+-- FMA33586 (Parte descendente do trapézio direito) -> SYS-MUS-0255, SYS-MUS-0256
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA33586' AND s.source_id IN ('FJ1521', 'FJ1521M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA33587 (undefined do trapézio esquerdo) -> SYS-MUS-0256
+-- FMA33587 (Parte descendente do trapézio esquerdo) -> SYS-MUS-0256
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA33587' AND s.source_id IN ('FJ1521M')
@@ -7069,37 +7069,37 @@ SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA34679' AND s.source_id IN ('FJ1513', 'FJ1513M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA34680 (undefined do deltoide direito) -> SYS-MUS-0157, SYS-MUS-0158
+-- FMA34680 (Parte clavicular do deltoide direito) -> SYS-MUS-0157, SYS-MUS-0158
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA34680' AND s.source_id IN ('FJ1468', 'FJ1468M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA34681 (undefined do deltoide esquerdo) -> SYS-MUS-0158
+-- FMA34681 (Parte clavicular do deltoide esquerdo) -> SYS-MUS-0158
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA34681' AND s.source_id IN ('FJ1468M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA34682 (undefined do deltoide direito) -> SYS-MUS-0155, SYS-MUS-0156
+-- FMA34682 (Parte acromial do deltoide direito) -> SYS-MUS-0155, SYS-MUS-0156
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA34682' AND s.source_id IN ('FJ1467', 'FJ1467M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA34683 (undefined do deltoide esquerdo) -> SYS-MUS-0156
+-- FMA34683 (Parte acromial do deltoide esquerdo) -> SYS-MUS-0156
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA34683' AND s.source_id IN ('FJ1467M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA34684 (undefined do deltoide direito) -> SYS-MUS-0241, SYS-MUS-0242
+-- FMA34684 (Parte espinal do deltoide direito) -> SYS-MUS-0241, SYS-MUS-0242
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA34684' AND s.source_id IN ('FJ1513', 'FJ1513M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA34685 (undefined do deltoide esquerdo) -> SYS-MUS-0242
+-- FMA34685 (Parte espinal do deltoide esquerdo) -> SYS-MUS-0242
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA34685' AND s.source_id IN ('FJ1513M')
@@ -7117,13 +7117,13 @@ SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA34687' AND s.source_id IN ('FJ1447', 'FJ1447M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA34690 (undefined do peitoral maior direito) -> SYS-MUS-0123, SYS-MUS-0124
+-- FMA34690 (Parte clavicular do peitoral maior direito) -> SYS-MUS-0123, SYS-MUS-0124
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA34690' AND s.source_id IN ('FJ1447', 'FJ1447M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA34691 (undefined do peitoral maior esquerdo) -> SYS-MUS-0124
+-- FMA34691 (Parte clavicular do peitoral maior esquerdo) -> SYS-MUS-0124
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA34691' AND s.source_id IN ('FJ1447M')
@@ -9337,13 +9337,13 @@ SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA45859' AND s.source_id IN ('FJ1453M', 'FJ2544')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA45874 (undefined do peitoral maior direito) -> SYS-MUS-0121, SYS-MUS-0122
+-- FMA45874 (Parte abdominal do peitoral maior direito) -> SYS-MUS-0121, SYS-MUS-0122
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA45874' AND s.source_id IN ('FJ1446', 'FJ1446M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA45875 (undefined do peitoral maior esquerdo) -> SYS-MUS-0122
+-- FMA45875 (Parte abdominal do peitoral maior esquerdo) -> SYS-MUS-0122
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA45875' AND s.source_id IN ('FJ1446M')
@@ -9589,19 +9589,19 @@ SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA46282' AND s.source_id IN ('FJ1601')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA46284 (undefined do músculo longo do pescoço esquerdo) -> SYS-MUS-0357
+-- FMA46284 (Parte oblíqua superior do músculo longo do pescoço esquerdo) -> SYS-MUS-0357
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA46284' AND s.source_id IN ('FJ1600')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA46286 (undefined do músculo longo do pescoço esquerdo) -> SYS-MUS-0358
+-- FMA46286 (Parte vertical intermediária do músculo longo do pescoço esquerdo) -> SYS-MUS-0358
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA46286' AND s.source_id IN ('FJ1601')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA46288 (undefined do músculo longo do pescoço esquerdo) -> SYS-MUS-0315
+-- FMA46288 (Parte oblíqua inferior do músculo longo do pescoço esquerdo) -> SYS-MUS-0315
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA46288' AND s.source_id IN ('FJ1557')
@@ -9919,25 +9919,25 @@ SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA46610' AND s.source_id IN ('FJ2781', 'FJ2799')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA46611 (undefined do cricotireóideo direito) -> SYS-MUS-0397
+-- FMA46611 (Parte reta do cricotireóideo direito) -> SYS-MUS-0397
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA46611' AND s.source_id IN ('FJ2801')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA46612 (undefined do cricotireóideo esquerdo) -> SYS-MUS-0388
+-- FMA46612 (Parte reta do cricotireóideo esquerdo) -> SYS-MUS-0388
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA46612' AND s.source_id IN ('FJ2783')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA46613 (undefined do cricotireóideo direito) -> SYS-MUS-0395
+-- FMA46613 (Parte oblíqua do cricotireóideo direito) -> SYS-MUS-0395
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA46613' AND s.source_id IN ('FJ2799')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA46614 (undefined do cricotireóideo esquerdo) -> SYS-MUS-0386
+-- FMA46614 (Parte oblíqua do cricotireóideo esquerdo) -> SYS-MUS-0386
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA46614' AND s.source_id IN ('FJ2781')
@@ -18721,13 +18721,13 @@ SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA79876' AND s.source_id IN ('FJ1738', 'FJ1762', 'FJ1769', 'FJ1770', 'FJ1775', 'FJ1779', 'FJ1810', 'FJ1817', 'FJ1822', 'FJ1826', 'FJ1831')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA79979 (undefined do peitoral maior direito) -> SYS-MUS-0151, SYS-MUS-0152
+-- FMA79979 (Parte esternocostal do peitoral maior direito) -> SYS-MUS-0151, SYS-MUS-0152
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA79979' AND s.source_id IN ('FJ1464', 'FJ1464M')
 ON CONFLICT ON CONSTRAINT concept_structure_pkey DO NOTHING;
 
--- FMA79980 (undefined do peitoral maior esquerdo) -> SYS-MUS-0152
+-- FMA79980 (Parte esternocostal do peitoral maior esquerdo) -> SYS-MUS-0152
 INSERT INTO concept_structure (concept_id, structure_id)
 SELECT c.id, s.id FROM anatomical_concept c, anatomical_structure s
 WHERE c.external_code = 'FMA79980' AND s.source_id IN ('FJ1464M')

@@ -14951,8 +14951,8 @@
   {
     "structureId": "SYS-MUS-0121",
     "sourceId": "FJ1446",
-    "name": "undefined do peitoral maior direito",
-    "normalizedName": "undefined do peitoral maior direito",
+    "name": "Parte abdominal do peitoral maior direito",
+    "normalizedName": "parte abdominal do peitoral maior direito",
     "system": "SYS-MUS",
     "region": "REG-UPPER-LIMB",
     "sourceConcepts": [
@@ -14994,8 +14994,8 @@
   {
     "structureId": "SYS-MUS-0122",
     "sourceId": "FJ1446M",
-    "name": "undefined do peitoral maior esquerdo",
-    "normalizedName": "undefined do peitoral maior esquerdo",
+    "name": "Parte abdominal do peitoral maior esquerdo",
+    "normalizedName": "parte abdominal do peitoral maior esquerdo",
     "system": "SYS-MUS",
     "region": "REG-UPPER-LIMB",
     "sourceConcepts": [
@@ -15037,8 +15037,8 @@
   {
     "structureId": "SYS-MUS-0123",
     "sourceId": "FJ1447",
-    "name": "undefined do peitoral maior direito",
-    "normalizedName": "undefined do peitoral maior direito",
+    "name": "Parte clavicular do peitoral maior direito",
+    "normalizedName": "parte clavicular do peitoral maior direito",
     "system": "SYS-MUS",
     "region": "REG-HEAD",
     "sourceConcepts": [
@@ -15065,8 +15065,8 @@
   {
     "structureId": "SYS-MUS-0124",
     "sourceId": "FJ1447M",
-    "name": "undefined do peitoral maior esquerdo",
-    "normalizedName": "undefined do peitoral maior esquerdo",
+    "name": "Parte clavicular do peitoral maior esquerdo",
+    "normalizedName": "parte clavicular do peitoral maior esquerdo",
     "system": "SYS-MUS",
     "region": "REG-HEAD",
     "sourceConcepts": [
@@ -15982,8 +15982,8 @@
   {
     "structureId": "SYS-MUS-0151",
     "sourceId": "FJ1464",
-    "name": "undefined do peitoral maior direito",
-    "normalizedName": "undefined do peitoral maior direito",
+    "name": "Parte esternocostal do peitoral maior direito",
+    "normalizedName": "parte esternocostal do peitoral maior direito",
     "system": "SYS-MUS",
     "region": "REG-UPPER-LIMB",
     "sourceConcepts": [
@@ -16025,8 +16025,8 @@
   {
     "structureId": "SYS-MUS-0152",
     "sourceId": "FJ1464M",
-    "name": "undefined do peitoral maior esquerdo",
-    "normalizedName": "undefined do peitoral maior esquerdo",
+    "name": "Parte esternocostal do peitoral maior esquerdo",
+    "normalizedName": "parte esternocostal do peitoral maior esquerdo",
     "system": "SYS-MUS",
     "region": "REG-UPPER-LIMB",
     "sourceConcepts": [
@@ -16132,8 +16132,8 @@
   {
     "structureId": "SYS-MUS-0155",
     "sourceId": "FJ1467",
-    "name": "undefined do deltoide direito",
-    "normalizedName": "undefined do deltoide direito",
+    "name": "Parte acromial do deltoide direito",
+    "normalizedName": "parte acromial do deltoide direito",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -16160,8 +16160,8 @@
   {
     "structureId": "SYS-MUS-0156",
     "sourceId": "FJ1467M",
-    "name": "undefined do deltoide esquerdo",
-    "normalizedName": "undefined do deltoide esquerdo",
+    "name": "Parte acromial do deltoide esquerdo",
+    "normalizedName": "parte acromial do deltoide esquerdo",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -16188,8 +16188,8 @@
   {
     "structureId": "SYS-MUS-0157",
     "sourceId": "FJ1468",
-    "name": "undefined do deltoide direito",
-    "normalizedName": "undefined do deltoide direito",
+    "name": "Parte clavicular do deltoide direito",
+    "normalizedName": "parte clavicular do deltoide direito",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -16216,8 +16216,8 @@
   {
     "structureId": "SYS-MUS-0158",
     "sourceId": "FJ1468M",
-    "name": "undefined do deltoide esquerdo",
-    "normalizedName": "undefined do deltoide esquerdo",
+    "name": "Parte clavicular do deltoide esquerdo",
+    "normalizedName": "parte clavicular do deltoide esquerdo",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -18776,8 +18776,8 @@
   {
     "structureId": "SYS-MUS-0241",
     "sourceId": "FJ1513",
-    "name": "undefined do deltoide direito",
-    "normalizedName": "undefined do deltoide direito",
+    "name": "Parte espinal do deltoide direito",
+    "normalizedName": "parte espinal do deltoide direito",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -18804,8 +18804,8 @@
   {
     "structureId": "SYS-MUS-0242",
     "sourceId": "FJ1513M",
-    "name": "undefined do deltoide esquerdo",
-    "normalizedName": "undefined do deltoide esquerdo",
+    "name": "Parte espinal do deltoide esquerdo",
+    "normalizedName": "parte espinal do deltoide esquerdo",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -19120,8 +19120,8 @@
   {
     "structureId": "SYS-MUS-0253",
     "sourceId": "FJ1520",
-    "name": "undefined do trapézio direito",
-    "normalizedName": "undefined do trapezio direito",
+    "name": "Parte ascendente do trapézio direito",
+    "normalizedName": "parte ascendente do trapezio direito",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -19146,8 +19146,8 @@
   {
     "structureId": "SYS-MUS-0254",
     "sourceId": "FJ1520M",
-    "name": "undefined do trapézio esquerdo",
-    "normalizedName": "undefined do trapezio esquerdo",
+    "name": "Parte ascendente do trapézio esquerdo",
+    "normalizedName": "parte ascendente do trapezio esquerdo",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -19172,8 +19172,8 @@
   {
     "structureId": "SYS-MUS-0255",
     "sourceId": "FJ1521",
-    "name": "undefined do trapézio direito",
-    "normalizedName": "undefined do trapezio direito",
+    "name": "Parte descendente do trapézio direito",
+    "normalizedName": "parte descendente do trapezio direito",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -19198,8 +19198,8 @@
   {
     "structureId": "SYS-MUS-0256",
     "sourceId": "FJ1521M",
-    "name": "undefined do trapézio esquerdo",
-    "normalizedName": "undefined do trapezio esquerdo",
+    "name": "Parte descendente do trapézio esquerdo",
+    "normalizedName": "parte descendente do trapezio esquerdo",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -20852,8 +20852,8 @@
   {
     "structureId": "SYS-MUS-0311",
     "sourceId": "FJ1554",
-    "name": "undefined do trapézio direito",
-    "normalizedName": "undefined do trapezio direito",
+    "name": "Parte transversa do trapézio direito",
+    "normalizedName": "parte transversa do trapezio direito",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -20880,8 +20880,8 @@
   {
     "structureId": "SYS-MUS-0312",
     "sourceId": "FJ1554M",
-    "name": "undefined do trapézio esquerdo",
-    "normalizedName": "undefined do trapezio esquerdo",
+    "name": "Parte transversa do trapézio esquerdo",
+    "normalizedName": "parte transversa do trapezio esquerdo",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -20966,8 +20966,8 @@
   {
     "structureId": "SYS-MUS-0315",
     "sourceId": "FJ1557",
-    "name": "undefined do músculo longo do pescoço esquerdo",
-    "normalizedName": "undefined do musculo longo do pescoco esquerdo",
+    "name": "Parte oblíqua inferior do músculo longo do pescoço esquerdo",
+    "normalizedName": "parte obliqua inferior do musculo longo do pescoco esquerdo",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -22203,8 +22203,8 @@
   {
     "structureId": "SYS-MUS-0357",
     "sourceId": "FJ1600",
-    "name": "undefined do músculo longo do pescoço esquerdo",
-    "normalizedName": "undefined do musculo longo do pescoco esquerdo",
+    "name": "Parte oblíqua superior do músculo longo do pescoço esquerdo",
+    "normalizedName": "parte obliqua superior do musculo longo do pescoco esquerdo",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -22231,8 +22231,8 @@
   {
     "structureId": "SYS-MUS-0358",
     "sourceId": "FJ1601",
-    "name": "undefined do músculo longo do pescoço esquerdo",
-    "normalizedName": "undefined do musculo longo do pescoco esquerdo",
+    "name": "Parte vertical intermediária do músculo longo do pescoço esquerdo",
+    "normalizedName": "parte vertical intermediaria do musculo longo do pescoco esquerdo",
     "system": "SYS-MUS",
     "region": "REG-TRUNK",
     "sourceConcepts": [
@@ -23230,8 +23230,8 @@
   {
     "structureId": "SYS-MUS-0386",
     "sourceId": "FJ2781",
-    "name": "undefined do cricotireóideo esquerdo",
-    "normalizedName": "undefined do cricotireoideo esquerdo",
+    "name": "Parte oblíqua do cricotireóideo esquerdo",
+    "normalizedName": "parte obliqua do cricotireoideo esquerdo",
     "system": "SYS-MUS",
     "region": "REG-NECK",
     "sourceConcepts": [
@@ -23288,8 +23288,8 @@
   {
     "structureId": "SYS-MUS-0388",
     "sourceId": "FJ2783",
-    "name": "undefined do cricotireóideo esquerdo",
-    "normalizedName": "undefined do cricotireoideo esquerdo",
+    "name": "Parte reta do cricotireóideo esquerdo",
+    "normalizedName": "parte reta do cricotireoideo esquerdo",
     "system": "SYS-MUS",
     "region": "REG-NECK",
     "sourceConcepts": [
@@ -23494,8 +23494,8 @@
   {
     "structureId": "SYS-MUS-0395",
     "sourceId": "FJ2799",
-    "name": "undefined do cricotireóideo direito",
-    "normalizedName": "undefined do cricotireoideo direito",
+    "name": "Parte oblíqua do cricotireóideo direito",
+    "normalizedName": "parte obliqua do cricotireoideo direito",
     "system": "SYS-MUS",
     "region": "REG-NECK",
     "sourceConcepts": [
@@ -23552,8 +23552,8 @@
   {
     "structureId": "SYS-MUS-0397",
     "sourceId": "FJ2801",
-    "name": "undefined do cricotireóideo direito",
-    "normalizedName": "undefined do cricotireoideo direito",
+    "name": "Parte reta do cricotireóideo direito",
+    "normalizedName": "parte reta do cricotireoideo direito",
     "system": "SYS-MUS",
     "region": "REG-NECK",
     "sourceConcepts": [

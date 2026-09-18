@@ -8142,45 +8142,45 @@ INSERT INTO anatomical_concept (
     'SYS-ESQ,SYS-MUS', 18, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA33581 (ascending part of right trapezius) -> undefined do trapézio direito; 1 elemento(s) em SYS-MUS
+-- FMA33581 (ascending part of right trapezius) -> Parte ascendente do trapézio direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA33581', 'ascending part of right trapezius', 'undefined do trapézio direito', 'undefined do trapezio direito',
+    'FMA33581', 'ascending part of right trapezius', 'Parte ascendente do trapézio direito', 'parte ascendente do trapezio direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA33583 (ascending part of left trapezius) -> undefined do trapézio esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA33583 (ascending part of left trapezius) -> Parte ascendente do trapézio esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA33583', 'ascending part of left trapezius', 'undefined do trapézio esquerdo', 'undefined do trapezio esquerdo',
+    'FMA33583', 'ascending part of left trapezius', 'Parte ascendente do trapézio esquerdo', 'parte ascendente do trapezio esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA33584 (transverse part of right trapezius) -> undefined do trapézio direito; 1 elemento(s) em SYS-MUS
+-- FMA33584 (transverse part of right trapezius) -> Parte transversa do trapézio direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA33584', 'transverse part of right trapezius', 'undefined do trapézio direito', 'undefined do trapezio direito',
+    'FMA33584', 'transverse part of right trapezius', 'Parte transversa do trapézio direito', 'parte transversa do trapezio direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA33585 (transverse part of left trapezius) -> undefined do trapézio esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA33585 (transverse part of left trapezius) -> Parte transversa do trapézio esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA33585', 'transverse part of left trapezius', 'undefined do trapézio esquerdo', 'undefined do trapezio esquerdo',
+    'FMA33585', 'transverse part of left trapezius', 'Parte transversa do trapézio esquerdo', 'parte transversa do trapezio esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA33586 (descending part of right trapezius) -> undefined do trapézio direito; 1 elemento(s) em SYS-MUS
+-- FMA33586 (descending part of right trapezius) -> Parte descendente do trapézio direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA33586', 'descending part of right trapezius', 'undefined do trapézio direito', 'undefined do trapezio direito',
+    'FMA33586', 'descending part of right trapezius', 'Parte descendente do trapézio direito', 'parte descendente do trapezio direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA33587 (descending part of left trapezius) -> undefined do trapézio esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA33587 (descending part of left trapezius) -> Parte descendente do trapézio esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA33587', 'descending part of left trapezius', 'undefined do trapézio esquerdo', 'undefined do trapezio esquerdo',
+    'FMA33587', 'descending part of left trapezius', 'Parte descendente do trapézio esquerdo', 'parte descendente do trapezio esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
@@ -8247,45 +8247,45 @@ INSERT INTO anatomical_concept (
     'SYS-MUS', 2, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA34680 (clavicular part of right deltoid) -> undefined do deltoide direito; 1 elemento(s) em SYS-MUS
+-- FMA34680 (clavicular part of right deltoid) -> Parte clavicular do deltoide direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA34680', 'clavicular part of right deltoid', 'undefined do deltoide direito', 'undefined do deltoide direito',
+    'FMA34680', 'clavicular part of right deltoid', 'Parte clavicular do deltoide direito', 'parte clavicular do deltoide direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA34681 (clavicular part of left deltoid) -> undefined do deltoide esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA34681 (clavicular part of left deltoid) -> Parte clavicular do deltoide esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA34681', 'clavicular part of left deltoid', 'undefined do deltoide esquerdo', 'undefined do deltoide esquerdo',
+    'FMA34681', 'clavicular part of left deltoid', 'Parte clavicular do deltoide esquerdo', 'parte clavicular do deltoide esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA34682 (acromial part of right deltoid) -> undefined do deltoide direito; 1 elemento(s) em SYS-MUS
+-- FMA34682 (acromial part of right deltoid) -> Parte acromial do deltoide direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA34682', 'acromial part of right deltoid', 'undefined do deltoide direito', 'undefined do deltoide direito',
+    'FMA34682', 'acromial part of right deltoid', 'Parte acromial do deltoide direito', 'parte acromial do deltoide direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA34683 (acromial part of left deltoid) -> undefined do deltoide esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA34683 (acromial part of left deltoid) -> Parte acromial do deltoide esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA34683', 'acromial part of left deltoid', 'undefined do deltoide esquerdo', 'undefined do deltoide esquerdo',
+    'FMA34683', 'acromial part of left deltoid', 'Parte acromial do deltoide esquerdo', 'parte acromial do deltoide esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA34684 (spinal part of right deltoid) -> undefined do deltoide direito; 1 elemento(s) em SYS-MUS
+-- FMA34684 (spinal part of right deltoid) -> Parte espinal do deltoide direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA34684', 'spinal part of right deltoid', 'undefined do deltoide direito', 'undefined do deltoide direito',
+    'FMA34684', 'spinal part of right deltoid', 'Parte espinal do deltoide direito', 'parte espinal do deltoide direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA34685 (spinal part of left deltoid) -> undefined do deltoide esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA34685 (spinal part of left deltoid) -> Parte espinal do deltoide esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA34685', 'spinal part of left deltoid', 'undefined do deltoide esquerdo', 'undefined do deltoide esquerdo',
+    'FMA34685', 'spinal part of left deltoid', 'Parte espinal do deltoide esquerdo', 'parte espinal do deltoide esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
@@ -8303,17 +8303,17 @@ INSERT INTO anatomical_concept (
     'SYS-MUS', 2, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA34690 (clavicular part of right pectoralis major) -> undefined do peitoral maior direito; 1 elemento(s) em SYS-MUS
+-- FMA34690 (clavicular part of right pectoralis major) -> Parte clavicular do peitoral maior direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA34690', 'clavicular part of right pectoralis major', 'undefined do peitoral maior direito', 'undefined do peitoral maior direito',
+    'FMA34690', 'clavicular part of right pectoralis major', 'Parte clavicular do peitoral maior direito', 'parte clavicular do peitoral maior direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA34691 (clavicular part of left pectoralis major) -> undefined do peitoral maior esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA34691 (clavicular part of left pectoralis major) -> Parte clavicular do peitoral maior esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA34691', 'clavicular part of left pectoralis major', 'undefined do peitoral maior esquerdo', 'undefined do peitoral maior esquerdo',
+    'FMA34691', 'clavicular part of left pectoralis major', 'Parte clavicular do peitoral maior esquerdo', 'parte clavicular do peitoral maior esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
@@ -10893,17 +10893,17 @@ INSERT INTO anatomical_concept (
     'SYS-MUS', 2, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA45874 (abdominal part of right pectoralis major) -> undefined do peitoral maior direito; 1 elemento(s) em SYS-MUS
+-- FMA45874 (abdominal part of right pectoralis major) -> Parte abdominal do peitoral maior direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA45874', 'abdominal part of right pectoralis major', 'undefined do peitoral maior direito', 'undefined do peitoral maior direito',
+    'FMA45874', 'abdominal part of right pectoralis major', 'Parte abdominal do peitoral maior direito', 'parte abdominal do peitoral maior direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA45875 (abdominal part of left pectoralis major) -> undefined do peitoral maior esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA45875 (abdominal part of left pectoralis major) -> Parte abdominal do peitoral maior esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA45875', 'abdominal part of left pectoralis major', 'undefined do peitoral maior esquerdo', 'undefined do peitoral maior esquerdo',
+    'FMA45875', 'abdominal part of left pectoralis major', 'Parte abdominal do peitoral maior esquerdo', 'parte abdominal do peitoral maior esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
@@ -11187,24 +11187,24 @@ INSERT INTO anatomical_concept (
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA46284 (superior oblique part of left longus colli) -> undefined do músculo longo do pescoço esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA46284 (superior oblique part of left longus colli) -> Parte oblíqua superior do músculo longo do pescoço esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA46284', 'superior oblique part of left longus colli', 'undefined do músculo longo do pescoço esquerdo', 'undefined do musculo longo do pescoco esquerdo',
+    'FMA46284', 'superior oblique part of left longus colli', 'Parte oblíqua superior do músculo longo do pescoço esquerdo', 'parte obliqua superior do musculo longo do pescoco esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA46286 (vertical intermediate part of left longus colli) -> undefined do músculo longo do pescoço esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA46286 (vertical intermediate part of left longus colli) -> Parte vertical intermediária do músculo longo do pescoço esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA46286', 'vertical intermediate part of left longus colli', 'undefined do músculo longo do pescoço esquerdo', 'undefined do musculo longo do pescoco esquerdo',
+    'FMA46286', 'vertical intermediate part of left longus colli', 'Parte vertical intermediária do músculo longo do pescoço esquerdo', 'parte vertical intermediaria do musculo longo do pescoco esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA46288 (inferior oblique part of left longus colli) -> undefined do músculo longo do pescoço esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA46288 (inferior oblique part of left longus colli) -> Parte oblíqua inferior do músculo longo do pescoço esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA46288', 'inferior oblique part of left longus colli', 'undefined do músculo longo do pescoço esquerdo', 'undefined do musculo longo do pescoco esquerdo',
+    'FMA46288', 'inferior oblique part of left longus colli', 'Parte oblíqua inferior do músculo longo do pescoço esquerdo', 'parte obliqua inferior do musculo longo do pescoco esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
@@ -11572,31 +11572,31 @@ INSERT INTO anatomical_concept (
     'SYS-MUS', 2, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA46611 (straight part of right cricothyroid) -> undefined do cricotireóideo direito; 1 elemento(s) em SYS-MUS
+-- FMA46611 (straight part of right cricothyroid) -> Parte reta do cricotireóideo direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA46611', 'straight part of right cricothyroid', 'undefined do cricotireóideo direito', 'undefined do cricotireoideo direito',
+    'FMA46611', 'straight part of right cricothyroid', 'Parte reta do cricotireóideo direito', 'parte reta do cricotireoideo direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA46612 (straight part of left cricothyroid) -> undefined do cricotireóideo esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA46612 (straight part of left cricothyroid) -> Parte reta do cricotireóideo esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA46612', 'straight part of left cricothyroid', 'undefined do cricotireóideo esquerdo', 'undefined do cricotireoideo esquerdo',
+    'FMA46612', 'straight part of left cricothyroid', 'Parte reta do cricotireóideo esquerdo', 'parte reta do cricotireoideo esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA46613 (oblique part of right cricothyroid) -> undefined do cricotireóideo direito; 1 elemento(s) em SYS-MUS
+-- FMA46613 (oblique part of right cricothyroid) -> Parte oblíqua do cricotireóideo direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA46613', 'oblique part of right cricothyroid', 'undefined do cricotireóideo direito', 'undefined do cricotireoideo direito',
+    'FMA46613', 'oblique part of right cricothyroid', 'Parte oblíqua do cricotireóideo direito', 'parte obliqua do cricotireoideo direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA46614 (oblique part of left cricothyroid) -> undefined do cricotireóideo esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA46614 (oblique part of left cricothyroid) -> Parte oblíqua do cricotireóideo esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA46614', 'oblique part of left cricothyroid', 'undefined do cricotireóideo esquerdo', 'undefined do cricotireoideo esquerdo',
+    'FMA46614', 'oblique part of left cricothyroid', 'Parte oblíqua do cricotireóideo esquerdo', 'parte obliqua do cricotireoideo esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
@@ -21841,17 +21841,17 @@ INSERT INTO anatomical_concept (
     'SYS-NER', 11, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA79979 (sternocostal part of right pectoralis major) -> undefined do peitoral maior direito; 1 elemento(s) em SYS-MUS
+-- FMA79979 (sternocostal part of right pectoralis major) -> Parte esternocostal do peitoral maior direito; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA79979', 'sternocostal part of right pectoralis major', 'undefined do peitoral maior direito', 'undefined do peitoral maior direito',
+    'FMA79979', 'sternocostal part of right pectoralis major', 'Parte esternocostal do peitoral maior direito', 'parte esternocostal do peitoral maior direito',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 
--- FMA79980 (sternocostal part of left pectoralis major) -> undefined do peitoral maior esquerdo; 1 elemento(s) em SYS-MUS
+-- FMA79980 (sternocostal part of left pectoralis major) -> Parte esternocostal do peitoral maior esquerdo; 1 elemento(s) em SYS-MUS
 INSERT INTO anatomical_concept (
     external_code, name, name_pt, normalized_name_pt, systems, element_count, name_derived) VALUES (
-    'FMA79980', 'sternocostal part of left pectoralis major', 'undefined do peitoral maior esquerdo', 'undefined do peitoral maior esquerdo',
+    'FMA79980', 'sternocostal part of left pectoralis major', 'Parte esternocostal do peitoral maior esquerdo', 'parte esternocostal do peitoral maior esquerdo',
     'SYS-MUS', 1, true
 ) ON CONFLICT (external_code) DO NOTHING;
 

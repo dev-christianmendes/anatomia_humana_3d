@@ -58,7 +58,7 @@ if (!Array.isArray(structures)) {
     }
     if (!s.name || !s.name.trim()) {
       errors.push(`${s.structureId}: nome pt-BR ausente.`);
-    } else if (s.name.includes('[object Object]')) {
+    } else if (s.name.includes('[object Object]') || s.name.includes('undefined')) {
       errors.push(`${s.structureId}: nome com marca de objeto nao resolvido: ${s.name}`);
     }
     if (!s.sourceId || !/^FJ[0-9]+M?$/.test(s.sourceId)) {
@@ -104,7 +104,7 @@ if (!Array.isArray(concepts)) {
     }
     if (!c.namePt || !c.namePt.trim()) {
       errors.push(`${c.id}: nome pt-BR ausente.`);
-    } else if (c.namePt.includes('[object Object]')) {
+    } else if (c.namePt.includes('[object Object]') || c.namePt.includes('undefined')) {
       errors.push(`${c.id}: nome pt-BR com marca de objeto: ${c.namePt}`);
     }
     if (!Array.isArray(c.elements)) {
