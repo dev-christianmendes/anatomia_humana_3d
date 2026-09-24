@@ -1,5 +1,12 @@
-import { describe, expect, it } from 'vitest'
+import { beforeAll, describe, expect, it } from 'vitest'
+import { applyCatalog } from '../../../data/catalogV2'
+import conceptsJson from '../../../../../catalog/v2/concepts.json'
+import structuresJson from '../../../../../catalog/v2/structures.json'
 import { normalizeSearchTerm, searchConcepts, suggestedConcepts } from './search'
+
+beforeAll(() => {
+  applyCatalog(conceptsJson, structuresJson)
+})
 
 describe('normalizeSearchTerm', () => {
   it('remove acentos, caixa alta e espacos', () => {

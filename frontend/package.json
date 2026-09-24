@@ -7,11 +7,14 @@
   },
   "type": "module",
   "scripts": {
+    "predev": "node ../scripts/sync-frontend-fallback.mjs",
     "dev": "vite",
+    "prebuild": "node ../scripts/sync-frontend-fallback.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "test": "vitest run src",
     "test:e2e": "playwright test",
+    "prepreview": "node ../scripts/sync-frontend-fallback.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

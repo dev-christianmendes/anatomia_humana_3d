@@ -1,4 +1,4 @@
-import { CONCEPTS_V2 } from '../../data/catalogV2'
+import { conceptsV2 } from '../../data/catalogV2'
 import { normalizeSearchTerm } from '../viewer/atlas/search'
 
 export type McpTool = {
@@ -16,7 +16,8 @@ export type McpHost = {
 
 export function findAnatomyResults(query: string, limit = 30) {
   const normalized = normalizeSearchTerm(query)
-  const matches = CONCEPTS_V2.filter(
+  const concepts = conceptsV2()
+  const matches = concepts.filter(
     (concept) =>
       (normalized && (concept.normalizedNamePt.includes(normalized) || concept.id.toLowerCase().includes(normalized))) ||
       (concept.id === query.trim()),
@@ -36,7 +37,7 @@ export function resolveInspectTarget(id: unknown): { id: string } | { error: str
   if (typeof id !== 'string' || !id.trim()) {
     return { error: 'Um identificador do atlas é necessário.' }
   }
-  const concept = CONCEPTS_V2.find((entry) => entry.id === id)
+  const concept = conceptsV2().find((entry) => entry.id === id)
   if (!concept) {
     return { error: 'Essa estrutura não está presente neste atlas.' }
   }
@@ -72,7 +73,7 @@ export function registerMcpTools(
     run: async (input) => {
       const target = resolveInspectTarget(input.id)
       if ('error' in target) return { error: target.error }
-      const concept = CONCEPTS_V2.find((entry) => entry.id === target.id)
+      const concept = conceptsV2().find((entry) => entry.id === target.id)
       deps.selectConcept(target.id)
       return { id: concept?.id ?? target.id, name: concept?.namePt ?? target.id, selectedPieces: concept?.elementCount ?? 0 }
     },

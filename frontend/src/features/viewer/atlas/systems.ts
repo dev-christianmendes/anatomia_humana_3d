@@ -1,4 +1,4 @@
-import { STRUCTURES_V2 } from '../../../data/catalogV2'
+import { structuresV2 } from '../../../data/catalogV2'
 import type { SystemCode, SystemDefinition } from './types'
 
 export type SystemInfo = Omit<SystemDefinition, 'color'>
@@ -161,10 +161,6 @@ export const SYSTEM_COLORS: Record<SystemCode, string> = {
 
 const SYSTEM_CODES: SystemCode[] = DEFINITIONS.map((d) => d.code)
 
-const COUNTS: Record<SystemCode, number> = Object.fromEntries(
-  SYSTEM_CODES.map((code) => [code, STRUCTURES_V2.filter((entry) => entry.system === code).length]),
-) as Record<SystemCode, number>
-
 export const SYSTEMS: SystemDefinition[] = DEFINITIONS.map((definition) => ({ ...definition, color: SYSTEM_COLORS[definition.code] }))
 
 export const SYSTEM_CODES_LIST = SYSTEM_CODES
@@ -182,11 +178,13 @@ export function systemLabel(code: string): string {
 }
 
 export function systemCount(code: SystemCode): number {
-  return COUNTS[code] ?? 0
+  return structuresV2().filter((entry) => entry.system === code).length
 }
 
 export function activeSystems(): SystemDefinition[] {
-  return SYSTEMS.filter((system) => COUNTS[system.code] > 0)
+  const counts = new Map<string, number>()
+  for (const entry of structuresV2()) counts.set(entry.system, (counts.get(entry.system) ?? 0) + 1)
+  return SYSTEMS.filter((system) => (counts.get(system.code) ?? 0) > 0)
 }
 
 const ORGAN_EXPLANATIONS: Record<string, string> = {

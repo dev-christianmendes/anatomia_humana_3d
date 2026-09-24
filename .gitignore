@@ -15,8 +15,9 @@ backend/target/
 # Experimentos
 frontend/experiments/
 
-# Builds intermediários do atlas (o frontend consome apenas os .bin.gz)
-frontend/public/models/fullbody/*.bin
+# Builds intermediários do atlas (.bin e catálogo v2 são gerados no build/web)
+# Os .bin NÃO estão ignorados para que o `vercel` (CLI) os envie como fallback de navegadores antigos;
+# são mantidos fora do commit (43 MB). Cuidado com `git add -A`.
 frontend/public/catalog/v2/
 .vercel
 .env*

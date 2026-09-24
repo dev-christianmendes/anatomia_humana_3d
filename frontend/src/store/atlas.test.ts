@@ -1,7 +1,14 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest'
+import { applyCatalog } from '../data/catalogV2'
+import conceptsJson from '../../../catalog/v2/concepts.json'
+import structuresJson from '../../../catalog/v2/structures.json'
 import { DEFAULT_VISIBLE, systemCount } from '../features/viewer/atlas/systems'
 import type { SystemCode } from '../features/viewer/atlas/types'
 import { systemVisible, useAtlas, visibleStructureCount } from './atlas'
+
+beforeAll(() => {
+  applyCatalog(conceptsJson, structuresJson)
+})
 
 describe('atlas store', () => {
   beforeEach(() => {
