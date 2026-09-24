@@ -1,0 +1,19 @@
+# Nó de dependências (raiz e frontend)
+node_modules
+frontend/node_modules
+
+# Builds e artefatos locais
+frontend/dist
+frontend/test-results
+frontend/experiments
+frontend/e2e
+
+# Chunks binários intermediários: o viewer consome apenas .bin.gz
+frontend/public/models/fullbody/*.bin
+
+# Assets-fonte do pipeline (OBJ/bin locais não versionados)
+assets/original
+
+# Logs e ferramentas locais
+*.log
+.playwright

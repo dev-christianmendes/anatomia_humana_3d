@@ -17,3 +17,6 @@ frontend/experiments/
 
 # Builds intermediários do atlas (o frontend consome apenas os .bin.gz)
 frontend/public/models/fullbody/*.bin
+frontend/public/catalog/v2/
+.vercel
+.env*
