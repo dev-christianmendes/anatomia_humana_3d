@@ -55,7 +55,9 @@ test('cenários de explosao alternam a legenda da cena', async ({ page }) => {
 })
 
 test('explosão mantém as peças visíveis ao explodir e ao mover a câmera', async ({ page }) => {
-  test.setTimeout(220000)
+  // SwiftShader (WebGL por software) nos runners do GitHub leva ~4 min só neste teste:
+  // ele chega até a última captura, então o limite antigo de 220 s cortava o fim.
+  test.setTimeout(480000)
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(error.message))
   await page.setViewportSize({ width: 420, height: 320 })
