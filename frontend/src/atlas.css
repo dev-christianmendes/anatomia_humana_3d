@@ -551,6 +551,19 @@ h1, h2, h3, p { margin: 0; }
   scrollbar-color: #b9c3cc transparent;
 }
 .structure-description { font-size: 14px; line-height: 1.7; color: #20242b; }
+.structure-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  padding: 3px 8px 3px 9px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+.badge-derived { background: #eef1f5; color: #64748b; }
+.badge-reviewed { background: #e2f0e9; color: #256d4b; }
+.search-badge { margin-left: auto; }
 .context-note { font-size: 11px; color: #9aa3ab; }
 .structure-meta { display: flex; flex-direction: column; gap: 10px; }
 .structure-meta span { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; color: #9aa3ab; }

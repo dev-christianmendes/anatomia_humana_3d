@@ -1,4 +1,4 @@
-import { CONCEPTS_V2 } from '../../../data/catalogV2'
+import { conceptsV2 } from '../../../data/catalogV2'
 import type { ConceptRecordV2 } from '../../../data/catalogV2'
 
 const SEARCH_LIMIT = 80
@@ -22,17 +22,19 @@ export const SUGGESTED_CONCEPTS: string[] = [
 ]
 
 export function suggestedConcepts(count = 8): ConceptRecordV2[] {
-  const byId = new Map(CONCEPTS_V2.map((c) => [c.id, c]))
+  const concepts = conceptsV2()
+  const byId = new Map(concepts.map((c) => [c.id, c]))
   const main = SUGGESTED_CONCEPTS.map((id) => byId.get(id)).filter((c): c is ConceptRecordV2 => Boolean(c))
-  const fill = CONCEPTS_V2.filter((c) => c.elementCount > 0 && !SUGGESTED_CONCEPTS.includes(c.id)).slice(0, count)
+  const fill = concepts.filter((c) => c.elementCount > 0 && !SUGGESTED_CONCEPTS.includes(c.id)).slice(0, count)
   return [...main, ...fill].slice(0, count)
 }
 
 export function searchConcepts(term: string, limit = SEARCH_LIMIT): ConceptRecordV2[] {
   const normalized = normalizeSearchTerm(term)
   if (!normalized) return suggestedConcepts(8)
+  const concepts = conceptsV2()
   const byTerm = new Map<string, ConceptRecordV2>()
-  for (const concept of CONCEPTS_V2) {
+  for (const concept of concepts) {
     const key = concept.normalizedNamePt
     if (key.startsWith(normalized) || key.includes(normalized) || concept.id.toLowerCase().includes(normalized)) {
       if (!byTerm.has(key)) byTerm.set(key, concept)

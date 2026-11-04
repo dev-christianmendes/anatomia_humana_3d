@@ -9,6 +9,7 @@ public record ConceptDto(
     List<String> systems,
     int elementCount,
     boolean nameDerived,
+    boolean reviewed,
     List<StructureSummaryDto> structures
 ) {
 }

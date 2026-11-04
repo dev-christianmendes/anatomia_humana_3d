@@ -12,6 +12,7 @@ Status: **implementada** no backend Java/Spring Boot, base `/api/v1`.
 | GET | /structures/{id}/concepts | Conceitos que agrupam uma estrutura |
 | GET | /concepts | Listar/pesquisar conceitos anatomicos (FMA) |
 | GET | /concepts/{id} | Dados de um conceito e suas estruturas |
+| GET | /catalog/v2/snapshot | Snapshot consolidado do catalogo V2 (conceitos com `elements` FJ e estruturas com `sourceId`) |
 | GET | /assets/{structureId} | Assets publicados associados a estrutura |
 
 Implementacao em `backend/src/main/java/com/anatomia3d/controller/`. Documentacao
@@ -26,6 +27,48 @@ Filtros de concepts: `search`, `system`, `page`, `size`. Busca por nome pt-BR
 ou nome FMA; normalizacao sem acentos. `system` filtra por CSV de `systems`.
 `GET /concepts/{id}` (id = external_code FMA) retorna as estruturas agrupadas.
 `GET /structures/{id}/concepts` retorna os conceitos da estrutura.
+
+### Snapshot do catalogo V2 (`GET /catalog/v2/snapshot`)
+
+Retorna `{ concepts: ConceptSnapshotDto[], structures: StructureSnapshotDto[] }`
+consolidado para o viewer, no mesmo formato dos JSONs de `catalog/v2`
+(`sync-frontend-fallback.mjs` espelha esses arquivos em `frontend/public/catalog/v2/`
+como fallback estatico quando a API nao esta disponivel).
+
+```json
+{
+  "concepts": [
+    {
+      "id": "FMA10014",
+      "namePt": "Nona vertebra toracica",
+      "name": "ninth thoracic vertebra",
+      "normalizedNamePt": "nona vertebra toracica",
+      "nameDerived": true,
+      "reviewed": false,
+      "elementCount": 1,
+      "systems": ["SYS-ESQ"],
+      "elements": ["FJ3175"]
+    }
+  ],
+  "structures": [
+    {
+      "structureId": "SYS-ESQ-0002",
+      "sourceId": "FJ3175",
+      "name": "Nona vertebra toracica",
+      "normalizedName": "nona vertebra toracica",
+      "nameDerived": true,
+      "reviewed": false,
+      "system": "SYS-ESQ",
+      "region": "REG-TRUNK",
+      "alternateNames": []
+    }
+  ]
+}
+```
+
+`elements` do conceito sao ids de origem FJ (vinculo via `CONCEPT_STRUCTURE`);
+o viewer mapeia `sourceId` -> `structureId` para selecao. `nameDerived`/`reviewed`
+vem do banco (V9/V10) e alimentam os selos de curadoria no frontend.
 
 Exemplo real de `GET /structures/{id}` (servidor em execucao):
 

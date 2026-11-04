@@ -45,6 +45,9 @@ public class AnatomicalConcept {
     @Column(name = "name_derived", nullable = false)
     private boolean nameDerived;
 
+    @Column(nullable = false)
+    private boolean reviewed;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
 
@@ -113,6 +116,14 @@ public class AnatomicalConcept {
 
     public void setNameDerived(boolean nameDerived) {
         this.nameDerived = nameDerived;
+    }
+
+    public boolean isReviewed() {
+        return reviewed;
+    }
+
+    public void setReviewed(boolean reviewed) {
+        this.reviewed = reviewed;
     }
 
     public Instant getCreatedAt() {

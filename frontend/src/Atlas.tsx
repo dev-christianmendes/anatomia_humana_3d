@@ -2,11 +2,11 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Activity, ArrowUpRight, ChevronRight, Focus, Info, Layers3, Pause, RotateCcw, RotateCw, Search, X } from 'lucide-react'
 import AtlasScene from './features/viewer/atlas/scene'
 import type { Atlas, SystemCode, View } from './features/viewer/atlas/types'
-import { activeSystems, conceptExplanation, hasCuratedExplanation, SYSTEM_COLORS, systemDefinition, systemLabel } from './features/viewer/atlas/systems'
+import { activeSystems, conceptExplanation, hasCuratedExplanation, SYSTEM_COLORS, systemCount, systemDefinition, systemLabel } from './features/viewer/atlas/systems'
 import { searchConcepts, suggestedConcepts } from './features/viewer/atlas/search'
 import { useAtlas } from './store/atlas'
 import { registerMcpTools } from './features/mcp/mcp'
-import { conceptParts, conceptRecord, structureNamePt, STRUCTURES_V2 } from './data/catalogV2'
+import { conceptParts, conceptRecord, loadCatalog, structureNamePt } from './data/catalogV2'
 import type { ConceptRecordV2 } from './data/catalogV2'
 import './atlas.css'
 
@@ -24,6 +24,7 @@ export default function Home() {
   const [details, setDetails] = useState(false)
   const [about, setAbout] = useState(false)
   const [chosen, setChosen] = useState<ConceptRecordV2 | null>(null)
+  const [catalog, setCatalog] = useState<'loading' | 'ready' | 'error'>('loading')
 
   const store = useAtlas()
 
@@ -39,6 +40,20 @@ export default function Home() {
         if (e instanceof Error && e.name !== 'AbortError') setError(e.message)
       })
     return () => abort.abort()
+  }, [])
+
+  useEffect(() => {
+    let active = true
+    loadCatalog()
+      .then(() => {
+        if (active) setCatalog('ready')
+      })
+      .catch(() => {
+        if (active) setCatalog('error')
+      })
+    return () => {
+      active = false
+    }
   }, [])
 
   useEffect(() => {
@@ -90,7 +105,10 @@ export default function Home() {
     atlas?.parts.forEach((p) => result.set(p.system, (result.get(p.system) ?? 0) + 1))
     return result
   }, [atlas])
-  const active = useMemo(() => activeSystems().filter((s) => counts.size === 0 || (counts.get(s.code) ?? 0) > 0), [counts])
+  const active = useMemo(
+    () => (catalog === 'ready' ? activeSystems().filter((s) => counts.size === 0 || (counts.get(s.code) ?? 0) > 0) : []),
+    [catalog, counts],
+  )
   const selectedParts = store.selected.map((id) => parts.get(id)).filter((p): p is NonNullable<typeof p> => Boolean(p))
   const primaryStructure = selectedParts[0]
   const selectedSystem = primaryStructure ? systemDefinition(primaryStructure.system) : undefined
@@ -98,7 +116,10 @@ export default function Home() {
     ? atlas.parts.filter((p) => (store.isolate ? store.selected.includes(p.id) : store.visible.includes(p.system) || store.selected.includes(p.id))).length
     : 0
 
-  const results = useMemo(() => (query.trim() ? searchConcepts(query, 80) : suggestedConcepts(8)), [query])
+  const results = useMemo(() => {
+    if (catalog !== 'ready') return null
+    return query.trim() ? searchConcepts(query, 80) : suggestedConcepts(8)
+  }, [catalog, query])
 
   function openPanel(next: 'layers' | 'search') {
     setDetails(false)
@@ -114,6 +135,7 @@ export default function Home() {
   }
 
   function chooseConcept(concept: ConceptRecordV2) {
+    if (catalog !== 'ready') return
     setChosen(concept)
     store.selectStructures(conceptParts(concept))
     setDetails(true)
@@ -122,12 +144,16 @@ export default function Home() {
   }
 
   function choosePart(id: string) {
+    if (catalog !== 'ready') return
     const part = parts.get(id)
     if (!part) return
     setChosen({
       id: part.conceptId,
+      name: structureNamePt(id),
       namePt: structureNamePt(id),
       normalizedNamePt: structureNamePt(id),
+      nameDerived: true,
+      reviewed: false,
       elements: [id],
       elementCount: 1,
       systems: [part.system],
@@ -144,6 +170,7 @@ export default function Home() {
   }
 
   function preset(codes: SystemCode[]) {
+    if (codes.length === 0) return
     setDetails(false)
     store.presetSystems(codes)
     store.clearSelection()
@@ -236,7 +263,7 @@ export default function Home() {
           <button type="button" className="mobile-only icon-button" aria-label="Fechar sistemas" onClick={() => setPanel(null)}>
             <X size={18} />
           </button>
-          <span className="desktop-only small-number">{active.length}</span>
+          <span className="desktop-only small-number">{catalog === 'ready' ? active.length : '…'}</span>
         </div>
         <div className="layer-presets">
           <button
@@ -262,30 +289,34 @@ export default function Home() {
           </button>
         </div>
         <div className="system-list">
-          {active.map((system) => (
-            <div className={`system-row ${store.visible.includes(system.code) ? 'enabled' : ''}`} key={system.code}>
-              <button
-                type="button"
-                className="system-name"
-                title={`Mostrar apenas ${systemLabel(system.code).toLowerCase()}`}
-                onClick={() => {
-                  store.presetSystems([system.code])
-                  store.clearSelection()
-                  setDetails(false)
-                }}
-              >
-                <span className="system-dot" style={{ background: system.color }} />
-                <span className="system-label">{systemLabel(system.code)}</span>
-                <span className="system-count">{atlas ? (counts.get(system.code) ?? 0).toLocaleString('pt-BR') : systemCountFor(system.code)}</span>
-              </button>
-              <input
-                type="checkbox"
-                aria-label={`Mostrar ${systemLabel(system.code).toLowerCase()}`}
-                checked={store.visible.includes(system.code)}
-                onChange={() => toggleSystem(system.code)}
-              />
-            </div>
-          ))}
+          {catalog !== 'ready' ? (
+            <p className="search-empty">Carregando catálogo…</p>
+          ) : (
+            active.map((system) => (
+              <div className={`system-row ${store.visible.includes(system.code) ? 'enabled' : ''}`} key={system.code}>
+                <button
+                  type="button"
+                  className="system-name"
+                  title={`Mostrar apenas ${systemLabel(system.code).toLowerCase()}`}
+                  onClick={() => {
+                    store.presetSystems([system.code])
+                    store.clearSelection()
+                    setDetails(false)
+                  }}
+                >
+                  <span className="system-dot" style={{ background: system.color }} />
+                  <span className="system-label">{systemLabel(system.code)}</span>
+                  <span className="system-count">{atlas ? (counts.get(system.code) ?? 0).toLocaleString('pt-BR') : systemCountFor(system.code)}</span>
+                </button>
+                <input
+                  type="checkbox"
+                  aria-label={`Mostrar ${systemLabel(system.code).toLowerCase()}`}
+                  checked={store.visible.includes(system.code)}
+                  onChange={() => toggleSystem(system.code)}
+                />
+              </div>
+            ))
+          )}
         </div>
         <div className="panel-foot">
           <span>{visibleCount.toLocaleString('pt-BR')} peças visíveis</span>
@@ -312,12 +343,19 @@ export default function Home() {
             />
           </label>
           <div className="anatomy-search-results">
-            {results.length === 0 ? (
+            {catalog === 'loading' ? (
+              <p className="search-empty">Carregando catálogo…</p>
+            ) : catalog === 'error' ? (
+              <p className="search-empty">O catálogo de anatomia não pôde ser carregado. Recarregue para tentar novamente.</p>
+            ) : results === null ? (
+              <p className="search-empty">O catálogo de anatomia está indisponível.</p>
+            ) : results.length === 0 ? (
               <p className="search-empty">Nenhuma estrutura corresponde à busca.</p>
             ) : (
               results.map((concept) => (
                 <button type="button" className="search-result" key={concept.id} onClick={() => chooseConcept(concept)}>
                   <span className="search-result-name">{concept.namePt}</span>
+                  {concept.reviewed && <span className="badge badge-reviewed search-badge">revisado</span>}
                   <span className="small-number">
                     {concept.elementCount} {concept.elementCount === 1 ? 'peça' : 'peças'}
                   </span>
@@ -452,6 +490,10 @@ export default function Home() {
             <div className="detail-accent" style={{ background: selectedSystem ? SYSTEM_COLORS[selectedSystem.code] : undefined }} />
             <div className="eyebrow">{selectedSystem?.namePt ?? 'ANATOMIA'}</div>
             <h2 id="detail-title" ref={detailTitle} className="structure-title">{chosen.namePt}</h2>
+            <div className="structure-badges">
+              {chosen.reviewed && <span className="badge badge-reviewed">nome revisado</span>}
+              {chosen.nameDerived && <span className="badge badge-derived">nome derivado</span>}
+            </div>
           </div>
           <div className="detail-scroll" key={`${chosen.id}-${store.isolate}`}>
             <p className="structure-description">{conceptExplanation(chosen.id, primaryStructure?.system ?? 'SYS-ESQ')}</p>
@@ -546,8 +588,9 @@ export default function Home() {
   )
 }
 
-function systemCountFor(code: string): number {
-  return STRUCTURES_V2.filter((entry) => entry.system === code).length
+function systemCountFor(code: string): string {
+  const count = systemCount(code as SystemCode)
+  return count.toLocaleString('pt-BR')
 }
 
 function viewLabel(view: View): string {

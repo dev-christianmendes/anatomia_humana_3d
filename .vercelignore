@@ -8,8 +8,7 @@ frontend/test-results
 frontend/experiments
 frontend/e2e
 
-# Chunks binários intermediários: o viewer consome apenas .bin.gz
-frontend/public/models/fullbody/*.bin
+# (.bin mantidos no deploy: fallback para navegadores sem DecompressionStream; gerenciados fora do git)
 
 # Assets-fonte do pipeline (OBJ/bin locais não versionados)
 assets/original

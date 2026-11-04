@@ -1,5 +1,12 @@
-import { describe, expect, it } from 'vitest'
+import { beforeAll, describe, expect, it } from 'vitest'
+import { applyCatalog } from '../../data/catalogV2'
+import conceptsJson from '../../../../catalog/v2/concepts.json'
+import structuresJson from '../../../../catalog/v2/structures.json'
 import { findAnatomyResults, registerMcpTools, resolveInspectTarget, type McpHost } from './mcp'
+
+beforeAll(() => {
+  applyCatalog(conceptsJson, structuresJson)
+})
 
 describe('findAnatomyResults', () => {
   it('retorna correspondencias com id, nome pt-BR e contagem de pecas', () => {

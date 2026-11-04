@@ -19,10 +19,13 @@ public final class StructureMapper {
         }
         return new StructureSummaryDto(
             structure.getExternalCode(),
+            structure.getSourceId(),
             structure.getName(),
             alternateNames(structure),
             SystemMapper.toDto(structure.getSystem()),
-            RegionMapper.toDto(structure.getRegion())
+            RegionMapper.toDto(structure.getRegion()),
+            structure.isNameDerived(),
+            structure.isReviewed()
         );
     }
 
@@ -39,6 +42,7 @@ public final class StructureMapper {
         }
         return new StructureDto(
             structure.getExternalCode(),
+            structure.getSourceId(),
             structure.getName(),
             alternateNames(structure),
             SystemMapper.toDto(structure.getSystem()),
@@ -46,7 +50,9 @@ public final class StructureMapper {
             structure.getDescription(),
             structure.getFunctionDescription(),
             structure.getExternalCode(),
-            source
+            source,
+            structure.isNameDerived(),
+            structure.isReviewed()
         );
     }
 

@@ -36,6 +36,9 @@ public class AnatomicalStructure {
     @Column(name = "external_code", nullable = false, unique = true, length = 32)
     private String externalCode;
 
+    @Column(name = "source_id", length = 32)
+    private String sourceId;
+
     @Column(nullable = false, length = 160)
     private String name;
 
@@ -59,6 +62,12 @@ public class AnatomicalStructure {
 
     @Column(nullable = false)
     private boolean published;
+
+    @Column(name = "name_derived", nullable = false)
+    private boolean nameDerived = true;
+
+    @Column(nullable = false)
+    private boolean reviewed;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "system_id")
@@ -94,6 +103,14 @@ public class AnatomicalStructure {
 
     public void setExternalCode(String externalCode) {
         this.externalCode = externalCode;
+    }
+
+    public String getSourceId() {
+        return sourceId;
+    }
+
+    public void setSourceId(String sourceId) {
+        this.sourceId = sourceId;
     }
 
     public String getName() {
@@ -158,6 +175,22 @@ public class AnatomicalStructure {
 
     public void setPublished(boolean published) {
         this.published = published;
+    }
+
+    public boolean isNameDerived() {
+        return nameDerived;
+    }
+
+    public void setNameDerived(boolean nameDerived) {
+        this.nameDerived = nameDerived;
+    }
+
+    public boolean isReviewed() {
+        return reviewed;
+    }
+
+    public void setReviewed(boolean reviewed) {
+        this.reviewed = reviewed;
     }
 
     public AnatomicalSystem getSystem() {

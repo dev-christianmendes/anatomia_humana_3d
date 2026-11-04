@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
+import java.util.List;
 
 public interface AnatomicalStructureRepository extends JpaRepository<AnatomicalStructure, Long> {
 
@@ -29,4 +30,20 @@ public interface AnatomicalStructureRepository extends JpaRepository<AnatomicalS
                                      @Param("systemCode") String systemCode,
                                      @Param("regionCode") String regionCode,
                                      Pageable pageable);
+
+    /**
+     * Estruturas do atlas full-body: aquelas vinculadas a pelo menos um conceito
+     * (via {@code concept_structure}), com joins de sistema, regiao e nomes
+     * alternativos para evitar N+1 no snapshot do catalogo.
+     */
+    @Query("""
+        select distinct s
+        from AnatomicalStructure s
+        left join fetch s.system
+        left join fetch s.region
+        left join fetch s.alternateNames
+        where s.id in (select cs.structure.id from ConceptStructure cs)
+        order by s.externalCode asc
+        """)
+    List<AnatomicalStructure> findAllLinkedToConcept();
 }
