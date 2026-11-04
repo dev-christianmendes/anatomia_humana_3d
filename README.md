@@ -6,6 +6,8 @@
 
 **Plataforma Web interativa para exploração tridimensional da anatomia humana.**
 
+**Demo:** https://anatomia-humana-3d.vercel.app (viewer estático; roda inteiro no navegador)
+
 O Anatomia 3D tem como objetivo combinar renderização 3D em tempo real, dados anatômicos estruturados e uma API REST para transformar o navegador em um atlas humano interativo.
 
 O Anatomia 3D é desenvolvido em etapas: após o **Milestone 01 (First 3D Viewer)** e a interação do MVP, a entrega atual corresponde ao **V2 "Human Atlas"** — o corpo humano completo (BodyParts3D 4.0) com renderer batched em Three.js puro, catálogo pt-BR por conceito e backend Java/Spring Boot com persistência em PostgreSQL.
@@ -16,11 +18,11 @@ O Anatomia 3D é desenvolvido em etapas: após o **Milestone 01 (First 3D Viewer
 | Plataforma | Web, com prioridade para desktop |
 | Finalidade | Educação, projeto acadêmico e portfólio |
 | Entrega disponível | Atlas humano completo: 15 sistemas, 2.234 estruturas e 3.432 conceitos, renderer batched Three.js puro, painel de camadas com presets, busca por conceito, isolamento, explosão radial → **inventário**, vistas ¾/anteriores/posteriores/laterais, legendas de cena, loading progressivo, atalhos de teclado e integração MCP |
-| Backend | Java 21 / Spring Boot com API `/api/v1` (estruturas, sistemas, regiões e conceitos) |
+| Backend | Java 21 / Spring Boot com API `/api/v1` (estruturas, sistemas, regiões e conceitos), serviço independente: o viewer ainda não a consome |
 | Banco | PostgreSQL com migrations Flyway (V1–V8) |
 | Docker Compose | Backend + PostgreSQL prontos para subir o stack |
 | Catálogo educacional | Catálogo V2 derivado: 2.234 estruturas e 3.432 conceitos pt-BR, com curadoria incremental em andamento |
-| Deploy público | Pendente |
+| Deploy público | Frontend na Vercel: https://anatomia-humana-3d.vercel.app · API e banco só local (Docker Compose) |
 
 > **Aviso educacional:** esta aplicação não realiza diagnósticos, não recomenda tratamentos e não substitui material de referência ou orientação profissional. O modelo e o conteúdo atual não foram submetidos a revisão clínica.
 
@@ -136,7 +138,7 @@ Zustand centraliza o estado de interação do atlas (`view`, `explode`, `visible
 
 ### Stack Planejada
 
-Não há stack backend pendente: Java 21, Spring Boot, Spring Data JPA, Flyway, PostgreSQL e Docker Compose já estão implementados. O deploy público continua em aberto.
+Não há stack backend pendente: Java 21, Spring Boot, Spring Data JPA, Flyway, PostgreSQL e Docker Compose já estão implementados. O frontend está publicado na Vercel; a API e o banco ainda não têm deploy público.
 
 As dependências e os scripts são definidos em [package.json](package.json) e [frontend/package.json](frontend/package.json). Os lockfiles registram as versões resolvidas para instalação reproduzível.
 
@@ -294,6 +296,8 @@ flowchart LR
 A cena usa geometria de buffer única por sistema (posições em metros, escala 0.001 a partir de mm) com um atributo `partIndex` por vértice; a visibilidade e o hover entram por dados por parte no shader. Os chunks são descomprimidos no navegador (gzip) e o progresso é reportado por chunk. O picking lê o `partIndex` no buffer do clique, dispensando malhas individuais por estrutura.
 
 ### Arquitetura Alvo
+
+> Objetivo, não estado atual: hoje o frontend não chama a API (ver [Arquitetura](#arquitetura)).
 
 ```mermaid
 flowchart LR
@@ -508,7 +512,7 @@ Não é necessário reconstruir o atlas durante o deploy, pois os chunks já aco
 
 O viewer carrega o atlas a partir de `public/models/fullbody/atlas.json` (caminho relativo servido pelo Vite com `base: './'`). Se publicar em um subdiretório, ajuste a configuração do Vite antes do build.
 
-Use HTTPS em produção. Backend, banco e CORS já têm configuração Docker Compose local; o deploy público em serviço de hospedagem, banco gerenciado e storage/CDN ainda é etapa separada.
+Use HTTPS em produção. O frontend estático está publicado na Vercel (`vercel.json`). Backend, banco e CORS têm configuração Docker Compose local; o deploy público da API, com banco gerenciado, ainda é etapa separada.
 
 ## Solução de Problemas
 
