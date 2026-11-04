@@ -4,9 +4,13 @@
 [![CI: E2E](https://github.com/dev-christianmendes/anatomia_humana_3d/actions/workflows/e2e.yml/badge.svg)](https://github.com/dev-christianmendes/anatomia_humana_3d/actions/workflows/e2e.yml)
 [![CI: Backend](https://github.com/dev-christianmendes/anatomia_humana_3d/actions/workflows/backend.yml/badge.svg)](https://github.com/dev-christianmendes/anatomia_humana_3d/actions/workflows/backend.yml)
 
-**Plataforma Web interativa para exploração tridimensional da anatomia humana.**
+## 🚀 Acessar o app
 
-**Demo:** https://anatomia-humana-3d.vercel.app (viewer estático; roda inteiro no navegador)
+[![Abrir Anatomia 3D no Vercel](https://img.shields.io/badge/Abrir%20o%20app-Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge&labelColor=2a2a2a)](https://anatomia-humana-3d.vercel.app)
+
+> **https://anatomia-humana-3d.vercel.app** — deploy de produção do frontend.
+
+**Plataforma Web interativa para exploração tridimensional da anatomia humana.**
 
 O Anatomia 3D tem como objetivo combinar renderização 3D em tempo real, dados anatômicos estruturados e uma API REST para transformar o navegador em um atlas humano interativo.
 
@@ -18,8 +22,8 @@ O Anatomia 3D é desenvolvido em etapas: após o **Milestone 01 (First 3D Viewer
 | Plataforma | Web, com prioridade para desktop |
 | Finalidade | Educação, projeto acadêmico e portfólio |
 | Entrega disponível | Atlas humano completo: 15 sistemas, 2.234 estruturas e 3.432 conceitos, renderer batched Three.js puro, painel de camadas com presets, busca por conceito, isolamento, explosão radial → **inventário**, vistas ¾/anteriores/posteriores/laterais, legendas de cena, loading progressivo, atalhos de teclado e integração MCP |
-| Backend | Java 21 / Spring Boot com API `/api/v1` (estruturas, sistemas, regiões e conceitos), serviço independente: o viewer ainda não a consome |
-| Banco | PostgreSQL com migrations Flyway (V1–V8) |
+| Backend | Java 21 / Spring Boot com API `/api/v1` (estruturas, sistemas, regiões e conceitos), o viewer usa só o snapshot do catálogo (`/api/v1/catalog/v2/snapshot`) quando a API está disponível; sem ela, funciona com a cópia estática |
+| Banco | PostgreSQL com migrations Flyway (V1–V10) |
 | Docker Compose | Backend + PostgreSQL prontos para subir o stack |
 | Catálogo educacional | Catálogo V2 derivado: 2.234 estruturas e 3.432 conceitos pt-BR, com curadoria incremental em andamento |
 | Deploy público | Frontend na Vercel: https://anatomia-humana-3d.vercel.app · API e banco só local (Docker Compose) |
@@ -125,7 +129,7 @@ As capturas podem ser regeneradas com Playwright (Chromium/SwiftShader) contra o
 | Renderização | Three.js (puro) | Cena WebGL batched (chunks binários + DataTextures) e controles |
 | Estilos | CSS e Tailwind CSS 4 | Estilização e integração com Vite |
 | Recursos visuais | Lucide e Fontsource | Ícones e fontes locais DM Sans/Manrope |
-| Pipeline 3D | Meshoptimizer e three-stdlib | Simplificação, quantização (normais Int16) e compressão dos chunks |
+| Pipeline 3D | Meshoptimizer | Simplificação, quantização (normais Int16) e compressão dos chunks |
 | Qualidade | ESLint, Vitest e Playwright | Análise estática, testes unitários e smoke test de navegador |
 | Verificação visual | pngjs | Análise dos pixels das capturas do canvas |
 | Estado compartilhado | Zustand | Seleção, hover, sistemas visíveis e isolamento |
@@ -134,7 +138,7 @@ As capturas podem ser regeneradas com Playwright (Chromium/SwiftShader) contra o
 | Contratos de API | springdoc-openapi | Swagger UI e `/api-docs` |
 | Infraestrutura | Docker Compose | PostgreSQL e backend em contêineres |
 
-Zustand centraliza o estado de interação do atlas (`view`, `explode`, `visible`, `selected`, `isolate`, `rotate`). O catálogo V2 (`catalog/v2/structures.json` e `catalog/v2/concepts.json`) é consumido pelo frontend via `frontend/src/data/catalogV2.ts`.
+Zustand centraliza o estado de interação do atlas (`view`, `explode`, `visible`, `selected`, `isolate`, `rotate`). O catálogo V2 (`catalog/v2/structures.json` e `catalog/v2/concepts.json`) é carregado pelo frontend via `frontend/src/data/catalogV2.ts`, que prioriza o snapshot da API (`GET /api/v1/catalog/v2/snapshot`) e usa como fallback a cópia estática em `frontend/public/catalog/v2`.
 
 ### Stack Planejada
 
@@ -203,7 +207,7 @@ Alternativa sem Docker (requer PostgreSQL local com banco `anatomia`, usuário `
 (cd backend && JAVA_HOME=$HOME/.local/share/jdks/temurin21 ./mvnw spring-boot:run)
 ```
 
-O viewer V2 não consome a API em tempo de execução: o atlas e o catálogo V2 são servidos com o frontend. A API permanece como contrato REST independente (Swagger em `http://localhost:8080/swagger-ui.html`).
+O viewer V2 funciona sem a API: o atlas e uma cópia do catálogo V2 são servidos com o frontend. Quando a API está disponível, o viewer busca o catálogo em `GET /api/v1/catalog/v2/snapshot` (ver [ADR-009](docs/ADR/ADR-009-catalog-snapshot.md)); os demais endpoints formam um contrato REST independente (Swagger em `http://localhost:8080/swagger-ui.html`).
 
 ## Como Usar
 
@@ -248,7 +252,7 @@ Execute os comandos abaixo a partir da raiz:
 
 ## Configuração e Ambiente
 
-O viewer V2 carrega o atlas localmente (assets em `frontend/public/models/fullbody`) e não depende de API para funcionar. A API REST permanece como contrato independente para integração e consulta dos dados anatômicos.
+O viewer V2 carrega o atlas localmente (assets em `frontend/public/models/fullbody`) e não depende da API para funcionar. O catálogo de estruturas e conceitos segue a ordem API-first: busca `GET /api/v1/catalog/v2/snapshot` (na origem do frontend ou em `VITE_API_URL`) e, se indisponível, carrega `public/catalog/v2`. A API REST permanece como contrato independente para integração e consulta dos dados anatômicos.
 
 [.env.example](.env.example) documenta o contrato de ambiente:
 
@@ -258,6 +262,7 @@ O viewer V2 carrega o atlas localmente (assets em `frontend/public/models/fullbo
 | `DATABASE_USERNAME` | Usuário do banco |
 | `DATABASE_PASSWORD` | Senha do banco, a ser definida fora do código |
 | `CORS_ALLOWED_ORIGINS` | Origens autorizadas a consumir a API (separadas por vírgula) |
+| `VITE_API_URL` | Origem do backend quando a API não está na mesma origem do frontend (ex.: `http://localhost:8080`); opcional — sem ela, o viewer tenta `/api` na própria origem |
 
 O banco, o backend e as migrations usam apenas variáveis com prefixo de backend; nada é incorporado ao JavaScript do navegador. Por padrão a API libera `http://localhost:5173` e `http://127.0.0.1:5173` (CORS).
 
@@ -275,7 +280,9 @@ flowchart LR
     Scene --> Atlas[public/models/fullbody: atlas.json + body-N.bin.gz]
     Scene --> CatalogV2[catalogV2.ts: catálogo V2 pt-BR]
     Store --> MCP[MCP: find_anatomy / inspect_anatomical_structure]
-    API[Spring Boot /api/v1] --> DB[(PostgreSQL/Flyway V1-V8)]
+    CatalogV2 -->|snapshot /api/v1/catalog/v2| API[Spring Boot /api/v1]
+    CatalogV2 -.->|fallback| StaticFallback[public/catalog/v2]
+    API --> DB[(PostgreSQL/Flyway V1-V10)]
     Source[BodyParts3D 4.0] --> Derive[derive-system-map + build-full-body]
     Derive --> Atlas
     CatalogDerive[derive-catalog-v2] --> CatalogV2
@@ -289,7 +296,7 @@ flowchart LR
 - [frontend/src/store/atlas.ts](frontend/src/store/atlas.ts) centraliza vista, explosão, sistemas visíveis, seleção e isolamento (Zustand).
 - [frontend/src/features/viewer/atlas/search.ts](frontend/src/features/viewer/atlas/search.ts) normaliza e ranqueia buscas por conceito/estrutura.
 - [frontend/src/features/viewer/atlas/explosionLayout.ts](frontend/src/features/viewer/atlas/explosionLayout.ts) deriva os offsets radial → inventário.
-- [frontend/src/data/catalogV2.ts](frontend/src/data/catalogV2.ts) lê `catalog/v2/structures.json` e `catalog/v2/concepts.json` (nome pt-BR, elementos FJ e ID FMA).
+- [frontend/src/data/catalogV2.ts](frontend/src/data/catalogV2.ts) carrega o catálogo V2 (nome pt-BR, elementos FJ e ID FMA): tenta o snapshot da API (`/api/v1/catalog/v2/snapshot`) e, se indisponível, usa a cópia estática em `public/catalog/v2`, mantida por `scripts/sync-frontend-fallback.mjs`.
 - [frontend/src/features/mcp/mcp.ts](frontend/src/features/mcp/mcp.ts) expõe `find_anatomy` e `inspect_anatomical_structure`.
 - [frontend/src/atlas.css](frontend/src/atlas.css) define o layout e a identidade visual "studio".
 
@@ -297,7 +304,7 @@ A cena usa geometria de buffer única por sistema (posições em metros, escala 
 
 ### Arquitetura Alvo
 
-> Objetivo, não estado atual: hoje o frontend não chama a API (ver [Arquitetura](#arquitetura)).
+> Objetivo, não estado atual: hoje o frontend só chama a API, de forma opcional, para o snapshot do catálogo (ver [Arquitetura](#arquitetura)).
 
 ```mermaid
 flowchart LR
@@ -367,7 +374,7 @@ O ponto de entrada do frontend é `Atlas.tsx`. O backend é um aplicativo Spring
 | Compressão | gzip por chunk; descomprimido no navegador |
 | Unidades | milímetros (convertidos para metros no loader) |
 | Triângulos | 2.104.882 |
-| Tamanho | ~25 MB em gzip (chunks) + `atlas.json` |
+| Tamanho | ~24 MB em gzip (chunks) + `atlas.json` |
 | Sistema/conceito | 15 sistemas, 3.432 conceitos FMA (classificação conforme `ashemag/human-atlas`) |
 | Licença registrada | CC BY 4.0 |
 | Data de obtenção registrada | 14 de setembro de 2026 |
@@ -405,12 +412,13 @@ O processo implementado em `scripts/build-full-body.mjs`: importa o OBJ completo
 | GET | `/api/v1/structures/{id}/relations` | Consultar relações anatômicas |
 | GET | `/api/v1/structures/{id}/concepts` | Consultar os conceitos (FMA) que agrupam uma estrutura |
 | GET | `/api/v1/concepts` | Listar e pesquisar conceitos (`search`, `system`, `page`, `size`, por nome pt-BR ou FMA) |
+| GET | `/api/v1/catalog/v2/snapshot` | Snapshot do catálogo V2 (conceitos com `elements` FJ e estruturas com `sourceId`), consolidado para o viewer |
 | GET | `/api/v1/concepts/{id}` | Consultar um conceito e suas estruturas |
 | GET | `/api/v1/assets/{structureId}` | Consultar assets associados |
 
 A listagem de estruturas e conceitos suporta `search`, `system`, `page` e `size`, com normalização sem acentos. Contrato detalhado em [docs/API.md](docs/API.md).
 
-O modelo relacional inclui `ANATOMICAL_SYSTEM`, `ANATOMICAL_REGION`, `ANATOMICAL_STRUCTURE` (com `source_id`), `ALTERNATE_NAME`, `STRUCTURE_RELATION`, `ASSET`, `SOURCE_LICENSE`, `ANATOMICAL_CONCEPT` e `CONCEPT_STRUCTURE`; as migrations estão em [backend/src/main/resources/db/migration](backend/src/main/resources/db/migration) (V1–V8). Regras e entidades em [docs/DATABASE.md](docs/DATABASE.md).
+O modelo relacional inclui `ANATOMICAL_SYSTEM`, `ANATOMICAL_REGION`, `ANATOMICAL_STRUCTURE` (com `source_id`), `ALTERNATE_NAME`, `STRUCTURE_RELATION`, `ASSET`, `SOURCE_LICENSE`, `ANATOMICAL_CONCEPT` e `CONCEPT_STRUCTURE`; as migrations estão em [backend/src/main/resources/db/migration](backend/src/main/resources/db/migration) (V1–V10). Regras e entidades em [docs/DATABASE.md](docs/DATABASE.md).
 
 **Catálogo V2 (estruturas e conceitos):** o catálogo pt-BR em [catalog/v2](catalog/v2) é a base de curadoria do V2 e alimenta os seeds do banco: `catalog:seed:v2` gera `V6__seed_expanded_structures.sql` (as 2.234 estruturas derivadas com `source_id`), `V7__seed_concepts.sql` (3.432 conceitos FMA com `name_pt`) e `V8__seed_concept_structures.sql` (46.825 vínculos conceito→estrutura por `source_id`).
 
@@ -482,7 +490,7 @@ As capturas são verificações de renderização e enquadramento, não uma cert
 - Leitura do `partIndex` por buffer no clique, sem malhas individuais por estrutura.
 - Fontes locais (DM Sans/Manrope), sem dependência de Google Fonts em tempo de execução.
 
-O modelo possui cerca de 2,1 milhões de triângulos. O chunk `index` do Vite reporta ~3,4 MB (gzip ~325 kB), mas a carga real por chunk do atlas é significativamente menor (~2 MB gzip no total para todos os 15 chunks).
+O modelo possui cerca de 2,1 milhões de triângulos. O bundle JS do Vite reporta ~3,4 MB (gzip ~325 kB); os 15 chunks do atlas somam ~24 MB em gzip (média de ~1,6 MB por chunk), com descompressão por streaming no navegador.
 
 ### Navegadores e Acessibilidade
 
@@ -499,6 +507,20 @@ npm --prefix frontend run preview
 
 O resultado é gerado em `frontend/dist`. O comando `preview` permite verificar esse build localmente; **não é um servidor de produção**.
 
+### Deploy no Vercel
+
+O frontend é publicado em produção no Vercel a cada `push` em `main` (integração Vercel–GitHub):
+
+> **https://anatomia-humana-3d.vercel.app**
+
+Para publicar manualmente pela CLI, a partir da raiz do projeto:
+
+```sh
+vercel --prod
+```
+
+### Outros serviços estáticos (Vercel/DN/Netlify)
+
 Para publicar somente o viewer atual em um serviço de hospedagem estática:
 
 | Configuração | Valor |
@@ -508,11 +530,13 @@ Para publicar somente o viewer atual em um serviço de hospedagem estática:
 | Build | `npm run build` |
 | Diretório de publicação | `dist` |
 
-Não é necessário reconstruir o atlas durante o deploy, pois os chunks já acompanham o frontend. Publique todo o conteúdo gerado, incluindo `dist/models/fullbody`, e preserve as atribuições em `assets/licenses.json`.
-
-O viewer carrega o atlas a partir de `public/models/fullbody/atlas.json` (caminho relativo servido pelo Vite com `base: './'`). Se publicar em um subdiretório, ajuste a configuração do Vite antes do build.
+O viewer carrega o atlas a partir de `public/models/fullbody/atlas.json` (caminho relativo servido pelo Vite com `base: './'`). Se publicar em um subdiretório em vez da raiz, ajuste a configuração do Vite antes do build. O `base: './'` atual já permite servir a partir de um subdiretório.
 
 Use HTTPS em produção. O frontend estático está publicado na Vercel (`vercel.json`). Backend, banco e CORS têm configuração Docker Compose local; o deploy público da API, com banco gerenciado, ainda é etapa separada.
+
+### Modo standalone e API
+
+O frontend publicado funciona standalone: sem o backend, o catálogo é servido pela cópia local (`frontend/public/catalog/v2`). Com a API disponível, o viewer prioriza o catálogo servido pelo backend, mantendo a mesma interface. Ver [Configuração e Ambiente](#configuração-e-ambiente).
 
 ## Solução de Problemas
 
@@ -522,7 +546,7 @@ Use HTTPS em produção. O frontend estático está publicado na Vercel (`vercel
 | Vite ou módulos não encontrados | Instale também o pacote do frontend com `npm --prefix frontend ci`; a instalação da raiz não o substitui. |
 | `WebGL indisponível` | Abra a aplicação em um navegador externo com WebGL 2 e aceleração gráfica habilitada. O navegador integrado do VS Code pode não disponibilizar esse recurso. |
 | Modelo não carrega | Verifique as requisições de `/models/fullbody/atlas.json` e `body-*.bin.gz` na aba Network, a presença dos assets e se o site está hospedado na raiz ou subdiretório configurado no Vite. |
-| Conflito de dependências (R3F/drei legados) | As dependências legadas R3F/drei ainda constam no lockfile, mas não são importadas pela aplicação; preserve as versões e os lockfiles, sem `--force` ou `--legacy-peer-deps`. |
+| Dependências legadas (R3F/drei) | As dependências R3F/Drei e o three-stdlib foram removidos dos lockfiles; o renderer usa apenas o núcleo do Three.js. Se um conflito persistir, instale com `npm ci` sem `--force` ou `--legacy-peer-deps`. |
 | Porta de desenvolvimento ocupada | Use a URL informada pelo Vite ou defina outra porta pelo script do frontend. Nos testes, verifique especificamente a porta 5173. |
 | Playwright não encontra Chromium | Execute `npm --prefix frontend exec -- playwright install chromium`. |
 | Chromium não inicia por bibliotecas do sistema ausentes | Consulte a mensagem do Playwright e instale os requisitos do seu sistema conforme a documentação oficial; a instalação do navegador não fornece todas as bibliotecas do Linux. |
@@ -553,8 +577,9 @@ Use HTTPS em produção. O frontend estático está publicado na Vercel (`vercel
 | **Catálogo V2** | Estruturas e conceitos pt-BR derivados (`catalog/v2`), seeds V6–V8 | Entregue |
 | **Renderer batched** | Three.js puro, 1 draw call/sistema, picking por `partIndex`, DataTextures | Entregue |
 | **UI Atlas** | Overlay studio: camadas, busca por conceito, explosão, vistas, atalhos e detalhe | Entregue |
-| **Testes V2** | 25 testes unitários + 6 E2E (Vitest + Playwright/SwiftShader) | Entregue |
-| Curadoria incremental V2 | Revisão dos nomes derivados por sistema | Em evolução |
+| **Testes V2** | 29 testes unitários + 7 E2E (Vitest + Playwright/SwiftShader) | Entregue |
+| **Integração catálogo V2 (API + fallback)** | `GET /api/v1/catalog/v2/snapshot` no viewer, fallback em `public/catalog/v2`, selos nome derivado/revisado | Entregue |
+| Curadoria incremental V2 | Revisão dos nomes derivados por sistema (`catalog/v2/curated.json`) | Em evolução |
 | Otimização e qualidade | Profiling, acessibilidade, matrix de navegadores | Em evolução |
 | Infraestrutura e deploy | Deploy completo e observabilidade | Planejado |
 
@@ -581,6 +606,7 @@ Checklist detalhado e decisões de arquitetura: [docs/ROADMAP.md](docs/ROADMAP.m
 | [docs/ADR/ADR-006-zustand.md](docs/ADR/ADR-006-zustand.md) | Estado de interação com Zustand |
 | [docs/ADR/ADR-007-catalog.md](docs/ADR/ADR-007-catalog.md) | Catálogo pt-BR (V1; V2 em ADR-008) |
 | [docs/ADR/ADR-008-atlas-batched.md](docs/ADR/ADR-008-atlas-batched.md) | Atlas full-body em chunks batched e catálogo V2 |
+| [docs/ADR/ADR-009-catalog-snapshot.md](docs/ADR/ADR-009-catalog-snapshot.md) | Integração do catálogo V2: API-first com fallback estático |
 
 ## Contribuição
 

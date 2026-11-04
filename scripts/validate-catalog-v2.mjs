@@ -134,21 +134,57 @@ if (!Array.isArray(concepts)) {
 
 // ---- Curadoria incremental ----
 
+// Formato consumido por derive-catalog-v2.mjs (applyCurated): objeto indexado por
+// structureId, cada valor com campos opcionais { name, nameDerived, reviewed,
+// alternateNames, description, function, educationalSources: [{ name, url }] }.
+
 if (existsSync(curatedPath)) {
   const curated = JSON.parse(readFileSync(curatedPath, 'utf8'));
-  if (!Array.isArray(curated)) {
-    errors.push('curated.json: esperado array de entradas curadas.');
+  if (!curated || typeof curated !== 'object' || Array.isArray(curated)) {
+    errors.push('curated.json: esperado objeto indexado por structureId.');
   } else {
     const structureIds = new Set(structures.map((s) => s.structureId));
-    const conceptIds = new Set(concepts.map((c) => c.id));
-    for (const entry of curated) {
-      const ref = entry.structureId || entry.conceptId || entry.id;
-      if (ref && !structureIds.has(ref) && !conceptIds.has(ref)) {
-        warnings.push(`Curadoria referencia item inexistente: ${entry.structureId ?? entry.conceptId ?? entry.id}`);
+    const entries = Object.entries(curated);
+    for (const [structureId, c] of entries) {
+      if (!structureIds.has(structureId)) {
+        warnings.push(`Curadoria referencia estrutura inexistente: ${structureId}`);
+        continue;
       }
-      if (typeof entry.namePtOverride !== 'string' || !entry.namePtOverride.trim()) {
-        warnings.push(`Curadoria ${ref}: namePtOverride ausente ou vazio.`);
+      if (!c || typeof c !== 'object' || Array.isArray(c)) {
+        errors.push(`Curadoria de ${structureId}: valor deve ser objeto.`);
+        continue;
       }
+      if (c.name !== undefined && (typeof c.name !== 'string' || !c.name.trim())) {
+        errors.push(`Curadoria de ${structureId}: name deve ser texto nao vazio.`);
+      }
+      if (c.nameDerived !== undefined && typeof c.nameDerived !== 'boolean') {
+        errors.push(`Curadoria de ${structureId}: nameDerived deve ser boolean.`);
+      }
+      if (c.reviewed !== undefined && typeof c.reviewed !== 'boolean') {
+        errors.push(`Curadoria de ${structureId}: reviewed deve ser boolean.`);
+      }
+      if (
+        c.alternateNames !== undefined &&
+        (!Array.isArray(c.alternateNames) || c.alternateNames.some((alt) => typeof alt !== 'string'))
+      ) {
+        errors.push(`Curadoria de ${structureId}: alternateNames deve ser array de textos.`);
+      }
+      if (c.description !== undefined && typeof c.description !== 'string') {
+        errors.push(`Curadoria de ${structureId}: description deve ser texto.`);
+      }
+      if (c.function !== undefined && typeof c.function !== 'string') {
+        errors.push(`Curadoria de ${structureId}: function deve ser texto.`);
+      }
+      if (
+        c.educationalSources !== undefined &&
+        (!Array.isArray(c.educationalSources) ||
+          c.educationalSources.some((src) => !src || typeof src.name !== 'string'))
+      ) {
+        errors.push(`Curadoria de ${structureId}: educationalSources deve ser array de { name, url }.`);
+      }
+    }
+    if (entries.length === 0) {
+      warnings.push('catalog/v2/curated.json vazio (curadoria incremental iniciada, nenhuma entrada ainda).');
     }
   }
 } else {

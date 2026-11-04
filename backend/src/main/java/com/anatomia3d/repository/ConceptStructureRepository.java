@@ -21,4 +21,14 @@ public interface ConceptStructureRepository extends JpaRepository<ConceptStructu
         group by cs.concept.id
         """)
     List<Object[]> countByConceptIds(@Param("ids") List<Long> ids);
+
+    @Query("""
+        select cs.concept.id, s.sourceId
+        from ConceptStructure cs
+        join cs.structure s
+        where cs.concept.id in :ids
+          and s.sourceId is not null
+        order by cs.concept.id asc, s.sourceId asc
+        """)
+    List<Object[]> sourceIdsByConceptIds(@Param("ids") List<Long> ids);
 }

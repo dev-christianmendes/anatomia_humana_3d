@@ -19,7 +19,7 @@ Convencao de commits: `feat:`, `fix:`, `perf:`, `docs:`, `test:` e `chore:`.
 Fluxo planejado: main, develop, feature/* e fix/*; branches/commits nao sao
 criados automaticamente pela configuracao do workspace.
 
-R3F e Drei sao legados (ADR-008): permanecem no lockfile por compatibilidade,
-mas o renderer e Three.js puro. Antes de atualizar dependencias, conferir
-peerDependencies e executar o smoke test 3D. Nao contornar conflitos de
+R3F e Drei sao legados (ADR-008) e foram removidos dos lockfiles: o renderer e
+Three.js puro (imports de `three/examples/jsm`). Antes de atualizar dependencias,
+conferir peerDependencies e executar o smoke test 3D. Nao contornar conflitos de
 dependencias com `--force` ou `--legacy-peer-deps`.

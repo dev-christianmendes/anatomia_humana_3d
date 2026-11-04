@@ -7,6 +7,8 @@ public record ConceptSummaryDto(
     String namePt,
     String name,
     List<String> systems,
-    int structureCount
+    int structureCount,
+    boolean nameDerived,
+    boolean reviewed
 ) {
 }

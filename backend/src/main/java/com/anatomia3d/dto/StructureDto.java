@@ -4,6 +4,7 @@ import java.util.List;
 
 public record StructureDto(
     String id,
+    String sourceId,
     String name,
     List<String> alternateNames,
     SystemDto system,
@@ -11,6 +12,8 @@ public record StructureDto(
     String description,
     String function,
     String modelNode,
-    SourceDto source
+    SourceDto source,
+    boolean nameDerived,
+    boolean reviewed
 ) {
 }

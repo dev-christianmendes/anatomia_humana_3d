@@ -23,7 +23,9 @@ public final class ConceptMapper {
             concept.getNamePt(),
             concept.getName(),
             systems(concept),
-            structureCount
+            structureCount,
+            concept.isNameDerived(),
+            concept.isReviewed()
         );
     }
 
@@ -43,6 +45,7 @@ public final class ConceptMapper {
             systems(concept),
             concept.getElementCount(),
             concept.isNameDerived(),
+            concept.isReviewed(),
             structures
         );
     }
